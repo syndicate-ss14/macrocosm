@@ -54,6 +54,8 @@
   - type: MobMover
   - type: MovementSpeedModifier
   - type: LagCompensation
+  - type: CollectiveMind # Startlight - Collective Minds - Give everyone general access to collective mind channels for Dragons/Carp/Critters/Zombies
+  - type: StunVisuals
 
 - type: entity
   save: false

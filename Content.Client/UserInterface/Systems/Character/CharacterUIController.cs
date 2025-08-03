@@ -1,4 +1,6 @@
 using System.Linq;
+using Content.Client._Starlight.UserInterface.Controls; // Starlight - Collective Mind
+using Content.Client._DV.CustomObjectiveSummary; // DeltaV
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
 using Content.Client.Stylesheets;
@@ -130,7 +132,11 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
             return;
         }
 
+<<<<<<< HEAD
         var (entity, objectives, briefing, jobId, entityName) = data;
+=======
+        var (entity, job, objectives, minds, briefing, entityName) = data; // Starlight - Collective Mind - Added minds variable.
+>>>>>>> 97a1087d04 (Add Collective Minds (Ported Starlight PRs # 69, # 70) (#276))
 
         _window.SpriteView.SetEntity(entity);
 
@@ -140,6 +146,7 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
         _window.SubText.Text = job != null ? Loc.GetString(job.Name) : null;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
+        _window.Minds.RemoveAllChildren(); // Starlight - Collective Mind
 
         foreach (var (groupId, conditions) in objectives)
         {
@@ -179,6 +186,29 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
 
             _window.Objectives.AddChild(objectiveControl);
         }
+
+        // Starlight - Start - Collective Mind
+        if (minds != null && minds.Count > 0)
+        {
+            var mindsControl = new CharacterMindsControl
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+            };
+            var mindDescriptionMessage = new FormattedMessage();
+            mindDescriptionMessage.AddText("Available collective minds:");
+            foreach (var mindPrototype in minds)
+            {
+                mindDescriptionMessage.AddText("\n");
+                mindDescriptionMessage.PushColor(mindPrototype.Key.Color);
+                mindDescriptionMessage.AddText($"{mindPrototype.Key.LocalizedName}: +{mindPrototype.Key.KeyCode}");
+                mindDescriptionMessage.AddText($" (Number {mindPrototype.Value.MindId})");
+                mindDescriptionMessage.Pop();
+
+            }
+            mindsControl.Description.SetMessage(mindDescriptionMessage);
+            _window.Objectives.AddChild(mindsControl);
+        }
+        // Starlight - End
 
         if (briefing != null)
         {

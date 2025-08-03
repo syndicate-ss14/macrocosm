@@ -163,7 +163,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (!_charInfoIsAttach)
             return;
 
-        var (_, _, _, job, entityName) = data;
+        var (_, job, _, _, _, entityName) = data; // Starlight - Collective Minds - Accounting for the extra Minds variable for chat highlighting update.
 
         // Mark this entity's name as our character name for the "UpdateHighlights" function.
         var newHighlights = "@" + entityName;
