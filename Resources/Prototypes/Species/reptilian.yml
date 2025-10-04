@@ -2,6 +2,7 @@
   id: Reptilian
   name: species-name-reptilian
   roundStart: true
+  randomViable: true # imp
   prototype: MobReptilian
   defaultSkinTone: "#34a223"
   dollPrototype: AppearanceReptilian

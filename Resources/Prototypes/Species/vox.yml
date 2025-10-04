@@ -1,7 +1,8 @@
 - type: species
   id: Vox
   name: species-name-vox
-  roundStart: true
+  roundStart: true # imp
+  randomViable: true
   prototype: MobVox
   dollPrototype: AppearanceVox
   skinColoration: VoxFeathers
