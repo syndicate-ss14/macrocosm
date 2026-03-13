@@ -2,7 +2,7 @@
   id: Arachnid
   name: species-name-arachnid
   roundStart: true
-  randomViable: true # imp
+  randomViable: true # MACRO
   prototype: MobArachnid
   defaultSkinTone: "#385878"
   dollPrototype: AppearanceArachnid

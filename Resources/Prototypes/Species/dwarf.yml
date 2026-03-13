@@ -2,7 +2,7 @@
   id: Dwarf
   name: species-name-dwarf
   roundStart: true
-  randomViable: true # imp
+  randomViable: true # MACRO
   prototype: MobDwarf
   dollPrototype: AppearanceDwarf
   skinColoration: HumanToned
