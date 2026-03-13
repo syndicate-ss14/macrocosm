@@ -217,7 +217,7 @@ namespace Content.Shared.Preferences
         // MACRO start. this function is fairly different from upstream now.
         // But upstreaming this would take so long that the species will be fully merged by then
         // Therefore: bear with my changes
-        public static HumanoidCharacterProfile Random(bool characterCreation = true, HashSet<string>? speciesBlacklist = null)
+        public static HumanoidCharacterProfile Random(HashSet<string>? speciesBlacklist = null, bool? characterCreation = true)
         {
             var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
             var random = IoCManager.Resolve<IRobustRandom>();
@@ -228,7 +228,7 @@ namespace Content.Shared.Preferences
                 {
                     if (speciesBlacklist != null && speciesBlacklist.Contains(x.ID))
                         return false;
-                    if (characterCreation)
+                    if (characterCreation == true)
                         return x.RoundStart;
                     return random.NextFloat() < x.RandomChance && x.RandomViable;
                 })

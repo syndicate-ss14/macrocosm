@@ -477,7 +477,7 @@ namespace Content.Server.Preferences.Managers
             {
                 var speciesToBlacklist =
                     new HashSet<string>(_cfg.GetCVar(CCVars.ICNewAccountSpeciesBlacklist).Split(","));
-                return await _db.InitPrefsAsync(userId, HumanoidCharacterProfile.Random(true, speciesToBlacklist), cancel); // MACRO, Visitor Species
+                return await _db.InitPrefsAsync(userId, HumanoidCharacterProfile.Random(speciesToBlacklist), cancel);
             }
 
             return prefs;
