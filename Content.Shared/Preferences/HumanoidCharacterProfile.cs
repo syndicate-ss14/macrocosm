@@ -214,7 +214,7 @@ namespace Content.Shared.Preferences
         }
 
         // TODO: This should eventually not be a visual change only.
-        // Imp start. this function is fairly different from upstream now.
+        // MACRO start. this function is fairly different from upstream now.
         // But upstreaming this would take so long that the species will be fully merged by then
         // Therefore: bear with my changes
         public static HumanoidCharacterProfile Random(bool characterCreation = true, HashSet<string>? speciesBlacklist = null)
@@ -238,7 +238,7 @@ namespace Content.Shared.Preferences
 
             return RandomWithSpecies(species);
         }
-        // Imp end
+        // MACRO end
         public static HumanoidCharacterProfile RandomWithSpecies(string? species = null)
         {
             species ??= HumanoidCharacterProfile.DefaultSpecies;
