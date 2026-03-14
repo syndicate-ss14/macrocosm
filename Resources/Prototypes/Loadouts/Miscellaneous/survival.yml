@@ -19,6 +19,8 @@
     - Moth
     - Reptilian
     - Vulpkanin
+    # macro below
+    - Gray
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
@@ -77,6 +79,8 @@
     - Human
     - Reptilian
     - Vulpkanin
+    # macro below
+    - Gray
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth
