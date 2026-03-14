@@ -5,21 +5,15 @@
   limits:
     enum.HumanoidVisualLayers.Hair:
       limit: 0
-      required: false
-    enum.HumanoidVisualLayers.FacialHair:
-      limit: 0
-      required: false
+      required: true
+      default: [ ApidAntennaeDefault ]
     enum.HumanoidVisualLayers.Tail: #wangs
       limit: 1
       required: true
-      default: [ MothWingsDefault ]
+      default: [ ApidWingsAnimatedDefault ]
     enum.HumanoidVisualLayers.Chest:
       limit: 2
       required: false
-    enum.HumanoidVisualLayers.HeadTop:
-      limit: 1
-      required: true
-      default: [ MothAntennasDefault ]
     enum.HumanoidVisualLayers.Snout:
       limit: 1
       required: false
@@ -55,6 +49,7 @@
   components:
   - type: Inventory
     speciesId: apid
+    templateId: apid
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -140,7 +135,7 @@
       FootLeft: OrganApidFootLeft
       FootRight: OrganApidFootRight
       Brain: OrganMothBrain
-      Eyes: OrganMothEyes
+      Eyes: OrganApidEyes
       Tongue: OrganMothTongue
       Appendix: OrganMothAppendix
       Ears: OrganMothEars
@@ -150,7 +145,7 @@
       Liver: OrganMothLiver
       Kidneys: OrganMothKidneys
   - type: HumanoidProfile
-    species: Moth
+    species: Apid
 
 - type: entity
   parent:
@@ -210,9 +205,11 @@
       275: 0.8
       250: 0.7
   - type: MovementSpeedModifier
-    # NOTE: to edit this entity's base movement speed, you will need to edit the leg bodypart. i discovered this so you didnt have to
     baseWeightlessFriction: 0.2
     baseWeightlessModifier: 1
+    baseSprintSpeed: 5.5
+    baseWalkSpeed: 3.5
+    acceleration: 1.2 # zoom
   - type: MovementIgnoreGravity # nyoom
     weightless: true
   - type: MeleeWeapon
@@ -277,25 +274,29 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: Mobs/Species/Moth/parts.rsi
+      sprite: _MACRO/Mobs/Species/Apid/parts.rsi
   - type: VisualOrganMarkings
     markingData:
-      group: Moth
+      group: Apid
 
 - type: entity
-  parent: [ OrganMoth, OrganMothVisual ]
+  parent: [ OrganApid, OrganApidVisual ]
   id: OrganApidExternal
   abstract: true
   components:
   - type: Sprite
-    sprite: Mobs/Species/Moth/parts.rsi
+    sprite: _MACRO/Mobs/Species/Apid/parts.rsi
 
 - type: entity
-  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganMothExternal ]
+  parent: [ OrganApidVisual, OrganBaseEyes, OrganApidInternal ]
+  id: OrganApidEyes
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganApidExternal ]
   id: OrganApidTorso
 
 - type: entity
-  parent: [ OrganBaseHead, OrganMothExternal ]
+  parent: [ OrganBaseHead, OrganApidExternal ]
   id: OrganApidHead
   components:
   - type: VisualOrganMarkings
@@ -303,35 +304,35 @@
     - enum.HumanoidVisualLayers.HeadTop
 
 - type: entity
-  parent: [ OrganBaseArmLeft, OrganMothExternal ]
+  parent: [ OrganBaseArmLeft, OrganApidExternal ]
   id: OrganApidArmLeft
 
 - type: entity
-  parent: [ OrganBaseArmRight, OrganMothExternal ]
+  parent: [ OrganBaseArmRight, OrganApidExternal ]
   id: OrganApidArmRight
 
 - type: entity
-  parent: [ OrganBaseHandLeft, OrganMothExternal ]
+  parent: [ OrganBaseHandLeft, OrganApidExternal ]
   id: OrganApidHandLeft
 
 - type: entity
-  parent: [ OrganBaseHandRight, OrganMothExternal ]
+  parent: [ OrganBaseHandRight, OrganApidExternal ]
   id: OrganApidHandRight
 
 - type: entity
-  parent: [ OrganBaseLegLeft, OrganMothExternal ]
+  parent: [ OrganBaseLegLeft, OrganApidExternal ]
   id: OrganApidLegLeft
 
 - type: entity
-  parent: [ OrganBaseLegRight, OrganMothExternal ]
+  parent: [ OrganBaseLegRight, OrganApidExternal ]
   id: OrganApidLegRight
 
 - type: entity
-  parent: [ OrganBaseFootLeft, OrganMothExternal ]
+  parent: [ OrganBaseFootLeft, OrganApidExternal ]
   id: OrganApidFootLeft
 
 - type: entity
-  parent: [ OrganBaseFootRight, OrganMothExternal ]
+  parent: [ OrganBaseFootRight, OrganApidExternal ]
   id: OrganApidFootRight
 
 - type: entity
