@@ -2,6 +2,7 @@
   id: Reptilian
   name: species-name-reptilian
   roundStart: true
+  randomViable: true # MACRO
   prototype: MobReptilian
   defaultSkinTone: "#34a223"
   dollPrototype: AppearanceReptilian

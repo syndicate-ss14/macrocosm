@@ -2,6 +2,7 @@
   id: Human
   name: species-name-human
   roundStart: true
+  randomViable: true # MACRO
   prototype: MobHuman
   dollPrototype: AppearanceHuman
   skinColoration: HumanToned
