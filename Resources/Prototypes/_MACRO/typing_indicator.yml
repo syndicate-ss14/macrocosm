@@ -1,0 +1,6 @@
+﻿- type: typingIndicator
+  id: gray
+  spritePath: /Textures/_MACRO/Effects/speech.rsi
+  typingState: gray0
+  idleState: gray0 # TODO: new idle state
+  offset: 0.01, 0.01
