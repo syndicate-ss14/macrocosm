@@ -237,7 +237,7 @@
   description: "Jazee thinking pib talking."
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganGrayInternal, OrganGrayVisual ]
+  parent: [ OrganGrayVisual, OrganBaseEyes, OrganGrayInternal ]
   id: OrganGrayEyes
   name: shuui
   description: "Soulful."
