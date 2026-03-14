@@ -150,7 +150,7 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ Gray ]
+    metabolizerTypes: [ Human ]
 
 - type: entity
   parent: OrganGray
@@ -175,11 +175,22 @@
       group: Gray
 
 - type: entity
-  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganGrayExternal ]
+  id: OrganGrayVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _MACRO/Mobs/Species/Gray/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Gray
+
+- type: entity
+  parent: [ OrganBaseTorso, OrganGrayExternal ]
   id: OrganGrayTorso
 
 - type: entity
-  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganGrayExternal ]
+  parent: [ OrganBaseHead, OrganGrayExternal ]
   id: OrganGrayHead
   components:
   - type: VisualOrganMarkings
@@ -226,14 +237,10 @@
   description: "Jazee thinking pib talking."
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganGrayInternal ]
+  parent: [ OrganBaseEyes, OrganGrayInternal, OrganGrayVisual ]
   id: OrganGrayEyes
   name: shuui
   description: "Soulful."
-  components:
-  - type: VisualOrgan
-    data:
-      sprite: _MACRO/Mobs/Species/Gray/organs.rsi
 
 - type: entity
   parent: [ OrganBaseTongue, OrganGrayInternal ]
@@ -264,8 +271,6 @@
   - type: Tag
     tags:
     - Meat
-    - Organ
-    - Lungs
     - WoodwindInstrument
 
 - type: entity
@@ -295,3 +300,6 @@
   - type: Tool
     qualities:
     - Pulsing
+  - type: Sprite
+    layers:
+      - state: kidney-r

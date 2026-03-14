@@ -1,0 +1,7 @@
+- type: species
+  id: Gray
+  name: species-name-gray
+  roundStart: true
+  prototype: MobGray
+  dollPrototype: AppearanceGray
+  skinColoration: HumanToned

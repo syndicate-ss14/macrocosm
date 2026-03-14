@@ -21,6 +21,7 @@
     - Vulpkanin
     # macro below
     - Gray
+    - Apid
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
@@ -81,6 +82,7 @@
     - Vulpkanin
     # macro below
     - Gray
+    - Apid
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth
