@@ -214,9 +214,7 @@ namespace Content.Shared.Preferences
         }
 
         // TODO: This should eventually not be a visual change only.
-        // MACRO start. this function is fairly different from upstream now.
-        // But upstreaming this would take so long that the species will be fully merged by then
-        // Therefore: bear with my changes
+        // MACRO start, extensive changes.
         public static HumanoidCharacterProfile Random(HashSet<string>? speciesBlacklist = null, bool? characterCreation = true)
         {
             var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
@@ -239,6 +237,7 @@ namespace Content.Shared.Preferences
             return RandomWithSpecies(species);
         }
         // MACRO end
+
         public static HumanoidCharacterProfile RandomWithSpecies(string? species = null)
         {
             species ??= HumanoidCharacterProfile.DefaultSpecies;

@@ -1,8 +1,8 @@
 - type: species
   id: Vox
   name: species-name-vox
-  roundStart: true # MACRO
-  randomViable: true
+  roundStart: true
+  randomViable: true # MACRO
   prototype: MobVox
   dollPrototype: AppearanceVox
   skinColoration: VoxFeathers
