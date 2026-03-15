@@ -151,6 +151,11 @@
     speechSounds: PVC
   - type: Damageable
     damageModifierSet: Gray
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: GrayBlood
+        Quantity: 300
 
 
 - type: entity

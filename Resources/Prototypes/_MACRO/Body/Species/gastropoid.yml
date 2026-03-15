@@ -46,42 +46,6 @@
   - type: Inventory
     speciesId: gastropoid
     templateId: gastropoid
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: _MACRO/Mobs/Species/Gastropoid/displacement.rsi
-            state: jumpsuit
-      outerClothing:
-        sizeMaps:
-          32:
-            sprite: _MACRO/Mobs/Species/Gastropoid/displacement.rsi
-            state: outerClothing
-      head:
-        sizeMaps:
-          32:
-            sprite: _MACRO/Mobs/Species/Gastropoid/displacement.rsi
-            state: head
-      shoes:
-        sizeMaps:
-          32:
-            sprite: _MACRO/Mobs/Species/Gastropoid/displacement.rsi
-            state: feet
-      eyes:
-        sizeMaps:
-          32:
-            sprite: _MACRO/Mobs/Species/Gastropoid/displacement.rsi
-            state: eyes
-      back:
-        sizeMaps:
-          32:
-            sprite: _MACRO/Mobs/Species/Gastropoid/displacement.rsi
-            state: back
-      neck:
-        sizeMaps:
-          32:
-            sprite: _MACRO/Mobs/Species/Gastropoid/displacement.rsi
-            state: neck
     displacements:
       jumpsuit:
         sizeMaps:
@@ -217,6 +181,12 @@
   - type: MovementSpeedModifier
     baseSprintSpeed: 2.25
     baseWalkSpeed: 1.25
+  - type: SnailSprint
+    action: ActionSlime
+    thirstCost: 100
+    sprintLength: 2
+    speedBoost: 1.5
+    reagentProduced: Mucin
 
 - type: entity
   parent: OrganBase
