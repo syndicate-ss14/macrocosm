@@ -1,0 +1,14 @@
+- type: species
+  id: Gastropoid
+  name: species-name-gastropoid
+  roundStart: true
+  #randomViable: true
+  prototype: MobGastropoid
+  defaultSkinTone: "#385878"
+  dollPrototype: AppearanceGastropoid
+  skinColoration: Hues
+  maleFirstNames: NamesGastropoidFirst
+  femaleFirstNames: NamesGastropoidFirst
+  lastNames: NamesGastropoidLast
+  sexes:
+  - Unsexed

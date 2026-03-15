@@ -1,7 +1,7 @@
 - type: species
   id: Gray
   name: species-name-gray
-  roundStart: true
+  roundStart: false
   prototype: MobGray
   dollPrototype: AppearanceGray
   skinColoration: GrayToned
