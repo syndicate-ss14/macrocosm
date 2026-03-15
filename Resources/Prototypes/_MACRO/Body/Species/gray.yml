@@ -138,6 +138,18 @@
   - BaseSpeciesMobOrganic
   id: MobGray
   name: Urist McGray
+  components:
+  - type: GrayAccent
+  - type: TypingIndicator
+    proto: gray
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+  - type: Damageable
+    damageModifierSet: Gray
+
 
 - type: entity
   parent: OrganBase
