@@ -75,11 +75,16 @@
           32:
             sprite: _MACRO/Mobs/Species/Apid/displacement.rsi
             state: head
+      belt:
+        sizeMaps:
+          32:
+            sprite: _MACRO/Mobs/Species/Apid/displacement.rsi
+            state: belt
       eyes:
         sizeMaps:
           32:
             sprite: _MACRO/Mobs/Species/Apid/displacement.rsi
-            state: eyes
+            state: glasses
       mask:
         sizeMaps:
           32:
@@ -111,11 +116,16 @@
           32:
             sprite: _MACRO/Mobs/Species/Apid/displacement.rsi
             state: head
+      belt:
+        sizeMaps:
+          32:
+            sprite: _MACRO/Mobs/Species/Apid/displacement.rsi
+            state: belt
       eyes:
         sizeMaps:
           32:
             sprite: _MACRO/Mobs/Species/Apid/displacement.rsi
-            state: eyes
+            state: glasses
       mask:
         sizeMaps:
           32:
@@ -250,6 +260,7 @@
     bodyStatus: InAir
   - type: NoSlip
   - type: CanMoveInAir
+  - type: CanWieldOneHanded
 
 - type: entity
   parent: OrganBase
