@@ -316,7 +316,7 @@
   id: OrganApidArmRight
 
 - type: entity
-  parent: [ OrganBaseHandLeft, OrganApidExternal ]
+  parent: [ OrganBaseHandLeftInactive, OrganApidExternal ]
   id: OrganApidHandLeft
 
 - type: entity
