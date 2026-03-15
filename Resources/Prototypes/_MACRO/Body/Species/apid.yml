@@ -185,10 +185,8 @@
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
+        sprite: _MACRO/Mobs/Effects/apid_brute_damage.rsi # technically this is only brute sprites for the chest. but that doesn't matter
         color: "#808A51"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
   - type: MothAccent
   - type: Vocal
     sounds:
@@ -201,6 +199,12 @@
     damage:
       types:
         Heat: 2.5 # moths burn more easily
+
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Critical
+      125: Dead
   - type: Temperature
     currentTemperature: 310.15
     specificHeat: 46
