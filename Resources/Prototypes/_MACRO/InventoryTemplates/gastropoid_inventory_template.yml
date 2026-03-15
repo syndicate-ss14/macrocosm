@@ -106,7 +106,7 @@
       strippingWindowPos: 0,5
       displayName: Belt
     - name: back
-      slotTexture: shell
+      slotTexture: shell # this is hard coded to look in upstream textures???
       fullTextureName: template_small
       slotFlags: BACK
       slotGroup: SecondHotbar

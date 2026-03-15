@@ -1,9 +1,13 @@
 - type: markingsGroup
   parent: Undergarments
   id: Gastropoid
+  onlyGroupWhitelisted: true
   limits:
     enum.HumanoidVisualLayers.Hair:
-      limit: 1
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 0
       required: false
     enum.HumanoidVisualLayers.Eyes:
       limit: 1
@@ -13,6 +17,9 @@
       limit: 1
       required: true
       default: [ GastropoidShellSmall ]
+    enum.HumanoidVisualLayers.TailOverlay:
+      limit: 1
+      required: false
     enum.HumanoidVisualLayers.Chest:
       limit: 2
       required: false
@@ -163,6 +170,7 @@
       Unsexed: UnisexSnail
   - type: BodyEmotes
     soundsId: GastropoidBodyEmotes
+  - type: GastropoidAccent
   - type: Reactive
     reactions:
     - reagents: [ Diphenhydramine, Lipozine, Oculine, Saline, Fresium, Hotsauce, TableSalt, Bleach, SodiumCarbonate, PestKiller, Posca ] # theres got to be a better way of doing this.
@@ -215,7 +223,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: _MACRO/Mobs/Species/Human/organs.rsi
+      sprite: _MACRO/Mobs/Species/Gastropoid/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Gastropoid

@@ -446,7 +446,7 @@
 
 - type: marking
   id: GlowInTheDarkStars
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -455,7 +455,7 @@
 
 - type: marking
   id: ProstheticInnerLight
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -464,7 +464,7 @@
 
 - type: marking
   id: ProstheticPulse
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -473,7 +473,7 @@
 
 - type: marking
   id: SimpleBow
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -481,7 +481,7 @@
 
 - type: marking
   id: SimpleCracks
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -489,7 +489,7 @@
 
 - type: marking
   id: SnailWeewoo
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -502,7 +502,7 @@
 
 - type: marking
   id: SnailWeewooSmall
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -515,7 +515,7 @@
 
 - type: marking
   id: ConeBigStripes
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -523,7 +523,7 @@
 
 - type: marking
   id: ConeCracked
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -531,7 +531,7 @@
 
 - type: marking
   id: ConeDuotone
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -539,7 +539,7 @@
 
 - type: marking
   id: ConeGlow
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -548,7 +548,7 @@
 
 - type: marking
   id: ConeGradient
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -556,7 +556,7 @@
 
 - type: marking
   id: ConeOvergrown
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -564,7 +564,7 @@
 
 - type: marking
   id: ConeSpecks
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -572,7 +572,7 @@
 
 - type: marking
   id: ConeStripes
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -580,7 +580,7 @@
 
 - type: marking
   id: SmallDuotone
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -588,7 +588,7 @@
 
 - type: marking
   id: SmallGlow
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -597,7 +597,7 @@
 
 - type: marking
   id: SmallGradient
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -605,7 +605,7 @@
 
 - type: marking
   id: SmallOvergrown
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -613,7 +613,7 @@
 
 - type: marking
   id: SmallSeam
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -621,7 +621,7 @@
 
 - type: marking
   id: SmallSpiral
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -629,7 +629,7 @@
 
 - type: marking
   id: SmallSpots
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -637,7 +637,7 @@
 
 - type: marking
   id: SmallSwirl
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -645,7 +645,7 @@
 
 - type: marking
   id: BigCracked
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -653,7 +653,7 @@
 
 - type: marking
   id: BigDuotone
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -661,7 +661,7 @@
 
 - type: marking
   id: BigGlow
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -670,7 +670,7 @@
 
 - type: marking
   id: BigGradient
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -678,7 +678,7 @@
 
 - type: marking
   id: BigOvergrown
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -686,7 +686,7 @@
 
 - type: marking
   id: BigSeam
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -694,7 +694,7 @@
 
 - type: marking
   id: BigSpiral
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -702,7 +702,7 @@
 
 - type: marking
   id: BigSpots
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -710,7 +710,7 @@
 
 - type: marking
   id: BigSwirl
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -718,7 +718,7 @@
 
 - type: marking
   id: ProstheticSimpleGlass
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -726,7 +726,7 @@
 
 - type: marking
   id: SmallMantle
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -736,7 +736,7 @@
 
 - type: marking
   id: SmallRibbon
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -746,7 +746,7 @@
 
 - type: marking
   id: ConeMantle
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -756,7 +756,7 @@
 
 - type: marking
   id: ConeRibbon
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -766,7 +766,7 @@
 
 - type: marking
   id: BigMantle
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -776,7 +776,7 @@
 
 - type: marking
   id: BigRibbon
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -786,7 +786,7 @@
 
 - type: marking
   id: ProstheticMulticolor
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
@@ -796,7 +796,7 @@
 
 - type: marking
   id: SmallFlowers
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Gastropoid ]
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
