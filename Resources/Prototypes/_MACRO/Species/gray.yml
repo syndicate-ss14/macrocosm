@@ -5,3 +5,7 @@
   prototype: MobGray
   dollPrototype: AppearanceGray
   skinColoration: GrayToned
+  maleFirstNames: NamesGrayFirst
+  femaleFirstNames: NamesGrayFirst
+  lastNames: NamesGrayLast
+  youngAge: 999
