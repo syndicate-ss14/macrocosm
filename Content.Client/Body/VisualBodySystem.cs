@@ -206,7 +206,7 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
                     proto.Shaders.TryGetValue(rsi.RsiState, out var shader))
                 {
                     EnsureComp<SpriteComponent>(target, out var spriteComp); // why is this method in the component?????
-                    spriteComp.LayerSetShader(i, shader);
+                    spriteComp.LayerSetShader(index + i + 1, shader);
                 }
                 // MACRO END
             }
