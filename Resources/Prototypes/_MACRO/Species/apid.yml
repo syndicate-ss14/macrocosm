@@ -6,9 +6,9 @@
   defaultSkinTone: "#385878"
   dollPrototype: AppearanceApid
   skinColoration: TintedHues # this prevents RandomHumanoidAppearance from fucking with their colorscheme too much
-  maleFirstNames: NamesArachnidFirst #ApidWorker
-  femaleFirstNames: NamesArachnidFirst #ApidWorker
-  lastNames: NamesArachnidLast #ApidNames
+  maleFirstNames: ApidWorker
+  femaleFirstNames: ApidWorker
+  lastNames: ApidNames
   sexes:
   - Male
   - Female
