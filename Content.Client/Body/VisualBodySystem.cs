@@ -199,6 +199,15 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
                     _sprite.LayerSetColor(target, layerId, marking.MarkingColors[i]);
                 else
                     _sprite.LayerSetColor(target, layerId, Color.White);
+
+                // MACRO START - marking layer shaders
+                if (proto.Shaders is not null &&
+                    proto.Shaders.TryGetValue(rsi.RsiState, out var shader))
+                {
+                    EnsureComp<SpriteComponent>(target, out var spriteComp); // why is this method in the component?????
+                    spriteComp.LayerSetShader(index + i + 1, shader);
+                }
+                // MACRO END
             }
 
             applied.Add(marking);
