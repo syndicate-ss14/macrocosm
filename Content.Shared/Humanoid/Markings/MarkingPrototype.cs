@@ -42,7 +42,7 @@ namespace Content.Shared.Humanoid.Markings
         ///     This implementation is very messy but unfortunately Robust doesn't like shaders in SpriteSpecifiers.
         /// </summary>
         [DataField]
-        public Dictionary<string, string> Shaders { get; private set; } = default!;
+        public Dictionary<string, string>? Shaders { get; private set; }
 
         public Marking AsMarking()
         {
