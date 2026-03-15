@@ -144,9 +144,11 @@
     proto: gray
   - type: Vocal
     sounds:
-      Male: MaleReptilian
-      Female: FemaleReptilian
-      Unsexed: MaleReptilian
+      Male: UnisexGray
+      Female: UnisexGray
+      Unsexed: UnisexGray
+  - type: Speech
+    speechSounds: PVC
   - type: Damageable
     damageModifierSet: Gray
 
