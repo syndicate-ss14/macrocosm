@@ -152,6 +152,8 @@
     state: underwing_primary
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
     state: underwing_secondary
+  shaders:
+    underwing_secondary: unshaded
 
 # Wings
 - type: marking
