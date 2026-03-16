@@ -30,11 +30,6 @@
     requiredSlipSpeed: 4.0 #It's not as slippery as water
   friction: 0.4
   evaporationSpeed: 15.0
-  metabolisms:
-    Food:
-      effects:
-      - !type:SatiateHunger
-        factor: 1
   footstepSound:
     collection: FootstepBlood
     params:

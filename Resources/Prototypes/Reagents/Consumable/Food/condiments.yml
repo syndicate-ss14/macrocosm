@@ -133,6 +133,15 @@
         factor: 0.5
       - !type:SatiateThirst
         factor: -0.5 # high salt content
+      #Macrocosm start
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Gastropoid ]
+        damage:
+          types:
+            Poison: 4
+      #Macrocosm end
 
 - type: reagent
   id: TableSalt

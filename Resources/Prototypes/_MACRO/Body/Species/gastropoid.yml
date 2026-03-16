@@ -103,7 +103,7 @@
       Tongue: OrganGastropoidTongue
       Appendix: OrganGastropoidAppendix
       Ears: OrganGastropoidEars
-      Lungs: OrganHumanLungs
+      Lungs: OrganGastropoidLungs
       Heart: OrganGastropoidHeart
       Stomach: OrganGastropoidStomach
       Liver: OrganGastropoidLiver
@@ -120,7 +120,7 @@
   components:
   - type: Butcherable
     spawned:
-    - id: FoodMeatHuman
+    - id: FoodMeatSnail
       amount: 5
   - type: TemperatureDamage
     heatDamageThreshold: 380
@@ -296,7 +296,7 @@
   id: OrganGastropoidEars
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganGastropoidInternal, OrganGastropoidMetabolizer ]
+  parent: [ OrganBaseLungs, OrganGastropoidInternal, OrganHumanMetabolizer ]
   id: OrganGastropoidLungs
 
 - type: entity
