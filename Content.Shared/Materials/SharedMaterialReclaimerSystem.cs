@@ -257,3 +257,6 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
 
 [ByRefEvent]
 public record struct GotReclaimedEvent(EntityCoordinates ReclaimerCoordinates);
+
+[ByRefEvent]
+public record struct ReclaimFinishedEvent(EntityUid Item); // Macro Change

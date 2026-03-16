@@ -1,0 +1,27 @@
+- type: entity
+  parent: [BaseStructure, StorePresetSalvageVendor]
+  id: SalvageTicketVendor
+  name: Salvage Ticket Vendor
+  description: A special vending machine for buying salvage equipment in exchange for reward tickets. 
+  components:
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    balance:
+      SalvageTicket: 0
+  - type: Sprite
+    sprite: _MACRO/Objects/Specific/Cargo/ticket_vendor.rsi
+    state: "off"
+  - type: PointLight
+    radius: 2
+    energy: 1.6
+    color: "#b89f25"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: GuideHelp
+    guides:
+    - Salvage

@@ -1,0 +1,35 @@
+- type: entity
+  parent: BaseFlatpack
+  id: MedicalBedFlatpack
+  name: medical bed flatpack
+  description: A flatpack used for constructing an medical bed.
+  components:
+  - type: Flatpack
+    entity: MedicalBed
+
+- type: entity
+  parent: BaseFlatpack
+  id: MedibotFlatpack
+  name: medibot flatpack
+  description: A flatpack used for constructing an medibot.
+  components:
+  - type: Flatpack
+    entity: MobMedibot
+
+- type: entity
+  parent: BaseFlatpack
+  id: KitchenElectricGrillFlatpack
+  name: electril grill flatpack
+  description: A flatpack used for constructing an electric grill.
+  components:
+  - type: Flatpack
+    entity: KitchenElectricGrill
+
+- type: entity
+  parent: BaseFlatpack
+  id: ComputerShuttleFlatpack
+  name: shuttle console flatpack
+  description: A flatpack used for constructing an shuttle console.
+  components:
+  - type: Flatpack
+    entity: ComputerShuttle 

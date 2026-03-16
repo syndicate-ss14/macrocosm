@@ -1,0 +1,57 @@
+- type: entity
+  id: BoxSalvageVendShuttleKit
+  parent: CrateEngineering 
+  name: shuttle board kit
+  description: A box filled with all the necessary boards and flatpacks needed to create a new shuttle, or repair an existing one. You didn't crash into something, right?
+  components:
+  - type: StorageFill
+    contents:
+    - id: ThrusterFlatpack
+      amount: 4
+    - id: WallmountGeneratorAPUElectronics
+      amount: 2
+    - id: ComputerShuttleFlatpack
+    - id: GyroscopeFlatpack
+    - id: APCElectronics
+    - id: WallmountSubstationElectronics
+
+- type: entity
+  id: BoxSalvageCookoutKit
+  parent: CrateFreezer
+  name: field cookout kit
+  description: A box containing a freezer and electric grill flatpack, skewers, 6 pack of beer, and assorted condiments.
+  components:
+  - type: StorageFill
+    contents:
+    - id: KitchenElectricGrillFlatpack
+    - id: DrinkBeerCan
+      amount: 6
+    - id: FoodKebabSkewer
+      amount: 3
+    - id: FoodCondimentBottleBBQ
+    - id: FoodCondimentBottleHotsauce
+    - id: FoodCondimentBottleKetchup
+    - id: FoodCondimentBottleBBQ
+    - id: FoodShakerPepper
+      amount: 2
+    - id: FoodShakerSalt
+      amount: 2
+
+- type: entity
+  id: BoxSalvageMedicalKit
+  parent: CrateMedical 
+  name: field medical kit
+  description: A box containing medical supplies, defibrillator,body bags and flatpacks for a medical bed and medibot.
+  components:
+  - type: StorageFill
+    contents:
+    - id: Defibrillator
+    - id: MedibotFlatpack 
+    - id: MedicalBedFlatpack  
+    - id: MedkitCombat
+    - id: Jug
+    - id: BodyBagFolded
+      amount: 2
+    - id: ClothingEyesHudMedical
+    - id: EmergencyMedipen
+      amount: 2

@@ -260,6 +260,11 @@ namespace Content.Server.Lathe
                         _puddle.TrySpillAt(uid, toAdd, out _);
                     }
                 }
+            
+                  // Macro change start, ticket system
+                 var ev = new LatheFinishPrintingEvent(_proto.Index(comp.CurrentRecipe)); 
+                 RaiseLocalEvent(uid, ref ev);        
+                 // Macro change end                 
             }
 
             comp.CurrentRecipe = null;

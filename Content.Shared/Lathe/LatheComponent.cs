@@ -4,6 +4,7 @@ using Content.Shared.Research.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared.Chemistry.Components; // Macro
 
 namespace Content.Shared.Lathe
 {
@@ -121,4 +122,10 @@ namespace Content.Shared.Lathe
     /// </summary>
     [ByRefEvent]
     public readonly record struct LatheStartPrintingEvent(LatheRecipePrototype Recipe);
+
+    /// <summary>
+    /// [Macro] Event raised on a lathe when it finishes producing a recipe.
+    /// </summary>
+    [ByRefEvent]
+    public readonly record struct LatheFinishPrintingEvent(LatheRecipePrototype Recipe);    
 }

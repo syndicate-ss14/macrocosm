@@ -201,7 +201,10 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
             if (component.ReclaimSolutions)
                 SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
         }
-
+        // Macro change start 
+        var ev = new ReclaimFinishedEvent(item); 
+        RaiseLocalEvent(uid, ref ev);
+        // Macro change end
         QueueDel(item);
     }
 

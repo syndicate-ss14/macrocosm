@@ -25,7 +25,7 @@
   - type: Tag
     tags:
     - Recyclable
-    - SalvageScrap
+    - SalvageScrap # Macro change, responsible for making salvage reward tickets print when scrap gets recycled 
 
 - type: entity
   parent: BaseStructure
@@ -50,6 +50,7 @@
   - type: Tag
     tags:
     - Recyclable
+    - SalvageScrap # Macro change, responsible for making salvage reward tickets print when scrap gets recycled 
   - type: Transform
     anchored: False
     noRot: true
