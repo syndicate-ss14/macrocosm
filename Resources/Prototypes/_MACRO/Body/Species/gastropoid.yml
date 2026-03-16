@@ -89,6 +89,11 @@
           32:
             sprite: _MACRO/Mobs/Species/Gastropoid/displacement.rsi
             state: neck
+      mask:
+        sizeMaps:
+          32:
+            sprite: _MACRO/Mobs/Species/Gastropoid/displacement.rsi
+            state: mask
   - type: InitialBody
     organs:
       Torso: OrganGastropoidTorso
@@ -163,6 +168,9 @@
         - MobMask
         layer:
         - MobLayer
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/_MACRO/Effects/Footsteps/snailstep.ogg
   - type: Vocal
     sounds:
       Male: UnisexSnail
