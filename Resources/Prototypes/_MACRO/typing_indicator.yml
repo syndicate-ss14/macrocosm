@@ -4,3 +4,10 @@
   typingState: gray0
   idleState: gray0 # TODO: new idle state
   offset: 0.01, 0.01
+
+- type: typingIndicator
+  id: Gastropoid
+  spritePath: /Textures/_MACRO/Effects/speech.rsi
+  typingState: snail
+  idleState: snail # TODO: new idle state
+  offset: -0.1, 0.1

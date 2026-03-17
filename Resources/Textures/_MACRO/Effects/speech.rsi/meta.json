@@ -74,43 +74,6 @@
             ]
         },
         {
-            "name": "lawyerblue0",
-            "delays": [
-                [
-                    0.3,
-                    0.3,
-                    0.3,
-                    0.4
-                ]
-            ]
-        },
-        {
-            "name": "lawyerblue1",
-            "delays": [
-                [
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1
-                ]
-            ]
-        },
-        {
-            "name": "lawyerblue2",
-            "delays": [
-                [
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1
-                ]
-            ]
-        },
-        {
             "name": "allulalo",
             "delays": [
                 [

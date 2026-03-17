@@ -208,6 +208,8 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Gastropoid
+  - type: TypingIndicator
+    proto: Gastropoid
 
 - type: entity
   parent: OrganBase
