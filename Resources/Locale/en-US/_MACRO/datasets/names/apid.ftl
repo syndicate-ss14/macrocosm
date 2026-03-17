@@ -23,7 +23,7 @@ names-apid-courier-dataset-2 = Carrier
 names-apid-scientist-dataset-1 = Researcher
 names-apid-scientist-dataset-2 = Notekeeper
 
-names-apid-janitor-dataset-1 = Scrubber
+names-apid-janitor-dataset-1 = Cleaner
 names-apid-janitor-dataset-2 = Housekeeper
 
 names-apid-aa-dataset-1 = Attendant
@@ -55,3 +55,28 @@ names-apid-dataset-17 = Zzb'rz
 names-apid-dataset-18 = Zzr'z
 names-apid-dataset-19 = Zzrz'rzz
 names-apid-dataset-20 = Zzsz'bz
+
+names-apid-soup-dataset-1 = Worker
+names-apid-soup-dataset-2 = Forager
+names-apid-soup-dataset-3 = Mender
+names-apid-soup-dataset-4 = Nurse
+names-apid-soup-dataset-5 = Builder
+names-apid-soup-dataset-6 = Carpenter
+names-apid-soup-dataset-7 = Mason
+names-apid-soup-dataset-8 = Leafcutter
+names-apid-soup-dataset-9 = Watcher
+names-apid-soup-dataset-10 = Guardian
+names-apid-soup-dataset-11 = Baker
+names-apid-soup-dataset-12 = Butcher
+names-apid-soup-dataset-13 = Messenger
+names-apid-soup-dataset-14 = Carrier
+names-apid-soup-dataset-15 = Researcher
+names-apid-soup-dataset-16 = Notekeeper
+names-apid-soup-dataset-17 = Cleaner
+names-apid-soup-dataset-18 = Housekeeper
+names-apid-soup-dataset-19 = Attendant
+names-apid-soup-dataset-20 = Secretary
+names-apid-soup-dataset-21 = Herald
+names-apid-soup-dataset-22 = Witness
+names-apid-soup-dataset-23 = Forager
+names-apid-soup-dataset-24 = Breaker

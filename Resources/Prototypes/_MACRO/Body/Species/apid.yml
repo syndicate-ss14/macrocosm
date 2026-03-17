@@ -3,12 +3,12 @@
   id: Apid
   onlyGroupWhitelisted: true
   limits:
-    enum.HumanoidVisualLayers.Hair:
-      limit: 0
+    enum.HumanoidVisualLayers.Eyes:
+      limit: 1
       required: true
       default: [ ApidEyesDefault ]
-    enum.HumanoidVisualLayers.Eyes:
-      limit: 0
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
       required: true
       default: [ ApidAntennaeDefault ]
     enum.HumanoidVisualLayers.Tail: #wangs

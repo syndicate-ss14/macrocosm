@@ -75,3 +75,9 @@
   values:
     prefix: names-apid-dataset-
     count: 20
+
+- type: localizedDataset
+  id: ApidNamesSoup
+  values:
+    prefix: names-apid-soup-dataset-
+    count: 20
