@@ -203,6 +203,11 @@
     sprintLength: 2
     speedBoost: 1.5
     reagentProduced: Mucin
+  - type: NoSlip
+  - type: Magboots
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Gastropoid
 
 - type: entity
   parent: OrganBase
