@@ -3,12 +3,14 @@
 
   Nanotrasen employs a variety of sapient species.
 
-  <Box>
+  <Box> <!--MACROCOSM: If you enable any extra species, be sure to uncomment them here!-->
     <GuideEntityEmbed Entity="MobArachnid" Caption="Arachnid"/>
+    <!--<GuideEntityEmbed Entity="MobApid" Caption="Apid"/>--> <!--Macrocosm-->
     <GuideEntityEmbed Entity="MobDecapoid" Caption="Decapoid"/>
     <GuideEntityEmbed Entity="MobDiona" Caption="Diona"/>
     <GuideEntityEmbed Entity="MobDwarf" Caption="Dwarf"/>
-    <GuideEntityEmbed Entity="MobGray" Caption="Gray"/>
+    <!--<GuideEntityEmbed Entity="MobGastropiod" Caption="Gastropoid"/>!--> <!--Macrocosm-->
+    <!--<GuideEntityEmbed Entity="MobGray" Caption="Gray"/>!--> <!--Macrocosm-->
   </Box>
   <Box>
     <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
