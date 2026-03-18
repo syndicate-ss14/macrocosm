@@ -173,6 +173,15 @@
       # eating salt on its own kinda sucks, kids
       - !type:SatiateThirst
         factor: -0.5
+      #Macrocosm start
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Gastropoid ]
+        damage:
+          types:
+            Poison: 4
+      #Macrocosm end
 
 - type: reagent
   id: Syrup
