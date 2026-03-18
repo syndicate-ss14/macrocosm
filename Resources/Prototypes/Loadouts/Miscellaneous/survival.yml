@@ -22,6 +22,7 @@
     # macro below
     - Gray
     - Apid
+    - Gastropoid
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
@@ -83,6 +84,7 @@
     # macro below
     - Gray
     - Apid
+    - Gastropoid
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth
