@@ -1,4 +1,9 @@
+
+
 # Hardsuits
+
+# Listings for specifically salvage hardsuits or items that relate too them. 
+# (Like a item use to make or upgrade a hardsuit)
 
 - type: listing
   id: SalvageVendorSpationaught
@@ -25,6 +30,7 @@
   - !type:ListingLimitedStockCondition
     stock: 3
 
+# If a salv actually gets enough tickets to afford this, they deserve it. 
 - type: listing
   id: SalvageVendorMaxim
   name: vendor-salvage-maxim-name
@@ -32,7 +38,7 @@
   icon: { sprite:  Clothing/OuterClothing/Hardsuits/maxim.rsi, state: icon}
   productEntity: ClothingOuterHardsuitMaxim
   cost:
-    SalvageTicket: 9999 
+    SalvageTicket: 9999
   categories:
   - SalvageVendorWearables
   conditions:
@@ -40,6 +46,8 @@
     stock: 1
 
 # Wearables
+
+# Listings for any other kind of clothing item such as backpakcs, gas masks, boots or non-hardsuit armors. 
 
 - type: listing
   id: SalvageVendorSalvageRig
@@ -125,7 +133,9 @@
   - !type:ListingLimitedStockCondition
     stock: 2
 
-# Equipment 
+# Equipment
+
+# Listings for tools, weapons and related items such as Crushers, Drills, Scanners, ect. 
 
 - type: listing
   id: SalvageVendorCrusherAxe
@@ -215,14 +225,16 @@
   icon: { sprite:  Objects/Weapons/Guns/Ammunition/SpeedLoaders/LightRifle/light_rifle_speed_loader.rsi, state: base}
   productEntity: SpeedLoaderLightRifle
   cost:
-    SalvageTicket: 50
+    SalvageTicket: 75
   categories:
   - SalvageVendorEquipment
   conditions:
   - !type:ListingLimitedStockCondition
-    stock: 4
+    stock: 6
 
-# Supplies 
+# Supplies
+
+# Listings for items salvagers often use up in the field such as food and medical supplies 
 
 - type: listing
   id: SalvageVendorCarpPocket
@@ -283,7 +295,7 @@
   cost:
     SalvageTicket: 150
   categories:
-  - SalvageVendorSupplies  
+  - SalvageVendorSupplies
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
@@ -297,12 +309,14 @@
   cost:
     SalvageTicket: 200
   categories:
-  - SalvageVendorSupplies  
+  - SalvageVendorSupplies
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 2
 
-# Misc. 
+# Misc.
+
+# Listings for anything else that does not fit within the above categories, either very specific items or just random fluf. 
 
 - type: listing
   id: SalvageVendorGoliathCloak
@@ -320,9 +334,9 @@
   name: vendor-salvage-mining-cloak-name
   description: vendor-salvage-mining-cloak-desc
   icon: { sprite:  Clothing/Neck/Cloaks/miner.rsi, state: icon}
-  productEntity: ClothingNeckCloakMiner
+  productEntity: CrateSupremeSalvagerCloak
   cost:
-    SalvageTicket: 1500
+    SalvageTicket: 1000
   categories:
   - SalvageVendorMisc
 
@@ -359,7 +373,10 @@
   categories:
   - SalvageVendorMisc
 
-# Standard Equipment 
+# Standard Equipment
+
+# Listings for items that salvagers can grab in limited quantaties for free, intented to contain stuff that is roundstart equipment for them.
+# Used in case you want the ticket exchange machine to act as an outright replacement for the regular salvage vending machine.
 
 - type: listing
   id: SalvageVendorOreBag
@@ -404,7 +421,7 @@
   icon: { sprite:  Objects/Weapons/Guns/Launchers/grappling_gun.rsi, state: base}
   productEntity: WeaponGrapplingGun
   categories:
-  - SalvageVendorStandard    
+  - SalvageVendorStandard
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 4
@@ -416,7 +433,7 @@
   icon: { sprite:  Objects/Weapons/Bombs/seismic.rsi, state: icon}
   productEntity: SeismicCharge
   categories:
-  - SalvageVendorStandard    
+  - SalvageVendorStandard
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 2
@@ -428,7 +445,7 @@
   icon: { sprite:  Objects/Tools/fulton.rsi, state: folded_extraction}
   productEntity: FultonBeacon
   categories:
-  - SalvageVendorStandard  
+  - SalvageVendorStandard
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 2
@@ -440,7 +457,7 @@
   icon: { sprite:  Objects/Tools/fulton.rsi, state: extraction_pack}
   productEntity: Fulton
   categories:
-  - SalvageVendorStandard  
+  - SalvageVendorStandard
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3

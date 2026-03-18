@@ -14,9 +14,6 @@
     - SalvageTicket
     balance:
       SalvageTicket: 0
-    sales:
-      enabled: false
-
 
 - type: storeCategory
   id: SalvageVendorWearables
