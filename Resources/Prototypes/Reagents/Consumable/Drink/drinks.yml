@@ -464,17 +464,17 @@
           type: [ Apid ]
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
+        minScale: 1.8
         conditions:
         - !type:ReagentCondition
           reagent: Water
           min: 1.8
         - !type:MetabolizerTypeCondition
           type: [ Apid ]
-        key: ForcedSleep
-        component: ForcedSleeping
+        effectProto: StatusEffectForcedSleeping
         time: 3
-        type: Add
+        type: Update
         #MACROCOSM END
 
 - type: reagent

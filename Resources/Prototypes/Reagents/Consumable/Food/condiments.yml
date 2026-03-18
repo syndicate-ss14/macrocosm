@@ -127,7 +127,7 @@
   color: saddlebrown
   recognizable: true
   metabolisms:
-    Digestion:
+    Bloodstream: #Macrocosm changed from disgestion > bloodstream
       effects:
       - !type:SatiateHunger
         factor: 0.5
@@ -168,7 +168,7 @@
   - !type:PlantAdjustHealth
     amount: -2
   metabolisms:
-    Digestion:
+    Bloodstream: #Macrocosm changed from disgestion > bloodstream
       effects:
       # eating salt on its own kinda sucks, kids
       - !type:SatiateThirst
