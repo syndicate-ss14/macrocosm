@@ -46,9 +46,9 @@ namespace Content.Server.Atmos.EntitySystems
                 return Atmospherics.SpaceHeatCapacity;
             }
 
-            //Create a proportional moles vector. Essentially we want the heat capacity of one mol of gas.
-            //Note: we *don't* want a normalized vector, as the denominator of the fraction will be a square root.
-            //E.g. A mix with 50/50 oxygen/nitrogen will compute to be 0.70 oxygen and 0.70 nitrogen instead of 0.5 and 0.5.
+            //Create an L1 normalized moles vector. Essentially we want the heat capacity of one mol of gas.
+            //Note: we *don't* want a (L2) normalized vector, as the denominator of the fraction will be a square root.
+            //E.g. An L2 normalized mix with 50/50 oxygen/nitrogen will compute to be 0.70 oxygen and 0.70 (bad) nitrogen instead of 0.5 and 0.5 (good).
             Span<float> temp = stackalloc float[moles.Length];
 
             //Get the sum of the vector.
@@ -60,7 +60,7 @@ namespace Content.Server.Atmos.EntitySystems
                 return Atmospherics.SpaceHeatCapacity;
             }
 
-            //Proportionalize the mols vector by dividing all elements within it by its sum.
+            //Perform L1 normalization on the mols vector by dividing all elements within it by its sum.
             //Here temp contains the fractional values of each gas in the mixture.
             NumericsHelpers.Divide(moles, molesSum, temp);
 
