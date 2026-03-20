@@ -67,7 +67,7 @@ public sealed class GasCondenserSystem : EntitySystem
 
     public float NumberOfMolesToConvert(ApcPowerReceiverComponent comp, GasMixture mix, float dt)
     {
-        /* IMP EDIT: UPSTREAM IMPLEMENTATION
+        /* MACRO EDIT: UPSTREAM IMPLEMENTATION
         var hc = _atmosphereSystem.GetHeatCapacity(mix, true);
         var alpha = 0.8f; // tuned to give us 1-ish u/second of reagent conversion
         // ignores the energy needed to cool down the solution to the condensation point, but that probably adds too much difficulty and so let's not simulate that
@@ -75,7 +75,7 @@ public sealed class GasCondenserSystem : EntitySystem
         return energy / (alpha * hc);
         */
 
-        // BEGIN IMP ADD
+        // BEGIN MACRO ADD
         //Rate of condensation is based on the gas mixture's specific heat (not heat capacity!).
         var specificHeat = _atmosphereSystem.GetSpecificHeat(mix);
 
@@ -88,6 +88,6 @@ public sealed class GasCondenserSystem : EntitySystem
         var alpha = 285f;
 
         return energy / (alpha * specificHeat);
-        // END IMP ADD
+        // END MACRO ADD
     }
 }

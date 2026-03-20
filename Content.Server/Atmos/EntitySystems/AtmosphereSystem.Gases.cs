@@ -28,7 +28,7 @@ namespace Content.Server.Atmos.EntitySystems
             Array.Sort(_gasReactions, (a, b) => b.Priority.CompareTo(a.Priority));
         }
 
-        // BEGIN IMP ADD
+        // BEGIN MACRO ADD
         /// <summary>
         ///     Calculates the specific heat for a gas mixture.
         ///     <br></br><b>Ensure that you know the difference between specific heat and heat capacity, and that you're using the correct function.</b>
@@ -69,7 +69,7 @@ namespace Content.Server.Atmos.EntitySystems
             NumericsHelpers.Multiply(temp, GasSpecificHeats, temp);
             return NumericsHelpers.HorizontalAdd(temp);
         }
-        // END IMP ADD
+        // END MACRO ADD
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override float GetHeatCapacityCalculation(float[] moles, bool space)
