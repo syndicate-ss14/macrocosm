@@ -1,5 +1,6 @@
 
 using Content.Shared.Preferences;
+using Content.Shared.Humanoid; // MACRO
 
 namespace Content.Client.Lobby.UI;
 
@@ -26,6 +27,28 @@ public sealed partial class HumanoidProfileEditor
         Profile = HumanoidCharacterProfile.Random();
         SetProfile(Profile, CharacterSlot);
         SetDirty();
+    }
+
+    /// <summary>
+    ///     Randomizes only the appearance of the character, without touching species, name, etc.
+    /// </summary>
+    private void RandomizeAppearance()
+    {
+        if (Profile == null)
+        {
+            return;
+        }
+        HumanoidCharacterAppearance.Random(Profile.Species, Profile.Sex);
+        Profile = new HumanoidCharacterProfile()
+        {
+            Name = Profile.Name,
+            Sex = Profile.Sex,
+            Age = Profile.Age,
+            Gender = Profile.Gender,
+            Species = Profile.Species,
+            Appearance = HumanoidCharacterAppearance.Random(Profile.Species, Profile.Sex),
+        };
+        SetProfile(Profile, CharacterSlot);
     }
 
     private void RandomizeName()
