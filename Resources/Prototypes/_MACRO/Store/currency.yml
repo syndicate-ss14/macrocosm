@@ -4,7 +4,7 @@
   id: SalvageTicket
   cash:
     1: SalvageTicket
-  displayName: store-currency-display-salvageticket
+  displayName: salvage tickets
   canWithdraw: true
 
 - type: entity
@@ -89,4 +89,4 @@
   icon: { sprite: _MACRO/Objects/Specific/Cargo/salvage_reward_ticket.rsi, state: icon }
   spawn: SalvageTicket
 
-# Salvage Reward Tickets end   
+# Salvage Reward Tickets end
