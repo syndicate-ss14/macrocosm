@@ -1,5 +1,18 @@
 # Chest
 
+- type: marking
+  id: ApidChestStripesDefault
+  bodyPart: Chest
+  groupWhitelist: [Apid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#ffe600"
+  sprites:
+  - sprite: _MACRO/Mobs/Customization/Apid/chest.rsi
+    state: stripes
+
 # Head
 
 # Snout
@@ -90,6 +103,8 @@
   bodyPart: Tail
   groupWhitelist: [Apid]
   sprites:
+  - sprite: _MACRO/Mobs/Customization/Apid/tail.rsi
+    state: apidBeeButtDefault
   - sprite: _MACRO/Mobs/Customization/Apid/tail.rsi
     state: apidWingsDefault
 
