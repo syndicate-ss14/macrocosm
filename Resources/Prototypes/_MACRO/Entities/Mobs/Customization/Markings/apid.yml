@@ -102,9 +102,12 @@
   id: ApidWingsAnimatedDefault
   bodyPart: Tail
   groupWhitelist: [Apid]
+  forcedColoring: false
   sprites:
   - sprite: _MACRO/Mobs/Customization/Apid/tail.rsi
     state: apidBeeButtDefault
+  - sprite: _MACRO/Mobs/Customization/Apid/tail.rsi
+    state: apidBeeButtStripesDefault
   - sprite: _MACRO/Mobs/Customization/Apid/tail.rsi
     state: apidWingsDefault
 

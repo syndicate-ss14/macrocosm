@@ -5,7 +5,7 @@
   limits:
     enum.HumanoidVisualLayers.Eyes:
       limit: 1
-      required: true
+      required: false
       default: [ ApidEyesDefault ]
     enum.HumanoidVisualLayers.Hair:
       limit: 1
@@ -17,7 +17,7 @@
       default: [ ApidWingsAnimatedDefault ]
     enum.HumanoidVisualLayers.Chest:
       limit: 1
-      required: true
+      required: false
       default: [ ApidChestStripesDefault ]
     enum.HumanoidVisualLayers.Snout:
       limit: 1

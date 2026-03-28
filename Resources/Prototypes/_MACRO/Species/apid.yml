@@ -4,9 +4,9 @@
   roundStart: true
   #randomViable: false
   prototype: MobApid
-  defaultSkinTone: "#385878"
+  defaultSkinTone: "#fcd719"
   dollPrototype: AppearanceApid
-  skinColoration: TintedHues # this prevents RandomHumanoidAppearance from fucking with their colorscheme too much
+  skinColoration: Hues # this prevents RandomHumanoidAppearance from fucking with their colorscheme too much
   maleFirstNames: ApidNamesSoup
   femaleFirstNames: ApidNamesSoup
   lastNames: ApidNames
