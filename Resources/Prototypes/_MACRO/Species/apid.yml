@@ -1,7 +1,7 @@
 - type: species
   id: Apid
   name: species-name-apid
-  roundStart: true
+  roundStart: false
   #randomViable: false
   prototype: MobApid
   defaultSkinTone: "#fcd719"

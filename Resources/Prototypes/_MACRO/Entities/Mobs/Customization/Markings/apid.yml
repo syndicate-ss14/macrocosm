@@ -107,12 +107,10 @@
   coloring:
     default:
       type:
-        !type:SkinColoring
+        !type:SkinColoring #did U know that this just doesnt work on randomappearance mobs for midround spawns upstream. fascinating
   sprites:
   - sprite: _MACRO/Mobs/Customization/Apid/tail.rsi
     state: apidBeeButtDefault
-  - sprite: _MACRO/Mobs/Customization/Apid/tail.rsi
-    state: apidBeeButtStripesDefault
 
 #TailOverlay
 

@@ -31,47 +31,7 @@
         },
         {
         "name": "apidBeeButtDefault",
-        "directions": 4,
-        "delays": [
-                [
-                  0.11,
-                  0.11
-                ],
-                [
-                  0.11,
-                  0.11
-                ],
-                [
-                  0.11,
-                  0.11
-                ],
-                [
-                  0.11,
-                  0.11
-                ]
-            ]
-        },
-        {
-        "name": "apidBeeButtStripesDefault",
-        "directions": 4,
-        "delays": [
-                [
-                  0.11,
-                  0.11
-                ],
-                [
-                  0.11,
-                  0.11
-                ],
-                [
-                  0.11,
-                  0.11
-                ],
-                [
-                  0.11,
-                  0.11
-                ]
-            ]
+        "directions": 4
         }
     ]
 }
