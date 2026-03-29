@@ -11,3 +11,10 @@
   typingState: snail
   idleState: snail # TODO: new idle state
   offset: -0.1, 0.1
+
+- type: typingIndicator
+  id: apid
+  spritePath: /Textures/_MACRO/Effects/speech.rsi
+  typingState: apid
+  idleState: apid-idle
+  offset: 0, 0

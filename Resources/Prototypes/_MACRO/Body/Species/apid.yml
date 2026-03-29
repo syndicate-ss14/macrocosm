@@ -175,13 +175,11 @@
   components:
   - type: Damageable
     damageModifierSet: Moth
-  - type: ZombieAccentOverride
-    accent: zombieMoth
   - type: Speech
     speechVerb: Moth
     allowedEmotes: ['Chitter', 'Squeak', 'Flap']
   - type: TypingIndicator
-    proto: moth
+    proto: apid
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
@@ -200,10 +198,6 @@
       Unsexed: UnisexMoth
   - type: BodyEmotes
     soundsId: MothBodyEmotes
-  - type: Flammable
-    damage:
-      types:
-        Heat: 2.5 # moths burn more easily
 
   - type: MobThresholds
     thresholds:
@@ -244,6 +238,8 @@
     damage:
       types:
         Shock: 3 # they got a little stinger
+  - type: StaminaDamageOnHit # this is just kinda fun.
+    damage: 18
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Monkey_burning
