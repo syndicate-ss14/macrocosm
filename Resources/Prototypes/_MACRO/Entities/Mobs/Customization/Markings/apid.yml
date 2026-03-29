@@ -33,6 +33,7 @@
   - sprite: _MACRO/Mobs/Species/Apid/parts.rsi
     state: eyes
 
+
 # RArm
 
 # LArm
@@ -99,15 +100,33 @@
 # Tail
 
 - type: marking
-  id: ApidWingsAnimatedDefault
+  id: ApidBeeButtDefault
   bodyPart: Tail
   groupWhitelist: [Apid]
   forcedColoring: false
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _MACRO/Mobs/Customization/Apid/tail.rsi
     state: apidBeeButtDefault
   - sprite: _MACRO/Mobs/Customization/Apid/tail.rsi
     state: apidBeeButtStripesDefault
+
+#TailOverlay
+
+- type: marking
+  id: ApidWingsAnimatedDefault
+  bodyPart: TailOverlay
+  groupWhitelist: [Apid]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#ffffff"
+  sprites:
   - sprite: _MACRO/Mobs/Customization/Apid/tail.rsi
     state: apidWingsDefault
 
