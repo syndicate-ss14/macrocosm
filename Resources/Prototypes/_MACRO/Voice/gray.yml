@@ -1,11 +1,11 @@
 ﻿- type: speechSounds
   id: PVC
   saySound:
-    path: /Audio/_MACRO/Voice/Talk/gray.ogg
+    path: /Audio/_MACRO/Voice/Gray/gray.ogg
   askSound:
-    path: /Audio/_MACRO/Voice/Talk/gray_ask.ogg
+    path: /Audio/_MACRO/Voice/Gray/gray_ask.ogg
   exclaimSound:
-    path: /Audio/_MACRO/Voice/Talk/gray_exclaim.ogg
+    path: /Audio/_MACRO/Voice/Gray/gray_exclaim.ogg
 
 - type: emoteSounds
   id: UnisexGray
