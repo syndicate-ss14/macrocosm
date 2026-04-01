@@ -151,7 +151,6 @@
         Quantity: 300
   - type: Tag
     tags:
-      - Gastropoid
       - DoorBumpOpener
       - CanPilot
       - FootstepSound
