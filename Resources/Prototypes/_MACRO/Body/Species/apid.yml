@@ -356,5 +356,5 @@
   id: OrganApidFootRight
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganMothInternal, OrganApidMetabolizer ]
+  parent: [ OrganBaseLungs, OrganApidInternal, OrganApidMetabolizer ]
   id: OrganApidLungs

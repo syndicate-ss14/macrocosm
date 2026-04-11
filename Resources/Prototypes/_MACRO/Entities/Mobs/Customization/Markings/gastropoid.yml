@@ -218,6 +218,7 @@
       type:
         !type:EyeColoring
         negative: false
+  forcedColoring: true
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/head.rsi
     state: predator
@@ -231,19 +232,21 @@
       type:
         !type:EyeColoring
         negative: false
+  forcedColoring: true
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/head.rsi
     state: prey
 
 - type: marking
   id: GastropoidFaceEyes3
-  bodyPart: HeadTop
+  bodyPart: Eyes
   groupWhitelist: [ Gastropoid ]
   coloring:
     default:
       type:
         !type:EyeColoring
         negative: false
+  forcedColoring: true
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/head.rsi
     state: tentacle
