@@ -140,7 +140,7 @@
     currentTemperature: 310
     specificHeat: 42
   - type: TemperatureSpeed
-    thresholds: # copied over from Decapoids to remove temp speed restrictions. this is hacky and sucks.
+    thresholds: # removes their temp speed restrictions. this is hacky and sucks.
       293: 1.0
       280: 1.0
       260: 1.0

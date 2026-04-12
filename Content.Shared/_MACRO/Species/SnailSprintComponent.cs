@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._MACRO.SnailSprint;
+namespace Content.Shared._MACRO.Species;
 
 /// <summary>
 ///     Allows an entity to use thirst for a speed boost.

@@ -24,7 +24,7 @@ using Content.Shared.Wieldable.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Collections;
 using Robust.Shared.Timing;
-using Content.Shared._MACRO.Decapoids; // Macrocosm edit
+using Content.Shared._MACRO.Species; // Macrocosm edit
 
 namespace Content.Shared.Wieldable;
 

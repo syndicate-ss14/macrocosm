@@ -11,7 +11,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._MACRO.SnailSprint;
+namespace Content.Shared._MACRO.Species;
 
 /// <summary>
 ///     Allows an entity to use thirst for a speed boost.
