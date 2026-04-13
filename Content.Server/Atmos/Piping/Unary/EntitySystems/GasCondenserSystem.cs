@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Atmos.Piping.Unary.Components;
@@ -21,6 +22,9 @@ public sealed class GasCondenserSystem : EntitySystem
     [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
 
+    // MACRO EDIT START
+
+
     public override void Initialize()
     {
         base.Initialize();
@@ -40,7 +44,7 @@ public sealed class GasCondenserSystem : EntitySystem
         if (solution.AvailableVolume == 0 || inlet.Air.TotalMoles == 0)
             return;
 
-        var molesToConvert = NumberOfMolesToConvert(receiver, inlet.Air, args.dt);
+        var molesToConvert = NumberOfMolesToConvert(receiver, inlet.Air, args.dt, entity); // MACRO: pass in entity
         var removed = inlet.Air.Remove(molesToConvert);
         for (var i = 0; i < Atmospherics.TotalNumberOfGases; i++)
         {
@@ -65,29 +69,29 @@ public sealed class GasCondenserSystem : EntitySystem
         _solution.UpdateChemicals(entity.Comp.Solution.Value);
     }
 
+    // BEGIN MACRO ADD
+    public float NumberOfMolesToConvert(ApcPowerReceiverComponent comp, GasMixture mix, float dt, Entity<GasCondenserComponent> entity)
+    {
+        //Rate of condensation is based on the gas mixture's specific heat (not heat capacity!).
+        var specificHeat = _atmosphereSystem.GetSpecificHeat(mix);
+
+        //Power usage of the condenser since the last update.
+        //Generally going to be a constant 6000.
+        var energy = comp.Load * dt;
+        Log.Info($"energy {energy}");
+
+        return energy / (entity.Comp.Rate * specificHeat);
+    }
+    // END MACRO ADD
+
+    /* MACRO EDIT: UPSTREAM IMPLEMENTATION
     public float NumberOfMolesToConvert(ApcPowerReceiverComponent comp, GasMixture mix, float dt)
     {
-        /* MACRO EDIT: UPSTREAM IMPLEMENTATION
         var hc = _atmosphereSystem.GetHeatCapacity(mix, true);
         var alpha = 0.8f; // tuned to give us 1-ish u/second of reagent conversion
         // ignores the energy needed to cool down the solution to the condensation point, but that probably adds too much difficulty and so let's not simulate that
         var energy = comp.Load * dt;
         return energy / (alpha * hc);
-        */
-
-        // BEGIN MACRO ADD
-        //Rate of condensation is based on the gas mixture's specific heat (not heat capacity!).
-        var specificHeat = _atmosphereSystem.GetSpecificHeat(mix);
-
-        //Power usage of the condenser is a holdover from the old implementation. Could stand to be removed as it's essentially a constant 5333.333.
-        var energy = comp.Load * dt;
-
-        //Alpha is a tuning variable to condense around 1u per second. Also a holdover from the previous implementation.
-        //GasCondenserComponent MolesToReagentMultiplier = 0.2137f, so we want to tune the return of this function to be around 5 to get 1u per tick.
-        //Alpha is tuned such that the median specific heat (nitrogen) condenses at about 1u per second. Different mixtures condense at different rates.
-        var alpha = 285f;
-
-        return energy / (alpha * specificHeat);
-        // END MACRO ADD
     }
+    */
 }
