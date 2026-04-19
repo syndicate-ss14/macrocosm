@@ -40,13 +40,13 @@ public sealed partial class GasCondenserComponent : Component
 
     // MACRO ADD START
     /// <summary>
-    /// How fast the condenser operates. It is balanced such that the condenser will produce about 1u per second.
+    /// How slowly the condenser operates. It is balanced such that the condenser will produce about 1u per second.
     /// </summary>
     /// <remarks>
-    /// Derived from the median gas specific heat, which happens to be nitrogen.
+    /// Balanced to produce 1u/s around the median gas specific heat, which happens to be nitrogen.
     /// Note that different gasses have different specific heats, so some will be processed faster or slower.
     /// </remarks>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float Rate = 285f;
+    public float Apathy = 285f;
     // MACRO ADD END
 }

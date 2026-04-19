@@ -80,7 +80,10 @@ public sealed class GasCondenserSystem : EntitySystem
         var energy = comp.Load * dt;
         Log.Info($"energy {energy}");
 
-        return energy / (entity.Comp.Rate * specificHeat);
+        //Apathy should not be 0
+        var apathy = entity.Comp.Apathy == 0f ? 0.0001f : entity.Comp.Apathy;
+
+        return energy / (apathy * specificHeat);
     }
     // END MACRO ADD
 
