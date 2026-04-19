@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Atmos.Piping.Unary.Components;
@@ -21,9 +20,6 @@ public sealed class GasCondenserSystem : EntitySystem
     [Dependency] private readonly PowerReceiverSystem _power = default!;
     [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-
-    // MACRO EDIT START
-
 
     public override void Initialize()
     {
@@ -78,7 +74,6 @@ public sealed class GasCondenserSystem : EntitySystem
         //Power usage of the condenser since the last update.
         //Generally going to be a constant 6000.
         var energy = comp.Load * dt;
-        Log.Info($"energy {energy}");
 
         //Apathy should not be 0
         var apathy = entity.Comp.Apathy == 0f ? 0.0001f : entity.Comp.Apathy;
