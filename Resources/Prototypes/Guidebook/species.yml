@@ -3,9 +3,12 @@
   name: guide-entry-species
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
+  # - Apid # macro - uncomment to enable
   - Arachnid
   - Diona
   - Dwarf
+  # - Gastropoid # macro - uncomment to enable
+  # - Gray # macro - uncomment to enable
   - Human
   - Moth
   - Reptilian
