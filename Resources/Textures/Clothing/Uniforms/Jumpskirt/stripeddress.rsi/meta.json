@@ -11,20 +11,10 @@
       "name": "icon"
     },
     {
-      "name": "WEB-icon"
-    },
-    {
-      "name": "WEB-crafting-icon"
-    },
-    {
       "name": "icon-color"
     },
     {
       "name": "equipped-INNERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "equipped-WEB-INNERCLOTHING",
       "directions": 4
     },
     {
@@ -33,10 +23,6 @@
     },
     {
       "name": "equipped-INNERCLOTHING-anomalocarid",
-      "directions": 4
-    },
-    {
-      "name": "equipped-WEB-INNERCLOTHING-anomalocarid",
       "directions": 4
     },
     {

@@ -14,9 +14,6 @@
       "name": "icon-alt"
     },
     {
-      "name": "icon-mecha"
-    },
-    {
       "name": "icon-super"
     },
     {
@@ -25,10 +22,6 @@
     },
     {
       "name": "alt-equipped-EYES",
-      "directions": 4
-    },
-    {
-      "name": "mecha-equipped-EYES",
       "directions": 4
     },
     {
@@ -45,10 +38,6 @@
     },
     {
       "name": "super-equipped-EYES-ungu",
-      "directions": 4
-    },
-    {
-      "name": "mecha-equipped-EYES-ungu",
       "directions": 4
     },
     {
@@ -72,10 +61,6 @@
       "directions": 4
     },
     {
-      "name": "mecha-equipped-EYES-anomalocarid",
-      "directions": 4
-    },
-    {
       "name": "inhand-left",
       "directions": 4
     },
@@ -89,14 +74,6 @@
     },
     {
       "name": "alt-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "mecha-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "mecha-inhand-right",
       "directions": 4
     },
     {
