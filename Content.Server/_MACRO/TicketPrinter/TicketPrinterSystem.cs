@@ -1,11 +1,15 @@
 using Content.Shared.TicketPrinter;
 using Content.Server.Stack;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
 
 namespace Content.Server.TicketPrinter;
 
 public sealed class TicketPrinterSystem : SharedTicketPrinterSystem
 {
     [Dependency] private readonly StackSystem _stack = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -17,7 +21,11 @@ public sealed class TicketPrinterSystem : SharedTicketPrinterSystem
     /// <param name="ent">Entity spawning the tickets</param>
     /// <param name="amount">Base amount of tickets to spawn</param>
     protected override void PrintTickets(Entity<TicketPrinterComponent> ent, float amount)
-    {
+    { 
+        add:
+        if (!_cfg.GetCVar(CCVars.SalvageTicketsEnabled))
+        return;
+
         var proto = ent.Comp.TicketProtoId.ToString();
         var spawnAmount = ent.Comp.Remainder + amount * ent.Comp.TicketMultiplier;
         if (spawnAmount <= 0 || proto == string.Empty)

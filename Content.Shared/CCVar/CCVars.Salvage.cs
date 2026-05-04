@@ -15,4 +15,13 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float>
         SalvageExpeditionCooldown = CVarDef.Create("salvage.expedition_cooldown", 780f, CVar.REPLICATED);
+
+    /// MACRCO CHANGE START///
+    /// <summary>
+    ///     When false, salvage reward tickets are not spawned from reclaimers, lathes, or similar ticket printers.
+    /// </summary>
+    public static readonly CVarDef<bool>
+        SalvageTicketsEnabled = CVarDef.Create("salvage.tickets_enabled", false, CVar.SERVERONLY);        
+    /// MACRCO CHANGE END///    
 }
+

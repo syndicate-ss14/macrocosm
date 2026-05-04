@@ -358,3 +358,8 @@
     - type: PhysicalComposition
       materialComposition:
         Steel: 1200 # 12 sheets
+    # MACRO CHANGE START #
+    - type: Tag
+      tags:
+      - SalvageScrap # responsible for making salvage reward tickets print when scrap gets recycled
+    #  MACRO CHANGE END #
