@@ -1,8 +1,10 @@
+
+# Development note: the ticket vendor is intentionally made to be unmovable, so salvagers could not take the vendor onto a shuttle and instead are encouraged to make more return trips back to the Station/Cargo
 - type: entity
   parent: [BaseStructure, StorePresetSalvageVendor]
   id: SalvageTicketVendor
   name: Salvage Ticket Vendor
-  description: A special vending machine for buying salvage equipment in exchange for reward tickets. 
+  description: A special vending machine for buying salvage equipment in exchange for reward tickets.
   components:
   - type: UserInterface
     interfaces:
