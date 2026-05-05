@@ -1,17 +1,21 @@
 - type: guideEntry
   id: Species
   name: guide-entry-species
-  text: "/ServerInfo/Guidebook/Mobs/Species.xml"
+  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Species.xml" #macro - redirected to our directory
   children:
-  - Arachnid
-  - Diona
-  - Dwarf
-  - Human
-  - Moth
-  - Reptilian
-  - SlimePerson
-  - Vox
-  - Vulpkanin
+    # - Allulalo # macro - uncomment to enable
+    # - Apid # macro - uncomment to enable
+    - Arachnid
+    - Diona
+    - Dwarf
+    # - Gastropoid # macro - uncomment to enable
+    # - Gray # macro - uncomment to enable
+    - Human
+    - Moth
+    - Reptilian
+    - SlimePerson
+    - Vox
+    - Vulpkanin
 
 - type: guideEntry
   id: Arachnid

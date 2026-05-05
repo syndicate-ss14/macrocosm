@@ -8,7 +8,7 @@ The primary purpose of Macrocosm is to collate content from member communities (
 
 <div class="header" align="center">
 
-[Docs](https://docs.macrocosm.cool) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.io/about/nightlies/)
+[Discord](https://discord.gg/rtmPwXbvrQ) | [Docs](https://docs.macrocosm.cool) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.io/about/nightlies/)
 
 Microcosms
 
