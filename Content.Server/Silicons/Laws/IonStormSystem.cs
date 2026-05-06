@@ -1,4 +1,5 @@
 using Content.Shared.Administration.Logs;
+using Content.Server.StationEvents.Events; // macro
 using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Silicons.Laws;
@@ -19,15 +20,24 @@ public sealed class IonStormSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly IonLawSystem _ionLaw = default!;
 
+    // micro add start
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<SiliconLawBoundComponent, IonStormEvent>(IonStormTarget);
+    }
+    // micro add end
+
     /// <summary>
     /// Randomly alters the laws of an individual silicon.
     /// </summary>
-    public void IonStormTarget(Entity<SiliconLawBoundComponent, IonStormTargetComponent> ent, bool adminlog = true)
+    public void IonStormTarget(Entity<SiliconLawBoundComponent> ent, ref IonStormEvent args) // micro edit, its an event subscription now
     {
-        var lawBound = ent.Comp1;
-        var target = ent.Comp2;
-        if (!_robustRandom.Prob(target.Chance))
-            return;
+        var lawBound = ent.Comp; // imp
+        EnsureComp<IonStormTargetComponent>(ent, out var target); // micro
+        // if (!_robustRandom.Prob(target.Chance)) // micro move to ionstormrule
+        //     return;
 
         var laws = _siliconLaw.GetLaws(ent, lawBound);
         if (laws.Laws.Count == 0)
@@ -115,7 +125,7 @@ public sealed class IonStormSystem : EntitySystem
         }
 
         // adminlog is used to prevent adminlog spam.
-        if (adminlog)
+        if (args.Adminlog) //micro edit
             _adminLogger.Add(LogType.Mind, LogImpact.High, $"{ToPrettyString(ent):silicon} had its laws changed by an ion storm to {laws.LoggingString()}");
 
         // laws unique to this silicon, dont use station laws anymore

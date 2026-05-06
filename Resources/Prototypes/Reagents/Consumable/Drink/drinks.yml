@@ -444,6 +444,16 @@
           types:
             Heat: 3
         #MACROCOSM START
+      - !type:Oxygenate
+        scaling: true
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Thaven ]
+      - !type:SatiateThirst # thaven breathing water vapor get thirsty slower
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Thaven ]
+        factor: 0.1
       - !type:PopupMessage # for apids. they're bees, they get calm if you smoke 'em
         conditions:
         - !type:ReagentCondition

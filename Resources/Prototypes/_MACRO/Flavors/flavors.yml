@@ -7,3 +7,13 @@
   id: allulalo
   flavorType: Complex
   description: flavor-complex-allulalo
+
+- type: flavor
+  id: thavenflesh
+  flavorType: Complex
+  description: flavor-complex-thavenflesh
+
+- type: flavor
+  id: shimmeringblood
+  flavorType: Complex
+  description: flavor-complex-shimmeringblood

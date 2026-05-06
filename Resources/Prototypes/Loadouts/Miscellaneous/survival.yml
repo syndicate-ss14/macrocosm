@@ -20,9 +20,11 @@
     - Reptilian
     - Vulpkanin
     # macro below
-    - Gray
+    - Allulalo
     - Apid
+    - Gray
     - Gastropoid
+    - Thaven
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox

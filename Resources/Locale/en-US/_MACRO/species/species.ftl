@@ -2,3 +2,4 @@
 species-name-allulalo = Allulalo
 species-name-gray = Gray
 species-name-gastropoid = Gastropoid
+species-name-thaven = Thaven
