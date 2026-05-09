@@ -4,6 +4,7 @@
   text: "/ServerInfo/_MACRO/Guidebook/Mobs/Species.xml" #macro - redirected to our directory
   children:
     # - Allulalo # macro - uncomment to enable
+    # - Anomalocarid # macro - uncomment to enable
     # - Apid # macro - uncomment to enable
     - Arachnid
     - Diona

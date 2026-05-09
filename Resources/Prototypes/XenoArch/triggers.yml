@@ -244,6 +244,11 @@
     - ZombieBlood
     - Sap
     - SulfurBlood
+    # macro start: species blood
+    - GrayBlood
+    - BloodAllulalo
+    - AnomalocaridCopperBlood
+    # macro end
 
 - type: xenoArchTrigger
   id: TriggerThrow
