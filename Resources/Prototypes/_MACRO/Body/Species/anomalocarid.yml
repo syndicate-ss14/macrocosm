@@ -193,6 +193,9 @@
       - anomalocarid-vent-toohot2
       - anomalocarid-vent-toohot3
   - type: AnomalocaridAccent
+  - type: ZombieAccentOverride
+    accent: zombieAnomalocarid
+
 
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,1.3

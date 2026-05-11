@@ -17,8 +17,7 @@
       accent: scottish
     # macro start
     - type: GrayAccent
-    - type: ReplacementAccent
-      accent: anomalocarid
+    - type: AnomalocaridAccent
     # macro end
 
 # 1 Cost
