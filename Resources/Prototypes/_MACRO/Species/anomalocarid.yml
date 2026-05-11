@@ -24,5 +24,6 @@
 #
 # Anomalocarids do have displacements, but most of their clothing uses bespoke custom sprites.
 # Don't feel pressured to add new sprites for every clothing item if you want to use Anomalocarids, the displacements will work fine.
+# If you have a lot of clothing items ported from other forks, check the Impstation repository before making your own custom sprites - they may already exist!
 #
 # You might like Anomalocarids if you want a species with a more light-hearted appearance, or if you want a species that has some unique atmospheric interactions.
