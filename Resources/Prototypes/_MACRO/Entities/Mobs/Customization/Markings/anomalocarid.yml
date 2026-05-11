@@ -1041,7 +1041,7 @@
 #  - sprite: _MACRO/Mobs/Customization/Anomalocarid/tail.rsi
 #    state: tail1
 
-# RArmExtension
+# RArmExtension (IMP, NEEDS TO BE REPLACED)
 
 - type: marking
   id: AnomalocaridGlassEyeLeft
