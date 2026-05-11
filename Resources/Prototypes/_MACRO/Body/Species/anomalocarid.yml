@@ -98,16 +98,16 @@
             state: back
   - type: InitialBody
     organs:
-      Torso: TorsoAnomalocarid
-      Head: HeadAnomalocarid
-      ArmLeft: LeftArmAnomalocarid
-      ArmRight: RightArmAnomalocarid
-      HandRight: RightHandAnomalocarid
-      HandLeft: LeftHandAnomalocarid
-      LegLeft: LeftLegAnomalocarid
-      LegRight: RightLegAnomalocarid
-      FootLeft: LeftFootAnomalocarid
-      FootRight: RightFootAnomalocarid
+      Torso: OrganAnomalocaridTorso
+      Head: OrganAnomalocaridHead
+      ArmLeft: OrganAnomalocaridArmLeft
+      ArmRight: OrganAnomalocaridArmRight
+      HandRight: OrganAnomalocaridHandRight
+      HandLeft: OrganAnomalocaridHandLeft
+      LegLeft: OrganAnomalocaridLegLeft
+      LegRight: OrganAnomalocaridLegRight
+      FootLeft: OrganAnomalocaridFootLeft
+      FootRight: OrganAnomalocaridFootRight
       Brain: OrganAnomalocaridBrain
       Eyes: OrganAnomalocaridEyes
       Tongue: OrganAnomalocaridTongue
@@ -228,7 +228,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
-      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floof
+      #- map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floof
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -311,6 +311,7 @@
 
 - type: entity
   parent: OrganAnomalocarid
+  id: OrganAnomalocaridInternal
   abstract: true
   components:
   - type: Sprite
