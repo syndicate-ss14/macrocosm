@@ -108,20 +108,21 @@
       LegRight: RightLegAnomalocarid
       FootLeft: LeftFootAnomalocarid
       FootRight: RightFootAnomalocarid
-      Brain: OrganHumanBrain
-      Eyes: OrganHumanEyes
-      Lungs: OrganHumanLungs
-      Heart: OrganHumanHeart
-      Stomach: OrganHumanStomach
-      Liver: OrganHumanLiver
-      Kidneys: OrganHumanKidneys
+      Brain: OrganAnomalocaridBrain
+      Eyes: OrganAnomalocaridEyes
+      Tongue: OrganAnomalocaridTongue
+      Appendix: OrganAnomalocaridAppendix
+      Lungs: OrganAnomalocaridLungs
+      Heart: OrganAnomalocaridHeart
+      Stomach: OrganAnomalocaridStomach
+      Liver: OrganAnomalocaridLiver
+      Kidneys: OrganAnomalocaridKidneys
   - type: HumanoidProfile
     species: Anomalocarid
     hideLayersOnEquip:
     - Eyes
     - HeadTop
     - HeadSide #might go back on this
-
 
 - type: entity
   parent:
@@ -250,9 +251,7 @@
       - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
-      - map: [ "enum.HumanoidVisualLayers.TailBehindBackpack" ] # imp
       - map: [ "back" ]
-      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floof
       - map: [ "enum.HumanoidVisualLayers.Tail" ] #layered above the back, maybe has very very minor balance implications (hiding guns behind your wings) but i think it's fine.
       - map: [ "ears" ] #above tail for over-ear headsets specifically. this means they layer over backpacks and outerclothing too, unsure about that right now.
       - map: [ "neck" ]
@@ -298,6 +297,20 @@
   id: OrganAnomalocarid
   abstract: true
   suffix: Anomalocarid
+
+- type: entity
+  id: OrganAnomalocaridMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Anomalocarid ]
+
+- type: entity
+  parent: OrganAnomalocarid
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _MACRO/Mobs/Species/Anomalocarid/organs.rsi
 
 - type: entity
   id: OrganAnomalocaridVisual
@@ -357,3 +370,118 @@
 - type: entity
   parent: [OrganBaseFootRight, OrganAnomalocaridExternal]
   id: OrganAnomalocaridFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganAnomalocaridInternal ]
+  id: OrganAnomalocaridBrain
+  description: "This is where cubes get rotated."
+  components:
+  - type: FlavorProfile
+    flavors:
+      - shrimp
+      - sweet
+
+- type: entity
+  parent: [ OrganAnomalocaridVisual, OrganBaseEyes, OrganAnomalocaridInternal ]
+  id: OrganAnomalocaridEyes
+  name: big wet eyes
+  description: "Oh my god there's someone trapped inside!! No wait, that's your reflection."
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganAnomalocaridInternal ]
+  id: OrganAnomalocaridTongue
+  name: golden ticket
+  description: "A coveted Discount Dan's Factory Tour edible ticket! Sadly, it seems like the offer expired years ago..."
+  components:
+  - type: FlavorProfile
+    flavors:
+      - salty
+      - shrimp
+      - paper
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganAnomalocaridInternal]
+  id: OrganAnomalocaridAppendix
+  name: bugbait
+  description: "Squeeze this for comfort."
+  components:
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Effects/Fluids/blood2.ogg
+  - type: UseDelay
+    delay: 2.0
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganAnomalocaridInternal, OrganAnomalocaridMetabolizer ]
+  id: OrganAnomalocaridLungs
+  name: book gills
+  description: "The librarian is gonna want to see this."
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sour
+  - type: Instrument
+    program: 109
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganAnomalocaridInternal, OrganAnimalMetabolizer ]
+  id: OrganAnomalocaridHeart
+  description: "Surely a single bite couldn't hurt..."
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sour
+      - sweet
+      - fizzy
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganAnomalocaridInternal, OrganAnomalocaridMetabolizer ]
+  id: OrganAnomalocaridStomach
+  description: "Yuck!"
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sour
+      - shrimp
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganAnomalocaridInternal, OrganAnimalMetabolizer ]
+  id: OrganAnomalocaridLiver
+  description: "You need this to live."
+  components:
+  - type: FlavorProfile
+    flavors:
+      - salty
+      - shrimp
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganAnomalocaridInternal, OrganAnomalocaridMetabolizer ]
+  id: OrganAnomalocaridKidneys
+  description: "Eww! They're sticky and stretchy!"
+  components:
+  - type: Clothing
+    quickEquip: false
+    equippedPrefix: kidney
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: kidney-equipped-HELMET
+  - type: FlavorProfile
+    flavors:
+      - sour
+      - sweet
+      - shrimp
+  - type: EmitSoundOnThrow
+    sound: /Audio/Weapons/bolathrow.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/Effects/snap.ogg
+  - type: Ensnaring #think fast chucklenuts!
+    freeTime: 2.0
+    breakoutTime: 1.5
+    walkSpeed: 0.8
+    sprintSpeed: 0.5
+    staminaDamage: 0
+    canThrowTrigger: true
+    canMoveBreakout: true
+    maxEnsnares: 1
