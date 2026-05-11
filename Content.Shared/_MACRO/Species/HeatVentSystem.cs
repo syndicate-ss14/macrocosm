@@ -4,6 +4,7 @@ using Content.Shared.Atmos;
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
+using Content.Shared.Mind.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Serialization;
@@ -29,7 +30,12 @@ public abstract class HeatVentSystem : EntitySystem
         SubscribeLocalEvent<HeatVentComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<HeatVentComponent, HeatVentActionEvent>(OnVentStart);
         SubscribeLocalEvent<HeatVentComponent, HeatVentDoAfterEvent>(OnVentEnd);
+        SubscribeLocalEvent<HeatVentComponent, MindAddedMessage>(OnMindAdded);
+    }
 
+    private void OnMindAdded(Entity<HeatVentComponent> ent, ref MindAddedMessage args)
+    {
+        ent.Comp.MindActive = true;
     }
 
     public override void Update(float frameTime)

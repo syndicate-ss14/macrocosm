@@ -1,0 +1,6 @@
+- type: accent
+  id: anomalocarid_accent
+  wordReplacements:
+    anomalocarid-words-1: anomalocarid-words-replace-1
+    anomalocarid-words-2: anomalocarid-words-replace-2
+    anomalocarid-words-3: anomalocarid-words-replace-3
