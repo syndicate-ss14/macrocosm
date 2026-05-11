@@ -60,6 +60,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceAnomalocarid
+  categories: [ HideSpawnMenu ]
   name: anomalocarid appearance
   components:
   - type: Inventory
