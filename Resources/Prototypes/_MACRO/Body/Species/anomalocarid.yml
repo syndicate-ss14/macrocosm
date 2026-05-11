@@ -3,32 +3,32 @@
   onlyGroupWhitelisted: true
   limits:
     enum.HumanoidVisualLayers.Eyes:
-      points: 1
+      limit: 1
       required: true
-      defaultMarkings: [ AnomalocaridEyeshine ]
+      default: [ AnomalocaridEyeshine ]
     enum.HumanoidVisualLayers.HeadTop:
-      points: 1
+      limit: 1
       required: false
     enum.HumanoidVisualLayers.HeadSide:
-      points: 1
+      limit: 1
       required: true
-      defaultMarkings: [ AnomalocaridGrabbersDefault ]
+      default: [ AnomalocaridGrabbersDefault ]
     enum.HumanoidVisualLayers.Snout:
-      points: 1
+      limit: 1
       required: false
     enum.HumanoidVisualLayers.UndergarmentTop:
-      points: 1
+      limit: 1
       required: false
     enum.HumanoidVisualLayers.UndergarmentBottom:
-      points: 1
+      limit: 1
       required: false
     enum.HumanoidVisualLayers.Chest:
-      points: 1
+      limit: 1
       required: false
     enum.HumanoidVisualLayers.Tail:
-      points: 1
+      limit: 1
       required: true
-      defaultMarkings: [ AnomalocaridWingsDefault ]
+      default: [ AnomalocaridWingsDefault ]
     enum.HumanoidVisualLayers.LArm:
       limit: 1
       required: false
@@ -54,7 +54,7 @@
       limit: 1
       required: false
     enum.HumanoidVisualLayers.Overlay:
-      points: 3
+      limit: 3
       required: false
 
 - type: entity
@@ -119,10 +119,6 @@
       Kidneys: OrganAnomalocaridKidneys
   - type: HumanoidProfile
     species: Anomalocarid
-    hideLayersOnEquip:
-    - Eyes
-    - HeadTop
-    - HeadSide #might go back on this
 
 - type: entity
   parent:
@@ -136,13 +132,14 @@
       types:
         Blunt: 0.4 # a little less barotrauma
         Heat: 0.1
+  - type: Temperature
+    specificHeat: 42 # down from 50
   - type: TemperatureDamage # anomalocarids are benthic hydrothermal vent dwellers, they love high pressure and high heat
     heatDamageThreshold: 4000
     coldDamageThreshold: 260
     coldDamage:
       types:
         Cold : 1 #per second, scales with temperature & other constants
-    specificHeat: 42
     heatDamage:
       types:
         Heat : 1 #per second, scales with temperature & other constants
@@ -169,7 +166,10 @@
     normalState: Generic_mob_burning_anomalocarid #same as the regular sprite, just resized to fit anomalocarids
     alternateState: Standing_anomalocarid
   - type: Bloodstream
-    bloodReagent: AnomalocaridCopperBlood #similar to CopperBlood, just a different color.
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: AnomalocaridCopperBlood #similar to CopperBlood, just a different color.
+        Quantity: 300
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -228,7 +228,6 @@
     noRot: true
     drawdepth: Mobs
     layers:
-      #- map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floof
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]

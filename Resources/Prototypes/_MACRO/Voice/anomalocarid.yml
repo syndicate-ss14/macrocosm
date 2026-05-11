@@ -44,10 +44,6 @@
       collection: Weh
     Hew:
       collection: Hew
-    Wuhey:
-      collection: Wuhey
-    Ungh:
-      collection: Ungh
     Chitter:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
@@ -59,4 +55,4 @@
     Bubble:
       path: /Audio/_MACRO/Voice/Anomalocarid/anomalocarid_bubbles.ogg
     Pop:
-      collection: Pops
+      path: /Audio/_MACRO/Voice/Anomalocarid/s_pop.ogg

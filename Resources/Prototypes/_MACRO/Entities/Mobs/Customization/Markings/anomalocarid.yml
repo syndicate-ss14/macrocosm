@@ -747,7 +747,7 @@
   id: AnomalocaridAntennae9
   bodyPart: HeadTop
   groupWhitelist: [ Anomalocarid ]
-  randomWeight: 0.1
+  #randomWeight: 0.1
   forcedColoring: false
   coloring:
     default:
@@ -868,7 +868,7 @@
   id: AnomalocaridAntennae16Arc
   bodyPart: HeadTop
   groupWhitelist: [ Anomalocarid ]
-  randomWeight: 0
+  #randomWeight: 0
   forcedColoring: false
   coloring:
     default:
@@ -905,14 +905,14 @@
     default:
       type:
         !type:EyeColoring
-  layering:
-    wings1_primary_behind: TailBehind
-    wings1_primary_front: TailOversuit
-    wings1_secondary_behind: TailBehind
-    wings1_secondary_front: TailOversuit
-  colorLinks:
-    wings1_primary_behind: wings1_primary_front
-    wings1_secondary_behind: wings1_secondary_front
+  # layering:
+  #   wings1_primary_behind: TailBehind
+  #   wings1_primary_front: TailOversuit
+  #   wings1_secondary_behind: TailBehind
+  #   wings1_secondary_front: TailOversuit
+  # colorLinks:
+  #   wings1_primary_behind: wings1_primary_front
+  #   wings1_secondary_behind: wings1_secondary_front
   sprites:
   - sprite: _MACRO/Mobs/Customization/Anomalocarid/tail.rsi
     state: wings1_primary_front
@@ -932,14 +932,14 @@
     default:
       type:
         !type:EyeColoring
-  layering:
-    wings2_primary_behind: TailBehind
-    wings2_primary_front: TailOversuit
-    wings2_secondary_behind: TailBehind
-    wings2_secondary_front: TailOversuit
-  colorLinks:
-    wings2_primary_behind: wings2_primary_front
-    wings2_secondary_behind: wings2_secondary_front
+  # layering:
+  #   wings2_primary_behind: TailBehind
+  #   wings2_primary_front: TailOversuit
+  #   wings2_secondary_behind: TailBehind
+  #   wings2_secondary_front: TailOversuit
+  # colorLinks:
+  #   wings2_primary_behind: wings2_primary_front
+  #   wings2_secondary_behind: wings2_secondary_front
   sprites:
   - sprite: _MACRO/Mobs/Customization/Anomalocarid/tail.rsi
     state: wings2_primary_front
@@ -980,14 +980,14 @@
     default:
       type:
         !type:EyeColoring
-  layering:
-    wings4_primary_behind: TailBehind
-    wings4_primary_front: TailOversuit
-    wings4_secondary_behind: TailBehind
-    wings4_secondary_front: TailOversuit
-  colorLinks:
-    wings4_primary_behind: wings4_primary_front
-    wings4_secondary_behind: wings4_secondary_front
+  # layering:
+  #   wings4_primary_behind: TailBehind
+  #   wings4_primary_front: TailOversuit
+  #   wings4_secondary_behind: TailBehind
+  #   wings4_secondary_front: TailOversuit
+  # colorLinks:
+  #   wings4_primary_behind: wings4_primary_front
+  #   wings4_secondary_behind: wings4_secondary_front
   sprites:
   - sprite: _MACRO/Mobs/Customization/Anomalocarid/tail.rsi
     state: wings4_primary_front
@@ -1007,17 +1007,17 @@
     default:
       type:
         !type:EyeColoring
-  layering:
-    tentacles_primary_behind: TailBehind
-    tentacles_primary_front: TailOversuit
-    tentacles_secondary_behind: TailBehind
-    tentacles_secondary_front: TailOversuit
-    tentacles_tertiary_behind: TailBehind
-    tentacles_tertiary_front: TailOversuit
-  colorLinks:
-    tentacles_primary_behind: tentacles_primary_front
-    tentacles_secondary_behind: tentacles_secondary_front
-    tentacles_tertiary_behind: tentacles_tertiary_front
+  # layering:
+  #   tentacles_primary_behind: TailBehind
+  #   tentacles_primary_front: TailOversuit
+  #   tentacles_secondary_behind: TailBehind
+  #   tentacles_secondary_front: TailOversuit
+  #   tentacles_tertiary_behind: TailBehind
+  #   tentacles_tertiary_front: TailOversuit
+  # colorLinks:
+  #   tentacles_primary_behind: tentacles_primary_front
+  #   tentacles_secondary_behind: tentacles_secondary_front
+  #   tentacles_tertiary_behind: tentacles_tertiary_front
   sprites:
   - sprite: _MACRO/Mobs/Customization/Anomalocarid/tail.rsi
     state: tentacles_primary_front
@@ -1031,7 +1031,7 @@
     state: tentacles_tertiary_behind
   - sprite: _MACRO/Mobs/Customization/Anomalocarid/tail.rsi
     state: tentacles_tertiary_front
-  randomWeight: 0.3
+  #randomWeight: 0.3
 
 #- type: marking
 #  id: AnomalocaridTailDefault
@@ -1101,7 +1101,7 @@
   id: AnomalocaridEyeRoboLeft
   bodyPart: LFoot
   groupWhitelist: [ Anomalocarid ]
-  randomWeight: 0.4
+  #randomWeight: 0.4
   forcedColoring: false
   coloring:
     default:
@@ -1117,7 +1117,7 @@
   id: AnomalocaridEyeRoboLeftUnshaded
   bodyPart: LFoot
   groupWhitelist: [ Anomalocarid ]
-  randomWeight: 0
+  #randomWeight: 0
   forcedColoring: false
   coloring:
     default:
@@ -1132,7 +1132,7 @@
   id: AnomalocaridEyeRoboRight
   bodyPart: LFoot
   groupWhitelist: [ Anomalocarid ]
-  randomWeight: 0.4
+  #randomWeight: 0.4
   forcedColoring: false
   coloring:
     default:
@@ -1148,7 +1148,7 @@
   id: AnomalocaridEyeRoboRightUnshaded
   bodyPart: LFoot
   groupWhitelist: [ Anomalocarid ]
-  randomWeight: 0
+  #randomWeight: 0
   forcedColoring: false
   coloring:
     default:

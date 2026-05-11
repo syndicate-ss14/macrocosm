@@ -137,7 +137,7 @@ public sealed partial class HeatVentComponent : Component
     ///     Sound to play when vent heat doafter completes.
     /// </summary>
     [DataField]
-    public SoundSpecifier VentSound = new SoundPathSpecifier("/Audio/_Impstation/Anomalocarids/pressure_release.ogg");
+    public SoundSpecifier VentSound = new SoundPathSpecifier("/Audio/_MACRO/Effects/pressure_release.ogg");
 
     /// <summary>
     ///     Sound to play when vent heat doafter completes.
