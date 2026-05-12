@@ -348,7 +348,7 @@
 
 # RLeg
 
-# LLeg
+# LLeg # TODO: SPLIT THESE SPRITES UP TO 1 LEG EACH
 
 - type: marking
   id: AnomalocaridLegStripes
@@ -863,18 +863,6 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Anomalocarid/headtop.rsi
     state: antennae16
-
-- type: marking
-  id: AnomalocaridAntennae16Arc
-  bodyPart: HeadTop
-  groupWhitelist: [ Anomalocarid ]
-  #randomWeight: 0
-  forcedColoring: false
-  coloring:
-    default:
-      type:
-        !type:EyeColoring
-  sprites:
   - sprite: _MACRO/Mobs/Customization/Anomalocarid/headtop.rsi
     state: antennae16_arc
   # shader: unshaded
@@ -894,7 +882,7 @@
   - sprite: _MACRO/Mobs/Customization/Anomalocarid/headtop.rsi
     state: antennae17_secondary
 
-#Tail
+#Tail # TODO: POLISH THESE
 
 - type: marking
   id: AnomalocaridWingsDefault
@@ -1041,11 +1029,11 @@
 #  - sprite: _MACRO/Mobs/Customization/Anomalocarid/tail.rsi
 #    state: tail1
 
-# RArmExtension (IMP, NEEDS TO BE REPLACED)
+# Overlay
 
 - type: marking
   id: AnomalocaridGlassEyeLeft
-  bodyPart: LFoot #dont change this!!! it's there so it layers over the eyes properly!
+  bodyPart: Overlay
   groupWhitelist: [ Anomalocarid ]
   coloring:
     default:
@@ -1058,7 +1046,7 @@
 
 - type: marking
   id: AnomalocaridGlassEyeRight
-  bodyPart: LFoot
+  bodyPart: Overlay
   groupWhitelist: [ Anomalocarid ]
   coloring:
     default:
@@ -1071,7 +1059,7 @@
 
 - type: marking
   id: AnomalocaridEyeThird
-  bodyPart: LFoot
+  bodyPart: Overlay
   groupWhitelist: [ Anomalocarid ]
   forcedColoring: false
   coloring:
@@ -1086,7 +1074,7 @@
 
 - type: marking
   id: AnomalocaridEyeMantis
-  bodyPart: LFoot
+  bodyPart: Overlay
   groupWhitelist: [ Anomalocarid ]
   forcedColoring: false
   coloring:
@@ -1099,7 +1087,7 @@
 
 - type: marking
   id: AnomalocaridEyeRoboLeft
-  bodyPart: LFoot
+  bodyPart: Overlay
   groupWhitelist: [ Anomalocarid ]
   #randomWeight: 0.4
   forcedColoring: false
@@ -1115,7 +1103,7 @@
 
 - type: marking
   id: AnomalocaridEyeRoboLeftUnshaded
-  bodyPart: LFoot
+  bodyPart: Overlay
   groupWhitelist: [ Anomalocarid ]
   #randomWeight: 0
   forcedColoring: false
@@ -1130,7 +1118,7 @@
 
 - type: marking
   id: AnomalocaridEyeRoboRight
-  bodyPart: LFoot
+  bodyPart: Overlay
   groupWhitelist: [ Anomalocarid ]
   #randomWeight: 0.4
   forcedColoring: false
@@ -1146,7 +1134,7 @@
 
 - type: marking
   id: AnomalocaridEyeRoboRightUnshaded
-  bodyPart: LFoot
+  bodyPart: Overlay
   groupWhitelist: [ Anomalocarid ]
   #randomWeight: 0
   forcedColoring: false
