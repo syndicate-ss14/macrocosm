@@ -2,35 +2,47 @@ using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.EntitySystems;
+using Content.Shared.Body.Systems;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
+using Content.Shared.Jittering;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._MACRO.Species;
 
-public abstract class HeatVentSystem : EntitySystem
+public sealed class HeatVentSystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly DamageableSystem _damage = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedAtmosphereSystem _atmos = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedJitteringSystem _jittering = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<HeatVentComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<HeatVentComponent, MapInitEvent>(OnInit);
         SubscribeLocalEvent<HeatVentComponent, HeatVentActionEvent>(OnVentStart);
         SubscribeLocalEvent<HeatVentComponent, HeatVentDoAfterEvent>(OnVentEnd);
         SubscribeLocalEvent<HeatVentComponent, MindAddedMessage>(OnMindAdded);
+    }
+
+    private void OnInit(Entity<HeatVentComponent> ent, ref MapInitEvent args)
+    {
+        _actions.AddAction(ent, ent.Comp.VentAction);
     }
 
     private void OnMindAdded(Entity<HeatVentComponent> ent, ref MindAddedMessage args)
@@ -55,26 +67,29 @@ public abstract class HeatVentSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Adds more heat to the entity's component if this entity is breathing.
+    ///     Adds more heat to the entity's component if this entity is alive.
     ///     Will also deal damage if the heat stored exceeds threshold.
     /// </summary>
     public void Cycle(Entity<HeatVentComponent> ent)
     {
-        // TODO: update respiration
-        // if (!TryComp<RespiratorComponent>(ent, out var respirator) || !_respirator.IsBreathing((ent.Owner, respirator)))
-        //     return;
+        // in an ideal world this would check if the mob was breathing, but respiration is serverside
+        if (_mobState.IsIncapacitated(ent))
+            return;
 
-        ent.Comp.HeatStored += ent.Comp.HeatAdded;
+        // We don't want ghostroles to get heatstroke!
+        if (ent.Comp.MindActive)
+            ent.Comp.HeatStored += ent.Comp.HeatAdded;
 
         if (ent.Comp.HeatStored >= ent.Comp.HeatDamageThreshold)
+        {
+            _jittering.DoJitter(ent, ent.Comp.UpdateCooldown, false);
             _damage.TryChangeDamage(ent.Owner, ent.Comp.HeatDamage, ignoreResistances: true, interruptsDoAfters: false);
 
-        UpdateAlert(ent);
-    }
+            if (_random.NextFloat() < ent.Comp.TooHotPopupChance && ent.Comp.TooHotPopups != null)
+                _popup.PopupClient(Loc.GetString(_random.Pick(ent.Comp.TooHotPopups)), ent, ent);
+        }
 
-    private void OnStartup(Entity<HeatVentComponent> ent, ref ComponentStartup args)
-    {
-        _actions.AddAction(ent, ent.Comp.VentAction);
+        UpdateAlert(ent);
     }
 
     /// <summary>

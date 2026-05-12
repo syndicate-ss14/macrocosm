@@ -427,6 +427,15 @@
       - sour
   - type: Instrument
     program: 109
+  - type: ActivatableUI
+    inHandsOnly: true
+    singleUser: true
+    verbText: verb-instrument-openui
+    key: enum.InstrumentUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
 
 - type: entity
   parent: [ OrganBaseHeart, OrganAnomalocaridInternal, OrganAnimalMetabolizer ]
