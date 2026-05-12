@@ -91,37 +91,22 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         // TODO: Add random markings
 
         // MACRO START: random markings :)
-        // Note that a lot of this code is modified from upstream, so some code is shared. Anything commented out is from upstream.
+        // Upstream behaviour is commented out. This is a bit messy, sorry!!!
 
         List<Marking> newMarkings = [];
-
-        // grab a completely random color.
         var baseColor = new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1);
 
-        // create a new color palette based on BaseColor. roll to determine what type of palette it is.
-        // personally I think this should be weighted, but I can't be bothered to implement that.
-        List<Color> colorPalette = [];
-        switch (random.Next(3))
-        {
-            case 0:
-                colorPalette = GetSplitComplementaries(baseColor);
-                break;
-            case 1:
-                colorPalette = GetTriadicComplementaries(baseColor);
-                break;
-            case 2:
-                colorPalette = GetOneComplementary(baseColor);
-                break;
-        }
+        // COLORPALETTE NOTES! (TODO maybe make this a dict? hashset?)
+        // 0 is skin color (base color)
+        // 1 is hair color
+        // 2 is eye color
+        var colorPalette = GetPaletteFromBase(baseColor, random.Next(3));
 
         // var newEyeColor = random.Pick(_realisticEyeColors);
 
-        // grab the skin type, and clamp it to our colour strategy.
         var protoMan = IoCManager.Resolve<IPrototypeManager>();
         var skinType = protoMan.Index<SpeciesPrototype>(species).SkinColoration;
         var strategy = protoMan.Index(skinType).Strategy;
-
-        var newSkinColor = strategy.ClosestSkinColor(colorPalette[0]);
 
         // var newSkinColor = strategy.InputType switch
         // {
@@ -130,35 +115,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         //     _ => strategy.ClosestSkinColor(new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1)),
         // };
 
-        // declare some defaults. ensures that the hair and eyes on hues-colored species don't match the skin or one another.
-        var newHairColor = colorPalette[1];
-        var newEyeColor = colorPalette[2];
-
-        // now we do some color logic.
-        if (protoMan.Index(skinType).RealisticColors)
-        {
-            // pick a random realistic hair color from the list and randomize it juuuuust a little bit.
-            newHairColor = random.Pick(HairStyles.RealisticHairColors);
-            newHairColor = newHairColor
-                .WithRed(RandomizeColor(newHairColor.R))
-                .WithGreen(RandomizeColor(newHairColor.G))
-                .WithBlue(RandomizeColor(newHairColor.B));
-
-            // and pick a random realistic eye color from the list.
-            newEyeColor = random.Pick(_realisticEyeColors);
-
-            // we're also going to crush the other colors down to the skin's luminosity so markings don't appear too bright on darker skin.
-            // (mq comment- is this needed? could look cool without. maybe a bool?)
-            colorPalette[1] = SquashToSkinLuminosity(newSkinColor, colorPalette[1]);
-            colorPalette[2] = SquashToSkinLuminosity(newSkinColor, colorPalette[2]);
-        }
-
-        if (protoMan.Index(skinType).SquashAllColors)
-        {
-            // crush the other colors down to valid skin colors.
-            colorPalette[1] = strategy.ClosestSkinColor(colorPalette[1]);
-            colorPalette[2] = strategy.ClosestSkinColor(colorPalette[2]);
-        }
+        colorPalette = ClampPaletteToStrategy(colorPalette, protoMan.Index(skinType));
 
         // declare our default hair.
         var newHairStyle = HairStyles.DefaultFacialHairStyle.Id;
@@ -167,10 +124,9 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         // we're also grabbing a new dictionary to store our marking data on a per-organ basis.
         var markingSet = markingManager.GetMarkingData(species);
 
-        // nubody made this logic suck so bad im so sorry.
         // now we need to somehow get from our species to a single visual layer and marking group. the only way we can do this? organs.
-        // GOD I NEED A FUCKING API
-        foreach (var category in protoMan.EnumeratePrototypes<OrganCategoryPrototype>())
+        var layers = new HashSet<HumanoidVisualLayers>();
+        foreach (var category in layers)
         {
             // identify what marking group we're using for this layer,
             if (!markingSet.TryGetValue(category, out var markingData))
@@ -259,72 +215,13 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         }
 
         // at the end of all that, we should have new values for each of these, so we set the character appearance to these new values.
-        return new HumanoidCharacterAppearance(newHairStyle, newHairColor, newFacialHairStyle, newHairColor, newEyeColor, newSkinColor, newMarkings);
+        return new HumanoidCharacterAppearance(
+            colorPalette[2],
+            colorPalette[0],
+            newMarkings);
 
         // return new HumanoidCharacterAppearance(newEyeColor, newSkinColor, new());
 
-        // HELPER FUNCTIONS
-        // These are probably better off in Robust.Shared.Maths.Color. oh well
-
-        float RandomizeColor(float channel)
-        {
-            return MathHelper.Clamp01(channel + random.Next(-25, 25) / 100f);
-        }
-
-        List<Color> GetComplementaryColors(Color color, double angle)
-        {
-            var hsl = Color.ToHsl(color);
-
-            // sorry about how messy these are, but to get all random values we need to reroll for positive and negative HSL.
-            var hVal = hsl.X + angle;
-            hVal = hVal >= 0.360 ? hVal - 0.360 : hVal;
-            var positiveHSL = new Vector4((float)hVal, MathHelper.Clamp01(hsl.Y + random.Next(-20, 0) / 100f), MathHelper.Clamp01(hsl.Z + random.Next(-15, 15) / 100f), hsl.W);
-
-            var hVal1 = hsl.X - angle;
-            hVal1 = hVal1 <= 0 ? hVal1 + 0.360 : hVal1;
-            var negativeHSL = new Vector4((float)hVal1, MathHelper.Clamp01(hsl.Y + random.Next(-20, 0) / 100f), MathHelper.Clamp01(hsl.Z + random.Next(-15, 15) / 100f), hsl.W);
-
-            var c0 = Color.FromHsl(positiveHSL);
-            var c1 = Color.FromHsl(negativeHSL);
-
-            var palette = new List<Color> { color, c0, c1 };
-            return palette;
-        }
-
-        //return a list of triadic complementary colors
-        List<Color> GetTriadicComplementaries(Color color)
-        {
-            return GetComplementaryColors(color, 0.120);
-        }
-
-        // return a list of split complementary colors
-        List<Color> GetSplitComplementaries(Color color)
-        {
-            return GetComplementaryColors(color, 0.150);
-        }
-
-        // return a list containing the base color and two copies of a single complemenary color
-        List<Color> GetOneComplementary(Color color)
-        {
-            return GetComplementaryColors(color, 0.180);
-        }
-
-        Color SquashToSkinLuminosity(Color skinColor, Color toSquash)
-        {
-            var skinColorHSL = Color.ToHsl(skinColor);
-            var toSquashHSL = Color.ToHsl(toSquash);
-
-            // check if the skin color is as dark as or darker than the marking color:
-            if (toSquashHSL.Z <= skinColorHSL.Z)
-            {
-                // if it is, don't fuck with it
-                return toSquash;
-            }
-
-            // otherwise, create a new color with the H, S, and A of toSquash, but the L of skinColor
-            var newColor = new Vector4(toSquashHSL.X, toSquashHSL.Y, skinColorHSL.Z, toSquashHSL.W);
-            return Color.FromHsl(newColor);
-        }
         // MACRO END (whew!)
     }
 

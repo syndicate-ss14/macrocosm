@@ -77,7 +77,7 @@ public sealed partial class MarkingsLimits
     /// Chance for a randomly generated entity to spawn with a marking in this category.
     /// </summary>
     /// <remarks>
-    /// Does one roll for each point- eg. at 2 points with a .6 weight,
+    /// Does one roll for each point in limit- eg. at 2 points in limit with a .6 weight,
     /// you have a 16% chance of no marking, a 48% chance of one marking and a 36% chance of two markings.
     /// </remarks>
     [DataField]
