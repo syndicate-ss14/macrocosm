@@ -1,4 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Numerics;
+using Content.Shared.Humanoid.Markings;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Shared.Humanoid;
@@ -67,6 +71,100 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
 
         List<Color> outPalette = [newSkinColor, newHairColor, newEyeColor];
         return outPalette;
+    }
+
+    // hair and facial hair are handled different to other markings, so those get their own special treatment
+    private static List<Marking> PickHairsRandomMarking(HumanoidVisualLayers layer, MarkingsLimits layerLimits, IReadOnlyDictionary<string, MarkingPrototype> allMarkings, Color color)
+    {
+        var random = IoCManager.Resolve<IRobustRandom>();
+
+        if (allMarkings.Count == 0 || !random.Prob(layerLimits.Weight))
+            return [];
+
+        var hairId = PickWeightedMarkingId(allMarkings);
+        if (hairId is null || !allMarkings.TryGetValue(hairId, out var hairProto))
+            return [];
+
+        if (allMarkings.TryGetValue(hairProto.ID, out var hairMarking))
+            return [hairMarking.AsMarking().WithColor(color)];
+
+        var protoMan = IoCManager.Resolve<IPrototypeManager>();
+        var defaultHair = layer switch
+        {
+            HumanoidVisualLayers.FacialHair => HairStyles.DefaultFacialHairStyle,
+            _ => HairStyles.DefaultHairStyle,
+        };
+
+        var defaultHairProto = protoMan.Index(defaultHair);
+        return [new Marking(defaultHair, defaultHairProto.Sprites.Count).WithColor(color)];
+    }
+
+    private static List<Marking> PickLayerRandomMarkings(HumanoidVisualLayers layer, MarkingsLimits? layerLimits, IReadOnlyDictionary<string, MarkingPrototype> allMarkings, List<Color> palette)
+    {
+
+        if (layerLimits is null)
+            return [];
+
+        if (layer == HumanoidVisualLayers.Hair ||
+            layer == HumanoidVisualLayers.FacialHair)
+        {
+            return PickHairsRandomMarking(layer, layerLimits, allMarkings, palette[1]);
+        }
+
+        var random = IoCManager.Resolve<IRobustRandom>();
+        var layerWeight = layerLimits.Weight;
+        var pool = allMarkings.ToDictionary();
+
+        List<Marking> outMarkings = [];
+
+        for (var i = 0; i < layerLimits.Limit; i++)
+        {
+            // just in case there are somehow more points than markings
+            if (pool.Count == 0)
+                break;
+
+            // category roll to see if we add anything
+            if (!random.Prob(layerWeight))
+                continue;
+
+            var randomMarking = PickWeightedMarkingId(pool);
+
+            if (randomMarking is null || !pool.Remove(randomMarking, out var protoToAdd))
+                continue;
+
+            // select a random color from our two secondary colors.
+            // TODO: we may need some color validation here. unsure.
+            // TODO: multiple layers on a marking?
+            var color = random.Pick(palette.Skip(0).ToList());
+
+            outMarkings.Add(protoToAdd.AsMarking().WithColor(color));
+        }
+        return outMarkings;
+    }
+
+    private static string? PickWeightedMarkingId(IReadOnlyDictionary<string, MarkingPrototype> markings)
+    {
+        var random = IoCManager.Resolve<IRobustRandom>();
+
+        if (markings.Count == 0)
+            return null;
+
+        var sum = 0f;
+        foreach (var proto in markings.Values)
+            sum += Math.Max(0f, proto.RandomWeight);
+
+        if (sum <= 0f)
+            return random.Pick(markings.Keys.ToList());
+
+        var roll = random.NextFloat(sum);
+        foreach (var (id, proto) in markings)
+        {
+            roll -= Math.Max(0f, proto.RandomWeight);
+            if (roll <= 0f)
+                return id;
+        }
+
+        return markings.Last().Key;
     }
 
     #region Color Helpers

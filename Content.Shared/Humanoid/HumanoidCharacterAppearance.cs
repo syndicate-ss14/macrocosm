@@ -94,17 +94,10 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         // Upstream behaviour is commented out. This is a bit messy, sorry!!!
 
         // var newEyeColor = random.Pick(_realisticEyeColors);
-        var baseColor = new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1);
-
-        // COLORPALETTE NOTES! (TODO maybe make this a dict? hashset?)
-        // 0 is skin color (base color)
-        // 1 is hair color
-        // 2 is eye color
-        var colorPalette = GetPaletteFromBase(baseColor, random.Next(3));
 
         var protoMan = IoCManager.Resolve<IPrototypeManager>();
         var skinType = protoMan.Index<SpeciesPrototype>(species).SkinColoration;
-        // var strategy = protoMan.Index(skinType).Strategy;
+        var strategy = protoMan.Index(skinType).Strategy;
 
         // var newSkinColor = strategy.InputType switch
         // {
@@ -112,74 +105,48 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         //     SkinColorationStrategyInput.Color => strategy.ClosestSkinColor(new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1)),
         //     _ => strategy.ClosestSkinColor(new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1)),
         // };
+
+        var baseColor = new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1);
+        var colorPalette = GetPaletteFromBase(baseColor, random.Next(3));
+
+        // TODO MAKE THIS BETTER
         colorPalette = ClampPaletteToStrategy(colorPalette, protoMan.Index(skinType));
+        var newSkinColor = colorPalette[0];
+        // var newHairColor = colorPalette[1];
+        var newEyeColor = colorPalette[2];
 
         var markingData = markingManager.GetMarkingData(species);
-        var layers = new HashSet<HumanoidVisualLayers>();
         Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> newMarkings = [];
 
-        // code below is modified from MarkingPicker and OrganMarkingPicker
         foreach (var (organ, organData) in markingData)
         {
+            // if this is an organ with no markings (heart, stomach, etc)
+            if (!protoMan.TryIndex(organData.Group, out var groupProto))
+                continue;
+
             Dictionary<HumanoidVisualLayers, List<Marking>> layerMarkings = [];
-            foreach (var layer in layers)
+            foreach (var layer in organData.Layers)
             {
                 var allMarkings = markingManager.MarkingsByLayerAndGroupAndSex(layer, organData.Group, sex);
 
                 if (allMarkings.Count == 0)
                     continue;
 
-                var markingWeights = new Dictionary<string, float>();
-                foreach (var marking in allMarkings)
-                    markingWeights.Add(marking.Key, marking.Value.RandomWeight);
-
-                // add random markings!
-                // this will roll once for each point in the marking category.
-                var markingGroup = protoMan.Index(organData.Group);
-
-                if (!markingGroup.Limits.ContainsKey(layer))
+                var layerLimits = groupProto.Limits.GetValueOrDefault(layer);
+                if (layerLimits is null || layerLimits.Limit <= 0)
                     continue;
 
-                List<Marking> groupMarkings = [];
-                for (var i = 0; i < markingGroup.Limits[layer].Limit; i++)
-                {
-                    // just in case there are somehow more points than markings
-                    if (markingWeights.Count == 0)
-                        continue;
-
-                    // category roll to see if we add anything
-                    if (!random.Prob(markingGroup.Limits[layer].Weight))
-                        continue;
-
-                    var randomMarking = random.Pick(markingWeights).Key;
-
-                    if (!allMarkings.TryGetValue(randomMarking, out var protoToAdd))
-                        continue;
-
-                    var markingToAdd = protoToAdd.AsMarking();
-                    // prevent duplicates
-                    markingWeights.Remove(randomMarking);
-
-                    // TODO: we may need some color validation here. unsure.
-
-                    // select a random color from our two secondary colors.
-                    var markingColor = random.Pick(colorPalette.Skip(0).ToList());
-
-                    // TODO: multiple layers on a marking?
-                    markingToAdd.WithColor(markingColor);
-
-                    groupMarkings.Add(markingToAdd);
-                }
-                layerMarkings.Add(layer, groupMarkings);
-                groupMarkings.Clear();
+                layerMarkings.Add(layer, PickLayerRandomMarkings(layer, layerLimits, allMarkings, colorPalette));
             }
             newMarkings.Add(organ, layerMarkings);
             layerMarkings.Clear();
         }
-        return new HumanoidCharacterAppearance(
-            colorPalette[2],
-            colorPalette[0],
+
+        HumanoidCharacterAppearance appearance = new(
+            newEyeColor,
+            newSkinColor,
             newMarkings);
+        return EnsureValid(appearance, species, sex);
         // return new HumanoidCharacterAppearance(newEyeColor, newSkinColor, new());
         // MACRO END (whew!)
     }
