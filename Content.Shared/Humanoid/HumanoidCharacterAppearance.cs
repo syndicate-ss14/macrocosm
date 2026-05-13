@@ -93,7 +93,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         // MACRO START: random markings :)
         // Upstream behaviour is commented out. This is a bit messy, sorry!!!
 
-        List<Marking> newMarkings = [];
+        // var newEyeColor = random.Pick(_realisticEyeColors);
         var baseColor = new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1);
 
         // COLORPALETTE NOTES! (TODO maybe make this a dict? hashset?)
@@ -102,11 +102,9 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         // 2 is eye color
         var colorPalette = GetPaletteFromBase(baseColor, random.Next(3));
 
-        // var newEyeColor = random.Pick(_realisticEyeColors);
-
         var protoMan = IoCManager.Resolve<IPrototypeManager>();
         var skinType = protoMan.Index<SpeciesPrototype>(species).SkinColoration;
-        var strategy = protoMan.Index(skinType).Strategy;
+        // var strategy = protoMan.Index(skinType).Strategy;
 
         // var newSkinColor = strategy.InputType switch
         // {
@@ -114,114 +112,75 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         //     SkinColorationStrategyInput.Color => strategy.ClosestSkinColor(new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1)),
         //     _ => strategy.ClosestSkinColor(new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1)),
         // };
-
         colorPalette = ClampPaletteToStrategy(colorPalette, protoMan.Index(skinType));
 
-        // declare our default hair.
-        var newHairStyle = HairStyles.DefaultFacialHairStyle.Id;
-        var newFacialHairStyle = HairStyles.DefaultFacialHairStyle.Id;
-
-        // we're also grabbing a new dictionary to store our marking data on a per-organ basis.
-        var markingSet = markingManager.GetMarkingData(species);
-
-        // now we need to somehow get from our species to a single visual layer and marking group. the only way we can do this? organs.
+        var markingData = markingManager.GetMarkingData(species);
         var layers = new HashSet<HumanoidVisualLayers>();
-        foreach (var category in layers)
+        Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> newMarkings = [];
+
+        // code below is modified from MarkingPicker and OrganMarkingPicker
+        foreach (var (organ, organData) in markingData)
         {
-            // identify what marking group we're using for this layer,
-            if (!markingSet.TryGetValue(category, out var markingData))
+            Dictionary<HumanoidVisualLayers, List<Marking>> layerMarkings = [];
+            foreach (var layer in layers)
             {
-                break;
-            }
+                var allMarkings = markingManager.MarkingsByLayerAndGroupAndSex(layer, organData.Group, sex);
 
-            // grab a dictionary of markings in that layer for that marking group,
-            var markings = markingManager.MarkingsByLayerAndGroupAndSex(category, markingData.Group, sex);
+                if (allMarkings.Count == 0)
+                    continue;
 
-            // and make a new dictionary that stores the string of the marking and the corresponding random weight.
-            var markingWeights = new Dictionary<string, float>();
-            foreach (var marking in markings)
-                markingWeights.Add(marking.Key, marking.Value.RandomWeight);
+                var markingWeights = new Dictionary<string, float>();
+                foreach (var marking in allMarkings)
+                    markingWeights.Add(marking.Key, marking.Value.RandomWeight);
 
-            // grab the markingset from our category..
-            if (!markingSet.TryGetValue(category, out var categorySet))
-                continue;
-
-            // hair and facial hair are handled different to other markings, so those get their own special treatment
-            // if it's hair, and there are hair styles, roll one. else bald
-            else if (category == HumanoidVisualLayers.Hair)
-            {
-                newHairStyle = markings.Count == 0 || !random.Prob(categorySet.Weight)
-                    ? HairStyles.DefaultHairStyle.Id
-                    : random.Pick(markingWeights).Key;
-            }
-
-            // if it's facial hair, there are entries in the category, and the character is not female, roll & assign a random one. else bald
-            else if (category == HumanoidVisualLayers.FacialHair)
-            {
-                newFacialHairStyle = markings.Count == 0 || sex == Sex.Female || !random.Prob(categorySet.Weight)
-                    ? HairStyles.DefaultFacialHairStyle.Id
-                    : random.Pick(markingWeights).Key;
-            }
-
-            // for every other category,
-            else if (markings.Keys.Any())
-            {
                 // add random markings!
                 // this will roll once for each point in the marking category.
-                for (var i = 0; i < categorySet.Limit; i++)
+                var markingGroup = protoMan.Index(organData.Group);
+
+                if (!markingGroup.Limits.ContainsKey(layer))
+                    continue;
+
+                List<Marking> groupMarkings = [];
+                for (var i = 0; i < markingGroup.Limits[layer].Limit; i++)
                 {
                     // just in case there are somehow more points than markings
                     if (markingWeights.Count == 0)
                         continue;
 
                     // category roll to see if we add anything
-                    if (!random.Prob(categorySet.Weight))
+                    if (!random.Prob(markingGroup.Limits[layer].Weight))
                         continue;
 
-                    // pick a random marking from the list
                     var randomMarking = random.Pick(markingWeights).Key;
-                    if (!markings.TryGetValue(randomMarking, out var protoToAdd))
-                        continue;
-                    var markingToAdd = protoToAdd.AsMarking();
-                    Color markingColor;
 
+                    if (!allMarkings.TryGetValue(randomMarking, out var protoToAdd))
+                        continue;
+
+                    var markingToAdd = protoToAdd.AsMarking();
                     // prevent duplicates
                     markingWeights.Remove(randomMarking);
 
-                    // set gauze to white.
-                    // side note, I really hate that gauze isn't its own category. please fix that so that i can make this not suck as much.
-                    // or, like, give it its own color rules. or something.
-                    if (markingToAdd.MarkingId.Contains("gauze", StringComparison.OrdinalIgnoreCase))
-                    {
-                        markingToAdd.SetColor(Color.White);
-                        newMarkings.Add(markingToAdd);
-                        continue;
-                    }
+                    // TODO: we may need some color validation here. unsure.
 
-                    // select a random color from our two secondary colors. if our marking is a Tail, add the skin color as well, otherwise lizards always look a little odd.
-                    // this will also make moths and spiders look less interesting on average, but I don't want a hardcoded exception for lizards.
-                    if (category == HumanoidVisualLayers.Tail)
-                        markingColor = random.Pick(colorPalette);
-                    else
-                        markingColor = random.Pick(colorPalette.Skip(0).ToList());
+                    // select a random color from our two secondary colors.
+                    var markingColor = random.Pick(colorPalette.Skip(0).ToList());
 
-                    // set the marking to that color
-                    markingToAdd.SetColor(markingColor);
+                    // TODO: multiple layers on a marking?
+                    markingToAdd.WithColor(markingColor);
 
-                    // otherwise, add it to the final list.
-                    newMarkings.Add(markingToAdd);
+                    groupMarkings.Add(markingToAdd);
                 }
+                layerMarkings.Add(layer, groupMarkings);
+                groupMarkings.Clear();
             }
+            newMarkings.Add(organ, layerMarkings);
+            layerMarkings.Clear();
         }
-
-        // at the end of all that, we should have new values for each of these, so we set the character appearance to these new values.
         return new HumanoidCharacterAppearance(
             colorPalette[2],
             colorPalette[0],
             newMarkings);
-
         // return new HumanoidCharacterAppearance(newEyeColor, newSkinColor, new());
-
         // MACRO END (whew!)
     }
 

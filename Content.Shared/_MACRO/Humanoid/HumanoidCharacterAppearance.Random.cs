@@ -1,5 +1,4 @@
 using System.Numerics;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Shared.Humanoid;
@@ -94,6 +93,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         var hsl = Color.ToHsl(color);
 
         // sorry about how messy these are, but to get all random values we need to reroll for positive and negative HSL.
+        // since we want to rotate x degrees around the colour wheel, we need to do so in both directions- doing x + x degrees will give us the wrong hue!
 
         var hVal = hsl.X + angle;
         hVal = hVal >= 0.360 ? hVal - 0.360 : hVal;
