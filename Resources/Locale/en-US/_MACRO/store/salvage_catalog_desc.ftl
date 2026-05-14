@@ -43,7 +43,7 @@ vendor-salvage-carp-pocket-name = Box of Carp-Pockets
 vendor-salvage-carp-pocket-desc = A rarely seen edition of donk pocket, made specifically for hard-working salvagers.
 
 vendor-salvage-emergency-pen-name = Emergency Medipen
-vendor-salvage-emergency-pen-desc = A box containing six Emergency Medipens.
+vendor-salvage-emergency-pen-desc = A single medipen, used to temporarily stabilize patients in critical condition and buy time for them to recieve proper medical treatment. 
 
 vendor-salvage-vodka-name = Vodka Bottle
 vendor-salvage-vodka-desc = Aah, vodka. Prime choice of drink AND fuel by Russians worldwide.
