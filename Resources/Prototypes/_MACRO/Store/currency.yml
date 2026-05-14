@@ -86,6 +86,7 @@
 
 - type: stack
   id: SalvageRewardTicket
+  name: store-currency-display-salvageticket
   icon: { sprite: _MACRO/Objects/Specific/Cargo/salvage_reward_ticket.rsi, state: icon }
   spawn: SalvageTicket
 
