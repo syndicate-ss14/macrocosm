@@ -22,7 +22,6 @@ public sealed class TicketPrinterSystem : SharedTicketPrinterSystem
     /// <param name="amount">Base amount of tickets to spawn</param>
     protected override void PrintTickets(Entity<TicketPrinterComponent> ent, float amount)
     { 
-        add:
         if (!_cfg.GetCVar(CCVars.SalvageTicketsEnabled))
         return;
 
