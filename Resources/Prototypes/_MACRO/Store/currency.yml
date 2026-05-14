@@ -4,7 +4,7 @@
   id: SalvageTicket
   cash:
     1: SalvageTicket
-  displayName: salvage tickets
+  displayName: store-currency-display-salvageticket
   canWithdraw: true
 
 - type: entity
