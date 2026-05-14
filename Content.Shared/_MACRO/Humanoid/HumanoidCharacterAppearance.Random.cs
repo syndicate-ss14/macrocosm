@@ -7,7 +7,7 @@ using Robust.Shared.Random;
 
 namespace Content.Shared.Humanoid;
 
-public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCharacterAppearance>
+public sealed partial class HumanoidCharacterAppearance
 {
     /// <summary>
     ///     Creates a new color palette from BaseColor.
@@ -43,11 +43,20 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
     {
         var random = IoCManager.Resolve<IRobustRandom>();
 
-        // clamping from our generated colours instead of getting a random color.
-        var newSkinColor = skinType.Strategy.ClosestSkinColor(colorPalette[0]);
+        // this should never happen.
+        if (colorPalette.Count > 3)
+            return colorPalette;
 
-        var newHairColor = colorPalette[1];
-        var newEyeColor = colorPalette[2];
+        // theres gotta be a better way to do this
+        var newSkinColor = colorPalette.FirstOrDefault();
+        colorPalette.Remove(newSkinColor);
+        var newHairColor = colorPalette.FirstOrDefault();
+        colorPalette.Remove(newHairColor);
+        var newEyeColor = colorPalette.FirstOrDefault();
+        colorPalette.Remove(newEyeColor);
+
+        // clamping from our generated colours instead of getting a random color.
+        newSkinColor = skinType.Strategy.ClosestSkinColor(newSkinColor);
 
         if (skinType.RealisticColors)
         {
@@ -79,11 +88,11 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         var random = IoCManager.Resolve<IRobustRandom>();
 
         if (allMarkings.Count == 0 || !random.Prob(layerLimits.Weight))
-            return [];
+            return new();
 
         var hairId = PickWeightedMarkingId(allMarkings);
         if (hairId is null || !allMarkings.TryGetValue(hairId, out var hairProto))
-            return [];
+            return new();
 
         if (allMarkings.TryGetValue(hairProto.ID, out var hairMarking))
             return [hairMarking.AsMarking().WithColor(color)];
@@ -103,7 +112,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
     {
 
         if (layerLimits is null)
-            return [];
+            return new();
 
         if (layer == HumanoidVisualLayers.Hair ||
             layer == HumanoidVisualLayers.FacialHair)
@@ -115,7 +124,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         var layerWeight = layerLimits.Weight;
         var pool = allMarkings.ToDictionary();
 
-        List<Marking> outMarkings = [];
+        List<Marking> outMarkings = new();
 
         for (var i = 0; i < layerLimits.Limit; i++)
         {
@@ -185,7 +194,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
     /// <returns>
     ///     A list of 3 colors.
     /// </returns>
-    private static List<Color> GetComplementaryColors(Color color, double angle)
+    private static List<Color> GetComplementaryColors(Color color, float angle)
     {
         var random = IoCManager.Resolve<IRobustRandom>();
         var hsl = Color.ToHsl(color);
@@ -194,19 +203,19 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         // since we want to rotate x degrees around the colour wheel, we need to do so in both directions- doing x + x degrees will give us the wrong hue!
 
         var hVal = hsl.X + angle;
-        hVal = hVal >= 0.360 ? hVal - 0.360 : hVal;
+        hVal -= MathF.Floor(hVal);
         var positiveHSL = new Vector4(
-            (float)hVal,
+            hVal,
             MathHelper.Clamp01(hsl.Y + random.Next(-20, 0) / 100f),
-            MathHelper.Clamp01(hsl.Z + random.Next(-15, 15) / 100f),
+            MathHelper.Clamp01(hsl.Z + random.Next(-15, 16) / 100f),
             hsl.W);
 
         var hVal1 = hsl.X - angle;
-        hVal1 = hVal1 <= 0 ? hVal1 + 0.360 : hVal1;
+        hVal1 += hVal1 <= 0f ? hVal1 + 0.360f : hVal1;
         var negativeHSL = new Vector4(
-            (float)hVal1,
+            hVal1,
             MathHelper.Clamp01(hsl.Y + random.Next(-20, 0) / 100f),
-            MathHelper.Clamp01(hsl.Z + random.Next(-15, 15) / 100f),
+            MathHelper.Clamp01(hsl.Z + random.Next(-15, 16) / 100f),
             hsl.W);
 
         var c0 = Color.FromHsl(positiveHSL);
@@ -221,7 +230,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
     /// </summary>
     private static List<Color> GetTriadicComplementaries(Color color)
     {
-        return GetComplementaryColors(color, 0.120);
+        return GetComplementaryColors(color, 0.120f);
     }
 
     /// <summary>
@@ -229,7 +238,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
     /// </summary>
     private static List<Color> GetSplitComplementaries(Color color)
     {
-        return GetComplementaryColors(color, 0.150);
+        return GetComplementaryColors(color, 0.150f);
     }
 
     /// <summary>
@@ -237,7 +246,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
     /// </summary>
     private static List<Color> GetOneComplementary(Color color)
     {
-        return GetComplementaryColors(color, 0.180);
+        return GetComplementaryColors(color, 0.180f);
     }
 
     /// <summary>

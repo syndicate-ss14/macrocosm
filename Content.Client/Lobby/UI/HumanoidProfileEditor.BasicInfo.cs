@@ -38,17 +38,12 @@ public sealed partial class HumanoidProfileEditor
         {
             return;
         }
-        HumanoidCharacterAppearance.Random(Profile.Species, Profile.Sex);
-        Profile = new HumanoidCharacterProfile()
-        {
-            Name = Profile.Name,
-            Sex = Profile.Sex,
-            Age = Profile.Age,
-            Gender = Profile.Gender,
-            Species = Profile.Species,
-            Appearance = HumanoidCharacterAppearance.Random(Profile.Species, Profile.Sex),
-        };
+
+        var appearance = HumanoidCharacterAppearance.Random(Profile.Species, Profile.Sex);
+
+        Profile = Profile.WithCharacterAppearance(appearance);
         SetProfile(Profile, CharacterSlot);
+        SetDirty();
     }
 
     private void RandomizeName()

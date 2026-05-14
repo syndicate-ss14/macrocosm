@@ -139,7 +139,6 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
                 layerMarkings.Add(layer, PickLayerRandomMarkings(layer, layerLimits, allMarkings, colorPalette));
             }
             newMarkings.Add(organ, layerMarkings);
-            layerMarkings.Clear();
         }
 
         HumanoidCharacterAppearance appearance = new(
