@@ -29,6 +29,7 @@ public sealed partial class HumanoidProfileEditor
         SetDirty();
     }
 
+    // MACRO ADD
     /// <summary>
     ///     Randomizes only the appearance of the character, without touching species, name, etc.
     /// </summary>

@@ -109,11 +109,12 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         var baseColor = new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1);
         var colorPalette = GetPaletteFromBase(baseColor, random.Next(3));
 
-        // TODO MAKE THIS BETTER
+        // TODO MAKE THIS BETTER. SORRY!!!
         colorPalette = ClampPaletteToStrategy(colorPalette, protoMan.Index(skinType));
         var newSkinColor = colorPalette[0];
         // var newHairColor = colorPalette[1];
         var newEyeColor = colorPalette[2];
+        colorPalette.Remove(newSkinColor);
 
         var markingData = markingManager.GetMarkingData(species);
         Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> newMarkings = [];

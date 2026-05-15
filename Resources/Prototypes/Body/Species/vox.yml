@@ -6,6 +6,7 @@
       limit: 1
       onlyGroupWhitelisted: true
       required: false
+      weight: 1 # MACRO
     enum.HumanoidVisualLayers.FacialHair:
       limit: 1
       onlyGroupWhitelisted: true

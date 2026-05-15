@@ -39,6 +39,7 @@ public sealed partial class HumanoidCharacterAppearance
     ///     1 = Hair colour,
     ///     2 = Eye colour.
     /// </returns>
+    /// <remarks>TODO: might be better to make this return a dictionary or enum.</remarks>
     private static List<Color> ClampPaletteToStrategy(List<Color> colorPalette, SkinColorationPrototype skinType)
     {
         var random = IoCManager.Resolve<IRobustRandom>();
@@ -55,7 +56,6 @@ public sealed partial class HumanoidCharacterAppearance
         var newEyeColor = colorPalette.FirstOrDefault();
         colorPalette.Remove(newEyeColor);
 
-        // clamping from our generated colours instead of getting a random color.
         newSkinColor = skinType.Strategy.ClosestSkinColor(newSkinColor);
 
         if (skinType.RealisticColors)
@@ -78,11 +78,14 @@ public sealed partial class HumanoidCharacterAppearance
             newEyeColor = skinType.Strategy.ClosestSkinColor(newEyeColor);
         }
 
-        List<Color> outPalette = [newSkinColor, newHairColor, newEyeColor];
-        return outPalette;
+        return new List<Color> { newSkinColor, newHairColor, newEyeColor };
     }
 
-    // hair and facial hair are handled different to other markings, so those get their own special treatment
+    /// <summary>
+    ///     Picks a random marking for a <see cref="HumanoidVisualLayers.Hair"/> or <see cref="HumanoidVisualLayers.FacialHair"/> layer.
+    ///     These layers are handled differently to other markings, so we need unique behaviour for them.
+    /// </summary>
+    /// <returns>A list of markings for the <see cref="HumanoidVisualLayers"/>.</returns>
     private static List<Marking> PickHairsRandomMarking(HumanoidVisualLayers layer, MarkingsLimits layerLimits, IReadOnlyDictionary<string, MarkingPrototype> allMarkings, Color color)
     {
         var random = IoCManager.Resolve<IRobustRandom>();
@@ -95,7 +98,7 @@ public sealed partial class HumanoidCharacterAppearance
             return new();
 
         if (allMarkings.TryGetValue(hairProto.ID, out var hairMarking))
-            return [hairMarking.AsMarking().WithColor(color)];
+            return new List<Marking> { hairMarking.AsMarking().WithColor(color) };
 
         var protoMan = IoCManager.Resolve<IPrototypeManager>();
         var defaultHair = layer switch
@@ -105,9 +108,16 @@ public sealed partial class HumanoidCharacterAppearance
         };
 
         var defaultHairProto = protoMan.Index(defaultHair);
-        return [new Marking(defaultHair, defaultHairProto.Sprites.Count).WithColor(color)];
+        return new List<Marking> { new Marking(defaultHair, defaultHairProto.Sprites.Count).WithColor(color) };
     }
 
+    /// <summary>
+    ///     Generates a list of random coloured markings for a <see cref="HumanoidVisualLayers"/> layer,
+    ///     with respect to the layer and marking weights and marking limits.
+    /// </summary>
+    /// <param name="allMarkings">A list of all markings for the layer.</param>
+    /// <param name="palette">A list of colors to choose from for the markings.</param>
+    /// <returns>A list of markings for the desired layer.</returns>
     private static List<Marking> PickLayerRandomMarkings(HumanoidVisualLayers layer, MarkingsLimits? layerLimits, IReadOnlyDictionary<string, MarkingPrototype> allMarkings, List<Color> palette)
     {
 
@@ -144,13 +154,17 @@ public sealed partial class HumanoidCharacterAppearance
             // select a random color from our two secondary colors.
             // TODO: we may need some color validation here. unsure.
             // TODO: multiple layers on a marking?
-            var color = random.Pick(palette.Skip(0).ToList());
+            var color = random.Pick(palette.ToList());
 
             outMarkings.Add(protoToAdd.AsMarking().WithColor(color));
         }
         return outMarkings;
     }
 
+    /// <summary>
+    ///     Uses <see cref="MarkingPrototype"/> weights to pick a random marking from a provided dictionary.
+    /// </summary>
+    /// <returns>The string ID of the chosen <see cref="MarkingPrototype"/>.</returns>
     private static string? PickWeightedMarkingId(IReadOnlyDictionary<string, MarkingPrototype> markings)
     {
         var random = IoCManager.Resolve<IRobustRandom>();
