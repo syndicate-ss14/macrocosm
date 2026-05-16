@@ -10,7 +10,7 @@ using Content.Client.Lobby.UI;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
-using Content.Shared._MACRO.MCCVar.CCVar;
+using Content.Shared._MACRO.MCCVar;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Input;
