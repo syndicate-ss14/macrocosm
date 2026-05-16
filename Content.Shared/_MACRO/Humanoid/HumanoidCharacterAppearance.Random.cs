@@ -1,14 +1,20 @@
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
+using Content.Shared.Humanoid.Markings.ColoringTypes;
+
 
 namespace Content.Shared.Humanoid;
 
 public sealed partial class HumanoidCharacterAppearance
 {
+    private readonly static string SkinColorKey = "skinColor";
+    private readonly static string HairColorKey = "hairColor";
+    private readonly static string EyeColorKey = "eyeColor";
+
     /// <summary>
     ///     Creates a new color palette from BaseColor.
     ///     Uses integer provided to choose what kind of palette is generated.
@@ -40,13 +46,9 @@ public sealed partial class HumanoidCharacterAppearance
     ///     2 = Eye colour.
     /// </returns>
     /// <remarks>TODO: might be better to make this return a dictionary or enum.</remarks>
-    private static List<Color> ClampPaletteToStrategy(List<Color> colorPalette, SkinColorationPrototype skinType)
+    private static Dictionary<string, Color> ClampPaletteToStrategy(List<Color> colorPalette, SkinColorationPrototype skinType)
     {
         var random = IoCManager.Resolve<IRobustRandom>();
-
-        // this should never happen.
-        if (colorPalette.Count > 3)
-            return colorPalette;
 
         // theres gotta be a better way to do this
         var newSkinColor = colorPalette.FirstOrDefault();
@@ -78,7 +80,12 @@ public sealed partial class HumanoidCharacterAppearance
             newEyeColor = skinType.Strategy.ClosestSkinColor(newEyeColor);
         }
 
-        return new List<Color> { newSkinColor, newHairColor, newEyeColor };
+        return new Dictionary<string, Color>
+        {
+            { SkinColorKey, newSkinColor },
+            { HairColorKey, newHairColor },
+            { EyeColorKey, newEyeColor }
+        };
     }
 
     /// <summary>
@@ -118,7 +125,7 @@ public sealed partial class HumanoidCharacterAppearance
     /// <param name="allMarkings">A list of all markings for the layer.</param>
     /// <param name="palette">A list of colors to choose from for the markings.</param>
     /// <returns>A list of markings for the desired layer.</returns>
-    private static List<Marking> PickLayerRandomMarkings(HumanoidVisualLayers layer, MarkingsLimits? layerLimits, IReadOnlyDictionary<string, MarkingPrototype> allMarkings, List<Color> palette)
+    private static List<Marking> PickLayerRandomMarkings(HumanoidVisualLayers layer, MarkingsLimits? layerLimits, IReadOnlyDictionary<string, MarkingPrototype> allMarkings, Dictionary<string, Color> palette)
     {
 
         if (layerLimits is null)
@@ -127,7 +134,7 @@ public sealed partial class HumanoidCharacterAppearance
         if (layer == HumanoidVisualLayers.Hair ||
             layer == HumanoidVisualLayers.FacialHair)
         {
-            return PickHairsRandomMarking(layer, layerLimits, allMarkings, palette[1]);
+            return PickHairsRandomMarking(layer, layerLimits, allMarkings, palette.GetValueOrDefault(HairColorKey));
         }
 
         var random = IoCManager.Resolve<IRobustRandom>();
@@ -151,12 +158,18 @@ public sealed partial class HumanoidCharacterAppearance
             if (randomMarking is null || !pool.Remove(randomMarking, out var protoToAdd))
                 continue;
 
-            // select a random color from our two secondary colors.
-            // TODO: we may need some color validation here. unsure.
-            // TODO: multiple layers on a marking?
-            var color = random.Pick(palette.ToList());
+            // OPTION 1: upstream coloring
+            //var colors = MarkingColoring.GetMarkingLayerColors(protoToAdd, palette.GetValueOrDefault(SkinColorKey), palette.GetValueOrDefault(EyeColorKey), outMarkings);
 
-            outMarkings.Add(protoToAdd.AsMarking().WithColor(color));
+            // OPTION 2: random coloring
+            List<Color> colors = new();
+            palette.Remove(SkinColorKey);
+            foreach (var sprite in protoToAdd.Sprites)
+            {
+                colors.Add(random.Pick(palette.Values));
+            }
+
+            outMarkings.Add(new Marking(protoToAdd, colors));
         }
         return outMarkings;
     }
