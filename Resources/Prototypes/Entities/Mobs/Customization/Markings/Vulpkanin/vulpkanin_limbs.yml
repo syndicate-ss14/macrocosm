@@ -8,8 +8,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpClawsHandRight
@@ -21,8 +21,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpClawsFootLeft
@@ -34,8 +34,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpClawsFootRight
@@ -47,8 +47,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 # Crest
 
@@ -63,8 +63,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsCrestArmLeft
@@ -76,8 +76,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsCrestFootLeft
@@ -89,8 +89,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsCrestHandLeft
@@ -102,8 +102,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 ## Right Side
 
@@ -117,8 +117,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsCrestArmRight
@@ -130,8 +130,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsCrestFootRight
@@ -143,8 +143,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsCrestHandRight
@@ -156,12 +156,12 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 # Fade
 
-## Left Side 
+## Left Side
 
 - type: marking
   id: VulpPointsFadeLegLeft
@@ -173,8 +173,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsFadeArmLeft
@@ -186,8 +186,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsFadeFootLeft
@@ -199,8 +199,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsFadeHandLeft
@@ -212,8 +212,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 ## Right Side
 
@@ -227,8 +227,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsFadeArmRight
@@ -240,8 +240,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsFadeFootRight
@@ -253,8 +253,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsFadeHandRight
@@ -266,8 +266,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 # Sharp
 
@@ -283,8 +283,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsSharpArmLeft
@@ -296,8 +296,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsSharpLongArmLeft
@@ -309,8 +309,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsSharpFootLeft
@@ -322,8 +322,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsSharpHandLeft
@@ -335,8 +335,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 ## Right Side
 
@@ -350,8 +350,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsSharpArmRight
@@ -363,8 +363,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsSharpLongArmRight
@@ -376,8 +376,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsSharpFootRight
@@ -389,8 +389,8 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
 
 - type: marking
   id: VulpPointsSharpHandRight
@@ -402,5 +402,5 @@
   coloring:
     default:
       type:
-        !type:SimpleColoring
-          color: "#e5e3d1"
+        !type:EyeColoring # MACRO SimpleColoring -> EyeColoring
+          # color: "#e5e3d1"
