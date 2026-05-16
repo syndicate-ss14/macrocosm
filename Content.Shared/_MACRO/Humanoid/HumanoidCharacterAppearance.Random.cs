@@ -162,11 +162,41 @@ public sealed partial class HumanoidCharacterAppearance
             //var colors = MarkingColoring.GetMarkingLayerColors(protoToAdd, palette.GetValueOrDefault(SkinColorKey), palette.GetValueOrDefault(EyeColorKey), outMarkings);
 
             // OPTION 2: random coloring
+            // List<Color> colors = new();
+            // palette.Remove(SkinColorKey);
+            // foreach (var sprite in protoToAdd.Sprites)
+            // {
+            //     colors.Add(random.Pick(palette.Values));
+            // }
+
+            // OPTION 3: what if the joker could beatbox
             List<Color> colors = new();
-            palette.Remove(SkinColorKey);
-            foreach (var sprite in protoToAdd.Sprites)
+            for (var j = 0; j < protoToAdd.Sprites.Count; j++)
             {
-                colors.Add(random.Pick(palette.Values));
+                // code here is from MarkingColoring.GetMarkingLayerColors
+                // who give a fuuuuuuuuu
+                // Getting layer name
+                string? name = protoToAdd.Sprites[j] switch
+                {
+                    SpriteSpecifier.Rsi rsi => rsi.RsiState,
+                    SpriteSpecifier.Texture texture => texture.TexturePath.Filename,
+                    _ => null
+                };
+
+                if (name == null ||
+                    protoToAdd.Coloring.Layers is not { } layers ||
+                    !layers.TryGetValue(name, out var layerColoring))
+                {
+                    colors.Add(Color.White);
+                    continue;
+                }
+
+                // and here is where i would put my layer rules
+                // IF THEY WERE SERIALIZABLE
+                colors.Add(layerColoring.GetColor(
+                    palette.GetValueOrDefault(SkinColorKey),
+                    palette.GetValueOrDefault(EyeColorKey),
+                    outMarkings));
             }
 
             outMarkings.Add(new Marking(protoToAdd, colors));
