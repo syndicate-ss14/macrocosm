@@ -49,6 +49,7 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
     private bool _hasUnreadAHelp;
     private bool _bwoinkSoundEnabled;
     private string? _aHelpSound;
+    private string? _aHelpAdminSound; // MACRO
 
     protected override string SawmillName => "c.s.go.es.bwoink";
 
@@ -62,6 +63,9 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         _adminManager.AdminStatusUpdated += OnAdminStatusUpdated;
         _config.OnValueChanged(CCVars.AHelpSound, v => _aHelpSound = v, true);
         _config.OnValueChanged(CCVars.BwoinkSoundEnabled, v => _bwoinkSoundEnabled = v, true);
+        // MACRO start
+        _config.OnValueChanged(Shared._MACRO.CCVar.CCVars.AHelpAdminSound, v => _aHelpAdminSound = v, true);
+        // MACRO end
     }
 
     public void UnloadButton()
@@ -139,8 +143,11 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         }
         if (message.PlaySound && localPlayer.UserId != message.TrueSender)
         {
-            if (_aHelpSound != null && (_bwoinkSoundEnabled || !_adminManager.IsActive()))
-                _audio.PlayGlobal(_aHelpSound, Filter.Local(), false);
+            // MACRO start
+            var sound = _adminManager.IsActive() ? _aHelpAdminSound : _aHelpSound;
+            if (sound != null && (_bwoinkSoundEnabled || !_adminManager.IsActive()))
+                _audio.PlayGlobal(sound, Filter.Local(), false);
+            // MACRO end
             _clyde.RequestWindowAttention();
         }
 
