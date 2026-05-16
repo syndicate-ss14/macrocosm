@@ -187,7 +187,10 @@ public sealed partial class HumanoidCharacterAppearance
                     protoToAdd.Coloring.Layers is not { } layers ||
                     !layers.TryGetValue(name, out var layerColoring))
                 {
-                    colors.Add(Color.White);
+                    colors.Add(protoToAdd.Coloring.Default.GetColor(
+                        palette.GetValueOrDefault(SkinColorKey),
+                        palette.GetValueOrDefault(EyeColorKey),
+                        outMarkings));
                     continue;
                 }
 
