@@ -10,6 +10,7 @@ using Content.Client.Lobby.UI;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
+using Content.Shared._MACRO.MCCVar.CCVar;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Input;
@@ -64,7 +65,7 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         _config.OnValueChanged(CCVars.AHelpSound, v => _aHelpSound = v, true);
         _config.OnValueChanged(CCVars.BwoinkSoundEnabled, v => _bwoinkSoundEnabled = v, true);
         // MACRO start
-        _config.OnValueChanged(Shared._MACRO.CCVar.CCVars.AHelpAdminSound, v => _aHelpAdminSound = v, true);
+        _config.OnValueChanged(MCCVars.AHelpAdminSound, v => _aHelpAdminSound = v, true);
         // MACRO end
     }
 
