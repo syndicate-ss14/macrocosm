@@ -5,6 +5,7 @@
     enum.HumanoidVisualLayers.Hair:
       limit: 1
       required: false
+      weight: 1 # MACRO
     enum.HumanoidVisualLayers.FacialHair:
       limit: 1
       required: false

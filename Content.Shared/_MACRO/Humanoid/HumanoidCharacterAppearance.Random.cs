@@ -158,18 +158,6 @@ public sealed partial class HumanoidCharacterAppearance
             if (randomMarking is null || !pool.Remove(randomMarking, out var protoToAdd))
                 continue;
 
-            // OPTION 1: upstream coloring
-            //var colors = MarkingColoring.GetMarkingLayerColors(protoToAdd, palette.GetValueOrDefault(SkinColorKey), palette.GetValueOrDefault(EyeColorKey), outMarkings);
-
-            // OPTION 2: random coloring
-            // List<Color> colors = new();
-            // palette.Remove(SkinColorKey);
-            // foreach (var sprite in protoToAdd.Sprites)
-            // {
-            //     colors.Add(random.Pick(palette.Values));
-            // }
-
-            // OPTION 3: what if the joker could beatbox
             List<Color> colors = new();
             for (var j = 0; j < protoToAdd.Sprites.Count; j++)
             {
@@ -183,23 +171,24 @@ public sealed partial class HumanoidCharacterAppearance
                     _ => null
                 };
 
-                if (name == null ||
+                // if we dont have a coloring rule set for that layer,
+                // we'll generate a random tone from either hair or eye.
+
+                var coloringType = (name == null ||
                     protoToAdd.Coloring.Layers is not { } layers ||
-                    !layers.TryGetValue(name, out var layerColoring))
-                {
-                    colors.Add(protoToAdd.Coloring.Default.GetColor(
+                    !layers.TryGetValue(name, out var layerColoring)) ?
+                    protoToAdd.Coloring.Default : layerColoring;
+
+                var color = coloringType.Type is not null ?
+                        coloringType.GetColor(
                         palette.GetValueOrDefault(SkinColorKey),
                         palette.GetValueOrDefault(EyeColorKey),
-                        outMarkings));
-                    continue;
-                }
+                        outMarkings) :
+                        random.Pick(new List<Color> {
+                        palette.GetValueOrDefault(HairColorKey),
+                        palette.GetValueOrDefault(EyeColorKey)});
 
-                // and here is where i would put my layer rules
-                // IF THEY WERE SERIALIZABLE
-                colors.Add(layerColoring.GetColor(
-                    palette.GetValueOrDefault(SkinColorKey),
-                    palette.GetValueOrDefault(EyeColorKey),
-                    outMarkings));
+                colors.Add(color);
             }
 
             outMarkings.Add(new Marking(protoToAdd, colors));

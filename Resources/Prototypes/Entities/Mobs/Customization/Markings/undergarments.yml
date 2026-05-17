@@ -7,8 +7,7 @@
   groupWhitelist: [Arachnid, Diona, Human, Moth, Slime]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -20,8 +19,7 @@
   groupWhitelist: [Arachnid, Diona, Human, Moth, Slime]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -33,8 +31,7 @@
   groupWhitelist: [Arachnid, Diona, Human, Moth, Slime]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -46,8 +43,7 @@
   groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -59,8 +55,7 @@
   groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -72,8 +67,7 @@
   groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -85,8 +79,7 @@
   groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -98,8 +91,7 @@
   groupWhitelist: [Vox]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -111,8 +103,7 @@
   groupWhitelist: [Vox]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -124,8 +115,7 @@
   groupWhitelist: [Vox]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -137,8 +127,7 @@
   groupWhitelist: [Vox]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -150,8 +139,7 @@
   groupWhitelist: [Vox]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -163,8 +151,7 @@
   groupWhitelist: [Vox]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -176,8 +163,7 @@
   groupWhitelist: [Vox]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -189,8 +175,7 @@
   groupWhitelist: [Reptilian]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -202,8 +187,7 @@
   groupWhitelist: [Reptilian]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -215,8 +199,7 @@
   groupWhitelist: [Reptilian]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -228,8 +211,7 @@
   groupWhitelist: [Vulpkanin]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -241,8 +223,7 @@
   groupWhitelist: [Vulpkanin]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -254,8 +235,7 @@
   groupWhitelist: [Vulpkanin]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -267,8 +247,7 @@
   groupWhitelist: [Vulpkanin]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -280,8 +259,7 @@
   groupWhitelist: [Vulpkanin]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -293,8 +271,7 @@
   groupWhitelist: [Vulpkanin]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
@@ -306,8 +283,7 @@
   groupWhitelist: [Vulpkanin]
   coloring:
     default:
-      type: #null # MACRO remove
-        !type:EyeColoring # MACRO add
+      type: null
       fallbackColor: '#FFFFFF'
   sprites:
   - sprite: Mobs/Customization/undergarments.rsi
