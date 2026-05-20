@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Impstation.UnableToWield;
+namespace Content.Shared._MACRO.UnableToWield;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class UnableToWieldComponent : Component
