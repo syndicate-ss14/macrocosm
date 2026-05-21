@@ -1,16 +1,16 @@
-//using Content.Server.Silicons.Laws; micro remove
+//using Content.Server.Silicons.Laws; // macro remove
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Station.Components;
-using Robust.Shared.Random; // micro
+using Robust.Shared.Random; // macro
 
 namespace Content.Server.StationEvents.Events;
 
 public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
 {
-    // [Dependency] private readonly IonStormSystem _ionStorm = default!; // micro remove
-    [Dependency] private readonly IRobustRandom _random = default!; // micro
+    // [Dependency] private readonly IonStormSystem _ionStorm = default!; // macro remove
+    [Dependency] private readonly IRobustRandom _random = default!; // macro
 
     protected override void Started(EntityUid uid, IonStormRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -19,24 +19,24 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
         if (!TryGetRandomStation(out var chosenStation))
             return;
 
-        // begin micro edit
+        // begin macro edit
         // var query = EntityQueryEnumerator<SiliconLawBoundComponent, TransformComponent, IonStormTargetComponent>();
         var query = EntityQueryEnumerator<IonStormTargetComponent, TransformComponent>();
         while (query.MoveNext(out var ent, out var target, out var xform))
-        // end micro edit
+        // end macro edit
         {
-            // only affect law holders on the station, and check random chance (micro edit)
+            // only affect law holders on the station, and check random chance (macro edit)
             if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != chosenStation ||
-                !_random.Prob(target.Chance)) // micro
+                !_random.Prob(target.Chance)) // macro
                 continue;
-            // begin micro edit again
+            // begin macro edit again
             var ev = new IonStormEvent();
             RaiseLocalEvent(ent, ref ev);
-            //     _ionStorm.IonStormTarget((ent, lawBound, target)); // end micro
+            //     _ionStorm.IonStormTarget((ent, lawBound, target)); // end macro
         }
     }
 }
-// micro add
+// macro add
 /// <summary>
 /// Event raised on an entity with <see cref="IonStormTargetComponent"/> when an ion storm occurs on the attached station.
 /// </summary>
