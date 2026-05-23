@@ -21,9 +21,9 @@ public sealed class TicketPrinterSystem : SharedTicketPrinterSystem
     /// <param name="ent">Entity spawning the tickets</param>
     /// <param name="amount">Base amount of tickets to spawn</param>
     protected override void PrintTickets(Entity<TicketPrinterComponent> ent, float amount)
-    { 
+    {
         if (!_cfg.GetCVar(CCVars.SalvageTicketsEnabled))
-        return;
+            return;
 
         var proto = ent.Comp.TicketProtoId.ToString();
         var spawnAmount = ent.Comp.Remainder + amount * ent.Comp.TicketMultiplier;
