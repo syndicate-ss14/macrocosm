@@ -1,7 +1,7 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.TicketPrinter;
+namespace Content.Shared._MACRO.TicketPrinter;
 
 [RegisterComponent]
 ///<summary>
