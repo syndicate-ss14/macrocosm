@@ -1,4 +1,4 @@
-namespace Content.Shared.TicketPrinter;
+namespace Content.Shared._MACRO.TicketPrinter;
 
 [RegisterComponent]
 ///<summary>
