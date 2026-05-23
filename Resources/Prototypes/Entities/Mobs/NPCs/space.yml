@@ -497,6 +497,7 @@
     - VimPilot
     - ChefPilot
     - Meat
+    - MultitoolDefibrillatorTarget #MACRO
   - type: CombatMode
     combatToggleAction: ActionCombatModeToggleOff
   - type: Bloodstream

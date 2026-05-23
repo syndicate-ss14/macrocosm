@@ -225,6 +225,7 @@
     - DoorBumpOpener
     - AnomalyHost
     - CanPilot
+    - MultitoolDefibrillatorTarget
   - type: Hands
     leftHandDisplacement:
       sizeMaps:

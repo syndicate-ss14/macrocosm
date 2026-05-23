@@ -329,6 +329,23 @@
   - type: Sprite
     layers:
       - state: kidney-r
+  - type: Defibrillator # Acts as a multitool, so can defib like a multitool
+    zapHeal:
+      types:
+        Asphyxiation: -10
+    zapSound: /Audio/Effects/sparks1.ogg
+    whitelist:
+      tags:
+      - MultitoolDefibrillatorTarget
+    showMessages: false
+    allowBypassCrit: true
+    doAfterDuration: 0.01
+    writheDuration: 1
+    zapDamage: 0
+    chargeSound: null
+    failureSound: null
+    successSound: null
+    readySound: null
 
 - type: entity
   save: false
