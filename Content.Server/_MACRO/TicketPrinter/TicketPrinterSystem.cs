@@ -3,7 +3,7 @@ using Content.Server.Stack;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 
-namespace Content.Server.TicketPrinter;
+namespace Content.Server._MACRO.TicketPrinter;
 
 public sealed class TicketPrinterSystem : SharedTicketPrinterSystem
 {
