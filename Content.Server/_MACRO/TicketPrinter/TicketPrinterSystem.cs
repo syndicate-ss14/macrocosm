@@ -31,7 +31,6 @@ public sealed class TicketPrinterSystem : SharedTicketPrinterSystem
             return;
 
         var tickets = _stack.SpawnMultipleAtPosition(ent.Comp.TicketProtoId, (int)Math.Floor(spawnAmount), Transform(ent).Coordinates);
-        
         foreach (var ticket in tickets)
             _stack.TryMergeToContacts(ticket); //try to make into a single stack
 
