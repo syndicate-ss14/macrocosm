@@ -5,7 +5,7 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 using Robust.Shared.GameObjects;
 
-namespace Content.Shared.TicketPrinter;
+namespace Content.Shared._MACRO.TicketPrinter;
 
 public abstract class SharedTicketPrinterSystem : EntitySystem
 {
