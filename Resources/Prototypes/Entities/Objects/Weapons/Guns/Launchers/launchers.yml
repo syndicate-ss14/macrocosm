@@ -210,6 +210,7 @@
   parent:
   - BaseItem
   - PowerCellSlotMediumItem
+  - BasePointerCrosshair # MACRO add
   id: WeaponTetherGun
   description: Manipulates gravity around objects to fling them at high velocities.
   components:
@@ -252,6 +253,7 @@
   parent:
     - BaseItem
     - PowerCellSlotMediumItem
+    - BasePointerCrosshair # MACRO add
   id: WeaponForceGun
   description: Manipulates gravity around objects to fling them at high velocities.
   components:
@@ -336,7 +338,7 @@
 # Admeme
 - type: entity
   name: tether gun
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerCrosshair ] # MACRO add crosshair
   id: WeaponTetherGunAdmin
   suffix: Admeme
   description: Manipulates gravity around objects to fling them at high velocities.
@@ -377,7 +379,7 @@
 
 - type: entity
   name: force gun
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerCrosshair ] # MACRO add crosshair
   id: WeaponForceGunAdmin
   suffix: Admeme
   description: Manipulates gravity around objects to fling them at high velocities.
