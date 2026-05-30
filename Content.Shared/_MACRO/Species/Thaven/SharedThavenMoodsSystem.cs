@@ -6,7 +6,7 @@ using Content.Shared.Popups;
 
 namespace Content.Shared._MACRO.Species.Thaven;
 
-public abstract class SharedThavenMoodsSystem : SharedStrangeMoodsSystem
+public abstract partial class SharedThavenMoodsSystem : SharedStrangeMoodsSystem
 {
     [Dependency] private EmagSystem _emag = default!;
     [Dependency] private MobStateSystem _mobState = default!;
