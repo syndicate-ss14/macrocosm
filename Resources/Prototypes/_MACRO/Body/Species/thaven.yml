@@ -122,7 +122,6 @@
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#ff624a"
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Thaven
   - type: Butcherable
     spawned:
@@ -132,7 +131,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: ShimmeringBlood
-        Quantity: 300
+        Quantity: 600
   - type: Fixtures
     fixtures:
       fix1:

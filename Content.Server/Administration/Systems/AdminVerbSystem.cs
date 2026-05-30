@@ -1,3 +1,6 @@
+using Content.Server._MACRO.StrangeMoods; // MACRO
+using Content.Server._MACRO.StrangeMoods.Eui; // MACRO
+using Content.Shared._MACRO.StrangeMoods; // MACRO
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.UI;
@@ -36,9 +39,6 @@ using Robust.Shared.Toolshed;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Chemistry.Components;
-using Content.Server._MACRO.StrangeMoods; // MACRO
-using Content.Server._MACRO.StrangeMoods.Eui; // MACRO
-using Content.Shared._MACRO.StrangeMoods; // MACRO
 using static Content.Shared.Configurable.ConfigurationComponent;
 
 namespace Content.Server.Administration.Systems
