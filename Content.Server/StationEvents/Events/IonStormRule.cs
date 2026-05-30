@@ -7,10 +7,10 @@ using Robust.Shared.Random; // macro
 
 namespace Content.Server.StationEvents.Events;
 
-public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
+public sealed partial class IonStormRule : StationEventSystem<IonStormRuleComponent>
 {
-    // [Dependency] private readonly IonStormSystem _ionStorm = default!; // macro remove
-    [Dependency] private readonly IRobustRandom _random = default!; // macro
+    // [Dependency] private IonStormSystem _ionStorm = default!; // macro remove
+    [Dependency] private IRobustRandom _random = default!; // macro
 
     protected override void Started(EntityUid uid, IonStormRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {

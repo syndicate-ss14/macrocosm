@@ -125,7 +125,7 @@
   components:
   - type: Butcherable
     spawned:
-    - id: FoodMeatSnail
+    - id: FoodMeat # TODO: was FoodMeatSnail before
       amount: 5
   - type: TemperatureDamage
     heatDamageThreshold: 380
@@ -205,7 +205,6 @@
   - type: NoSlip
   - type: Magboots
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Gastropoid
   - type: TypingIndicator
     proto: Gastropoid

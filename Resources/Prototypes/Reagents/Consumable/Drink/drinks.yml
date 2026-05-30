@@ -264,6 +264,12 @@
   desc: reagent-desc-milk-goat
 
 - type: reagent
+  id: MilkSheep
+  parent: Milk
+  name: reagent-name-milk-sheep
+  desc: reagent-desc-milk-sheep
+
+- type: reagent
   id: MilkOat
   name: reagent-name-milk-oat
   group: Drinks
@@ -444,11 +450,17 @@
           types:
             Heat: 3
         #MACROCOSM START
-      - !type:Oxygenate
-        scaling: true
+      - !type:Oxygenate # for decapoids.
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Thaven ]
+          type: [ Decapoid, Thaven ]
+      - !type:ModifyLungGas
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Decapoid ]
+        ratios:
+          Ammonia: 1.0
+          WaterVapor: -1.0
       - !type:SatiateThirst # thaven breathing water vapor get thirsty slower
         conditions:
         - !type:MetabolizerTypeCondition

@@ -4,9 +4,9 @@ using Content.Shared.Speech;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed class GrayAccentComponentAccentSystem : EntitySystem
+public sealed partial class GrayAccentComponentAccentSystem : EntitySystem
 {
-    [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
+    [Dependency] private ReplacementAccentSystem _replacement = default!;
 
     private static readonly Regex RegexPuUpperLeft = new(@"(?<=\b[A-Z]+.)\b[Pp]u\b");
     private static readonly Regex RegexPuUpperRight = new(@"\b[Pp]u\b(?=.[A-Z]+\b)");

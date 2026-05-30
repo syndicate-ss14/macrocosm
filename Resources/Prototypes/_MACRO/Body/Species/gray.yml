@@ -369,7 +369,6 @@
       Unsexed: UnisexGray
   - type: GrayAccent
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Gray
   - type: DamageVisuals
     damageOverlayGroups:

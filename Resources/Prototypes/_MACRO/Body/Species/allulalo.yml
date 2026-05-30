@@ -171,7 +171,6 @@
       Female: UnisexAllulalo
       Unsexed: UnisexAllulalo
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Allulalo #stops them from being oppressive hopefully
   - type: Bloodstream
     bloodReferenceSolution:
@@ -200,20 +199,11 @@
     damage:
       types:
         Piercing: 4
-  - type: SolutionContainerManager
+  - type: SolutionManager
     solutions:
-      melee:
-        reagents:
-        - ReagentId: Ethanotoxin
-          Quantity: 4 #you can bite someone four times. upped from two based on feedback
+    - SolutionVenomAllulalo
   - type: MeleeChemicalInjector
     solution: melee
-  - type: SolutionRegeneration
-    solution: melee
-    generated:
-      reagents:
-      - ReagentId: Ethanotoxin
-        Quantity: 0.05 #20 second cooldown between bites working full power
   - type: StaminaResistance
     damageCoefficient: 1.25 #takes the disabler/batong hits needed to stun from 4 > 3
   - type: Butcherable
@@ -238,6 +228,22 @@
   - type: MovementSpeedModifier # They're so fast they go nyoom
     baseWalkSpeed: 3
     baseSprintSpeed: 5
+
+- type: entity
+  id: SolutionVenomAllulalo
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: melee
+    solution:
+      reagents:
+      - ReagentId: Ethanotoxin
+        Quantity: 4 #you can bite someone four times. upped from two based on feedback
+  - type: SolutionRegeneration
+    generated:
+      reagents:
+      - ReagentId: Ethanotoxin
+        Quantity: 0.05 #20 second cooldown between bites working full power
 
 - type: entity
   parent: OrganBase

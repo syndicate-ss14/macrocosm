@@ -11,6 +11,7 @@
   - Trinkets
   #- CaptainJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -26,6 +27,7 @@
   - Trinkets
   #- HoPJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 # Silicons
 - type: roleLoadout
@@ -55,6 +57,7 @@
   - Trinkets
   #- PassengerJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobBartender
@@ -69,6 +72,7 @@
   - Trinkets
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -81,6 +85,7 @@
   - Trinkets
   #- ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobChef
@@ -96,6 +101,7 @@
   - Trinkets
   #- ChefJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobLibrarian
@@ -108,6 +114,7 @@
   - Trinkets
   #- LibrarianJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobLawyer
@@ -121,6 +128,7 @@
   - Trinkets
   #- LawyerJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobChaplain
@@ -139,6 +147,7 @@
   - Trinkets
   #- ChaplainJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobJanitor
@@ -154,6 +163,7 @@
   - Trinkets
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobBotanist
@@ -168,6 +178,7 @@
   - Trinkets
   #- BotanistJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobClown
@@ -183,6 +194,7 @@
   - SurvivalClown
   - Trinkets
   - ClownJobTrinkets
+  - GroupBreathToolDecapoidInventoryClown # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobMime
@@ -199,6 +211,7 @@
   - SurvivalMime
   - Trinkets
   #- MimeJobTrinkets
+  - GroupBreathToolDecapoidInventoryMime # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobMusician
@@ -214,6 +227,7 @@
   #- MusicianJobTrinkets
   - Instruments
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 # Cargo
 - type: roleLoadout
@@ -231,6 +245,7 @@
   - Trinkets
   #- QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -247,6 +262,7 @@
   - Trinkets
   #- CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -260,6 +276,7 @@
   - Trinkets
   #- SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 # Engineering
 - type: roleLoadout
@@ -276,6 +293,7 @@
   - Trinkets
   #- ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -287,6 +305,7 @@
   - Trinkets
   #- TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -302,6 +321,7 @@
   - Trinkets
   #- StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -315,6 +335,7 @@
   - Trinkets
   #- AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 # Science
 - type: roleLoadout
@@ -333,6 +354,7 @@
   - Trinkets
   #- ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobScientist
@@ -351,6 +373,7 @@
   - Trinkets
   #- ScientistJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -363,6 +386,7 @@
   - Trinkets
   #- ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 # Security
 - type: roleLoadout
@@ -379,6 +403,7 @@
   - Trinkets
   - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobWarden
@@ -393,6 +418,7 @@
   - Trinkets
   - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -408,6 +434,7 @@
   - Trinkets
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobDetective
@@ -422,6 +449,7 @@
   - Trinkets
   - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -432,6 +460,7 @@
   - Trinkets
   #- SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 # Wildcards
 - type: roleLoadout
@@ -447,6 +476,7 @@
   - Trinkets
   #- ReporterJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobPsychologist
@@ -459,6 +489,7 @@
   - Trinkets
   #- PsychologistJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
@@ -470,6 +501,7 @@
   groups:
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 # gives vox a nitrogen breathing tank
 # other species get nothing
@@ -484,12 +516,14 @@
   - Survival
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: RoleSurvivalClown
   groups:
   - SurvivalClown
   - GroupTankHarness
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: RoleSurvivalExtended
@@ -497,6 +531,7 @@
   - SurvivalExtended
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: RoleSurvivalMedical
@@ -504,6 +539,7 @@
   - SurvivalMedical
   - GroupSpeciesBreathToolMedical
   - GroupTankHarness
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: RoleSurvivalSecurity
@@ -511,6 +547,7 @@
   - SurvivalSecurity
   - GroupSpeciesBreathToolSecurity
   - GroupTankHarness
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: RoleSurvivalSyndicate
@@ -518,11 +555,13 @@
   - SurvivalSyndicate
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: RoleSurvivalMilitaryDouble
   groups:
   - SurvivalMilitaryDouble
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: RoleSurvivalNukie
@@ -530,14 +569,17 @@
   - SurvivalSyndicate
   - GroupSpeciesBreathTool
   - GroupPocketTankDouble
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: RoleSurvivalEVA
   groups:
   - GroupEVATank
   - SurvivalExtended
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: RoleSurvivalSpaceNinja
   groups:
   - GroupEVATank
+  - GroupBreathToolDecapoid # MACRO: Decapoid
