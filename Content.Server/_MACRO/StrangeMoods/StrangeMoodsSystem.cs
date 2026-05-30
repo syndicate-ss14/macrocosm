@@ -17,7 +17,7 @@ using Robust.Shared.Serialization.Manager;
 
 namespace Content.Server._MACRO.StrangeMoods;
 
-public sealed class StrangeMoodsSystem : SharedStrangeMoodsSystem
+public sealed partial class StrangeMoodsSystem : SharedStrangeMoodsSystem
 {
     [Dependency] private IChatManager _chat = default!;
     [Dependency] private IPrototypeManager _proto = default!;

@@ -8,7 +8,7 @@ using Robust.Shared.Console;
 namespace Content.Server._MACRO.StrangeMoods;
 
 [AdminCommand(AdminFlags.Fun)]
-public sealed class SharedMoodsCommand : LocalizedEntityCommands
+public sealed partial class SharedMoodsCommand : LocalizedEntityCommands
 {
     [Dependency] private IAdminManager _admin = default!;
     [Dependency] private EuiManager _eui = default!;
