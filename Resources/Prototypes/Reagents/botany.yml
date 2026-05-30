@@ -70,7 +70,7 @@
             Poison: 3
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [Plant]
+          type: [Plant, Gastropoid] #Macrocosm, added Gastropoid
 
 - type: reagent
   id: PlantBGone
@@ -89,6 +89,7 @@
       amount: -20
     - !type:PlantAdjustMutationMod
       amount: 0.1
+    - !type:PlantRemoveKudzu
   metabolisms:
     Bloodstream:
       effects:

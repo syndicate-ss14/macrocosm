@@ -23,8 +23,9 @@
         layer:
         - MachineLayer
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -53,6 +54,7 @@
   - type: ExtensionCableReceiver
   - type: LightningTarget
     priority: 1
+  - type: TooShortForUiBlacklist # MACRO
 
 - type: entity
   abstract: true
