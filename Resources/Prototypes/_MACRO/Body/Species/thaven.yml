@@ -10,7 +10,6 @@
       limit: 1
       required: true
       default: [ ThavenEars1 ]
-      matchSkin: true
     enum.HumanoidVisualLayers.Hair:
       limit: 1
       required: false
@@ -198,7 +197,7 @@
       - thavenflesh
 
 - type: entity
-  parent: OrganHuman
+  parent: OrganThaven
   id: OrganThavenExternal
   abstract: true
   components:
