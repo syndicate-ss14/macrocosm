@@ -10,11 +10,11 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._MACRO.Decapoids.EntitySystems;
 
-public abstract class SharedVaporizerSystem : EntitySystem
+public abstract partial class SharedVaporizerSystem : EntitySystem
 {
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
 
     private const int ExaminePriority = 1;
 
@@ -36,9 +36,9 @@ public abstract class SharedVaporizerSystem : EntitySystem
     /// <param name="ent">Vaporizer to process.</param>
     /// <param name="gasTank">Gas Tank component to add to.</param>
     /// <param name="solutionManager">Solution Manager to get the solution from.</param>
-    private void ProcessVaporizerTank(Entity<VaporizerComponent> ent, GasTankComponent gasTank, SolutionContainerManagerComponent solutionManager)
+    private void ProcessVaporizerTank(Entity<VaporizerComponent> ent, GasTankComponent gasTank)
     {
-        if (!_solution.TryGetSolution((ent, solutionManager), ent.Comp.LiquidTank, out var solutionEnt, out var solution))
+        if (!_solution.TryGetSolution(ent.Owner, ent.Comp.LiquidTank, out var solutionEnt, out var solution))
             return;
 
         var state = GetVaporizerState(ent, solution);
@@ -104,14 +104,14 @@ public abstract class SharedVaporizerSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
-        var enumerator = EntityQueryEnumerator<VaporizerComponent, GasTankComponent, SolutionContainerManagerComponent>();
+        var enumerator = EntityQueryEnumerator<VaporizerComponent, GasTankComponent>();
 
-        while (enumerator.MoveNext(out var uid, out var vaporizer, out var gasTank, out var solutionManager))
+        while (enumerator.MoveNext(out var uid, out var vaporizer, out var gasTank))
         {
             if (_gameTiming.CurTime < vaporizer.NextProcess)
                 continue;
 
-            ProcessVaporizerTank((uid, vaporizer), gasTank, solutionManager);
+            ProcessVaporizerTank((uid, vaporizer), gasTank);
             vaporizer.NextProcess = _gameTiming.CurTime + vaporizer.ProcessDelay;
         }
     }

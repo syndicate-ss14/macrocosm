@@ -9,13 +9,12 @@
     size: Small
     shape:
     - 0,0,1,1
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Water
-          Quantity: 50
-        maxVol: 50
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Water
+        Quantity: 50
+      maxVol: 50
   - type: Sprite
     sprite: _MACRO/Objects/Consumable/Drinks/Plastic/bigwaterbottle.rsi
   - type: FitsInDispenser
@@ -34,13 +33,12 @@
     size: Small
     shape:
     - 0,0,0,2
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Water
-          Quantity: 80
-        maxVol: 80
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Water
+        Quantity: 80
+      maxVol: 80
   - type: Sprite
     sprite: _MACRO/Objects/Consumable/Drinks/Plastic/tallwaterbottle.rsi
   - type: FitsInDispenser
@@ -53,14 +51,13 @@
   id: DrinkWaterBottleLargeFunnyFull
   suffix: Decapoid, funny
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Water
-          Quantity: 35
-        - ReagentId: Laughter
-          Quantity: 15
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Water
+        Quantity: 35
+      - ReagentId: Laughter
+        Quantity: 15
   - type: FitsInDispenser
     solution: drink
   - type: Label
