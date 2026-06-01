@@ -9,3 +9,7 @@
 - type: metabolizerType
   id: Allulalo
   name: metabolizer-type-allulalo
+
+- type: metabolizerType
+  id: Decapoid
+  name: metabolizer-type-decapoid

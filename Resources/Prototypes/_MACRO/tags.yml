@@ -4,4 +4,10 @@
   id: CostumeItem # Used for non-clothing items that should be allowed to fit in costume bundles.
 
 - type: Tag
+  id: SGD # SpeechRequiresEquipment whitelist on MobDecapoid.
+
+- type: Tag
+  id: Vaporizer # SpeechRequiresEquipment whitelist on MobDecapoid.
+
+- type: Tag
   id: MultitoolDefibrillatorTarget # Used to identify a creature as small enough for a multitool to act as a defibrillator
