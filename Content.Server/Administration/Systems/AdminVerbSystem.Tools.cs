@@ -36,9 +36,6 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Content.Server._MACRO.StrangeMoods.Eui; // MACRO
-using Content.Shared._MACRO.StrangeMoods; // MACRO
-using Robust.Shared.Random; // MACRO
 
 namespace Content.Server.Administration.Systems;
 
@@ -735,53 +732,7 @@ public sealed partial class AdminVerbSystem
             args.Verbs.Add(setCapacity);
         }
 
-        // Begin MACRO Additions
-        if (TryComp<StrangeMoodsComponent>(args.Target, out var moods))
-        {
-            if (moods.StrangeMood.Datasets.Count <= 0)
-                return;
-
-            Verb addRandomMood = new()
-            {
-                Text = "Add Random Mood",
-                Category = VerbCategory.Tricks,
-                Icon = new SpriteSpecifier.Rsi(new ResPath("Interface/Actions/actions_borg.rsi"), "state-laws"),
-                Act = () =>
-                {
-                    _moods.TryAddRandomMood((args.Target, moods), _random.Pick(moods.StrangeMood.Datasets).Key);
-                },
-                Impact = LogImpact.High,
-                Message = Loc.GetString("admin-trick-add-random-mood-description"),
-                Priority = (int) TricksVerbPriorities.AddRandomMood,
-            };
-            args.Verbs.Add(addRandomMood);
-        }
-        else
-        {
-            Verb giveMoods = new()
-            {
-                Text = "Give Moods",
-                Category = VerbCategory.Tricks,
-                Icon = new SpriteSpecifier.Rsi(new ResPath("Interface/Actions/actions_borg.rsi"), "state-laws"),
-                Act = () =>
-                {
-                    if (HasComp<StrangeMoodsComponent>(args.Target))
-                        return;
-
-                    var ui = new StrangeMoodsInitEui(_moods, EntityManager, _prototypeManager, _random, _adminManager, _playerManager, _euiManager, args.User);
-                    if (!_playerManager.TryGetSessionByEntity(args.User, out var session))
-                        return;
-
-                    _euiManager.OpenEui(ui, session);
-                    ui.SetTarget(args.Target);
-                },
-                Impact = LogImpact.High,
-                Message = Loc.GetString("admin-trick-give-moods-description"),
-                Priority = (int) TricksVerbPriorities.AddRandomMood,
-            };
-            args.Verbs.Add(giveMoods);
-        }
-        // End MACRO Additions
+        AddMACROTricks(args); // macro add
     }
 
     private void RefillEquippedTanks(EntityUid target, Gas gasType)

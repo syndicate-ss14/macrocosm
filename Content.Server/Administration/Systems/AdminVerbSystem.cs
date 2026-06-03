@@ -1,6 +1,3 @@
-using Content.Server._MACRO.StrangeMoods; // MACRO
-using Content.Server._MACRO.StrangeMoods.Eui; // MACRO
-using Content.Shared._MACRO.StrangeMoods; // MACRO
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.UI;
@@ -70,7 +67,6 @@ namespace Content.Server.Administration.Systems
         [Dependency] private AdminFrozenSystem _freeze = default!;
         [Dependency] private IPlayerManager _playerManager = default!;
         [Dependency] private SiliconLawSystem _siliconLawSystem = default!;
-        [Dependency] private StrangeMoodsSystem _moods = default!; // MACRO
 
         private readonly Dictionary<ICommonSession, List<EditSolutionsEui>> _openSolutionUis = new();
 
@@ -414,26 +410,7 @@ namespace Content.Server.Administration.Systems
                     Impact = LogImpact.Low
                 });
 
-                // Begin MACRO Additions
-                if (TryComp<StrangeMoodsComponent>(args.Target, out var moods))
-                {
-                    args.Verbs.Add(new Verb()
-                    {
-                        Text = Loc.GetString("strange-moods-ui-verb"),
-                        Category = VerbCategory.Admin,
-                        Act = () =>
-                        {
-                            var ui = new StrangeMoodsEui(_moods, EntityManager, _random, _adminManager);
-                            if (!_playerManager.TryGetSessionByEntity(args.User, out var session))
-                                return;
-
-                            _euiManager.OpenEui(ui, session);
-                            ui.UpdateMoods((args.Target, moods));
-                        },
-                        Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Actions/actions_borg.rsi"), "state-laws"),
-                    });
-                }
-                // End MACRO Additions
+                AddMACROVerbs(args); // MACRO add
             }
         }
 
