@@ -10,6 +10,10 @@ namespace Content.IntegrationTests.Tests._MACRO.StrangeMoods;
 [TestFixture, TestOf(typeof(StrangeMoodPrototype))]
 public sealed class StrangeMoodTests
 {
+    private const string ThreeValueSet = "ThreeValueSet";
+    private const string DuplicateTest = "DuplicateTest";
+    private const string DuplicateOverlapTest = "DuplicateOverlapTest";
+
     [TestPrototypes]
     private const string Prototypes = """
 
@@ -54,8 +58,8 @@ public sealed class StrangeMoodTests
         var moodSystem = entMan.System<StrangeMoodsSystem>();
         var protoMan = server.ResolveDependency<IPrototypeManager>();
 
-        var dataset = protoMan.Index<DatasetPrototype>("ThreeValueSet");
-        var moodProto = protoMan.Index<StrangeMoodPrototype>("DuplicateTest");
+        var dataset = protoMan.Index<DatasetPrototype>(ThreeValueSet);
+        var moodProto = protoMan.Index<StrangeMoodPrototype>(DuplicateTest);
 
         var datasetSet = dataset.Values.ToHashSet();
         var mood = moodSystem.RollMood(moodProto);
@@ -77,8 +81,8 @@ public sealed class StrangeMoodTests
         var moodSystem = entMan.System<StrangeMoodsSystem>();
         var protoMan = server.ResolveDependency<IPrototypeManager>();
 
-        var dataset = protoMan.Index<DatasetPrototype>("ThreeValueSet");
-        var moodProto = protoMan.Index<StrangeMoodPrototype>("DuplicateOverlapTest");
+        var dataset = protoMan.Index<DatasetPrototype>(ThreeValueSet);
+        var moodProto = protoMan.Index<StrangeMoodPrototype>(DuplicateOverlapTest);
 
         var datasetSet = dataset.Values.ToHashSet();
         var mood = moodSystem.RollMood(moodProto);
