@@ -46,6 +46,12 @@
   - OffsetCaneNT
   - Cane
   - TowelColorWhite
+  # Macro edit start
+
+  # Enable this line to allow newcomers to select tutorial pAIs. Also enable the block of text under _MACRO/Loadouts/Miscellaneous/trinkets.yml.
+  # - TutorialAI_Newcomer
+
+  # Macro edit end
 
 - type: loadoutGroup
   id: Glasses
