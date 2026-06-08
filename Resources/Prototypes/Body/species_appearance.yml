@@ -66,6 +66,9 @@
       state: body-overlay-2
       visible: false
 
+    # MACRO Combat visuals
+    - map: ["enum.CombatModeVisualLayers.Combat"]
+
 - type: entity
   id: BaseSpeciesAppearance
   parent:

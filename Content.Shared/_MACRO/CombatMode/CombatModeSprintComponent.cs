@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._MACRO.CombatModeSprint;
+namespace Content.Shared._MACRO.CombatMode;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class CombatModeSprintComponent : Component

@@ -51,6 +51,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceUngu
+  categories: [ HideSpawnMenu ]
   name: ungu appearance
   components:
   - type: Inventory
@@ -164,6 +165,10 @@
     stunSeconds: 1
     doImpactDamage: true
     beginCombatMessage: "ungu-begin-combat-popup"
+  - type: CombatModeVisuals
+    sprite:
+      sprite: _MACRO/Mobs/Species/Ungu/parts.rsi
+      state: angry
   - type: CombatMode
   - type: MeleeWeapon
     attackRate: 0.6

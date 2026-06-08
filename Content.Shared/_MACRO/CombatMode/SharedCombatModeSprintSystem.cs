@@ -1,13 +1,11 @@
-using System.Collections.Generic;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage.Systems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Player;
 
-namespace Content.Shared._MACRO.CombatModeSprint;
+namespace Content.Shared._MACRO.CombatMode;
 
 public abstract partial class SharedCombatModeSprintSystem : EntitySystem
 {
@@ -26,7 +24,7 @@ public abstract partial class SharedCombatModeSprintSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CombatModeSprintComponent, ToggleCombatActionEvent>(
-            OnToggleCombat,
+            OnCombatToggle,
             after: [typeof(SharedCombatModeSystem)]);
         SubscribeLocalEvent<CombatModeSprintComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
         SubscribeLocalEvent<CombatModeSprintComponent, ComponentShutdown>(OnSprintShutdown);
@@ -37,7 +35,7 @@ public abstract partial class SharedCombatModeSprintSystem : EntitySystem
         _lastImpactCollideCombat.Remove(ent.Owner);
     }
 
-    private void OnToggleCombat(Entity<CombatModeSprintComponent> ent, ref ToggleCombatActionEvent args)
+    private void OnCombatToggle(Entity<CombatModeSprintComponent> ent, ref ToggleCombatActionEvent args)
     {
         _movementSpeed.RefreshMovementSpeedModifiers(ent);
         if (ent.Comp.BeginCombatMessage != null && _combatMode.IsInCombatMode(ent))

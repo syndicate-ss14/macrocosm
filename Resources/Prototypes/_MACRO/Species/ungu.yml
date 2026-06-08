@@ -4,7 +4,7 @@
   roundStart: false
   #randomViable: true
   prototype: MobUngu
-  dollPrototype: MobUngu
+  dollPrototype: AppearanceUngu
   skinColoration: Hues
   defaultSkinTone: "#FFFFFF"
   maleFirstNames: NamesUnguFirst
