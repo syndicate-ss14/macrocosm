@@ -10,11 +10,10 @@ namespace Content.Shared._MACRO.CombatMode;
 public sealed partial class CombatModeVisualsComponent : Component
 {
     /// <summary>
-    /// Sprite to set for the combat layer, could be set when the combat layer is created instead.
-    /// Used primarily for species to have a generic easily modifiable layer.
+    /// Sprite to set for the combat layer
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public SpriteSpecifier? Sprite;
+    [DataField(required: true), ViewVariables(VVAccess.ReadOnly)]
+    public SpriteSpecifier Sprite;
 
     /// <summary>
     /// Hides the base layer when combat mode is activated if it exists
