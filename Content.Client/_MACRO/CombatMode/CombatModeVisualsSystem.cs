@@ -15,7 +15,17 @@ public sealed partial class CombatModeVisualsSystem : SharedCombatModeVisualsSys
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CombatModeVisualsComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<CombatModeVisualsComponent, AppearanceChangeEvent>(OnAppearanceChanged);
+    }
+
+    private void OnStartup(Entity<CombatModeVisualsComponent> ent, ref ComponentStartup args)
+    {
+        if (!TryComp<SpriteComponent>(ent, out var sprite))
+            return;
+
+        if (ent.Comp.Sprite is { })
+            _sprite.LayerSetSprite((ent, sprite), CombatModeVisualLayers.Combat, ent.Comp.Sprite);
     }
 
     private void OnAppearanceChanged(Entity<CombatModeVisualsComponent> ent, ref AppearanceChangeEvent args)
@@ -28,9 +38,6 @@ public sealed partial class CombatModeVisualsSystem : SharedCombatModeVisualsSys
         // make sure we can sync the frames
         if (!_sprite.TryGetLayer((ent, args.Sprite), CombatModeVisualLayers.Combat, out var combatLayer, true))
             return;
-
-        if (ent.Comp.Sprite is { })
-            _sprite.LayerSetSprite(combatLayer, ent.Comp.Sprite);
 
         // turn on combat visuals if the mob is alive and in combat mode. otherwise turn them off
         _sprite.LayerSetVisible(combatLayer, _mobState.IsAlive(ent) && combat.IsInCombatMode);

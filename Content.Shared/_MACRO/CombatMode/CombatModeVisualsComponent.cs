@@ -13,7 +13,7 @@ public sealed partial class CombatModeVisualsComponent : Component
     /// Sprite to set for the combat layer, could be set when the combat layer is created instead.
     /// Used primarily for species to have a generic easily modifiable layer.
     /// </summary>
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
     public SpriteSpecifier? Sprite;
 
     /// <summary>
