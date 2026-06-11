@@ -53,6 +53,8 @@
       reagents:
       - ReagentId: Gold
         Quantity: 10
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 2
 
 - type: entity
   parent: IngotGold
@@ -93,6 +95,8 @@
       reagents:
       - ReagentId: Silver
         Quantity: 10
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 2
 
 - type: entity
   parent: IngotSilver

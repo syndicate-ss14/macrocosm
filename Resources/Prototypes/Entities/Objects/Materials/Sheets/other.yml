@@ -77,6 +77,8 @@
       reagents:
       - ReagentId: Plasma
         Quantity: 10
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 2
 
 - type: entity
   parent: SheetPlasma
@@ -134,6 +136,8 @@
         Quantity: 5
       - ReagentId: Phosphorus
         Quantity: 5
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 1
 
 - type: entity
   parent: SheetPlastic
@@ -191,6 +195,8 @@
         Quantity: 8
       - ReagentId: Radium
         Quantity: 2
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 3
 
 - type: entity
   parent: SheetUranium

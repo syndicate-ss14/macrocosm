@@ -610,10 +610,11 @@
     - type: Lathe
       idleState: icon
       runningState: building
-      defaultProductionAmount: 10
+      defaultProductionAmount: 30 # Macro change, from 10 to 30
       staticPacks:
       - OreSmelting
       - RGlassSmelting
+    - type: TicketPrinter # Macro change, responsible for making the ore processor print salvage reward tickets 
 
 - type: entity
   parent: OreProcessor

@@ -69,6 +69,8 @@
       reagents:
       - ReagentId: Silicon
         Quantity: 10
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 1
 
 - type: entity
   parent: SheetGlass
@@ -156,6 +158,8 @@
         Quantity: 4.5
       - ReagentId: Carbon
         Quantity: 0.5
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 2
 
 - type: entity
   parent: SheetRGlass
@@ -228,6 +232,8 @@
         Quantity: 10
       - ReagentId: Plasma
         Quantity: 10
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 3
 
 - type: entity
   parent: SheetPGlass
@@ -280,6 +286,8 @@
         Quantity: 4.5
       - ReagentId: Carbon
         Quantity: 0.5
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 4
 
 - type: entity
   parent: SheetRPGlass
@@ -352,6 +360,8 @@
         Quantity: 10
       - ReagentId: Uranium
         Quantity: 10
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 4
 
 - type: entity
   parent: SheetUGlass
@@ -403,6 +413,8 @@
         Quantity: 4.5
       - ReagentId: Carbon
         Quantity: 0.5
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 5
 
 - type: entity
   parent: SheetRUGlass

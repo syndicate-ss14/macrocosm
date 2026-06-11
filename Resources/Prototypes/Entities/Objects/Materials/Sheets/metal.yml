@@ -50,6 +50,8 @@
         Quantity: 9
       - ReagentId: Carbon
         Quantity: 1
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 1
 
 - type: entity
   parent: SheetSteel
@@ -167,6 +169,8 @@
         Quantity: 9
       - ReagentId: Carbon
         Quantity: 1
+  - type: TicketValue # Macro addition, salvage ticket system 
+    ticketValue: 4
 
 - type: entity
   parent: SheetPlasteel
