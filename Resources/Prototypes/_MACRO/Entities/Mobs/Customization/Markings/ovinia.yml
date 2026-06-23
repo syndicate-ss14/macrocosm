@@ -266,7 +266,7 @@
   groupWhitelist: [ Ovinia ]
   sprites:
     - sprite: _MACRO/Mobs/Customization/Ovinia/tail_markings.rsi
-      state: ovinia-tail
+      state: ovinia-tail_wag
 
 - type: marking
   id: OviniaTail
@@ -274,7 +274,7 @@
   groupWhitelist: [ Ovinia ]
   sprites:
     - sprite: _MACRO/Mobs/Customization/Ovinia/tail_markings.rsi
-      state: ovinia-tail_wag
+      state: ovinia-tail
 
 # RLeg
 
