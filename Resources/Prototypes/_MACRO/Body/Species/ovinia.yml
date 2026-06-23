@@ -146,6 +146,11 @@
   - type: Tag
     tags:
     - OviniaEmotes
+    - DoorBumpOpener
+    - CanPilot
+    - FootstepSound
+    - AnomalyHost
+
   - type: NpcFactionMember
     factions:
     - AnimalFriend

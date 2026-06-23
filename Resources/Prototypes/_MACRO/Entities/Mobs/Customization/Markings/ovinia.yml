@@ -290,7 +290,7 @@
 
 - type: marking
   id: OviniaLeftLegValais
-  bodyPart: RLeg
+  bodyPart: LLeg
   groupWhitelist: [ Ovinia ]
   sprites:
     - sprite: _MACRO/Mobs/Customization/Ovinia/body_markings.rsi
