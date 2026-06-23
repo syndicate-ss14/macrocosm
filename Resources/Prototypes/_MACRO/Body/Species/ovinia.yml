@@ -135,6 +135,8 @@
     damageModifierSet: Ovinia
   - type: Flammable
     firestackMultiplier: .75 #wool isnt flammable
+  - type: EatTimeModifier
+    multiplier: 1.5 # quite slow eaters
   - type: Hunger
     baseDecayRate: 0.0083 # slower than normal (chewin they cud)
   - type: Thirst
