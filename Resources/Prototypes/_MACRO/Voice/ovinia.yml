@@ -7,6 +7,15 @@
   - chat-speech-verb-ovinia-3
   - chat-speech-verb-ovinia-4
 
+- type: speechSounds
+  id: Ovinia
+  saySound: 
+    path: 
+  askSound: 
+    path: 
+  exclaimSound: 
+    path: 
+
 - type: emoteSounds
   id: MaleOvinia
   params:
