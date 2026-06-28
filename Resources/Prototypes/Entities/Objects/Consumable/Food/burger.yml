@@ -2,7 +2,7 @@
 # Bun
 
 - type: entity
-  parent: FoodBreadSliceBase
+  parent: [FoodBreadSliceBase, BaseSlicingRefinableFood]
   id: FoodBreadBun
   name: bun
   description: A hamburger bun. Round and convenient to hold.
@@ -11,18 +11,15 @@
     sprite: Objects/Consumable/Food/burger.rsi
     layers:
     - state: bun
-  - type: Butcherable
-    butcherDelay: 1
-    spawned:
-      - id: FoodBreadBunTop
-        amount: 1
-      - id: FoodBreadBunBottom
-        amount: 1
   # macro edit start - allow ungu to eat
   - type: Tag
     tags:
     - UnguFood
   # macro edit end
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodBreadBunTop
+    - id: FoodBreadBunBottom
 
 - type: entity
   parent: FoodBreadSliceBase

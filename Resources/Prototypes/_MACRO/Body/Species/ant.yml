@@ -122,7 +122,6 @@
     sprite: _MACRO/Mobs/Species/Ant/parts.rsi
     state: full
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatMeatball #meatball until someone makes ant meat
       amount: 1
