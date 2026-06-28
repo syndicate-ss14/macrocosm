@@ -205,7 +205,6 @@
     sprite: _MACRO/Mobs/Species/Ungu/parts.rsi
     state: full
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeat
       amount: 5
