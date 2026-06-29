@@ -3,11 +3,10 @@
   id: ThavenCheekBarbels
   bodyPart: HeadTop
   groupWhitelist: [Thaven]
-  coloring: # macro edit
+  coloring: # Macro edit
     default:
       type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
+       !type:SkinColoring
   sprites:
   - sprite: _DV/Mobs/Customization/thaven/thaven.rsi
     state: cheek_barbels
@@ -16,11 +15,10 @@
   id: ThavenEyebrowBarbels
   bodyPart: HeadTop
   groupWhitelist: [Thaven]
-  coloring: # macro edit
+  coloring: # Macro edit
     default:
       type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
+       !type:SkinColoring
   sprites:
   - sprite: _DV/Mobs/Customization/thaven/thaven.rsi
     state: eyebrow_barbels

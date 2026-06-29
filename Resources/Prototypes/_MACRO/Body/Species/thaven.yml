@@ -181,7 +181,7 @@
     metabolizerTypes: [ Thaven ]
 
 - type: entity
-  parent: OrganThaven
+  parent: [ OrganThaven, OrganBaseOrganic ]
   id: OrganThavenInternal
   abstract: true
   components:
@@ -192,9 +192,16 @@
       reagents:
       - ReagentId: CarpoToxin
         Quantity: 5
-  - type: FlavorProfile # organs arent actually edible RN
+  - type: FlavorProfile
     flavors:
       - thavenflesh
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 10
+      - ReagentId: CarpoToxin
+        Quantity: 10
 
 - type: entity
   parent: OrganThaven
@@ -260,6 +267,14 @@
   parent: [ OrganBaseBrain, OrganThavenInternal ]
   id: OrganThavenBrain
   description: "An organic positronic brain. Quite remarkable, really."
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: GreyMatter
+        Quantity: 3
+      - ReagentId: CarpoToxin
+        Quantity: 12
 
 - type: entity
   parent: [ OrganBaseEyes, OrganThavenInternal, OrganThavenExternal ]
