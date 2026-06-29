@@ -345,7 +345,6 @@
     prototype: Gray
     requiredLegs: 2
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatHuman
       amount: 5
