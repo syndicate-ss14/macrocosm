@@ -85,9 +85,12 @@
     - Reptilian
     - Vulpkanin
     # macro below
-    - Gray
+    - Allulalo
+    - Ant
     - Apid
+    - Gray
     - Gastropoid
+    - Thaven
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth
