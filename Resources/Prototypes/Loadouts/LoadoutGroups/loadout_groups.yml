@@ -1315,7 +1315,7 @@
   - LoadoutSpeciesVoxNitrogen
   - EmergencyAquaticSecurity # MACRO: Decapoids
   - LoadoutSpeciesAquaticFullTank # MACRO: Decapoids
-  - BoxSurvivalSecurityUngu # MACRO: Ungu
+  - EmergencyWheatSecurity # MACRO: Ungu
 
 # Wildcards
 - type: loadoutGroup
