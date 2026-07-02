@@ -277,14 +277,10 @@
         Quantity: 12
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganThavenInternal, OrganThavenExternal ]
+  parent: [ OrganThavenInternal, OrganThavenExternal, OrganBaseEyes ]
   id: OrganThavenEyes
+  name: eyes
   description: "The dark sclera have a faint, iridescent coating."
-  components:
-  - type: VisualOrgan
-    data:
-      sprite: _MACRO/Mobs/Species/Thaven/parts.rsi
-      state: eyes
 
 - type: entity
   parent: [ OrganBaseLungs, OrganThavenInternal, OrganThavenMetabolizer ]
