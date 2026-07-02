@@ -366,7 +366,7 @@
   id: OrganUnguBrain
 
 - type: entity
-  parent: [ OrganUnguVisual, OrganBaseEyes, OrganUnguInternal ]
+  parent: [ OrganUnguInternal, OrganUnguExternal, OrganBaseEyes ]
   id: OrganUnguEyes
 
 - type: entity
