@@ -55,6 +55,8 @@
   name: ungu appearance
   components:
   - type: Inventory
+    templateId: ungu
+    speciesId: ungu
     displacements:
       gloves:
         sizeMaps:
@@ -265,10 +267,15 @@
         pitch: .5
         volume: -3
         variation: 0.05
+  - type: CreamPied
+    sprite:
+      sprite: Effects/creampie.rsi
+      state: creampie_ungu
 
 - type: entity
   parent: OrganBase
   id: OrganUngu
+  suffix: ungu
   abstract: true
 
 - type: entity
@@ -359,7 +366,7 @@
   id: OrganUnguBrain
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganUnguInternal, OrganUnguExternal ]
+  parent: [ OrganUnguVisual, OrganBaseEyes, OrganUnguInternal ]
   id: OrganUnguEyes
 
 - type: entity
