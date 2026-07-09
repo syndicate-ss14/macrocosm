@@ -5,6 +5,9 @@ using Robust.Client.UserInterface.XAML;
 
 namespace Content.Client._MACRO.StrangeMoods;
 
+/// <summary>
+///     Menu used to display an entity's moods.
+/// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class StrangeMoodsMenu : FancyWindow
 {

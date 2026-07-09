@@ -1,3 +1,4 @@
+using Content.Shared._MACRO.StrangeMoods;
 using Content.Shared.Dataset;
 using Content.Shared.Random;
 using Robust.Shared.GameStates;
@@ -5,6 +6,15 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._MACRO.Species.Thaven;
 
+/// <summary>
+///     Component that gives an entity Thaven moods.
+///     Unlike <see cref="StrangeMoodsComponent"/> Thaven can be emagged or ion stormed
+///     to grant 'wildcard' moods, which are pulled from a seperate dataset.
+/// </summary>
+/// <remarks>
+///     Generally you should not be initializing this component via yml, it is intended to
+///     be initialized via <see cref="SharedStrangeMoodsSystem"/>.
+/// </remarks>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class ThavenMoodsComponent : Component
 {

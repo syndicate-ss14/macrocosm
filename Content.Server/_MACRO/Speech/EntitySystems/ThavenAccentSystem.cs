@@ -3,7 +3,10 @@ using Content.Server.Speech.EntitySystems;
 using Content.Shared.Speech;
 
 namespace Content.Server._MACRO.Speech.EntitySystems;
-// hi, this is a copy of NoContractionsAccentSystem, split to retain function of accentless for non thaven using the trait
+
+/// <summary>
+///     this is a copy of NoContractionsAccentSystem, split to retain function of accentless for non thaven using the trait
+/// </summary>
 public sealed partial class ThavenAccentComponentAccentSystem : EntitySystem
 {
     [Dependency] private ReplacementAccentSystem _replacement = default!;

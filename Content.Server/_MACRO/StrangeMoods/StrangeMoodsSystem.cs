@@ -17,6 +17,7 @@ using Robust.Shared.Serialization.Manager;
 
 namespace Content.Server._MACRO.StrangeMoods;
 
+/// <inheritdoc/>
 public sealed partial class StrangeMoodsSystem : SharedStrangeMoodsSystem
 {
     [Dependency] private IChatManager _chat = default!;
@@ -390,7 +391,7 @@ public sealed partial class StrangeMoodsSystem : SharedStrangeMoodsSystem
     {
         if (includeShared && ent.Comp.SharedMood is { } sharedMood)
         {
-            return [..sharedMood.Moods.Concat(ent.Comp.StrangeMood.Moods)];
+            return [.. sharedMood.Moods.Concat(ent.Comp.StrangeMood.Moods)];
         }
 
         return ent.Comp.StrangeMood.Moods;

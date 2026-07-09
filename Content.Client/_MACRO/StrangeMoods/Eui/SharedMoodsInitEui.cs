@@ -31,15 +31,15 @@ public sealed class SharedMoodsInitEui : BaseEui
         switch (msg)
         {
             case SharedMoodsInitValidMessage:
-            {
-                _sharedMoodsUi.Close();
-                break;
-            }
+                {
+                    _sharedMoodsUi.Close();
+                    break;
+                }
             case SharedMoodsInitErrorMessage:
-            {
-                _sharedMoodsUi.ShowError();
-                break;
-            }
+                {
+                    _sharedMoodsUi.ShowError();
+                    break;
+                }
         }
     }
 }

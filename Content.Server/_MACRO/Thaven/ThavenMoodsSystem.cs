@@ -8,6 +8,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._MACRO.Thaven;
 
+/// <inheritdoc/>
 public sealed partial class ThavenMoodsSystem : SharedThavenMoodsSystem
 {
     [Dependency] private IRobustRandom _random = default!;

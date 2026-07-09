@@ -6,6 +6,9 @@ using Content.Shared.Popups;
 
 namespace Content.Shared._MACRO.Species.Thaven;
 
+/// <summary>
+///     Handles emag behaviour for Thaven moods.
+/// </summary>
 public abstract partial class SharedThavenMoodsSystem : SharedStrangeMoodsSystem
 {
     [Dependency] private EmagSystem _emag = default!;

@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace Content.Shared._MACRO.StrangeMoods;
 
+/// <summary>
+///     An individual 'mood' that will appear in an entity's StrangeMood UI.
+/// </summary>
 [Virtual, DataDefinition]
 [Serializable, NetSerializable]
 public partial class StrangeMood
@@ -60,6 +63,9 @@ public partial class StrangeMood
     }
 }
 
+/// <summary>
+///     Prototype for an individual 'mood' that will appear in an entity's StrangeMood UI.
+/// </summary>
 [Prototype]
 public sealed partial class StrangeMoodPrototype : StrangeMood, IPrototype
 {

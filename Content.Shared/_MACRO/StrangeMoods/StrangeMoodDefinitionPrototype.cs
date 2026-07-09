@@ -5,6 +5,10 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._MACRO.StrangeMoods;
 
+/// <summary>
+///     Contains information on how an entity handles its moods,
+///     and all possible moods that this entity can generate.
+/// </summary>
 [Virtual, DataDefinition]
 [Serializable, NetSerializable]
 public partial class StrangeMoodDefinition

@@ -7,6 +7,9 @@ using Robust.Shared.Console;
 
 namespace Content.Server._MACRO.StrangeMoods;
 
+/// <summary>
+///     Console commands associated with <see cref="StrangeMoodsSystem"/>.
+/// </summary>
 [AdminCommand(AdminFlags.Fun)]
 public sealed partial class SharedMoodsCommand : LocalizedEntityCommands
 {

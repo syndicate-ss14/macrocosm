@@ -54,18 +54,18 @@ public sealed class SharedMoodsEui : BaseEui
         switch (msg)
         {
             case SharedMoodsSendMessage sendData:
-            {
-                if (sendData.Mood is not { } mood)
-                    return;
+                {
+                    if (sendData.Mood is not { } mood)
+                        return;
 
-                _sharedMoodsUi.SetMoods(mood.Moods);
-                break;
-            }
+                    _sharedMoodsUi.SetMoods(mood.Moods);
+                    break;
+                }
             case SharedMoodsInitValidMessage initData:
-            {
-                _sharedMoodsUi.PopulateDropDown(initData.AllSharedMoods, initData.Mood);
-                break;
-            }
+                {
+                    _sharedMoodsUi.PopulateDropDown(initData.AllSharedMoods, initData.Mood);
+                    break;
+                }
         }
     }
 
