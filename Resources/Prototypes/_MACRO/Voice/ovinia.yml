@@ -9,12 +9,14 @@
 
 - type: speechSounds
   id: Ovinia
-  saySound: 
-    path: 
-  askSound: 
-    path: 
-  exclaimSound: 
-    path: 
+  params:
+    variation: 0.125
+  saySound:
+    path: /Audio/_MACRO/Voice/Ovinia/ovinia_say.ogg
+  askSound:
+    path: /Audio/_MACRO/Voice/Ovinia/ovinia_ask.ogg
+  exclaimSound:
+    path: /Audio/_MACRO/Voice/Ovinia/ovinia_exclaim.ogg
 
 - type: emoteSounds
   id: MaleOvinia

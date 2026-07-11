@@ -128,7 +128,7 @@
       Female: FemaleOvinia
       Unsexed: MaleOvinia
   - type: Speech
-    speechSounds: Alto
+    speechSounds: Ovinia
     speechVerb: Ovinia
     allowedEmotes: [ 'Baa', 'Moo' ]
   - type: Damageable
