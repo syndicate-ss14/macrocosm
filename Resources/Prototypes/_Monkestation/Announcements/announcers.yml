@@ -1,0 +1,38 @@
+- type: weightedRandom
+  id: Announcers
+  weights:
+    DefaultAnnouncer: 100
+
+- type: msAnnouncer
+  id: DefaultAnnouncer
+  sounds:
+    Attention:
+      path: /Audio/Announcements/attention.ogg
+    Announce:
+      path: /Audio/Announcements/announce.ogg
+    GridPowerOff:
+      path: /Audio/Announcements/power_off.ogg
+      params:
+        volume: -4
+    GridPowerOn:
+      collection: PowerOn
+      params:
+        volume: -4
+    Intercept:
+      path: /Audio/Announcements/intercept.ogg
+    Welcome:
+      path: /Audio/Announcements/welcome.ogg
+    Meteors:
+      path: /Audio/Announcements/meteors.ogg
+      params:
+        volume: -4
+    War:
+      path: /Audio/Announcements/war.ogg
+    ShuttleCalled:
+      path: /Audio/Announcements/shuttlecalled.ogg
+    ShuttleRecalled:
+      path: /Audio/Announcements/shuttlerecalled.ogg
+    ShuttleDock:
+      path: /Audio/Announcements/shuttle_dock.ogg
+    Notice1:
+      path: /Audio/Misc/notice1.ogg

@@ -1,5 +1,8 @@
+using System.Linq;
+using Content.Server._Monkestation.Announcements;
 using Content.Server.Administration;
 using Content.Server.Chat.Systems;
+using Content.Shared._Monkestation.Announcements;
 using Content.Shared.Administration;
 using Robust.Shared.Audio;
 using Robust.Shared.Console;
@@ -14,6 +17,8 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IResourceManager _res = default!;
+
+    [Dependency] private AnnouncerManager _announcer = default!; // Monkestation edit
 
     public override string Command => "announce";
     public override string Description => Loc.GetString("cmd-announce-desc");
@@ -34,7 +39,7 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
         var message = args[0];
         var sender = Loc.GetString("cmd-announce-sender");
         var color = Color.Gold;
-        var sound = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
+        _announcer.TryGetAnnouncerSound("Announce", out var sound);
 
         // Optional sender argument
         if (args.Length >= 2)
@@ -56,7 +61,10 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
 
         // Optional sound argument
         if (args.Length >= 4)
-            sound = new SoundPathSpecifier(args[3]);
+        {
+            if (!_announcer.TryGetAnnouncerSound(args[3], out sound)) // Monkestation edit - allow announcement prototypes
+                sound = new SoundPathSpecifier(args[3]);
+        }
 
         _chat.DispatchGlobalAnnouncement(message, sender, true, sound, color);
         shell.WriteLine(Loc.GetString("shell-command-success"));
@@ -70,7 +78,8 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
             2 => CompletionResult.FromHint(Loc.GetString("cmd-announce-arg-sender")),
             3 => CompletionResult.FromHint(Loc.GetString("cmd-announce-arg-color")),
             4 => CompletionResult.FromHintOptions(
-                CompletionHelper.AudioFilePath(args[3], _proto, _res),
+                CompletionHelper.AudioFilePath(args[3], _proto, _res)
+                    .Concat(CompletionHelper.PrototypeIDs<MSAnnouncementSoundPrototype>(proto: _proto)), // Monkestation edit - allow suggest prototypes
                 Loc.GetString("cmd-announce-arg-sound")
             ),
             _ => CompletionResult.Empty

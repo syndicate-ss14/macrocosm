@@ -1,4 +1,5 @@
 using System.Threading;
+using Content.Server._Monkestation.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.AlertLevel;
 using Content.Shared.CCVar;
@@ -41,6 +42,8 @@ namespace Content.Server.RoundEnd
         [Dependency] private EmergencyShuttleSystem _shuttle = default!;
         [Dependency] private SharedAudioSystem _audio = default!;
         [Dependency] private StationSystem _stationSystem = default!;
+
+        [Dependency] private AnnouncerManager _announcer = default!; // Monkestation edit
 
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
 
@@ -211,7 +214,8 @@ namespace Content.Server.RoundEnd
                 null,
                 Color.Gold);
 
-            _audio.PlayGlobal("/Audio/Announcements/shuttlecalled.ogg", Filter.Broadcast(), true);
+            _announcer.TryGetAnnouncerSound("ShuttleCalled", out var sound); // Monkestation edit - announcer override
+            _audio.PlayGlobal(sound, Filter.Broadcast(), true);
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -261,7 +265,8 @@ namespace Content.Server.RoundEnd
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
                 Loc.GetString("round-end-system-shuttle-sender-announcement"), false, colorOverride: Color.Gold);
 
-            _audio.PlayGlobal("/Audio/Announcements/shuttlerecalled.ogg", Filter.Broadcast(), true);
+            _announcer.TryGetAnnouncerSound("ShuttleRecalled", out var sound); // Monkestation edit - announcer override
+            _audio.PlayGlobal(sound, Filter.Broadcast(), true);
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;

@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using System.Threading;
+using Content.Server._Monkestation.Announcements;
 using Content.Server.Access.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -67,6 +68,8 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     [Dependency] private StationSystem _station = default!;
     [Dependency] private TransformSystem _transformSystem = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = default!;
+
+    [Dependency] private AnnouncerManager _announcer = default!;
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -338,7 +341,8 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
                 playDefaultSound: false);
 
             // TODO: Need filter extensions or something don't blame me.
-            _audio.PlayGlobal(stationShuttleComp.FailureAudio, Filter.Broadcast(), true);
+            _announcer.TryGetAnnouncerSound(stationShuttleComp.FailureAudio, out var sound); // monkestation edit - announcer override
+            _audio.PlayGlobal(sound, Filter.Broadcast(), true);
             return;
         }
 
@@ -392,12 +396,13 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
         // Play announcement audio.
 
-        var audioFile = result.ResultType == ShuttleDockResultType.NoDock
+        var audioId = result.ResultType == ShuttleDockResultType.NoDock
             ? stationShuttleComp.NearbyAudio
             : stationShuttleComp.DockedAudio;
 
         // TODO: Need filter extensions or something don't blame me.
-        _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);
+        _announcer.TryGetAnnouncerSound(audioId, out var audio); // Monkestation edit
+        _audio.PlayGlobal(audio, Filter.Broadcast(), true);
     }
 
     private void OnStationInit(EntityUid uid, StationCentcommComponent component, MapInitEvent args)

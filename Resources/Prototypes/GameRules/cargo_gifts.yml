@@ -28,8 +28,7 @@
       max: 10
   - type: StationEvent
     startColor: "#18abf5"
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
+    startAudio: Announce # monkestation edit - announcer overrides
   - type: CargoGiftsRule
     sender: cargo-gift-default-sender
 

@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using Content.Server._Monkestation.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
@@ -24,6 +26,8 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
     [Dependency] protected SharedAudioSystem Audio = default!;
     [Dependency] protected StationSystem StationSystem = default!;
 
+    [Dependency] protected AnnouncerManager _announcer = default!; // Monkestation edit - announcer overrides
+
     protected ISawmill Sawmill = default!;
 
     public override void Initialize()
@@ -49,7 +53,12 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
         if (stationEvent.StartAnnouncement != null)
             ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: stationEvent.StartAnnouncementColor);
 
-        Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
+        // Monkestation edit start - announcer overrides
+        if (stationEvent.StartAudio == null)
+            return;
+        _announcer.TryGetAnnouncerSound(stationEvent.StartAudio.Value, out var soundSpecifier);
+        Audio.PlayGlobal(soundSpecifier, allPlayersInGame, true);
+        // Monkestation edit end - announcer overrides
     }
 
     /// <inheritdoc/>
@@ -88,7 +97,12 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
         if (stationEvent.EndAnnouncement != null)
             ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.EndAnnouncement), playSound: false, colorOverride: stationEvent.EndAnnouncementColor);
 
-        Audio.PlayGlobal(stationEvent.EndAudio, allPlayersInGame, true);
+        // Monkestation edit start - announcer overrides
+        if (stationEvent.EndAudio == null)
+            return;
+        _announcer.TryGetAnnouncerSound(stationEvent.EndAudio.Value, out var soundSpecifier);
+        Audio.PlayGlobal(soundSpecifier, allPlayersInGame, true);
+        // Monkestation edit end - announcer overrides
     }
 
     /// <summary>

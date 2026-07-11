@@ -1,4 +1,6 @@
+using Content.Shared._Monkestation.Announcements;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.StationEvents.Components;
@@ -31,10 +33,10 @@ public sealed partial class StationEventComponent : Component
     public Color EndAnnouncementColor = Color.Gold;
 
     [DataField]
-    public SoundSpecifier? StartAudio;
+    public ProtoId<MSAnnouncementSoundPrototype>? StartAudio; // monkestation edit - use announcement sound
 
     [DataField]
-    public SoundSpecifier? EndAudio;
+    public ProtoId<MSAnnouncementSoundPrototype>? EndAudio; // monkestation edit - use announcement sound
 
     /// <summary>
     ///     In minutes, when is the first round time this event can start
