@@ -9,8 +9,6 @@
 
 - type: speechSounds
   id: Ovinia
-  params:
-    variation: 0.125
   saySound:
     path: /Audio/_MACRO/Voice/Ovinia/ovinia_say.ogg
   askSound:
