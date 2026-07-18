@@ -33,7 +33,7 @@ public sealed partial class ChatSystem
                 _announcer.TryGetAnnouncerSound(DefaultAnnouncementSound, out announcementSound);
             }
             _audio.PlayGlobal(announcementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
-            // Macrocosm edit end - announcer variation
+            // Macrocosm edit end
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }
@@ -60,7 +60,7 @@ public sealed partial class ChatSystem
                 _announcer.TryGetAnnouncerSound(DefaultAnnouncementSound, out announcementSound);
             }
             _audio.PlayGlobal(announcementSound, filter, true, AudioParams.Default.WithVolume(-2f));
-            // Macrocosm edit end - announcer variation
+            // Macrocosm edit end
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement from {sender}: {message}");
     }
@@ -99,7 +99,7 @@ public sealed partial class ChatSystem
                 _announcer.TryGetAnnouncerSound(DefaultAnnouncementSound, out announcementSound);
             }
             _audio.PlayGlobal(announcementSound, filter, true, AudioParams.Default.WithVolume(-2f));
-            // Macrocosm edit end - announcer variation
+            // Macrocosm edit end
         }
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");

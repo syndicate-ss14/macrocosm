@@ -39,7 +39,7 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
         var message = args[0];
         var sender = Loc.GetString("cmd-announce-sender");
         var color = Color.Gold;
-        _announcer.TryGetAnnouncerSound("Announce", out var sound);
+        _announcer.TryGetAnnouncerSound("Announce", out var sound); // Macrocosm edit - Announcer variation
 
         // Optional sender argument
         if (args.Length >= 2)

@@ -39,7 +39,7 @@ namespace Content.Server.Communications
         [Dependency] private IAdminLogManager _adminLogger = default!;
         [Dependency] private IdentitySystem _identity = default!;
 
-        [Dependency] private AnnouncerManager _announcer = default!; // Macrostation
+        [Dependency] private AnnouncerManager _announcer = default!; // Macrocosm
 
         private const float UIUpdateInterval = 5.0f;
 
