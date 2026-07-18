@@ -3,7 +3,7 @@
   weights:
     DefaultAnnouncer: 100
 
-- type: msAnnouncer
+- type: announcer
   id: DefaultAnnouncer
   sounds:
     Attention:

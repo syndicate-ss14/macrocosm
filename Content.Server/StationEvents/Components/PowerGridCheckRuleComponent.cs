@@ -14,7 +14,7 @@ public sealed partial class PowerGridCheckRuleComponent : Component
     /// Sound to play when power is restored.
     /// </summary>
     [DataField]
-    public ProtoId<AnnouncementSoundPrototype> PowerOnSound = "PowerOn"; // Macrocosm edit - Announcement Sound Prototypes
+    public ProtoId<AnnouncementSoundPrototype> PowerOnSound = "GridPowerOn"; // Macrocosm edit - Announcement Sound Prototypes
 
     /// <summary>
     /// Token source for cancelling the power restoration announcement.
