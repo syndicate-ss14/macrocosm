@@ -1,8 +1,8 @@
 using System.Linq;
-using Content.Server._Monkestation.Announcements;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration;
 using Content.Server.Chat.Systems;
-using Content.Shared._Monkestation.Announcements;
+using Content.Shared._MACRO.Announcements;
 using Content.Shared.Administration;
 using Robust.Shared.Audio;
 using Robust.Shared.Console;
@@ -18,7 +18,7 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IResourceManager _res = default!;
 
-    [Dependency] private AnnouncerManager _announcer = default!; // Monkestation edit
+    [Dependency] private AnnouncerManager _announcer = default!; // macrocosm
 
     public override string Command => "announce";
     public override string Description => Loc.GetString("cmd-announce-desc");
@@ -62,7 +62,7 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
         // Optional sound argument
         if (args.Length >= 4)
         {
-            if (!_announcer.TryGetAnnouncerSound(args[3], out sound)) // Monkestation edit - allow announcement prototypes
+            if (!_announcer.TryGetAnnouncerSound(args[3], out sound)) // Macrocosm edit - allow announcement sound prototypes
                 sound = new SoundPathSpecifier(args[3]);
         }
 
@@ -79,7 +79,7 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
             3 => CompletionResult.FromHint(Loc.GetString("cmd-announce-arg-color")),
             4 => CompletionResult.FromHintOptions(
                 CompletionHelper.AudioFilePath(args[3], _proto, _res)
-                    .Concat(CompletionHelper.PrototypeIDs<MSAnnouncementSoundPrototype>(proto: _proto)), // Monkestation edit - allow suggest prototypes
+                    .Concat(CompletionHelper.PrototypeIDs<AnnouncementSoundPrototype>(proto: _proto)), // Macrocosm edit - announcer sound prototypes
                 Loc.GetString("cmd-announce-arg-sound")
             ),
             _ => CompletionResult.Empty

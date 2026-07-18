@@ -1,5 +1,4 @@
-using System.Diagnostics;
-using Content.Server._Monkestation.Announcements;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
@@ -26,7 +25,7 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
     [Dependency] protected SharedAudioSystem Audio = default!;
     [Dependency] protected StationSystem StationSystem = default!;
 
-    [Dependency] protected AnnouncerManager _announcer = default!; // Monkestation edit - announcer overrides
+    [Dependency] protected AnnouncerManager Announcer = default!; // Macrocosm
 
     protected ISawmill Sawmill = default!;
 
@@ -53,12 +52,12 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
         if (stationEvent.StartAnnouncement != null)
             ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: stationEvent.StartAnnouncementColor);
 
-        // Monkestation edit start - announcer overrides
+        // Macrocosm edit start - announcer variation
         if (stationEvent.StartAudio == null)
             return;
-        _announcer.TryGetAnnouncerSound(stationEvent.StartAudio.Value, out var soundSpecifier);
+        Announcer.TryGetAnnouncerSound(stationEvent.StartAudio.Value, out var soundSpecifier);
         Audio.PlayGlobal(soundSpecifier, allPlayersInGame, true);
-        // Monkestation edit end - announcer overrides
+        // Macrocosm edit end
     }
 
     /// <inheritdoc/>
@@ -97,12 +96,12 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
         if (stationEvent.EndAnnouncement != null)
             ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.EndAnnouncement), playSound: false, colorOverride: stationEvent.EndAnnouncementColor);
 
-        // Monkestation edit start - announcer overrides
+        // Macrocosm edit start - announcer variation
         if (stationEvent.EndAudio == null)
             return;
-        _announcer.TryGetAnnouncerSound(stationEvent.EndAudio.Value, out var soundSpecifier);
+        Announcer.TryGetAnnouncerSound(stationEvent.EndAudio.Value, out var soundSpecifier);
         Audio.PlayGlobal(soundSpecifier, allPlayersInGame, true);
-        // Monkestation edit end - announcer overrides
+        // Macrocosm edit end
     }
 
     /// <summary>

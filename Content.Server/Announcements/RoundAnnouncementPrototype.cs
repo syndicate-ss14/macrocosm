@@ -1,4 +1,4 @@
-using Content.Shared._Monkestation.Announcements;
+using Content.Shared._MACRO.Announcements;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -13,7 +13,7 @@ public sealed partial class RoundAnnouncementPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    [DataField("sound")] public ProtoId<MSAnnouncementSoundPrototype>? Sound; // Monkestation edit announcement override
+    [DataField("sound")] public ProtoId<AnnouncementSoundPrototype>? Sound; // Macrocosm edit - announcement sound prototypes
 
     [DataField("message")] public string? Message;
 }

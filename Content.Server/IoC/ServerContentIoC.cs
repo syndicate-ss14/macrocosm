@@ -1,5 +1,4 @@
-using Content.Server._Monkestation;
-using Content.Server._Monkestation.Announcements;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -85,8 +84,6 @@ internal static class ServerContentIoC
         deps.Register<ServerFeedbackManager>();
         deps.Register<ISharedFeedbackManager, ServerFeedbackManager>();
 
-        // Monkestation start
-        deps.Register<AnnouncerManager>();
-        // Monkestation end
+        deps.Register<AnnouncerManager>(); // Macrocosm edit
     }
 }

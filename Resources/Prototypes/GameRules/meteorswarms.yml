@@ -134,7 +134,7 @@
     minimumPlayers: 0
   - type: MeteorSwarm
     announcement: station-event-space-dust-start-announcement
-    announcementSound: Attention # Monkestation edit
+    announcementSound: Attention # Macrocosm edit - sound prototypes
     nonDirectional: true
     meteors:
       MeteorSpaceDust: 1
@@ -189,7 +189,7 @@
     weight: 0.05
   - type: MeteorSwarm
     announcement: station-event-meteor-urist-start-announcement
-    announcementSound: Attention # Monkestation edit
+    announcementSound: Attention # Macrocosm edit - sound prototypes
     meteors:
       MeteorUrist: 1
     waves:
@@ -205,7 +205,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-immovable-rod-start-announcement
-    startAudio: Attention # monkestation edit - announcer overrides
+    startAudio: Attention # Macrocosm edit - sound prototypes
     weight: 3.5
     reoccurrenceDelay: 1
     duration: 1
@@ -249,7 +249,7 @@
     weight: 0.05
   - type: MeteorSwarm
     announcement: station-event-meteor-cow-start-announcement
-    announcementSound: Attention # Monkestation edit
+    announcementSound: Attention # Macrocosm edit - sound prototypes
     meteors:
       MeteorCow: 1
     waves:
@@ -267,7 +267,7 @@
     weight: 0.05
   - type: MeteorSwarm
     announcement: station-event-meteor-clown-start-announcement
-    announcementSound: Attention # Monkestation edit
+    announcementSound: Attention # Macrocosm edit - sound prototypes
     meteors:
       MeteorClown: 1
     waves:
@@ -285,7 +285,7 @@
     weight: 0.05
   - type: MeteorSwarm
     announcement: station-event-meteor-potato-start-announcement
-    announcementSound: Attention # Monkestation edit
+    announcementSound: Attention # Macrocosm edit - sound prototypes
     meteors:
       MeteorPotato: 1
     waves:
@@ -303,7 +303,7 @@
     weight: 0.03
   - type: MeteorSwarm
     announcement: station-event-fun-swarm-start-announcement
-    announcementSound: Attention # Monkestation edit
+    announcementSound: Attention # Macrocosm edit - sound prototypes
     meteors:
       MeteorClown: 1
       MeteorCow: 1

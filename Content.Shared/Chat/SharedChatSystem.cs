@@ -1,6 +1,6 @@
 using System.Collections.Frozen;
 using System.Text.RegularExpressions;
-using Content.Shared._Monkestation.Announcements;
+using Content.Shared._MACRO.Announcements;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Popups;
@@ -37,7 +37,7 @@ public abstract partial class SharedChatSystem : EntitySystem
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
-    public static readonly ProtoId<MSAnnouncementSoundPrototype> DefaultAnnouncementSound = "Announce"; // Monkestation edit
+    public static readonly ProtoId<AnnouncementSoundPrototype> DefaultAnnouncementSound = "Announce"; // Macrocosm edit - Announcement sound prototypes
 
     public static readonly ProtoId<RadioChannelPrototype> CommonChannel = "Common";
 

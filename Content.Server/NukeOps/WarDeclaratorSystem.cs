@@ -1,4 +1,4 @@
-using Content.Server._Monkestation.Announcements;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
@@ -27,7 +27,7 @@ public sealed partial class WarDeclaratorSystem : EntitySystem
     [Dependency] private PopupSystem _popupSystem = default!;
     [Dependency] private AccessReaderSystem _accessReaderSystem = default!;
 
-    [Dependency] private AnnouncerManager _announcer = default!; // Monkestation edit
+    [Dependency] private AnnouncerManager _announcer = default!; // Macrocosm edit
 
     public override void Initialize()
     {
@@ -77,8 +77,10 @@ public sealed partial class WarDeclaratorSystem : EntitySystem
         if (ev.Status == WarConditionStatus.WarReady)
         {
             var title = Loc.GetString(ent.Comp.SenderTitle);
+            // Macrocosm edit start - announcer variation
             _announcer.TryGetAnnouncerSound(ent.Comp.Sound, out var sound);
             _chat.DispatchGlobalAnnouncement(ent.Comp.Message, title, true, sound, ent.Comp.Color);
+            // Macrocosm edit end
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(args.Actor):player} has declared war with this text: {ent.Comp.Message}");
         }
 

@@ -1,13 +1,13 @@
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Monkestation.Announcements;
+namespace Content.Shared._MACRO.Announcements;
 
 /// <summary>
 /// This is a prototype for an announcement sound
 /// </summary>
-[Prototype("msAnnouncementSound")]
-public sealed partial class MSAnnouncementSoundPrototype : IPrototype
+[Prototype]
+public sealed partial class AnnouncementSoundPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]

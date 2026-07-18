@@ -437,7 +437,7 @@ namespace Content.Server.GameTicking
             SendStatusToAll();
             ReqWindowAttentionAll();
             UpdateLateJoinStatus();
-            _announcer.RandomizeAnnouncer(); // Monkestation edit
+            _announcer.RandomizeAnnouncer(); // Macrocosm edit
             AnnounceRound();
             UpdateInfoText();
             SendRoundStartedDiscordMessage();
@@ -802,10 +802,10 @@ namespace Content.Server.GameTicking
             if (proto.Message != null)
                 _chatSystem.DispatchGlobalAnnouncement(Loc.GetString(proto.Message), playSound: true);
 
-            // Monkestation edit start - announcer overrides
+            // Macrocosm edit start - announcer overrides
             if (proto.Sound != null && _announcer.TryGetAnnouncerSound(proto.Sound.Value, out var sound))
                 _audio.PlayGlobal(sound, Filter.Broadcast(), true);
-            // Monkestation edit end - announcer overrides
+            // Macrocosm edit end - announcer overrides
         }
 
         private async void SendRoundStartedDiscordMessage()

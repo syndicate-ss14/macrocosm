@@ -1,4 +1,4 @@
-using Content.Server._Monkestation.Announcements;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.AlertLevel;
 using Content.Server.Chat.Systems;
@@ -39,7 +39,7 @@ namespace Content.Server.Communications
         [Dependency] private IAdminLogManager _adminLogger = default!;
         [Dependency] private IdentitySystem _identity = default!;
 
-        [Dependency] private AnnouncerManager _announcer = default!;
+        [Dependency] private AnnouncerManager _announcer = default!; // Macrostation
 
         private const float UIUpdateInterval = 5.0f;
 
@@ -267,8 +267,10 @@ namespace Content.Server.Communications
 
             if (comp.Global)
             {
+                // Macrocosm start - Announcer overrides
                 _announcer.TryGetAnnouncerSound(comp.Sound, out var sound);
                 _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: sound, colorOverride: comp.Color);
+                // Macrocosm end
 
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following global announcement: {msg}");
                 return;

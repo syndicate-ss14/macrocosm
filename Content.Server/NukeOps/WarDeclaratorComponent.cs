@@ -1,5 +1,5 @@
 ﻿using Content.Server.GameTicking.Rules;
-using Content.Shared._Monkestation.Announcements;
+using Content.Shared._MACRO.Announcements;
 using Content.Shared.NukeOps;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -39,7 +39,7 @@ public sealed partial class WarDeclaratorComponent : Component
     /// War declaration announcement sound
     /// </summary>
     [DataField]
-    public ProtoId<MSAnnouncementSoundPrototype> Sound = "War"; // Monkestation edit - announcer overrides
+    public ProtoId<AnnouncementSoundPrototype> Sound = "War"; // Macrocosm edit - announcement sound prototypes
 
     /// <summary>
     /// Fluent ID for the declaration sender title

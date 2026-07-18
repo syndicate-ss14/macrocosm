@@ -1,5 +1,5 @@
 using System.Threading;
-using Content.Server._Monkestation.Announcements;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.AlertLevel;
 using Content.Shared.CCVar;
@@ -43,7 +43,7 @@ namespace Content.Server.RoundEnd
         [Dependency] private SharedAudioSystem _audio = default!;
         [Dependency] private StationSystem _stationSystem = default!;
 
-        [Dependency] private AnnouncerManager _announcer = default!; // Monkestation edit
+        [Dependency] private AnnouncerManager _announcer = default!; // Macrocosm edit
 
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
 
@@ -214,8 +214,10 @@ namespace Content.Server.RoundEnd
                 null,
                 Color.Gold);
 
-            _announcer.TryGetAnnouncerSound("ShuttleCalled", out var sound); // Monkestation edit - announcer override
+            // Macrocosm edit start - announcer override
+            _announcer.TryGetAnnouncerSound("ShuttleCalled", out var sound);
             _audio.PlayGlobal(sound, Filter.Broadcast(), true);
+            // Macrocosm edit end
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -265,8 +267,10 @@ namespace Content.Server.RoundEnd
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
                 Loc.GetString("round-end-system-shuttle-sender-announcement"), false, colorOverride: Color.Gold);
 
-            _announcer.TryGetAnnouncerSound("ShuttleRecalled", out var sound); // Monkestation edit - announcer override
+            // Macrocosm edit start - announcer override
+            _announcer.TryGetAnnouncerSound("ShuttleRecalled", out var sound);
             _audio.PlayGlobal(sound, Filter.Broadcast(), true);
+            // Macrocosm edit end
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;

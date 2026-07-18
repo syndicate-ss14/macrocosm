@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Server._Monkestation.Announcements;
+using Content.Server._MACRO.Announcements;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Station.Systems;
@@ -22,7 +22,7 @@ public sealed partial class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmCompon
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private StationSystem _station = default!;
 
-    [Dependency] private AnnouncerManager _announcer = default!;
+    [Dependency] private AnnouncerManager _announcer = default!; // Macrocosm edit
 
     protected override void Added(EntityUid uid, MeteorSwarmComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
@@ -36,8 +36,10 @@ public sealed partial class MeteorSwarmSystem : GameRuleSystem<MeteorSwarmCompon
         if (component.Announcement is { } locId)
             _chat.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(locId), playSound: false, colorOverride: Color.Gold);
 
+        // Macrocosm edit start - announcer variation
         if (component.AnnouncementSound is { } soundId && _announcer.TryGetAnnouncerSound(soundId, out var sound))
             _audio.PlayGlobal(sound, allPlayersInGame, true);
+        // Macrocosm edit end
     }
 
     protected override void ActiveTick(EntityUid uid, MeteorSwarmComponent component, GameRuleComponent gameRule, float frameTime)

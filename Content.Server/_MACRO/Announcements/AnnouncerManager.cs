@@ -1,14 +1,14 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Shared._Monkestation.Announcements;
-using Content.Shared._Monkestation.CCVars;
+using Content.Shared._MACRO.Announcements;
+using Content.Shared._MACRO.CCVars;
 using Content.Shared.Random;
 using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server._Monkestation.Announcements;
+namespace Content.Server._MACRO.Announcements;
 
 public sealed partial class AnnouncerManager : IPostInjectInit
 {
@@ -17,10 +17,10 @@ public sealed partial class AnnouncerManager : IPostInjectInit
     [Dependency] private ILogManager _logManager = default!;
     [Dependency] private IRobustRandom _random = default!;
 
-    private static readonly ProtoId<MSAnnouncerPrototype> DefaultAnnouncer = "DefaultAnnouncer";
+    private static readonly ProtoId<AnnouncerPrototype> DefaultAnnouncer = "DefaultAnnouncer";
 
     [ViewVariables(VVAccess.ReadWrite)]
-    private ProtoId<MSAnnouncerPrototype> _announcerId = DefaultAnnouncer;
+    private ProtoId<AnnouncerPrototype> _announcerId = DefaultAnnouncer;
 
     private ISawmill _sawmill = default!;
 
@@ -30,7 +30,7 @@ public sealed partial class AnnouncerManager : IPostInjectInit
     /// <param name="announcementId">The ID of the announcement sound</param>
     /// <param name="soundSpecifier">The sound specifier to play</param>
     /// <returns>True if the sound was found</returns>
-    public bool TryGetAnnouncerSound(ProtoId<MSAnnouncementSoundPrototype> announcementId,
+    public bool TryGetAnnouncerSound(ProtoId<AnnouncementSoundPrototype> announcementId,
         [NotNullWhen(true)] out SoundSpecifier? soundSpecifier)
     {
         var announcer = _prototypeManager.Index(_announcerId);
@@ -48,7 +48,7 @@ public sealed partial class AnnouncerManager : IPostInjectInit
     /// </summary>
     public void RandomizeAnnouncer()
     {
-        ProtoId<WeightedRandomPrototype> weights = _configurationManager.GetCVar(MonkeCCVars.AnnouncerWeightPrototype);
+        ProtoId<WeightedRandomPrototype> weights = _configurationManager.GetCVar(MacroCCVars.AnnouncerWeightPrototype);
         if (!TryPickAnnouncer(weights, out _announcerId))
             _sawmill.Error("Failed to load announcer.");
     }
@@ -60,7 +60,7 @@ public sealed partial class AnnouncerManager : IPostInjectInit
     /// <param name="announcerId">The selected announcer</param>
     /// <returns>True if selection succeeded</returns>
     private bool TryPickAnnouncer(ProtoId<WeightedRandomPrototype> weights,
-        out ProtoId<MSAnnouncerPrototype> announcerId)
+        out ProtoId<AnnouncerPrototype> announcerId)
     {
         announcerId = DefaultAnnouncer;
         if (!_prototypeManager.TryIndex(weights, out var options))
@@ -71,7 +71,7 @@ public sealed partial class AnnouncerManager : IPostInjectInit
 
         var validWeights = options.Weights.Where(pair =>
         {
-            if (_prototypeManager.HasIndex<MSAnnouncerPrototype>(pair.Key))
+            if (_prototypeManager.HasIndex<AnnouncerPrototype>(pair.Key))
                 return true;
             _sawmill.Error($"Unknown announcer prototype {pair.Key}");
             return false;

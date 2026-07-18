@@ -28,7 +28,7 @@
       max: 10
   - type: StationEvent
     startColor: "#18abf5"
-    startAudio: Announce # monkestation edit - announcer overrides
+    startAudio: Announce # Macrocosm edit - sound prototypes
   - type: CargoGiftsRule
     sender: cargo-gift-default-sender
 
