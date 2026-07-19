@@ -16,5 +16,5 @@ public sealed partial class CowToolComponent : Component
     /// Value used to override the SpeedModifier in <see cref="ToolComponent"/>.
     /// </summary>
     [DataField]
-    public float ProficiencySpeedModifier  = 1;
+    public float ProficiencySpeedModifier = 1;
 }

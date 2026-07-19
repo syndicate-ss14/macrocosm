@@ -25,7 +25,7 @@
   typingState: ungu
   idleState: ungu
   offset: 0, 0.1
-  
+
 - type: typingIndicator
   id: allulalo
   spritePath: /Textures/_MACRO/Effects/speech.rsi

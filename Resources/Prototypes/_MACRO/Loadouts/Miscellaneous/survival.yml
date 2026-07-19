@@ -14,8 +14,8 @@
     proto: Cow
   storage:
     back:
-    - BoxSurvivalUngu 
-    
+    - BoxSurvivalUngu
+
 - type: loadout
   id: EmergencyWheatClown
   effects:
@@ -24,7 +24,7 @@
   storage:
     back:
     - BoxHugUngu
-    
+
 - type: loadout
   id: EmergencyWheatMime
   effects:
@@ -33,7 +33,7 @@
   storage:
     back:
     - BoxMimeUngu
-    
+
 - type: loadout
   id: EmergencyWheatExtended
   effects:
@@ -42,7 +42,7 @@
   storage:
     back:
     - BoxSurvivalEngineeringUngu
-    
+
 - type: loadout
   id: EmergencyWheatMedical
   effects:
@@ -51,7 +51,7 @@
   storage:
     back:
     - BoxSurvivalMedicalUngu
-    
+
 - type: loadout
   id: EmergencyWheatSecurity
   effects:
@@ -60,7 +60,7 @@
   storage:
     back:
     - BoxSurvivalSecurityUngu
-    
+
 - type: loadout
   id: EmergencyWheatSyndicate
   effects:
@@ -69,7 +69,7 @@
   storage:
     back:
     - BoxSurvivalSyndicateUngu
-    
+
 - type: loadout
   id: LoadoutSpeciesEVAUngu
   effects:
@@ -77,7 +77,7 @@
     proto: Cow
   equipment:
     suitstorage: OxygenTankFilled
-    
+
 - type: loadout
   id: LoadoutSpeciesPocketDoubleOxygenUngu
   effects:
@@ -85,7 +85,7 @@
     proto: Cow
   equipment:
     pocket1: DoubleEmergencyOxygenTankFilled
-    
+
 # Species
 - type: loadoutEffectGroup
   id: Aquatic

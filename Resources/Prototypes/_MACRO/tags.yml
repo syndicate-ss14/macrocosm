@@ -5,10 +5,10 @@
 
 - type: Tag
   id: UnguFood # Used to denote non-food items ungu are able to eat
-  
+
 - type: Tag
   id: SGD # SpeechRequiresEquipment whitelist on MobDecapoid.
 
 - type: Tag
   id: Vaporizer # SpeechRequiresEquipment whitelist on MobDecapoid.
-  
+

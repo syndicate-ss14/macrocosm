@@ -51,7 +51,7 @@
     Moo:
       path: /Audio/Animals/cow_moo.ogg
       params:
-        variation: 0.2 
+        variation: 0.2
 
 # body emotes
 - type: emoteSounds

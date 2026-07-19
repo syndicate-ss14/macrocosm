@@ -99,7 +99,7 @@ public abstract partial class SharedToolSystem
         // macro edit end
 
         var args = new TileToolDoAfterEvent(GetNetEntity(gridUid), tileRef.GridIndices);
-        UseTool(ent, user, ent, comp.Delay, tool.Qualities, args, out _, toolComponent: tool);
+        UseTool(ent, user, ent, delay /* MACRO: was comp.Delay */, tool.Qualities, args, out _, toolComponent: tool);
         return true;
     }
 
