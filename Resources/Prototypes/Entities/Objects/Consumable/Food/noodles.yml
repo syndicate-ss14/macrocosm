@@ -33,6 +33,11 @@
       - pasta
   - type: Sprite
     state: boiled
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
 # Tastes like pasta.
 
 - type: entity
@@ -168,6 +173,11 @@
       - butter
   - type: Sprite
     state: butter
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
   - type: Solution
     solution:
       reagents:

@@ -931,6 +931,7 @@
     guides:
     - Chef
     - FoodRecipes
+  - type: CowToolProficiency #macro edit - this was made for ungus, but i'm putting this here in case an admin wants to be cute and give a cow hands
 
 - type: entity
   parent: SolutionLarge

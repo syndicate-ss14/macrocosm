@@ -4,6 +4,8 @@
   whitelist:
     components:
     - Vocal
+  category: Vocal
+  available: false
   chatMessages: ["chat-emote-msg-hiss"]
   chatTriggers:
   - hiss
@@ -36,6 +38,7 @@
     - bahs
     - bahed
     - bah'd
+
 
 - type: emote
   id: Moo
