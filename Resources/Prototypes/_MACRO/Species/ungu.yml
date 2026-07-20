@@ -16,6 +16,12 @@
   - Female
   youngAge: 60
   oldAge: 150
+  defaultSoundsBySex:
+  - UnisexUngu
+  - UnisexUngu
+  - UnisexUngu
+  voices:
+  - UnisexUngu
 
 # Developer Notes
 #

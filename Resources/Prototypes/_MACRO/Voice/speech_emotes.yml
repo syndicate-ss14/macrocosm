@@ -4,6 +4,8 @@
   whitelist:
     components:
     - Vocal
+  category: Vocal
+  available: false
   chatMessages: ["chat-emote-msg-hiss"]
   chatTriggers:
   - hiss
@@ -13,7 +15,7 @@
 - type: emote
   id: Moo
   name: chat-emote-name-moo
-  category: General
+  category: Vocal
   available: false
   chatMessages: ["chat-emote-msg-moo"]
   chatTriggers:

@@ -223,10 +223,7 @@
         layer:
         - MobLayer
   - type: Vocal
-    sounds:
-      Male: UnisexUngu
-      Female: UnisexUngu
-      Unsexed: UnisexUngu
+    emoteSounds: UnisexUngu
   - type: BodyEmotes
     soundsId: UnguBodyEmotes
   - type: Damageable
