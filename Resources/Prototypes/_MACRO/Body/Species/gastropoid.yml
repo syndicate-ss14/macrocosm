@@ -125,7 +125,7 @@
   components:
   - type: Butcherable
     spawned:
-    - id: FoodMeatSnail
+    - id: FoodMeat # TODO: was FoodMeatSnail before
       amount: 5
   - type: TemperatureDamage
     heatDamageThreshold: 380
@@ -171,10 +171,7 @@
     footstepSoundCollection:
       path: /Audio/_MACRO/Effects/Footsteps/snailstep.ogg
   - type: Vocal
-    sounds:
-      Male: UnisexSnail
-      Female: UnisexSnail
-      Unsexed: UnisexSnail
+    emoteSounds: UnisexSnail
   - type: BodyEmotes
     soundsId: GastropoidBodyEmotes
   - type: GastropoidAccent
@@ -205,7 +202,6 @@
   - type: NoSlip
   - type: Magboots
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Gastropoid
   - type: TypingIndicator
     proto: Gastropoid

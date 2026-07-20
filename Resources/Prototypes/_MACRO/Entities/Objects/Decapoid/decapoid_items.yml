@@ -31,7 +31,7 @@
         Blunt: 1 #see above
     passiveBlockFraction: 0.0 #does not give damage reduction passively
     activeBlockFraction: 0.5 #gives 50% damage reduction against brute damage to the decapoid while the claw is raised
-  - type: Damageable
+  - type: Injurable
     damageContainer: DecapoidShield #determines what types of damage are reduced by the Blocking component, DecapoidShield damage container is brute damage only
   - type: ToolTileCompatible
     delay: 0.5
@@ -167,10 +167,10 @@
     edible: Drink
     solution: waterTank
     destroyOnEmpty: false
-  - type: SolutionContainerManager
-    solutions:
-      waterTank:
-        maxVol: 30
+  - type: Solution
+    id: waterTank
+    solution:
+      maxVol: 30
   - type: RefillableSolution
     solution: waterTank
   - type: ExaminableSolution

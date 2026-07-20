@@ -9,11 +9,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._MACRO.Body.EntitySystems;
 
-public sealed class EquipmentOrganSystem : EntitySystem
+public sealed partial class EquipmentOrganSystem : EntitySystem
 {
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
 
     public override void Initialize()
     {

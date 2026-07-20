@@ -10,12 +10,11 @@
     state: pill19
   - type: Label
     currentLabel: emergency
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Epinephrine
-          Quantity: 12
-        - ReagentId: TranexamicAcid
-          Quantity: 3
+  - type: Solution
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Epinephrine
+        Quantity: 12
+      - ReagentId: TranexamicAcid
+        Quantity: 3

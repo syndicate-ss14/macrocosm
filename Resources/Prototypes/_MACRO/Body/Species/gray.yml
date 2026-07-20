@@ -150,10 +150,7 @@
   - type: TypingIndicator
     proto: gray
   - type: Vocal
-    sounds:
-      Male: UnisexGray
-      Female: UnisexGray
-      Unsexed: UnisexGray
+    emoteSounds: UnisexGray
   - type: Speech
     speechSounds: PVC
   - type: Damageable
@@ -346,7 +343,6 @@
     prototype: Gray
     requiredLegs: 2
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatHuman
       amount: 5
@@ -370,7 +366,6 @@
       Unsexed: UnisexGray
   - type: GrayAccent
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Gray
   - type: DamageVisuals
     damageOverlayGroups:
