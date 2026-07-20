@@ -123,10 +123,7 @@
   - type: TypingIndicator
     proto: ovinia
   - type: Vocal
-    emoteSounds:
-      Male: MaleOvinia
-      Female: FemaleOvinia
-      Unsexed: MaleOvinia
+    emoteSounds: MaleOvinia
   - type: Speech
     speechSounds: Ovinia
     speechVerb: Ovinia
