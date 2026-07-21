@@ -76,7 +76,7 @@
 
 - type: marking
   id: OviniaEars
-  bodyPart: HeadTop
+  bodyPart: HeadSide
   groupWhitelist: [ Ovinia ]
   sprites:
     - sprite: _MACRO/Mobs/Customization/Ovinia/ear_markings.rsi
@@ -86,7 +86,7 @@
 
 - type: marking
   id: OviniaEarsCow
-  bodyPart: HeadTop
+  bodyPart: HeadSide
   groupWhitelist: [ Ovinia ]
   sprites:
     - sprite: _MACRO/Mobs/Customization/Ovinia/ear_markings.rsi
@@ -95,7 +95,7 @@
       state: cow-ears-inner
 
 - type: marking
-  id: OviniaEarsDeer
+  id: OviniaEarsSide
   bodyPart: HeadTop
   groupWhitelist: [ Ovinia ]
   sprites:
@@ -106,7 +106,7 @@
 
 - type: marking
   id: OviniaEarsHorse
-  bodyPart: HeadTop
+  bodyPart: Headside
   groupWhitelist: [ Ovinia ]
   sprites:
     - sprite: _MACRO/Mobs/Customization/Ovinia/ear_markings.rsi

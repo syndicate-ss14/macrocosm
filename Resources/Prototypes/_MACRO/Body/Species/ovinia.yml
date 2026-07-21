@@ -12,12 +12,13 @@
       limit: 6
       required: false
     enum.HumanoidVisualLayers.HeadTop:
-      limit: 6
-      default: [ OviniaEars ]
+      limit: 1
+      default: [ OviniaRamHorns ]
       required: true
     enum.HumanoidVisualLayers.HeadSide:
-      limit: 3
-      required: false
+      limit: 1
+      default: [ OviniaEars ]
+      required: true
     enum.HumanoidVisualLayers.UndergarmentTop:
       limit: 1
       required: false
