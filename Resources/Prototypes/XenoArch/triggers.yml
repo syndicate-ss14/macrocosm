@@ -321,6 +321,7 @@
     - Sap
     - SulfurBlood
     - BloodKodepiia # macro add
+    - SynthBlood # Imp
 
 - type: entity
   parent: BaseXenoArtifactTrigger

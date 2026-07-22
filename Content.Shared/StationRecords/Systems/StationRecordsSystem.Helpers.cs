@@ -27,7 +27,9 @@ public sealed partial class StationRecordsSystem
             StationRecordFilterType.Job =>
                 !someRecord.JobTitle.Contains(filterLowerCaseValue, StringComparison.OrdinalIgnoreCase),
             StationRecordFilterType.Species =>
-                !someRecord.Species.Contains(filterLowerCaseValue, StringComparison.OrdinalIgnoreCase),
+                someRecord.Synthetic // Misfit - Add synthetic to species record searching
+                    ? !$"synthetic {someRecord.Species}".ToLower().Contains(filterLowerCaseValue)
+                    : !someRecord.Species.Contains(filterLowerCaseValue, StringComparison.OrdinalIgnoreCase),
             StationRecordFilterType.Prints => someRecord.Fingerprint != null
                 && IsFilterWithSomeCodeValue(someRecord.Fingerprint, filterLowerCaseValue),
             StationRecordFilterType.DNA => someRecord.DNA != null
