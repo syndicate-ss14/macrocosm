@@ -20,8 +20,6 @@
         Quantity: 120
       - ReagentId: Vitamin
         Quantity: 12
-  - type: SliceableFood
-    count: 12
   - type: Item
     size: Normal
     shape:
@@ -62,7 +60,7 @@
 
 - type: entity
   name: margherita pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaMargherita
   description: The flavor of Italy.
   components:
@@ -74,8 +72,16 @@
   - type: Sprite
     layers:
     - state: margherita
-  - type: SliceableFood
-    slice: FoodPizzaMargheritaSlice
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - Pizza
+    - UnguFood
+  # macro edit end
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaMargheritaSlice
+      amount: 8
 
 - type: entity
   name: slice of margherita pizza
@@ -93,10 +99,16 @@
     - state: margherita-slice
   - type: Item
     heldPrefix: margherita-slice
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - Pizza
+    - UnguFood
+  # macro edit end
 
 - type: entity
   name: meat pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaMeat
   description: Greasy pizza with delicious meat.
   components:
@@ -109,8 +121,10 @@
   - type: Sprite
     layers:
     - state: meat
-  - type: SliceableFood
-    slice: FoodPizzaMeatSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaMeatSlice
+      amount: 8
   - type: Tag
     tags:
     - Meat
@@ -142,7 +156,7 @@
 
 - type: entity
   name: mushroom pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaMushroom
   description: Very special pizza.
   components:
@@ -154,8 +168,16 @@
   - type: Sprite
     layers:
     - state: mushroom
-  - type: SliceableFood
-    slice: FoodPizzaMushroomSlice
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - Pizza
+    - UnguFood
+  # macro edit end
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaMushroomSlice
+      amount: 8
 
 - type: entity
   name: slice of mushroom pizza
@@ -173,11 +195,17 @@
     - state: mushroom-slice
   - type: Item
     heldPrefix: mushroom-slice
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - Pizza
+    - UnguFood
+  # macro edit end
 # Tastes like crust, tomato, cheese, mushroom.
 
 - type: entity
   name: vegetable pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaVegetable
   description: The station's vegetarians will thank you for making this.
   components:
@@ -192,8 +220,16 @@
   - type: Sprite
     layers:
     - state: vegetable
-  - type: SliceableFood
-    slice: FoodPizzaVegetableSlice
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - Pizza
+    - UnguFood
+  # macro edit end
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaVegetableSlice
+      amount: 8
 
 - type: entity
   name: slice of vegetable pizza
@@ -215,12 +251,18 @@
     - state: vegetable-slice
   - type: Item
     heldPrefix: vegetable-slice
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - Pizza
+    - UnguFood
+  # macro edit end
 
 # Tastes like crust, tomato, cheese, carrot.
 
 - type: entity
   name: donk-pocket pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaDonkpocket
   description: Who thought this would be a good idea?
   components:
@@ -230,8 +272,10 @@
   - type: Sprite
     layers:
     - state: donkpocket
-  - type: SliceableFood
-    slice: FoodPizzaDonkpocketSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaDonkpocketSlice
+      amount: 8
   - type: Solution
     solution:
       reagents:
@@ -278,7 +322,7 @@
 
 - type: entity
   name: dank pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaDank
   description: The hippie's pizza of choice.
   components:
@@ -291,8 +335,16 @@
   - type: Sprite
     layers:
     - state: dank
-  - type: SliceableFood
-    slice: FoodPizzaDankSlice
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - Pizza
+    - UnguFood
+  # macro edit end
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaDankSlice
+      amount: 8
   - type: Solution
     solution:
       reagents:
@@ -320,6 +372,12 @@
     - state: dank-slice
   - type: Item
     heldPrefix: dank-slice
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - Pizza
+    - UnguFood
+  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -333,7 +391,7 @@
 
 - type: entity
   name: sassysage pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaSassysage
   description: You can really smell the sassiness.
   components:
@@ -346,8 +404,10 @@
   - type: Sprite
     layers:
     - state: sassysage
-  - type: SliceableFood
-    slice: FoodPizzaSassysageSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaSassysageSlice
+      amount: 8
   - type: Tag
     tags:
     - Meat
@@ -379,7 +439,7 @@
 
 - type: entity
   name: Hawaiian pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaPineapple
   description: Makes people burst into tears. Tears of joy or sadness depends on the person's fondness for pineapple.
   components:
@@ -393,8 +453,10 @@
   - type: Sprite
     layers:
     - state: pineapple
-  - type: SliceableFood
-    slice: FoodPizzaPineappleSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaPineappleSlice
+      amount: 8
   - type: Tag
     tags:
     - Meat
@@ -428,7 +490,7 @@
 #TODO: This is a meme pizza from /tg/. It has specially coded mechanics.
 - type: entity
   name: Arnold's pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaArnold
   description: Hello, you've reached Arnold's pizza shop. I'm not here now, I'm out killing pepperoni.
   components:
@@ -442,8 +504,10 @@
   - type: Sprite
     layers:
     - state: arnold
-  - type: SliceableFood
-    slice: FoodPizzaArnoldSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaArnoldSlice
+      amount: 8
   - type: Solution
     solution:
       reagents:
@@ -533,7 +597,7 @@
 
 - type: entity
   name: spicy rock pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaUranium
   description: Spicy pizza covered in peppers and uranium.
   components:
@@ -546,8 +610,10 @@
   - type: Sprite
     layers:
     - state: uranium-pizza
-  - type: SliceableFood
-    slice: FoodPizzaUraniumSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaUraniumSlice
+      amount: 8
   - type: Tag
     tags:
     - Meat
@@ -612,7 +678,7 @@
 
 - type: entity
   name: cotton pizza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaCotton
   description: Flat fabric cotton dough with cotton topping. Incredible.
   components:
@@ -625,8 +691,10 @@
     - state: cotton-pizza
   - type: Edible
     requiresSpecialDigestion: true
-  - type: SliceableFood
-    slice: FoodPizzaCottonSlice
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaCottonSlice
+      amount: 8
   - type: Tag
     tags:
     - ClothMade
@@ -673,7 +741,7 @@
 
 - type: entity
   name: world peazza
-  parent: FoodPizzaBase
+  parent: [FoodPizzaBase, BaseSlicingRefinableFood]
   id: FoodPizzaWorldpeas
   description: Modern diplomacy in the shape of a disc.
   components:
@@ -684,8 +752,16 @@
   - type: Sprite
     layers:
     - state: worldpeas
-  - type: SliceableFood
-    slice: FoodPizzaWorldpeasSlice
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - Pizza
+    - UnguFood
+  # macro edit end
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodPizzaWorldpeasSlice
+      amount: 8
   - type: Solution
     solution:
       reagents:
@@ -711,6 +787,12 @@
     - state: worldpeas-slice
   - type: Item
     heldPrefix: worldpeas-slice
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - Pizza
+    - UnguFood
+  # macro edit end
   - type: Solution
     solution:
       reagents:

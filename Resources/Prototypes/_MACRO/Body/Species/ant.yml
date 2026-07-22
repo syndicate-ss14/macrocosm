@@ -122,7 +122,6 @@
     sprite: _MACRO/Mobs/Species/Ant/parts.rsi
     state: full
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatMeatball #meatball until someone makes ant meat
       amount: 1
@@ -144,10 +143,7 @@
       types:
         Blunt: 0.1
   - type: Vocal
-    sounds:
-      Male: UnisexAnt
-      Female: UnisexAnt
-      Unsexed: UnisexAnt
+    emoteSounds: UnisexAnt
   - type: Damageable
     damageModifierSet: Ant
   - type: MobThresholds
