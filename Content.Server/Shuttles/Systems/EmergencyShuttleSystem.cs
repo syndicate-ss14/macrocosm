@@ -68,7 +68,6 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     [Dependency] private StationSystem _station = default!;
     [Dependency] private TransformSystem _transformSystem = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = default!;
-
     [Dependency] private AnnouncerManager _announcer = default!; // Macrocosm edit
 
     private const float ShuttleSpawnBuffer = 1f;

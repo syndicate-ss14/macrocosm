@@ -83,7 +83,6 @@ internal static class ServerContentIoC
         deps.Register<DiscordChatLink>();
         deps.Register<ServerFeedbackManager>();
         deps.Register<ISharedFeedbackManager, ServerFeedbackManager>();
-
         deps.Register<AnnouncerManager>(); // Macrocosm edit
     }
 }

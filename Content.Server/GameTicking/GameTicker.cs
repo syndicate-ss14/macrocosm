@@ -66,7 +66,6 @@ namespace Content.Server.GameTicking
         [Dependency] private MetaDataSystem _metaData = default!;
         [Dependency] private SharedRoleSystem _roles = default!;
         [Dependency] private ServerDbEntryManager _dbEntryManager = default!;
-
         [Dependency] private AnnouncerManager _announcer = default!; // Macrocosm edit
 
         [ViewVariables] private bool _initialized;

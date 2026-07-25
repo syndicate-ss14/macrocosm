@@ -83,19 +83,8 @@ public sealed partial class AnnouncerManager : IPostInjectInit
             _sawmill.Error($"No announcers found in weights {weights}.");
         }
 
-        var total = validWeights.Values.Sum();
-        var accumulated = 0f;
-        var rand = _random.NextFloat(total);
-        foreach (var (key, weight) in validWeights)
-        {
-            accumulated += weight;
-            if (accumulated < rand)
-                continue;
-            announcerId = key;
-            return true;
-        }
-        _sawmill.Error("Weighted random selection failed");
-        return false;
+        announcerId = _random.Pick(validWeights).Key;
+        return true;
     }
 
     public void PostInject()

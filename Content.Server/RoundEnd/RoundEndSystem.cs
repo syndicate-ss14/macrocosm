@@ -11,6 +11,7 @@ using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
+using Content.Shared._MACRO.Announcements;
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.GameTicking;
@@ -42,8 +43,12 @@ namespace Content.Server.RoundEnd
         [Dependency] private EmergencyShuttleSystem _shuttle = default!;
         [Dependency] private SharedAudioSystem _audio = default!;
         [Dependency] private StationSystem _stationSystem = default!;
-
         [Dependency] private AnnouncerManager _announcer = default!; // Macrocosm edit
+
+        // Macrocosm edit start
+        private static readonly ProtoId<AnnouncementSoundPrototype> ShuttleCalledAnnouncementId = "ShuttleCalled";
+        private static readonly ProtoId<AnnouncementSoundPrototype> ShuttleRecalledAnnouncementId = "ShuttleRecalled";
+        // Macrocosm edit end
 
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
 
@@ -215,7 +220,7 @@ namespace Content.Server.RoundEnd
                 Color.Gold);
 
             // Macrocosm edit start - announcer override
-            _announcer.TryGetAnnouncerSound("ShuttleCalled", out var sound);
+            _announcer.TryGetAnnouncerSound(ShuttleCalledAnnouncementId, out var sound);
             _audio.PlayGlobal(sound, Filter.Broadcast(), true);
             // Macrocosm edit end
 
@@ -268,7 +273,7 @@ namespace Content.Server.RoundEnd
                 Loc.GetString("round-end-system-shuttle-sender-announcement"), false, colorOverride: Color.Gold);
 
             // Macrocosm edit start - announcer override
-            _announcer.TryGetAnnouncerSound("ShuttleRecalled", out var sound);
+            _announcer.TryGetAnnouncerSound(ShuttleRecalledAnnouncementId, out var sound);
             _audio.PlayGlobal(sound, Filter.Broadcast(), true);
             // Macrocosm edit end
 
