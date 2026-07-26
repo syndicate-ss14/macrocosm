@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared._MACRO.Announcements;
-using Content.Shared._MACRO.MCCVars;
+using Content.Shared._MACRO.CCVars;
 using Content.Shared.Random;
 using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
@@ -48,7 +48,7 @@ public sealed partial class AnnouncerManager : IPostInjectInit
     /// </summary>
     public void RandomizeAnnouncer()
     {
-        ProtoId<WeightedRandomPrototype> weights = _configurationManager.GetCVar(MCCVars.AnnouncerWeightPrototype);
+        ProtoId<WeightedRandomPrototype> weights = _configurationManager.GetCVar(MacroCCVars.AnnouncerWeightPrototype);
         if (!TryPickAnnouncer(weights, out _announcerId))
             _sawmill.Error("Failed to load announcer.");
     }

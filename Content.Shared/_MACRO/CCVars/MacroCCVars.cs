@@ -1,9 +1,9 @@
 using Robust.Shared.Configuration;
 
-namespace Content.Shared._MACRO.MCCVars;
+namespace Content.Shared._MACRO.CCVars;
 
 [CVarDefs]
-public sealed partial class MCCVars
+public sealed class MacroCCVars
 {
     /// <summary>
     ///     The prototype to use for announcer weights.
