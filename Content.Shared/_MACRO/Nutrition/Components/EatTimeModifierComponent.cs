@@ -14,16 +14,4 @@ public sealed partial class EatTimeModifierComponent : Component
     /// </summary>
     [DataField]
     public float Modifier = 1f;
-
-    /// <summary>
-    /// If not null, the target must succeed the whitelist.
-    /// </summary>
-    [DataField]
-    public EntityWhitelist? TargetWhitelist { get; set; }
-
-    /// <summary>
-    /// If not null, the target must not pass the blacklist.
-    /// </summary>
-    [DataField]
-    public EntityWhitelist? TargetBlacklist { get; set; }
 }

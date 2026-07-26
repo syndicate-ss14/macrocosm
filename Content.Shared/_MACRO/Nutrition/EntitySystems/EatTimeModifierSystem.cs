@@ -26,9 +26,7 @@ public sealed class EatTimeModifierSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        if (!TryComp<EatTimeModifierComponent>(user, out var eatTimeModifier)
-            || !_entityWhitelist.IsWhitelistPassOrNull(eatTimeModifier.TargetWhitelist, user)
-            || !_entityWhitelist.IsWhitelistFailOrNull(eatTimeModifier.TargetBlacklist, user))
+        if (!TryComp<EatTimeModifierComponent>(user, out var eatTimeModifier))
             return;
 
         args.Time *= eatTimeModifier.Modifier;
