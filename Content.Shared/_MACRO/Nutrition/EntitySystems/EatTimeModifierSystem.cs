@@ -2,6 +2,7 @@ using Content.Shared._MACRO.Nutrition.Components;
 using Content.Shared.Item;
 using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Whitelist;
 
 namespace Content.Shared._MACRO.Nutrition.EntitySystems;
 
@@ -10,6 +11,8 @@ namespace Content.Shared._MACRO.Nutrition.EntitySystems;
 /// </summary>
 public sealed class EatTimeModifierSystem : EntitySystem
 {
+    [Dependency] private EntityWhitelistSystem _entityWhitelist = null!;
+
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -18,12 +21,16 @@ public sealed class EatTimeModifierSystem : EntitySystem
 
     private void OnEdible(ref EdibleEvent args)
     {
+        var user = args.User;
+
         if (args.Cancelled)
             return;
 
-        if (!TryComp<EatTimeModifierComponent>(args.User, out var comp))
+        if (!TryComp<EatTimeModifierComponent>(user, out var eatTimeModifier)
+            || !_entityWhitelist.IsWhitelistPassOrNull(eatTimeModifier.TargetWhitelist, user)
+            || !_entityWhitelist.IsWhitelistFailOrNull(eatTimeModifier.TargetBlacklist, user))
             return;
 
-        args.Time *= comp.Multiplier;
+        args.Time *= eatTimeModifier.Modifier;
     }
 }
