@@ -7,23 +7,11 @@ namespace Content.Server._MACRO.Speech.EntitySystems;
 
 public sealed partial class AnomalocaridAccentSystem : EntitySystem
 {
-    [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
+    [Dependency] private ReplacementAccentSystem _replacement = default!;
 
-    private static readonly Dictionary<Regex, string> Regexes = new()
-    {
-        {new ("bl"),"blblbl"},
-        {new ("Bl"),"Blblbl"},
-        {new ("BL"),"BLBLBL"},
-        {new ("gl"),"glglgl"},
-        {new ("Gl"),"Glglgl"},
-        {new ("GL"),"GLGGLL"},
-        {new ("(?<!c)k"),"k-k"},
-        {new ("(?<!C)K"),"K-K"},
-        {new ("ck"),"ck-k"},
-        {new ("CK"),"CK-K"},
-        {new ("Ck"),"Ck-k"},
-        {new ("cK"),"cK-K"},
-    };
+    private static readonly Regex BubbleRegex = new("(([bg])|([BG]))((l)|(L))");
+
+    private static readonly Regex ClickRegex = new("(c)(k)", RegexOptions.IgnoreCase);
 
     public override void Initialize()
     {
@@ -35,10 +23,20 @@ public sealed partial class AnomalocaridAccentSystem : EntitySystem
     {
         var message = args.Message;
 
-        foreach (var keypair in Regexes)
-        {
-            message = keypair.Key.Replace(message, keypair.Value);
-        }
+        // "bl" -> "blblbl"
+        // "Bl" -> "Blblbl"
+        // "BL" -> "BLBLBL"
+        // "bL" -> "blbLBL"
+        // please bear with me. regex so beautiful
+        message = BubbleRegex.Replace(message, m => m.Groups[1].ToString() +
+            (m.Groups[2].Success ? m.Groups[4].ToString().ToLower() : m.Groups[4].ToString()) +
+            (m.Groups[5].Success ? m.Groups[1].ToString().ToLower() : m.Groups[1].ToString()) +
+            m.Groups[4].ToString() +
+            (m.Groups[5].Success ? m.Groups[1].ToString().ToLower() : m.Groups[1].ToString().ToUpper()) +
+            m.Groups[4].ToString());
+
+        // "fuck" -> "fuck-k"
+        message = ClickRegex.Replace(message, "$1$2-$2");
 
         message = _replacement.ApplyReplacements(message, "anomalocarid");
 

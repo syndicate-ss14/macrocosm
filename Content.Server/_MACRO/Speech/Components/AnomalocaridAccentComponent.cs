@@ -4,4 +4,4 @@ namespace Content.Server.Speech.Components;
 ///     blblblblbl
 /// </summary>
 [RegisterComponent]
-public sealed partial class AnomalocaridAccentComponent : Component { }
+public sealed partial class AnomalocaridAccentComponent : Component;

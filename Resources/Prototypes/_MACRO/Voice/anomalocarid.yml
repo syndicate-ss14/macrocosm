@@ -9,6 +9,7 @@
 
 - type: emoteSounds
   id: UnisexAnomalocarid
+  voiceSelectorName: humanoid-profile-editor-voice-neutral
   params:
     variation: 0.075
   sounds:

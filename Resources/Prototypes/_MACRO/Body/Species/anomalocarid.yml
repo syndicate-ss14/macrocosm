@@ -185,9 +185,9 @@
     damage:
       types:
         Blunt: 8
-  - type: ActionGun
-    action: ActionAnomalocaridSpit
-    gunProto: AnomalocaridSpitGun
+  - type: ActionGrant
+    actions:
+    - ActionAnomalocaridSpit
   - type: HeatVent
     tooHotPopups:
       - anomalocarid-vent-toohot1
@@ -213,10 +213,7 @@
       chat-speech-verb-suffix-exclamation: AnomalocaridExclamation
       chat-speech-verb-suffix-stutter: AnomalocaridStutter
   - type: Vocal
-    sounds:
-      Male: UnisexAnomalocarid
-      Female: UnisexAnomalocarid
-      Unsexed: UnisexAnomalocarid
+    emoteSounds: UnisexAnomalocarid
   - type: Tag
     tags:
     - AnomalocaridClaw #this exists so they can dig through rocks
