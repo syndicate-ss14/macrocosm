@@ -3,12 +3,25 @@
   name: chat-emote-name-hiss
   whitelist:
     components:
-    - Respirator
+    - Vocal
+  category: Vocal
+  available: false
   chatMessages: ["chat-emote-msg-hiss"]
   chatTriggers:
   - hiss
   - hisses
   - hissed
+
+- type: emote
+  id: Moo
+  name: chat-emote-name-moo
+  category: Vocal
+  available: false
+  chatMessages: ["chat-emote-msg-moo"]
+  chatTriggers:
+    - moo
+    - moos
+    - mooed
 
 - type: emote
   id: Bubble

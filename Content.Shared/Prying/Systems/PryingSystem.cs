@@ -11,19 +11,20 @@ using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Serialization;
 using PryUnpoweredComponent = Content.Shared.Prying.Components.PryUnpoweredComponent;
+using Content.Shared._MACRO.Tools.Components; // macro
 
 namespace Content.Shared.Prying.Systems;
 
 /// <summary>
 /// Handles prying of entities (e.g. doors)
 /// </summary>
-public sealed class PryingSystem : EntitySystem
+public sealed partial class PryingSystem : EntitySystem
 {
-    [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private ISharedAdminLogManager _adminLog = default!;
+    [Dependency] private SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private SharedAudioSystem _audioSystem = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private AlertsSystem _alerts = default!;
 
     public override void Initialize()
     {
@@ -101,7 +102,16 @@ public sealed class PryingSystem : EntitySystem
             return true;
         }
 
-        StartPry(target, user, tool, comp.SpeedModifier, out id);
+        // macro edit start, if a prying tool has CowTool and the user has CowToolProficiency, use speed modifier from CowToolComponent
+        // else, use speed modifier from PryingComponent, as normal
+        float speedModifier; //toolModifier parameter moved to its own variable from StartPry call below to allow it to be set to different durations
+        if (TryComp<CowToolComponent>(tool, out var cowToolComponent) &&
+            TryComp<CowToolProficiencyComponent>(user, out _))
+            speedModifier = cowToolComponent.ProficiencySpeedModifier;
+        else
+            speedModifier = comp.SpeedModifier;
+        StartPry(target, user, tool, speedModifier, out id); // speedModifier was previously comp.SpeedModifier
+        // macro edit end
 
         return true;
     }
