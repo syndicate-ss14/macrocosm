@@ -3,6 +3,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Stunnable;
 using Content.Server.Temperature.Systems;
 using Content.Server.Damage.Components;
+using Content.Shared._MACRO.Atmos.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
@@ -294,7 +295,11 @@ namespace Content.Server.Atmos.EntitySystems
             if (!Resolve(uid, ref flammable))
                 return;
 
-            stacks *= flammable.FirestackMultiplier; // MACRO ADD: allow entities to modulate firestacks applied
+            // MACRO start: firestack modifier
+            if (TryComp<FireStackModifierComponent>(uid, out var fireStackModifier))
+                stacks *= fireStackModifier.Modifier;
+            // MACRO end
+
             flammable.FireStacks = MathF.Min(MathF.Max(flammable.MinimumFireStacks, stacks), flammable.MaximumFireStacks);
 
             if (flammable.FireStacks <= 0)

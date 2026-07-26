@@ -1,3 +1,4 @@
+using Content.Shared._MACRO.Bed.Sleep;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
 using Content.Shared.Buckle.Components;
@@ -287,16 +288,16 @@ public sealed partial class SleepingSystem : EntitySystem
 
     private void OnStatusEffectApplied(Entity<ForcedSleepingStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
-        // MACRO START: SuperSleepyComponent to modify force sleep duration
+        // MACRO START: SleepTimeModifier to modify force sleep duration
         // IF YOU ARE HERE TO ADD MORE TRYCOMPS: dont. make a new event instead.
-        if (TryComp<SuperSleepyComponent>(args.Target, out var sleepy) &&
+        if (TryComp<SleepTimeModifierComponent>(args.Target, out var sleepTimeModifier) &&
             _statusEffect.TryGetTime(args.Target, StatusEffectForcedSleeping, out var initTime))
         {
             var time = initTime.EndEffectTime - initTime.StartEffectTime;
             _statusEffect.TryUpdateStatusEffectDuration(
                 args.Target,
                 StatusEffectForcedSleeping,
-                time * sleepy.SleepMultiplier);
+                time * sleepTimeModifier.Modifier);
         }
         // MACRO END
 

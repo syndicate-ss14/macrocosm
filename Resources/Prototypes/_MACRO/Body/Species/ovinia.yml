@@ -132,16 +132,18 @@
   - type: Damageable
     damageModifierSet: Ovinia
   - type: Flammable
-    firestackMultiplier: .75 #wool isnt flammable
+  - type: FireStackModifier
+    modifier: 0.75 # less fire stacks!
   - type: EatTimeModifier
     multiplier: 1.5 # quite slow eaters
   - type: Hunger
     baseDecayRate: 0.0083 # slower than normal (chewin they cud)
   - type: Thirst
     baseDecayRate: 0.0083 # slower than normal
-  - type: SuperSleepy
-  - type: BetterPetter
-    multiplier: 1.2
+  - type: SleepTimeModifier
+    modifier: 2
+  - type: PettingChanceModifier
+    modifier: 1.2
   - type: ProtectedFromStepTriggers
   - type: Tag
     tags:

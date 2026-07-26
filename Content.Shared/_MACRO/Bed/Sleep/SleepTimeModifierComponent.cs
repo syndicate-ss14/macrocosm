@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Bed.Sleep;
+namespace Content.Shared._MACRO.Bed.Sleep;
 
 /// <summary>
 ///     Component that modifies an entity's sleep wakeup cooldown
@@ -8,7 +8,7 @@ namespace Content.Shared.Bed.Sleep;
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
-public sealed partial class SuperSleepyComponent : Component
+public sealed partial class SleepTimeModifierComponent : Component
 {
     /// <summary>
     ///     When this entity is put to sleep, the cooldown before
@@ -16,5 +16,5 @@ public sealed partial class SuperSleepyComponent : Component
     ///     multiplied by this value.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float SleepMultiplier = 2;
+    public float Modifier = 1;
 }

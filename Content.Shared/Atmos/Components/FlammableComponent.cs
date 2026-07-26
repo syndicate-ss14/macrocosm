@@ -108,13 +108,6 @@ namespace Content.Shared.Atmos.Components
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public float FirestackFade = -0.1f;
 
-        // MACRO ADD
-        /// <summary>
-        ///     Whenever firestacks are added to the object, the number of firestacks will be modified by this coefficient.
-        /// </summary>
-        [DataField]
-        public float FirestackMultiplier = 1f;
-
         [DataField]
         public ProtoId<AlertPrototype> FireAlert = "Fire";
 
