@@ -14,10 +14,10 @@ namespace Content.Server.Announcements;
 [AdminCommand(AdminFlags.Moderator)]
 public sealed partial class AnnounceCommand : LocalizedEntityCommands
 {
+    private static readonly ProtoId<AnnouncementSoundPrototype> AnnounceId = "Announce";
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IResourceManager _res = default!;
-
     [Dependency] private AnnouncerManager _announcer = default!; // macrocosm
 
     public override string Command => "announce";
@@ -39,7 +39,13 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
         var message = args[0];
         var sender = Loc.GetString("cmd-announce-sender");
         var color = Color.Gold;
-        _announcer.TryGetAnnouncerSound("Announce", out var sound); // Macrocosm edit - Announcer variation
+        // Macrocosm edit - handle sound
+        if (!_announcer.TryGetAnnouncerSound(AnnounceId, out var sound) && args.Length < 4)
+        {
+            var warningMessage = Loc.GetString("cmd-announce-no-sound", ("sound", AnnounceId));
+            shell.WriteError(warningMessage);
+        }
+        // Macrocosm edit end
 
         // Optional sender argument
         if (args.Length >= 2)
