@@ -11,8 +11,6 @@ namespace Content.Shared._MACRO.Nutrition.EntitySystems;
 /// </summary>
 public sealed class EatTimeModifierSystem : EntitySystem
 {
-    [Dependency] private EntityWhitelistSystem _entityWhitelist = null!;
-
     /// <inheritdoc/>
     public override void Initialize()
     {
