@@ -62,8 +62,9 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
         // Optional sound argument
         if (args.Length >= 4)
         {
-            if (!_announcer.TryGetAnnouncerSound(args[3], out sound)) // Macrocosm edit - allow announcement sound prototypes
-                sound = new SoundPathSpecifier(args[3]);
+            var soundOverride = args[3];
+            if (!_announcer.TryGetAnnouncerSound(soundOverride, out sound)) // Macrocosm edit - allow announcement sound prototypes
+                sound = new SoundPathSpecifier(soundOverride);
         }
 
         _chat.DispatchGlobalAnnouncement(message, sender, true, sound, color);
