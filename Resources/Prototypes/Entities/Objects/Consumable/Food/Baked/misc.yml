@@ -35,6 +35,11 @@
       - sweet
   - type: Item
     size: Tiny
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
 
 - type: entity
   name: berry muffin
@@ -139,6 +144,11 @@
   components:
   - type: Sprite
     state: bun-honey
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
 
 - type: entity
   name: hotcross bun
@@ -148,6 +158,11 @@
   components:
   - type: Sprite
     state: bun-hotcross
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
 
 - type: entity
   name: meat bun
@@ -177,6 +192,11 @@
   components:
   - type: Sprite
     state: cookie-oatmeal
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
 
 - type: entity
   name: raisin cookie
@@ -198,6 +218,11 @@
   components:
   - type: Sprite
     state: cookie-sugar
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
 
 # Nuggets
 
@@ -402,6 +427,11 @@
     layers:
       - state: tray
       - state: waffles
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
 
 - type: entity
   name: soy waffles
@@ -446,6 +476,11 @@
   components:
   - type: Sprite
     state: pretzel
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
 
 - type: entity
   name: cannoli
@@ -455,6 +490,11 @@
   components:
   - type: Sprite
     state: cannoli
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
 
 - type: entity
   name: dumplings
@@ -493,6 +533,11 @@
       - smokey
   - type: Sprite
     state: chevrechaud
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -698,6 +743,11 @@
       - butter
   - type: Sprite
     state: croissant
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -756,6 +806,11 @@
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/misc.rsi
     state: grilled-cheese
+  # macro edit start - allow ungu to eat
+  - type: Tag
+    tags:
+    - UnguFood
+  # macro edit end
   - type: Solution
     solution:
       reagents:
