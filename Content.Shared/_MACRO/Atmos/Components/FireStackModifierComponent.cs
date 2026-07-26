@@ -6,6 +6,9 @@ namespace Content.Shared._MACRO.Atmos.Components;
 [RegisterComponent]
 public sealed partial class FireStackModifierComponent : Component
 {
+    /// <summary>
+    /// The modifier to multiply the fire stacks by.
+    /// </summary>
     [DataField]
     public float Modifier { get; set; } = 1f;
 }
