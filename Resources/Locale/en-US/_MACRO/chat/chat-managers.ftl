@@ -17,3 +17,9 @@ chat-speech-verb-anomalocarid-exclamation-strong-2 = screams
 chat-speech-verb-name-anomalocarid-stutter = Anomalocarid Stuttering
 chat-speech-verb-anomalocarid-stutter-1 = rasps
 chat-speech-verb-anomalocarid-stutter-2 = gurgles
+
+chat-speech-verb-name-ovinia = Ovinia
+chat-speech-verb-ovinia-1 = baas
+chat-speech-verb-ovinia-2 = bleats
+chat-speech-verb-ovinia-3 = maas
+chat-speech-verb-ovinia-4 = mehs
