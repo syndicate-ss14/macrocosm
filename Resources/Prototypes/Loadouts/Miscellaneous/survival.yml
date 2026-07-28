@@ -26,6 +26,7 @@
     - Gray
     - Gastropoid
     - Thaven
+    - Ovinia
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
@@ -91,6 +92,7 @@
     - Gray
     - Gastropoid
     - Thaven
+    - Ovinia
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth
