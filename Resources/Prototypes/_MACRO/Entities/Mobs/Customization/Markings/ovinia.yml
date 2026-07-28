@@ -95,14 +95,14 @@
       state: cow-ears-inner
 
 - type: marking
-  id: OviniaEarsSide
-  bodyPart: HeadTop
+  id: OviniaEarsDeer
+  bodyPart: HeadSide
   groupWhitelist: [ Ovinia ]
   sprites:
     - sprite: _MACRO/Mobs/Customization/Ovinia/ear_markings.rsi
-      state: cow-ears
+      state: deer-ears
     - sprite: _MACRO/Mobs/Customization/Ovinia/ear_markings.rsi
-      state: cow-ears-inner
+      state: deer-ears-inner
 
 - type: marking
   id: OviniaEarsHorse
