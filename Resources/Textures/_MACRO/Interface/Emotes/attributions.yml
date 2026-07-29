@@ -9,3 +9,15 @@
   license: "CC-BY-SA-4.0"
   copyright: "Created by UndertaleSex for Impstation"
   source: "https://github.com/impstation/imp-station-14"
+
+- files: 
+  - "baa.png"
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken/modified from tgstation at https://github.com/tgstation/tgstation/blob/HEAD/icons/ui/chat/emoji.dmi"
+  source: "https://github.com/tgstation/tgstation"
+  
+- files: 
+  - "moo.png"
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken/modified from tgstation at https://github.com/tgstation/tgstation/blob/HEAD/icons/ui/chat/emoji.dmi"
+  source: "https://github.com/tgstation/tgstation"

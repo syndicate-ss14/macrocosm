@@ -15,3 +15,5 @@
 - type: Tag
   id: Vaporizer # SpeechRequiresEquipment whitelist on MobDecapoid.
 
+- type: Tag
+  id: OviniaEmotes # Used for Ovinia specific emotes

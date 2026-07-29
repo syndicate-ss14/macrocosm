@@ -39,3 +39,10 @@
   typingState: anom
   idleState: anomidle
   offset: -0.3, 0.6
+
+- type: typingIndicator
+  id: ovinia
+  spritePath: /Textures/_MACRO/Effects/speech.rsi
+  typingState: ovinia0
+  idleState: ovinia-idle
+  offset: 0, 0

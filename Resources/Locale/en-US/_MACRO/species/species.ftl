@@ -6,3 +6,4 @@ species-name-gray = Gray
 species-name-gastropoid = Gastropoid
 species-name-ungu = Ungu
 species-name-decapoid = Decapoid
+species-name-ovinia = Ovinia
