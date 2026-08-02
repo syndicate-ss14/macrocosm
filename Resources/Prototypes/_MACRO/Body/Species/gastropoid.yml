@@ -48,6 +48,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceGastropoid
+  categories: [ HideSpawnMenu ]
   name: gastropoid appearance
   components:
   - type: Inventory

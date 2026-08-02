@@ -15,7 +15,10 @@
     - type: MothAccent
     - type: ReplacementAccent
       accent: scottish
-    - type: GrayAccent # macro
+    # macro start
+    - type: GrayAccent
+    - type: AnomalocaridAccent
+    # macro end
 
 # 1 Cost
 

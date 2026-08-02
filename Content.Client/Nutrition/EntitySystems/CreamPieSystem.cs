@@ -66,6 +66,12 @@ public sealed partial class CreamPieSystem : SharedCreamPieSystem
 
         _appearance.TryGetData<bool>(ent.Owner, CreamPiedVisuals.Creamed, out var isCreamPied, appearance);
         _sprite.LayerSetSprite((ent.Owner, sprite), index, creamPied.Sprite);
+
+        // MACRO START- creampie offset
+        if (ent.Comp1.Offset is { } offset)
+            _sprite.LayerSetOffset((ent.Owner, sprite), index, offset);
+        // MACRO END
+
         _sprite.LayerSetVisible((ent.Owner, sprite), index, isCreamPied);
 
         if (ProtoMan.Resolve(ent.Comp1.Displacement, out var displacementProto))

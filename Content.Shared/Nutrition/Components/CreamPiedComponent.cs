@@ -4,6 +4,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using System.Numerics; // MACRO: sprite offset
 
 namespace Content.Shared.Nutrition.Components;
 
@@ -34,6 +35,13 @@ public sealed partial class CreamPiedComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public ProtoId<DisplacementDataPrototype>? Displacement;
+
+    // MACRO ADD
+    /// <summary>
+    ///     Optional offset for the sprite layer.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Vector2? Offset;
 }
 
 /// <summary>

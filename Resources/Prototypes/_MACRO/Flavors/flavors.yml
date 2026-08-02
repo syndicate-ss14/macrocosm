@@ -12,3 +12,8 @@
   id: allulalo
   flavorType: Complex
   description: flavor-complex-allulalo
+
+- type: flavor
+  id: shrimp
+  flavorType: Base
+  description: flavor-base-shrimp

@@ -5,6 +5,7 @@
   children:
   # - Ant # macro - uncomment to enable
   # - Allulalo # macro - uncomment to enable
+    # - Anomalocarid # macro - uncomment to enable
   # - Apid # macro - uncomment to enable
   - Arachnid
   # - Decapoid # macro - uncomment to enable

@@ -58,6 +58,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceGray
+  categories: [ HideSpawnMenu ]
   name: gray appearance
   components:
   - type: Inventory

@@ -1,0 +1,35 @@
+- type: species
+  id: Anomalocarid
+  name: species-name-anomalocarid
+  roundStart: false
+  #randomViable: true
+  prototype: MobAnomalocarid
+  defaultSkinTone: "#e5e5e5"
+  dollPrototype: AppearanceAnomalocarid
+  skinColoration: AnomalocaridToned
+  maleFirstNames: NamesAnomalocaridFirst
+  femaleFirstNames: NamesAnomalocaridFirst
+  lastNames: NamesAnomalocaridLast
+  sexes:
+  - Male
+  - Female
+  - Unsexed
+  defaultSoundsBySex:
+  - UnisexAnomalocarid
+  - UnisexAnomalocarid
+  - UnisexAnomalocarid
+  voices:
+  - UnisexAnomalocarid
+
+# Developer Notes
+#
+# Anomalocarids are based on anomalocarids and shrimp in general. They have a unique visual identity, being much taller than other species!
+# They are extremely resilient to heat and have a much higher pressure tolerance, and a slight resistance to slashing, poison and radiation.
+# In return, they take much more cold, blunt, and piercing damage.
+# They also have a unique 'Heat Vent' ability that allows them to vent heat that automatically accumulates over time. # If they generate enough heat, they will begin to take damage.
+#
+# Anomalocarids do have displacements, but most of their clothing uses bespoke custom sprites.
+# Don't feel pressured to add new sprites for every clothing item if you want to use Anomalocarids, the displacements will work fine.
+# If you have a lot of clothing items ported from other forks, check the Impstation repository before making your own custom sprites - they may already exist!
+#
+# You might like Anomalocarids if you want a species with a more light-hearted appearance, or if you want a species that has some unique atmospheric interactions.

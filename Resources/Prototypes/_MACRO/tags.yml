@@ -1,6 +1,9 @@
 # Sort all tags in alphabetical order and document their purpose here
 
 - type: Tag
+  id: AnomalocaridClaw # Used to allow Anomalocarid's melee weapon to break rocks.
+
+- type: Tag
   id: CostumeItem # Used for non-clothing items that should be allowed to fit in costume bundles.
 
 - type: Tag

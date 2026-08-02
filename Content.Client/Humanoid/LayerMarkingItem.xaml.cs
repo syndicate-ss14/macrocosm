@@ -11,6 +11,7 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Input;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Numerics;
 
 namespace Content.Client.Humanoid;
 
@@ -88,6 +89,10 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
     private void UpdateData()
     {
         MarkingTexture.Textures = _markingPrototype.Sprites.Select(layer => _sprite.Frame0(layer)).ToList();
+        // MACRO EDIT: add a height check to the sprite for long anomalocarid leg markings!
+        if (_markingPrototype.Sprites.Any(layer => _sprite.Frame0(layer).Height > 32))
+            MarkingTexture.TextureScale = new(1, 1);  // basically just halving the size. TODO maybe get this to offset instead.
+        // MACRO EDIT END
         SelectButton.Text = Loc.GetString($"marking-{_markingPrototype.ID}");
     }
 

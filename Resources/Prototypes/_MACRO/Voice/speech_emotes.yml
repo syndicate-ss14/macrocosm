@@ -57,3 +57,31 @@
     - moo
     - mooed
     - moo'd
+
+- type: emote
+  id: Bubble
+  name: chat-emote-name-bubble
+  category: Vocal
+  available: false
+  icon: _MACRO/Interface/Emotes/bubble.png
+  whitelist:
+    components:
+    - Vocal
+  chatMessages: ["chat-emote-msg-bubble"]
+  chatTriggers:
+    - bubbles
+    - bubbling
+
+- type: emote
+  id: Pop
+  name: chat-emote-name-pop
+  category: Vocal
+  available: false
+  icon: _MACRO/Interface/Emotes/pop.png
+  whitelist:
+    components:
+    - Vocal
+  chatMessages: ["chat-emote-msg-pop"]
+  chatTriggers:
+    - pops
+    - popping

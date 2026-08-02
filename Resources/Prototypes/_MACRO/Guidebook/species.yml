@@ -35,6 +35,11 @@
 #  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Ant.xml"
 
 #- type: guideEntry
+#  id: Anomalocarid
+#  name: Anomalocarid
+#  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Anomalocarid.xml"
+
+#- type: guideEntry
 #  id: Ovinia
 #  name: Ovinia
 #  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Ovinia.xml"

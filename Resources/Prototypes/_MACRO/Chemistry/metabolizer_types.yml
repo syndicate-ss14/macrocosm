@@ -13,3 +13,7 @@
 - type: metabolizerType
   id: Decapoid
   name: metabolizer-type-decapoid
+
+- type: metabolizerType
+  id: Anomalocarid
+  name: metabolizer-type-anomalocarid
