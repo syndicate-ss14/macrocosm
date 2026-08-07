@@ -85,7 +85,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Kodepiia/chest.rsi
     state: stripes
-  shader:
+  shaders:
     stripes: unshaded
 
 - type: marking
@@ -275,7 +275,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Kodepiia/eyes.rsi
     state: human
-  shader:
+  shaders:
     human: unshaded
 
 - type: marking
@@ -307,7 +307,7 @@
     state: humanuneven1
   - sprite: _MACRO/Mobs/Customization/Kodepiia/eyes.rsi
     state: humanuneven2
-  shader:
+  shaders:
     humanuneven1: unshaded
     humanuneven2: unshaded
 
@@ -416,7 +416,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Kodepiia/eyes.rsi
     state: square
-  shader:
+  shaders:
     square: unshaded
 
 - type: marking
@@ -444,7 +444,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Kodepiia/eyes.rsi
     state: squareuneven
-  shader:
+  shaders:
     squareuneven: unshaded
 
 # RArm
