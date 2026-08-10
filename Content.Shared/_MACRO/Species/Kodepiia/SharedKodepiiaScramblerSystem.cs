@@ -12,24 +12,19 @@ public abstract partial class SharedKodepiiaScramblerSystem : EntitySystem
 {
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<KodepiiaScramblerComponent, ComponentStartup>(OnStartup);
-        SubscribeLocalEvent<KodepiiaScramblerComponent, ComponentShutdown>(OnShutdown);
-    }
-
+    [SubscribeLocalEvent]
     private void OnStartup(Entity<KodepiiaScramblerComponent> ent, ref ComponentStartup args)
     {
         _actionsSystem.AddAction(ent, ref ent.Comp.ScramblerAction, ent.Comp.ScramblerActionId);
     }
 
+    [SubscribeLocalEvent]
     private void OnShutdown(Entity<KodepiiaScramblerComponent> ent, ref ComponentShutdown args)
     {
         _actionsSystem.RemoveAction(ent.Owner, ent.Comp.ScramblerAction);
     }
 }
+
 /// <summary>
 /// Event that is triggered when the scrambler's action is used.
 /// </summary>

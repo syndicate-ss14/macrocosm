@@ -39,10 +39,14 @@ public sealed partial class ConsumeActionComponent : Component
     public bool CanEatRotten = true;
 
     /// <summary>
-    /// Base consume speed. The quotient of the target and performers body mass is multiplied by this.
+    ///     The base time of the doAfter for consuming a mob.
     /// </summary>
+    /// <remarks>
+    ///     This is multiplied by the ratio of the target's mass to the consumer's mass;
+    ///     for instance, a consumer will bite smaller mobs faster, and vice versa.
+    /// </remarks>
     [DataField]
-    public float BaseConsumeSpeed = 10f;
+    public TimeSpan BaseConsumeTime = TimeSpan.FromSeconds(10.0f);
 
     /// <summary>
     /// reagent ingested when eating.
@@ -91,7 +95,10 @@ public sealed partial class ConsumeActionComponent : Component
     /// Sound that is played when the the victim is consumed.
     /// </summary>
     [DataField]
-    public SoundSpecifier ConsumptionSound = new SoundCollectionSpecifier("gib");
+    public SoundSpecifier ConsumptionSound = new SoundCollectionSpecifier("gib")
+    {
+        Params = AudioParams.Default.WithVolume(-3f),
+    };
 
     /// <summary>
     /// LocId of the failure popup that occurs when consuming is blocked.
@@ -116,6 +123,12 @@ public sealed partial class ConsumeActionComponent : Component
     /// </summary>
     [DataField]
     public LocId ConsumeFailByFullStomach = "ingestion-you-cannot-ingest-any-more";
+
+    /// <summary>
+    /// The verb used for consuming a target. E.g.: "You cannot [verb] this target!"
+    /// </summary>
+    [DataField]
+    public LocId ConsumeVerb = "edible-verb-food";
 
     /// <summary>
     /// LocId of the popup that only shows up to the consumer when they consume something.

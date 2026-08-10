@@ -12,5 +12,5 @@ public sealed partial class MacroCCVars
     ///     12 by default, set to 0 to disable.
     /// </summary>
     public static readonly CVarDef<int> ConsumptionGibThreshold =
-        CVarDef.Create("consumption.gibthreshold", 12, CVar.SERVERONLY);
+        CVarDef.Create("macrocosm.consumption.gib_threshold", 12, CVar.NOTIFY | CVar.REPLICATED | CVar.SERVER);
 }
