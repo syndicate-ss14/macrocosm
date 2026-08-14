@@ -1,3 +1,4 @@
+using Content.Server._MACRO.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
@@ -20,6 +21,8 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
     [Dependency] protected ChatSystem ChatSystem = default!;
     [Dependency] protected SharedAudioSystem Audio = default!;
     [Dependency] protected StationSystem StationSystem = default!;
+
+    [Dependency] protected AnnouncerManager Announcer = default!; // Macrocosm
 
     protected ISawmill Sawmill = default!;
 
@@ -46,7 +49,12 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
         if (stationEvent.StartAnnouncement != null)
             ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: stationEvent.StartAnnouncementColor);
 
-        Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
+        // Macrocosm edit start - announcer variation
+        if (stationEvent.StartAudio == null)
+            return;
+        Announcer.TryGetAnnouncerSound(stationEvent.StartAudio.Value, out var soundSpecifier);
+        Audio.PlayGlobal(soundSpecifier, allPlayersInGame, true);
+        // Macrocosm edit end
     }
 
     /// <inheritdoc/>
@@ -85,7 +93,12 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
         if (stationEvent.EndAnnouncement != null)
             ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.EndAnnouncement), playSound: false, colorOverride: stationEvent.EndAnnouncementColor);
 
-        Audio.PlayGlobal(stationEvent.EndAudio, allPlayersInGame, true);
+        // Macrocosm edit start - announcer variation
+        if (stationEvent.EndAudio == null)
+            return;
+        Announcer.TryGetAnnouncerSound(stationEvent.EndAudio.Value, out var soundSpecifier);
+        Audio.PlayGlobal(soundSpecifier, allPlayersInGame, true);
+        // Macrocosm edit end
     }
 
     /// <summary>
