@@ -4,11 +4,12 @@
   name: Scramble Appearance
   description: Change your appearance in a rush. You don't have time to control what comes out!
   components:
+  - type: Action
+    useDelay: 600
   - type: Sprite
     sprite: _MACRO/Interface/Actions/kodepiia.rsi
     layers:
     - state: kodepiia_shapeshift
-    useDelay: 600
   - type: ConfirmableAction
     popup: dna-scrambler-action-popup
   - type: InstantAction
@@ -22,11 +23,11 @@
   components:
   - type: Action
     itemIconStyle: NoItem
+    useDelay: 60
   - type: Sprite
     sprite: _MACRO/Interface/Actions/kodepiia.rsi
     layers:
     - state: kodepiia_eat
-    useDelay: 60
   - type: TargetAction
   - type: EntityTargetAction
     event: !type:ConsumeEvent
