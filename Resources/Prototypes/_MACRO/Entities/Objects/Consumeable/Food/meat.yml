@@ -7,8 +7,6 @@
   - type: Sprite
     sprite: _MACRO/Objects/Consumable/Food/Meat/kodepiia_meat.rsi
     state: kodepiia
-  - type: InternalTemperature
-    conductivity: 0.41
   - type: Construction
     graph: KodepiiaFlakes
     node: start

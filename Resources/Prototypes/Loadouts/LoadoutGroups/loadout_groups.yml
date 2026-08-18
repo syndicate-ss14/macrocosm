@@ -564,7 +564,6 @@
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyMeatClown # MACRO: Kodepiia
   - EmergencyAquaticClown # MACRO: Decapoids
   - LoadoutSpeciesAquaticFullTank # MACRO: Decapoids
 
@@ -966,7 +965,6 @@
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyMeatExtended # MACRO: Kodepiia
   - EmergencyAquaticExtended # MACRO: Decapoids
   - LoadoutSpeciesAquaticFullTank # MACRO: Decapoids
 
@@ -1397,7 +1395,6 @@
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyMeatSyndicate # MACRO: Kodepiia
   - EmergencyAquaticSyndicate # MACRO: Decapoids
   - LoadoutSpeciesAquaticFullTank # MACRO: Decapoids
 
