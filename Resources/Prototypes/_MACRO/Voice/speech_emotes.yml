@@ -22,7 +22,7 @@
   whitelist:
     components:
     - Vocal
-  chatMessages: ["chat-emote-msg-honks"]
+  chatMessages: ["chat-emote-msg-honk"]
   chatTriggers:
     - honk
     - honks
