@@ -202,8 +202,7 @@
       60: Critical
       125: Dead
   - type: Temperature
-    currentTemperature: 310.15
-    specificHeat: 46
+    specificHeat: 2750 # 46 -> 2750 (default: 3000)
   - type: TemperatureDamage # Moths hate the heat and thrive in the cold.
     heatDamageThreshold: 320
     coldDamageThreshold: 230

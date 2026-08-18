@@ -145,7 +145,7 @@ public sealed partial class SharedSnailSprintSystem : EntitySystem
         // Ensure that the next time RefreshMovementSpeedModifiersEvent is raised, OnRefreshMovespeed will remove the movement speed modifier
         ent.Comp.Active = false;
         // then raise that event
-        _movementSpeedModifier.RefreshMovementSpeedModifiers(ent);
+        _movementSpeedModifier.RefreshMovementSpeedModifiers(ent.Owner);
 
         // remove the thirst cost from total thirst
         if (TryComp<ThirstComponent>(ent.Owner, out var thirstComp))
