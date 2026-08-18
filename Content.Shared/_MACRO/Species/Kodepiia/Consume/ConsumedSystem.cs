@@ -18,12 +18,13 @@ public sealed partial class ConsumedSystem : EntitySystem
         var target = Identity.Entity(ent, EntityManager);
 
         // Filter thresholds by whatever equals or exceeds consume value.
-        var validthresholds = ent.Comp.ExamineThresholds.Where(kvp => consumed >= kvp.Key);
-        if (!validthresholds.Any())
+        var validThresholds = ent.Comp.ExamineThresholds.Where(kvp => consumed >= kvp.Key);
+        var keyValuePairs = validThresholds.ToList();
+        if (!keyValuePairs.Any())
             return;
 
         // Get the highest valid tooltip and use it as examine text.
-        var examineTooltip = validthresholds.MaxBy(kvp => kvp.Key).Value;
+        var examineTooltip = keyValuePairs.MaxBy(kvp => kvp.Key).Value;
         args.PushMarkup(Loc.GetString(examineTooltip, ("target", target)));
     }
 
