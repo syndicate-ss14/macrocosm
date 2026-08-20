@@ -10,11 +10,17 @@
     Diona: 1
     Vox: 1
     Vulpkanin: 1
-    # Uncomment species here that you want randomly generated for visitor species
+    # Uncomment species here that you want randomly generated for visitor species.
     #Allulalo: 1
-    #Ant: 0.1 # MACRO set this to what you want, but ants should be pretty rare to get here.
-    #Decapoid: 1 # Note that Decapoid do not spawn with their respiratory equipment properly equipped, and will suffocate if this is enabled.
+    #Apid: 0.5
+      # Traditionally, apids aren't seen wandering around super often, but you're free to let them.
+    #Ant: 0.1
+      # Set this to what you want, but ants are sort of designed to be a funny novelty - it's better if they're rare.
+    #Decapoid: 1
+      # Note that Decapoid do not spawn with their respiratory equipment properly equipped,
+      # and will suffocate if this is enabled.
     #Gastropoid: 1
     #Gray: 1
+    #Kodepiia: 1
     #Ovinia: 1
     #Ungu: 1
