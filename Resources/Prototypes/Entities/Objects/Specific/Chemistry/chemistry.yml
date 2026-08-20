@@ -607,6 +607,7 @@
   - type: Tag
     tags:
     - Pill
+    - KodeEdible # macro add
 
 - type: entity
   abstract: true

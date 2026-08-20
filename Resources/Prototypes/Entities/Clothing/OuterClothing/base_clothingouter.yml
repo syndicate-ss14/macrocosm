@@ -159,6 +159,7 @@
   - type: HideLayerClothing
     slots:
     - Tail
+    - Tenta # macro: for kodes
 
 - type: entity
   abstract: true

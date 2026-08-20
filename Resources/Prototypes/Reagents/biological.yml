@@ -220,6 +220,13 @@
     collection: FootstepBlood
     params:
       volume: 6
+  metabolisms: # macro add
+    Digestion:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Kodepiia]
 
 - type: reagent
   id: Vomit
@@ -261,6 +268,10 @@
         damage:
           types:
             Cellular: 2
+        conditions: # macro add
+        - !type:MetabolizerTypeCondition
+          type: [Kodepiia]
+          inverted: true
 
 - type: reagent
   id: LivingTissue

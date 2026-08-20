@@ -2,6 +2,13 @@
 # https://github.com/space-wizards/space-station-14/pull/41664
 # Species
 - type: loadoutEffectGroup
+  id: Carnivorous
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Kodepiia
+
+- type: loadoutEffectGroup
   id: Aquatic
   effects:
   - !type:SpeciesLoadoutEffect
