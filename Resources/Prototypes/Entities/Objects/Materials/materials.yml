@@ -523,6 +523,7 @@
   description: A webby material.
   suffix: Full
   components:
+  - type: Material
   - type: PhysicalComposition
     materialComposition:
       WebSilk: 100
@@ -680,6 +681,10 @@
         Quantity: 7
   - type: Item
     heldPrefix: bones
+  - type: Tag # macro add
+    tags:
+    - RawMaterial
+    - KodeEdible
 
 - type: entity
   parent: MaterialBones

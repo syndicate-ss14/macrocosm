@@ -30,7 +30,7 @@ public sealed partial class StartIonStormedSystem : EntitySystem
         for (int currentIonStorm = 0; currentIonStorm < ent.Comp.IonStormAmount; currentIonStorm++)
         {
             // begin macro edit
-            // _ionStorm.IonStormTarget((ent.Owner, lawBound, target), false);
+            // _ionStorm.IonStormTarget((ent.Owner, lawBound, target));
             var ev = new IonStormEvent(false);
             RaiseLocalEvent(ent, ref ev);
             // end macro edit

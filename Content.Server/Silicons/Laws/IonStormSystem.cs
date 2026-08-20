@@ -1,11 +1,8 @@
-using Content.Shared.Administration.Logs;
 using Content.Server.StationEvents.Events; // macro
-using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
 using Robust.Shared.Random;
-using System.Linq;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 
@@ -13,7 +10,6 @@ namespace Content.Server.Silicons.Laws;
 
 public sealed partial class IonStormSystem : EntitySystem
 {
-    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private SiliconLawSystem _siliconLaw = default!;
     [Dependency] private IRobustRandom _robustRandom = default!;
     [Dependency] private IonLawSystem _ionLaw = default!;
@@ -32,11 +28,13 @@ public sealed partial class IonStormSystem : EntitySystem
     /// </summary>
     public void IonStormTarget(Entity<SiliconLawBoundComponent> ent, ref IonStormEvent args) // macro edit, its an event subscription now
     {
+        //var lawBound = ent.Comp1; //macro removals, to use IonStormTarget so non silicons can use ion storms
+        //var target = ent.Comp2;
+        //if (!_robustRandom.Prob(target.Chance))
+        //    return;
         // start macro
         var lawBound = ent.Comp;
         EnsureComp<IonStormTargetComponent>(ent, out var target);
-        // if (!_robustRandom.Prob(target.Chance)) // macro, moved to ionstormrule
-        //     return;
         // end macro
 
         var laws = _siliconLaw.GetLaws(ent, lawBound);
@@ -98,35 +96,26 @@ public sealed partial class IonStormSystem : EntitySystem
         }
         else
         {
-            laws.Laws.Insert(0, new SiliconLaw
+            var glitchedLaw = new SiliconLaw
             {
                 LawString = newLaw,
                 Order = -1,
-                LawIdentifierOverride = Loc.GetString("ion-storm-law-scrambled-number", ("length", _robustRandom.Next(5, 10)))
-            });
+                LawIdentifierOverride = Loc.GetString(
+                    "ion-storm-law-scrambled-number",
+                    (
+                        "length",
+                        _robustRandom.Next(
+                            SharedSiliconLawSystem.IonStormIdentifierMinLength,
+                            SharedSiliconLawSystem.IonStormIdentifierMaxLength
+                        )
+                    )
+                ),
+                Corrupted = true
+            };
+            laws.Laws.Insert(0, glitchedLaw);
         }
 
-        // sets all unobfuscated laws' indentifier in order from highest to lowest priority
-        // This could technically override the Obfuscation from the code above, but it seems unlikely enough to basically never happen
-        int orderDeduction = -1;
-
-        for (int i = 0; i < laws.Laws.Count; i++)
-        {
-            var notNullIdentifier = laws.Laws[i].LawIdentifierOverride ?? (i - orderDeduction).ToString();
-
-            if (notNullIdentifier.Any(char.IsSymbol))
-            {
-                orderDeduction += 1;
-            }
-            else
-            {
-                laws.Laws[i].LawIdentifierOverride = (i - orderDeduction).ToString();
-            }
-        }
-
-        // adminlog is used to prevent adminlog spam.
-        if (args.Adminlog) //macro edit
-            _adminLogger.Add(LogType.Mind, LogImpact.High, $"{ToPrettyString(ent):silicon} had its laws changed by an ion storm to {laws.LoggingString()}");
+        SiliconLawSystem.RankLaws(laws.Laws);
 
         // laws unique to this silicon, dont use station laws anymore
         EnsureComp<SiliconLawProviderComponent>(ent);
