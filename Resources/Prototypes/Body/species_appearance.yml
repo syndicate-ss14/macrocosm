@@ -50,6 +50,10 @@
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    #MACRO start
+    # Kodepiiae 'arms' are drawn in front of everything but tails
+    - map: [ "enum.HumanoidVisualLayers.Tenta" ]
+    #MACRO end
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "enum.HumanoidVisualLayers.TailOverlay" ]
 

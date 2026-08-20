@@ -69,6 +69,7 @@
       - UndergarmentTop
       - UndergarmentBottom
       - Special
+      - Tenta # MACRO ADD // Kode arms
 
 - type: entity
   parent:
