@@ -1,6 +1,5 @@
 using Content.Server.Humanoid.Components;
 using Content.Server.RandomMetadata;
-using Content.Shared._MACRO.CCVars;
 using Content.Shared.Body;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Humanoid;
@@ -8,6 +7,7 @@ using Content.Shared.Preferences;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization.Manager;
+using Content.Shared._MACRO.CCVar;
 
 namespace Content.Server.Humanoid.Systems;
 
@@ -42,14 +42,13 @@ public sealed partial class RandomHumanoidSystem : EntitySystem
         if (!ProtoMan.TryIndex<RandomHumanoidSettingsPrototype>(prototypeId, out var prototype))
             throw new ArgumentException("Could not get random humanoid settings");
 
-        var profile = HumanoidCharacterProfile.Random(prototype.SpeciesBlacklist);
+        // var profile = HumanoidCharacterProfile.Random(prototype.SpeciesBlacklist);
+        // BEGIN Macrocosm: Weighted species selection
+        var weightProtoId = prototype.SpeciesWeights
+            ?? _configurationManager.GetCVar(MacroCCVars.VisitorSpeciesWeights);
 
-        // Macro Start
-        var weightProto = _configurationManager.GetCVar(MacroCCVars.RandomSpeciesWeightPrototype);
-        profile.Species = HumanoidCharacterProfile.RandomSpeciesWeighted(weightProto, prototype.SpeciesBlacklist);
-
-        profile.Appearance = HumanoidCharacterAppearance.Random(profile.Species,profile.Sex); // Rerandomize appearance after changing the profile species. this is clunky.
-        // Macro End
+        var profile = HumanoidCharacterProfile.Random(weightProtoId, prototype.SpeciesBlacklist);
+        // END Macrocosm
 
         var speciesProto = ProtoMan.Index<SpeciesPrototype>(profile.Species);
         var humanoid = EntityManager.CreateEntityUninitialized(speciesProto.Prototype, coordinates);

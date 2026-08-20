@@ -10,10 +10,4 @@ public sealed class MacroCCVars
     /// </summary>
     public static readonly CVarDef<string> AnnouncerWeightPrototype =
         CVarDef.Create("macro.announcer_weight_prototype", "Announcers", CVar.SERVERONLY);
-
-    /// <summary>
-    ///     The prototype to use for random species weights on entities that use randomized species..
-    /// </summary>
-    public static readonly CVarDef<string> RandomSpeciesWeightPrototype =
-        CVarDef.Create("macro.random_species_weight_prototype", "VisitorSpeciesWeights", CVar.SERVERONLY);
 }
