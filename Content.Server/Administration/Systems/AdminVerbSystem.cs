@@ -438,6 +438,8 @@ namespace Content.Server.Administration.Systems
                     },
                     Impact = LogImpact.Low
                 });
+
+                AddMACROVerbs(args); // MACRO add
             }
         }
 

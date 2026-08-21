@@ -1,9 +1,10 @@
 species-name-apid = Apid
 species-name-allulalo = Allulalo
 species-name-ant = Ant
+species-name-decapoid = Decapoid
 species-name-gray = Gray
 species-name-gastropoid = Gastropoid
 species-name-kodepiia = Kodepiia
-species-name-ungu = Ungu
-species-name-decapoid = Decapoid
 species-name-ovinia = Ovinia
+species-name-thaven = Thaven
+species-name-ungu = Ungu

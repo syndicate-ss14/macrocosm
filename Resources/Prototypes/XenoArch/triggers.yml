@@ -252,7 +252,11 @@
     - ZombieBlood
     - Sap
     - SulfurBlood
-    - BloodKodepiia # macro add
+    #MACRO below
+    - ShimmeringBlood
+    - GrayBlood
+    - BloodAllulalo
+    - BloodKodepiia
 
 - type: xenoArchTrigger
   id: TriggerThrow

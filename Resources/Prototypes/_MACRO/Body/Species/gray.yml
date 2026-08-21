@@ -166,7 +166,6 @@
       - ReagentId: GrayBlood
         Quantity: 600
 
-
 - type: entity
   parent: OrganBase
   id: OrganGray

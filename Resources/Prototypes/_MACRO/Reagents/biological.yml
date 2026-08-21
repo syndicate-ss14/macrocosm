@@ -6,17 +6,6 @@
   desc: reagent-desc-gray-blood
   physicalDesc: reagent-physical-desc-glowing
 
-- type: reaction
-  id: GrayBloodBreakdown
-  source: true
-  requiredMixerCategories:
-  - Centrifuge
-  reactants:
-    GrayBlood:
-      amount: 5
-  products:
-    Radium: 5
-
 - type: reagent
   id: Mucin
   name: reagent-name-mucin
@@ -115,3 +104,37 @@
           inverted: true
       - !type:Drunk
         boozePower: 2
+
+- type: reagent # can't parent it to blood because anybody should be able to drink it, the flesh/organs are the toxic parts (fugu moment)
+  id: ShimmeringBlood
+  name: reagent-name-shimmering-blood
+  group: Biological
+  desc: reagent-desc-shimmering-blood
+  flavor: shimmeringblood
+  color: "#ff624a" # a slightly warmer color than the ichor extracted from dragon flesh
+  recognizable: true
+  physicalDesc: reagent-physical-desc-shimmering-blood
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateHunger
+        factor: 1
+      - !type:SatiateThirst
+        factor: 1
+    Bloodstream:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        type: Add
+        time: 5
+  plantMetabolism:
+    - !type:PlantAdjustToxins
+      amount: 2
+    - !type:PlantAdjustWeeds
+      amount: -2
+    - !type:PlantAdjustPests
+      amount: -2
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6

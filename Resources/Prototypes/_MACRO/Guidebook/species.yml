@@ -41,6 +41,11 @@
 #  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Ant.xml"
 
 #- type: guideEntry
+#  id: Thaven
+#  name: Thaven
+#  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Thaven.xml"
+
+#- type: guideEntry
 #  id: Ovinia
 #  name: Ovinia
 #  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Ovinia.xml"

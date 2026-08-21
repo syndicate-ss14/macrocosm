@@ -15,7 +15,10 @@
     - type: MothAccent
     - type: ReplacementAccent
       accent: scottish
+    - type: AllulaloAccent # macro
     - type: GrayAccent # macro
+    - type: GastropoidAccent # macro
+    - type: ThavenAccent # macro
 
 # 1 Cost
 
