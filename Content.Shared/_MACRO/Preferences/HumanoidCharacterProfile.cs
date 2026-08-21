@@ -78,6 +78,8 @@ public partial class HumanoidCharacterProfile
         HashSet<string>? ignoredSpecies = null)
     {
         var config = RandomizeConfigAll;
+        config &= ~RandomizeCfg.Species; // Do not randomize species; we're doing it here.
+
         var baseProfile = new HumanoidCharacterProfile();
 
         // If ignoredSpecies is empty, then it will choose a random species -
