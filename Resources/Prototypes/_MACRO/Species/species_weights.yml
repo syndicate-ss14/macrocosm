@@ -17,8 +17,8 @@
     #Ant: 0.1
       # Set this to what you want, but ants are sort of designed to be a funny novelty - it's better if they're rare.
     #Decapoid: 1
-      # Note that Decapoid do not spawn with their respiratory equipment properly equipped,
-      # and will suffocate if this is enabled.
+      # Note that Decapoids rely on non-oxygen internals (water vapor), and - like Vox - will begin
+      # suffocating if left idle for long enough (such as pending ghostroles.)
     #Gastropoid: 1
     #Gray: 1
     #Kodepiia: 1
