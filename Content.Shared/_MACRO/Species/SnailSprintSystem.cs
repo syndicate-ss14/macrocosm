@@ -19,14 +19,14 @@ namespace Content.Shared._MACRO.Species;
 /// </summary>
 public sealed partial class SharedSnailSprintSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _netManager = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedPuddleSystem _puddleSystem = default!;
-    [Dependency] private readonly ThirstSystem _thirstSystem = default!;
+    [Dependency] private INetManager _netManager = default!;
+    [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private SharedPuddleSystem _puddleSystem = default!;
+    [Dependency] private ThirstSystem _thirstSystem = default!;
 
     public override void Initialize()
     {
@@ -145,7 +145,7 @@ public sealed partial class SharedSnailSprintSystem : EntitySystem
         // Ensure that the next time RefreshMovementSpeedModifiersEvent is raised, OnRefreshMovespeed will remove the movement speed modifier
         ent.Comp.Active = false;
         // then raise that event
-        _movementSpeedModifier.RefreshMovementSpeedModifiers(ent);
+        _movementSpeedModifier.RefreshMovementSpeedModifiers(ent.Owner);
 
         // remove the thirst cost from total thirst
         if (TryComp<ThirstComponent>(ent.Owner, out var thirstComp))

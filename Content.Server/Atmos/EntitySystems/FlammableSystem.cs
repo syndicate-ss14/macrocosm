@@ -3,6 +3,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Stunnable;
 using Content.Server.Temperature.Systems;
 using Content.Server.Damage.Components;
+using Content.Shared._MACRO.Atmos.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
@@ -32,27 +33,27 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Atmos.EntitySystems
 {
-    public sealed class FlammableSystem : EntitySystem
+    public sealed partial class FlammableSystem : EntitySystem
     {
-        [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
-        [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
-        [Dependency] private readonly StunSystem _stunSystem = default!;
-        [Dependency] private readonly TemperatureSystem _temperatureSystem = default!;
-        [Dependency] private readonly SharedIgnitionSourceSystem _ignitionSourceSystem = default!;
-        [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-        [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-        [Dependency] private readonly FixtureSystem _fixture = default!;
-        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly InventorySystem _inventory = default!;
-        [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-        [Dependency] private readonly SharedPopupSystem _popup = default!;
-        [Dependency] private readonly UseDelaySystem _useDelay = default!;
-        [Dependency] private readonly AudioSystem _audio = default!;
-        [Dependency] private readonly IRobustRandom _random = default!;
-        [Dependency] private readonly IGameTiming _timing = default!;
+        [Dependency] private ActionBlockerSystem _actionBlockerSystem = default!;
+        [Dependency] private AtmosphereSystem _atmosphereSystem = default!;
+        [Dependency] private StunSystem _stunSystem = default!;
+        [Dependency] private TemperatureSystem _temperatureSystem = default!;
+        [Dependency] private SharedIgnitionSourceSystem _ignitionSourceSystem = default!;
+        [Dependency] private DamageableSystem _damageableSystem = default!;
+        [Dependency] private AlertsSystem _alertsSystem = default!;
+        [Dependency] private FixtureSystem _fixture = default!;
+        [Dependency] private IAdminLogManager _adminLogger = default!;
+        [Dependency] private InventorySystem _inventory = default!;
+        [Dependency] private SharedAppearanceSystem _appearance = default!;
+        [Dependency] private SharedPopupSystem _popup = default!;
+        [Dependency] private UseDelaySystem _useDelay = default!;
+        [Dependency] private AudioSystem _audio = default!;
+        [Dependency] private IRobustRandom _random = default!;
+        [Dependency] private IGameTiming _timing = default!;
 
-        private EntityQuery<InventoryComponent> _inventoryQuery;
-        private EntityQuery<PhysicsComponent> _physicsQuery;
+        [Dependency] private EntityQuery<InventoryComponent> _inventoryQuery = default!;
+        [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
 
         private static readonly TimeSpan UpdateTime = TimeSpan.FromSeconds(1);
 
@@ -61,9 +62,6 @@ namespace Content.Server.Atmos.EntitySystems
         public override void Initialize()
         {
             UpdatesAfter.Add(typeof(AtmosphereSystem));
-
-            _inventoryQuery = GetEntityQuery<InventoryComponent>();
-            _physicsQuery = GetEntityQuery<PhysicsComponent>();
 
             SubscribeLocalEvent<FlammableComponent, MapInitEvent>(OnMapInit);
             SubscribeLocalEvent<FlammableComponent, InteractUsingEvent>(OnInteractUsing);
@@ -272,6 +270,11 @@ namespace Content.Server.Atmos.EntitySystems
             _appearance.SetData(uid, FireVisuals.OnFire, flammable.OnFire, appearance);
             _appearance.SetData(uid, FireVisuals.FireStacks, flammable.FireStacks, appearance);
 
+            if (flammable.Displacement != null)
+                _appearance.SetData(uid, FireVisuals.FireDisplacement, flammable.Displacement.Value.Id, appearance);
+            else
+                _appearance.RemoveData(uid, FireVisuals.FireDisplacement);
+
             // Also enable toggleable-light visuals
             // This is intended so that matches & candles can re-use code for un-shaded layers on in-hand sprites.
             // However, this could cause conflicts if something is ACTUALLY both a toggleable light and flammable.
@@ -291,6 +294,11 @@ namespace Content.Server.Atmos.EntitySystems
         {
             if (!Resolve(uid, ref flammable))
                 return;
+
+            // MACRO start: firestack modifier
+            if (TryComp<FireStackModifierComponent>(uid, out var fireStackModifier))
+                stacks *= fireStackModifier.Modifier;
+            // MACRO end
 
             flammable.FireStacks = MathF.Min(MathF.Max(flammable.MinimumFireStacks, stacks), flammable.MaximumFireStacks);
 
@@ -451,8 +459,7 @@ namespace Content.Server.Atmos.EntitySystems
                     var source = EnsureComp<IgnitionSourceComponent>(uid);
                     _ignitionSourceSystem.SetIgnited((uid, source));
 
-                    if (TryComp(uid, out TemperatureComponent? temp))
-                        _temperatureSystem.ChangeHeat(uid, 12500 * flammable.FireStacks, false, temp);
+                    _temperatureSystem.ChangeHeat(uid, 12500 * flammable.FireStacks, false);
 
                     var ev = new GetFireProtectionEvent();
                     // let the thing on fire handle it

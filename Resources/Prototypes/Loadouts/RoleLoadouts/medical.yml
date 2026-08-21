@@ -12,10 +12,12 @@
   - ChiefMedicalOfficerNeck
   - ChiefMedicalOfficerShoes
   - Glasses
+  - AssistiveItems
   - SurvivalMedical
   - Trinkets
 #  - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -29,10 +31,12 @@
   - MedicalShoes
   - MedicalDoctorPDA
   - Glasses
+  - AssistiveItems
   - SurvivalMedical
   - Trinkets
 #  - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -41,10 +45,12 @@
   - MedicalInternJumpsuit
   - MedicalBackpack
   - Glasses
+  - AssistiveItems
   - SurvivalMedical
   - Trinkets
 #  - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobChemist
@@ -56,10 +62,12 @@
   - ChemistOuterClothing
   - MedicalShoes
   - Glasses
+  - AssistiveItems
   - SurvivalMedical
   - Trinkets
 #  - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
   id: JobParamedic
@@ -72,7 +80,9 @@
   - ParamedicOuterClothing
   - ParamedicShoes
   - Glasses
+  - AssistiveItems
   - SurvivalMedical
   - Trinkets
 #  - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - GroupBreathToolDecapoid # MACRO: Decapoid
