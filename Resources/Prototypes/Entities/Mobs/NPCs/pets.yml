@@ -685,6 +685,7 @@
     - Hamster
     - VimPilot
     - ChefPilot
+    - MultitoolDefibrillatorTarget #MACRO
   - type: FlavorProfile
     flavors:
     - meaty

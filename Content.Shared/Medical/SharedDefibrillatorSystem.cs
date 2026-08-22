@@ -15,6 +15,7 @@ using Content.Shared.Popups;
 using Content.Shared.PowerCell;
 using Content.Shared.Timing;
 using Content.Shared.Traits.Assorted;
+using Content.Shared.Whitelist; // MACRO
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 
@@ -40,6 +41,7 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private UseDelaySystem _useDelay = default!;
     [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!; //MACRO
 
     private readonly HashSet<EntityUid> _interactors = new();
 
@@ -88,13 +90,14 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
             return false;
         }
 
-        if (!TryComp<UseDelayComponent>(ent, out var useDelay) || _useDelay.IsDelayed((ent.Owner, useDelay), ent.Comp.DelayId))
-            return false;
+        // MACRO: Remove this tryComp.
+        //if (!TryComp<UseDelayComponent>(ent, out var useDelay) || _useDelay.IsDelayed((ent.Owner, useDelay), ent.Comp.DelayId))
+        //   return false;
 
         if (!_powerCell.HasActivatableCharge(ent.Owner, user: user, predicted: true))
             return false;
 
-        return true;
+        return _whitelist.IsWhitelistPassOrNull(ent.Comp.Whitelist, target); // MACRO
     }
 
     /// <summary>
@@ -188,12 +191,12 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
 
     private bool TryRevive(Entity<DefibrillatorComponent> ent, EntityUid user, EntityUid target, bool isOriginal)
     {
-        bool failedRevive = true;
-        if (_rotting.IsRotten(target))
+        var failedRevive = true;
+        if (_rotting.IsRotten(target) && ent.Comp.ShowMessages) //MACRO edit: && ent.Comp.ShowMessages
         {
             _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("defibrillator-rotten"), InGameICChatType.Speak, true);
         }
-        else if (TryComp<UnrevivableComponent>(target, out var unrevivable))
+        else if (TryComp<UnrevivableComponent>(target, out var unrevivable) && ent.Comp.ShowMessages) //MACRO edit: && ent.Comp.ShowMessages
         {
             _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(unrevivable.ReasonMessage), InGameICChatType.Speak, true);
         }
@@ -208,8 +211,20 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
                 _mobThreshold.TryGetThresholdForState(target, MobState.Dead, out var threshold, targetThresholds) &&
                 _damageable.GetTotalDamage(target) < threshold) //is their current health above their death threshold
             {
-                _mobState.ChangeMobState(target, MobState.Critical, targetMobState, user); //if so revive them
-                failedRevive = false;
+                // MACRO start: Allow some defibs to bypass crit state
+                if (ent.Comp.AllowBypassCrit &&
+                    (!_mobThreshold.TryGetThresholdForState(target, MobState.Critical, out var critThreshold) ||
+                     _damageable.GetTotalDamage(target) < critThreshold))
+                {
+                    _mobState.ChangeMobState(target, MobState.Alive, targetMobState, user);
+                    failedRevive = false;
+                }
+                else
+                {
+                    _mobState.ChangeMobState(target, MobState.Critical, targetMobState, user);
+                    failedRevive = false;
+                }
+                // MACRO end
             }
 
             if (_mind.TryGetMind(target, out var mindUid, out var mindComp) &&
@@ -219,7 +234,7 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
                 if (mindComp.CurrentEntity != target)
                     OpenReturnToBodyEui((mindUid, mindComp), playerSession);
             }
-            else
+            else if (ent.Comp.ShowMessages) //MACRO edit: if (ent.Comp.ShowMessages)
             {
                 if (HasComp<MindContainerComponent>(target))
                     _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("defibrillator-no-mind"), InGameICChatType.Speak, true); //target can host a mind but doesn't

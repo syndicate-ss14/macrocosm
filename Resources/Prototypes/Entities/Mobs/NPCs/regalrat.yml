@@ -271,6 +271,7 @@
     tags:
       - CannotSuicide
       - FootstepSound
+      - MultitoolDefibrillatorTarget #MACRO
   - type: NoSlip
   - type: Insulated
     coefficient: 0.2 # they don't make da roolz, but they sneaky
