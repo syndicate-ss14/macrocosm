@@ -40,7 +40,7 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private UseDelaySystem _useDelay = default!;
-    [Dependency] private SharedInteractionSystem _interactionSystem = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!; //MACRO
 
     private readonly HashSet<EntityUid> _interactors = new();
