@@ -31,6 +31,48 @@ namespace Content.Server.Atmos.EntitySystems
             Array.Sort(_gasReactions, (a, b) => b.Priority.CompareTo(a.Priority));
         }
 
+        // BEGIN MACRO ADD
+        /// <summary>
+        ///     Calculates the specific heat for a gas mixture.
+        ///     <br></br><b>Ensure that you know the difference between specific heat and heat capacity, and that you're using the correct function.</b>
+        /// </summary>
+        /// <param name="mixture">The mixture whose specific heat should be calculated</param>
+        public float GetSpecificHeat(GasMixture mixture)
+            => GetSpecificHeatCalculation(mixture.Moles, mixture.Immutable);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private float GetSpecificHeatCalculation(float[] moles, bool space)
+        {
+            //Mirroring heat capacity calculation: return space's specific heat
+            if (space && MathHelper.CloseTo(NumericsHelpers.HorizontalAdd(moles), 0f))
+            {
+                return Atmospherics.SpaceHeatCapacity;
+            }
+
+            //Create an L1 normalized moles vector. Essentially we want the heat capacity of one mol of gas.
+            //Note: we *don't* want a (L2) normalized vector, as the denominator of the fraction will be a square root.
+            //E.g. An L2 normalized mix with 50/50 oxygen/nitrogen will compute to be 0.70 oxygen and 0.70 (bad) nitrogen instead of 0.5 and 0.5 (good).
+            Span<float> temp = stackalloc float[moles.Length];
+
+            //Get the sum of the vector.
+            var molesSum = NumericsHelpers.HorizontalAdd(moles);
+
+            //This should never happen, but just in case.
+            if (molesSum == 0f)
+            {
+                return Atmospherics.SpaceHeatCapacity;
+            }
+
+            //Perform L1 normalization on the mols vector by dividing all elements within it by its sum.
+            //Here temp contains the fractional values of each gas in the mixture.
+            NumericsHelpers.Divide(moles, molesSum, temp);
+
+            //Multiply fractional moles with specific heats and return the sum. This is the specific heat of the mixture.
+            //Here temp contains the partial specific heat of each gas in the mixture.
+            NumericsHelpers.Multiply(temp, GasMolarHeatCapacities, temp);
+            return NumericsHelpers.HorizontalAdd(temp);
+        }
+        // END MACRO ADD
         public override float GetMass(GasMixture mix)
         {
             return GetMass(mix.Moles);
