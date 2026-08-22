@@ -16,7 +16,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Apid ] #Macrocosm, add Apid
+          type: [ Human, Animal, Rat, Plant, Arachnid, Apid ] #Macrocosm, add Apid
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:

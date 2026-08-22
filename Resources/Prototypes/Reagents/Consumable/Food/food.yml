@@ -10,7 +10,8 @@
   metabolisms:
     Metabolites:
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         conditions: # macro add
         - !type:MetabolizerTypeCondition
           type: [Kodepiia]
@@ -41,7 +42,8 @@
       # Helps you stop bleeding to an extent.
       - !type:ModifyBleed
         amount: -0.25
-      - !type:SatiateHunger #Numbers are balanced with this in mind + it helps limit how much healing you can get from food
+      - !type:Satiate #Numbers are balanced with this in mind + it helps limit how much healing you can get from food
+        satiationType: Hunger
         conditions: # macro add
         - !type:MetabolizerTypeCondition
           type: [Kodepiia]
@@ -70,9 +72,10 @@
           Brute: -0.4
       - !type:ModifyBloodLevel
         amount: 1 # weaker than iron but pretty good all things considered
-      - !type:SatiateHunger
-# macro add start
-       conditions:
+      - !type:Satiate
+        satiationType: Hunger
+        # macro add start
+        conditions:
         - !type:MetabolizerTypeCondition
           type: [Kodepiia]
           inverted: true
@@ -111,7 +114,8 @@
   metabolisms:
     Metabolites:
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         conditions:
         - !type:MetabolizerTypeCondition # macro add
           type: [Kodepiia]

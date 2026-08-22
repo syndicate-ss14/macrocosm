@@ -181,9 +181,12 @@
     damage:
       types:
         Blunt: 0 # immune to space
-  - type: Hunger
-  - type: Thirst
-    baseDecayRate: -1 # Make it so they never get thirsty. We can't just remove the component
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: NormalSatiationHunger
+      Thirst:
+        prototype: NormalSatiationThirst
   - type: TemperatureDamage
     heatDamageThreshold: 380 # slightly more vulnerable to heat
     coldDamageThreshold: 0 # immune to space
@@ -200,12 +203,8 @@
       293: 1.0
       280: 1.0
       260: 1.0
-  - type: Clumsy
-    clumsyVaulting: false
-    clumsyHypo: false
-    clumsyDefib: false
-    clumsyCatching: false
-    gunShootFailDamage:
+  - type: ClumsyGunStatusEffect
+    failDamage:
       types:
         Blunt: 5
     clumsySound:

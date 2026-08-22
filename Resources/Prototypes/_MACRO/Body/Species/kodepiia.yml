@@ -140,9 +140,12 @@
     spawned:
     - id: FoodMeatKodepiia
       amount: 5
-  - type: Thirst
-  - type: Hunger
-    baseDecayRate: 0.15 # 10x default. 6 minutes to hungry and 15.5 minutes to starving
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: KodepiiaSatiationHunger
+      Thirst:
+        prototype: NormalSatiationThirst
   - type: Respirator
     breathVolume: 1 # Twice as much - makes kodes sensitive to waste gases
     updateIntervalMultiplier: 0.5 # Twice as fast

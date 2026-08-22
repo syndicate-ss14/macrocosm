@@ -42,13 +42,13 @@
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-      - behavior: Prying
+      - behavior: [ Prying ]
         sprite:
           sprite: *ClawRSI
           state: icon-closed
         useSound: /Audio/_MACRO/Items/Decapoid/claw_prying.ogg
         changeSound: /Audio/_MACRO/Items/Decapoid/switch.ogg
-      - behavior: Cutting
+      - behavior: [ Cutting ]
         sprite:
           sprite: *ClawRSI
           state: icon

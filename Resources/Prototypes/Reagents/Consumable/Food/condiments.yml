@@ -129,13 +129,15 @@
   metabolisms:
     Bloodstream: #Macrocosm changed from disgestion > bloodstream
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: 0.5
         conditions: # macro add
         - !type:MetabolizerTypeCondition
           type: [Kodepiia]
           inverted: true
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -0.5 # high salt content
       #Macrocosm start
       - !type:HealthChange
@@ -175,7 +177,8 @@
     Bloodstream: #Macrocosm changed from disgestion > bloodstream
       effects:
       # eating salt on its own kinda sucks, kids
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -0.5
       #Macrocosm start
       - !type:HealthChange
@@ -203,7 +206,8 @@
     Digestion:
       # 12 diona blood for 1 unit of syrup, this stuff better be worthwhile.
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: 6.0 #Stronger than cookedramen
         conditions: # macro add
         - !type:MetabolizerTypeCondition

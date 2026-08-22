@@ -178,7 +178,8 @@
   metabolisms:
     Bloodstream:
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -1.5
       - !type:HealthChange
         ignoreResistances: true
@@ -412,15 +413,15 @@
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [Animal] # Applying damage to the mobs with lower metabolism capabilities
+          type: [ Animal, Arachnid ] # Applying damage to the mobs with lower metabolism capabilities
         damage:
           types:
             Poison: 0.4
       - !type:Vomit
         probability: 0.04 #Scaled for time, not metabolismrate.
         conditions:
-          - !type:MetabolizerTypeCondition
-            type: [Animal]
+        - !type:MetabolizerTypeCondition
+          type: [ Animal, Arachnid ]
 
 - type: reagent
   id: Amatoxin
@@ -488,7 +489,7 @@
       - !type:PopupMessage
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Kodepiia ] #Macro, add Kodepiia
+          type: [ Animal, Vox, Arachnid, Kodepiia ] #Macro, add Kodepiia
           inverted: true
         type: Local
         visualType: MediumCaution
@@ -498,12 +499,12 @@
         probability: 0.1
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Kodepiia ] #Macro, add Kodepiia
+          type: [ Animal, Vox, Plant, Arachnid, Kodepiia ] # Macro, add Kodepiia
           inverted: true
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Kodepiia ] #Macro, add Kodepiia
+          type: [ Animal, Vox, Plant, Arachnid, Kodepiia ] # Macro, add Kodepiia
           inverted: true
         damage:
           types:
@@ -518,7 +519,7 @@
       - !type:AdjustReagent
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal ]
+          type: [ Animal, Arachnid ]
         reagent: Protein
         amount: 0.5
       - !type:AdjustReagent
@@ -535,7 +536,8 @@
           type: [Kodepiia]
         damage:
           Brute: -0.4
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Kodepiia ]
@@ -564,7 +566,7 @@
           reagent: Allicin
           min: 1
         - !type:MetabolizerTypeCondition
-          type: [Animal]
+          type: [ Animal ]
         damage:
           types:
             Poison: 0.06
@@ -611,7 +613,7 @@
           reagent: Honk
           min: 1
         - !type:MetabolizerTypeCondition
-          type: [ Animal ]
+          type: [ Animal, Arachnid ]
         damage:
           types:
             Poison: 0.06
@@ -714,12 +716,14 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:HungerCondition
+        - !type:SatiationCondition
+          satiationType: Hunger
           max: 50
         damage:
           types:
             Poison: 2
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: -6
 
 # inspired by the spider neurotoxin GsMtx-4
@@ -775,7 +779,8 @@
   metabolisms:
     Digestion:
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: 1
         conditions:
         - !type:MetabolizerTypeCondition

@@ -39,7 +39,7 @@ public abstract partial class SharedConsumeSystem : EntitySystem
     [Dependency] private DamageableSystem _damage = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private SharedForensicsSystem _forensics = default!;
+    [Dependency] private ForensicsSystem _forensics = default!;
     [Dependency] private GibbingSystem _gibbing = default!;
     [Dependency] private IngestionSystem _ingestion = default!;
     [Dependency] private MobStateSystem _mobState = default!;

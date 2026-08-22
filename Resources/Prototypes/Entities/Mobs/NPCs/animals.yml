@@ -201,7 +201,7 @@
 
 - type: entity
   name: chicken
-  parent: [SimpleMobBase, BaseSlicingRefinable, BaseMobDestructible]
+  parent: [SimpleMobBase, BaseSlicingRefinable, BaseMobDestructible, BaseExaminableHunger]
   id: MobChicken
   description: Comes before an egg, and IS a dinosaur!
   components:
@@ -241,6 +241,7 @@
     breedChance: 0.05
     birthPopup: reproductive-laid-egg-popup
     makeOffspringInfant: false
+    minHungerThreshold: Peckish
     partnerWhitelist:
       tags:
       - Chicken
@@ -273,10 +274,22 @@
       reagents:
       - ReagentId: Blood
         Quantity: 100
-  - type: EggLayer
-    eggSpawn:
-    - id: FoodEgg
-  - type: ExaminableHunger
+  - type: EntityProducerAction
+    insufficientSatiationPopup: action-popup-lay-egg-too-hungry
+    userPopup: action-popup-lay-egg-user
+    othersPopup: action-popup-lay-egg-others
+  - type: SatiationProduction
+    delay: 60
+    delayMax: 120
+    satiationUsage: 60
+    minimumSatiation: 60
+    automaticForPlayers: false
+  - type: EntityProducer
+    table:
+      id: FoodEgg
+  - type: ActionGrant
+    actions:
+    - ActionAnimalLayEgg
   - type: ReplacementAccent
     accent: chicken
   - type: SentienceTarget
@@ -393,8 +406,10 @@
     - horrible
     - terrible
     - chewy
-  - type: Hunger
-    baseDecayRate: 0.25
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: CockroachHunger
   - type: Extractable
     grindableSolutionName: food
   - type: Solution
@@ -562,6 +577,8 @@
     weightlessAcceleration: 1.5
     weightlessFriction: 1
     baseWeightlessModifier: 1
+  - type: NameIdentifier
+    group: AdjectivePrefix
   - type: Damageable
     damageModifierSet: Moth
   - type: Bloodstream
@@ -665,7 +682,7 @@
 
 - type: entity
   name: mallard duck #Quack
-  parent: [SimpleMobBase, BaseSlicingRefinable, BaseMobDestructible]
+  parent: [SimpleMobBase, BaseSlicingRefinable, BaseMobDestructible, BaseExaminableHunger]
   id: MobDuckMallard
   description: An adorable mallard duck, it's fluffy and soft!
   components:
@@ -695,6 +712,7 @@
     breedChance: 0.05
     birthPopup: reproductive-laid-egg-popup
     makeOffspringInfant: false
+    minHungerThreshold: Peckish
     partnerWhitelist:
       tags:
       - Duck
@@ -727,10 +745,22 @@
       reagents:
       - ReagentId: Blood
         Quantity: 100
-  - type: EggLayer
-    eggSpawn:
-    - id: FoodEgg
-  - type: ExaminableHunger
+  - type: EntityProducerAction
+    insufficientSatiationPopup: action-popup-lay-egg-too-hungry
+    userPopup: action-popup-lay-egg-user
+    othersPopup: action-popup-lay-egg-others
+  - type: SatiationProduction
+    delay: 60
+    delayMax: 120
+    satiationUsage: 60
+    minimumSatiation: 60
+    automaticForPlayers: false
+  - type: EntityProducer
+    table:
+      id: FoodEgg
+  - type: ActionGrant
+    actions:
+    - ActionAnimalLayEgg
   - type: ReplacementAccent
     accent: duck
   - type: SentienceTarget
@@ -869,7 +899,7 @@
 
 - type: entity
   name: cow
-  parent: [ BaseMobRuminant, SimpleMobBase, BaseSlicingRefinable, BaseMobDestructible ]
+  parent: [ BaseMobRuminant, SimpleMobBase, BaseSlicingRefinable, BaseMobDestructible, BaseExaminableHunger ]
   id: MobCow
   description: Moo.
   components:
@@ -884,6 +914,7 @@
     - DoorBumpOpener
     - Cow
   - type: Reproductive
+    minHungerThreshold: Peckish
     partnerWhitelist:
       tags:
       - Cow
@@ -913,18 +944,18 @@
   - type: SolutionManager
     solutions:
     - SolutionUdder
-  - type: Udder
-    reagentId: Milk
-    quantityPerUpdate: 25
-    growthDelay: 30
-  - type: ExaminableHunger
+  - type: HarvestableSolution
+    solutionName: udder
+    verbText: udder-system-verb-milk
+    emptyMessage: udder-system-dry
+    successMessage: udder-system-success
   - type: ToolRefinable
     refineResult:
     - id: FoodMeat
       amount: 5
   - type: Grammar
     attributes:
-      gender: female # Here because of UdderComponent
+      gender: female # Milk-producing animals are female.
   - type: InteractionPopup
     successChance: 0.7
     interactDelay: 2 # Avoids overlapping SFX due to spam - these SFX are a little longer than the typical 1 second.
@@ -958,6 +989,16 @@
       reagents:
       - ReagentId: Milk
         Quantity: 30
+  - type: SatiationProduction
+    producer: Parent
+    delay: 30
+    minimumSatiationThreshold: Peckish
+  # TODO: toxins from bloodstream !?
+  - type: SolutionProducer
+    generated:
+      reagents:
+      - ReagentId: Milk
+        Quantity: 25
 
 - type: entity
   name: crab
@@ -1029,7 +1070,7 @@
 
 - type: entity
   name: goat
-  parent: [ BaseMobRuminant, SimpleMobBase, BaseSlicingRefinable, BaseMobDestructible ]
+  parent: [ BaseMobRuminant, SimpleMobBase, BaseSlicingRefinable, BaseMobDestructible, BaseExaminableHunger ]
   id: MobGoat
   description: Her spine consists of long sharp segments, no wonder she is so grumpy.
   components:
@@ -1057,6 +1098,7 @@
     - DoorBumpOpener
     - Goat
   - type: Reproductive
+    minHungerThreshold: Peckish
     partnerWhitelist:
       tags:
       - Goat
@@ -1076,12 +1118,11 @@
     solutions:
     - SolutionUdderGoat
     - SolutionWool
-  - type: Udder
-    reagentId: MilkGoat
-    quantityPerUpdate: 25
-    growthDelay: 20
-  - type: ExaminableHunger
-  - type: Wooly
+  - type: HarvestableSolution
+    solutionName: udder
+    verbText: udder-system-verb-milk
+    emptyMessage: udder-system-dry
+    successMessage: udder-system-success
   - type: Edible
     destroyOnEmpty: false
     solution: wool
@@ -1096,7 +1137,7 @@
       amount: 4
   - type: Grammar
     attributes:
-      gender: female # Here because of UdderComponent
+      gender: female # Milk-producing animals are female.
   - type: Speech
     speechSounds: Goat
     speechVerb: Goat
@@ -1130,6 +1171,13 @@
       reagents:
       - ReagentId: MilkGoat
         Quantity: 30
+  - type: SatiationProduction
+    delay: 20
+  - type: SolutionProducer
+    generated:
+      reagents:
+      - ReagentId: MilkGoat
+        Quantity: 25
 
 - type: entity
   parent: SolutionLarge
@@ -1138,10 +1186,18 @@
   components:
   - type: Solution
     id: wool
+  - type: SatiationProduction
+    producer: Parent
+    minimumSatiationThreshold: Peckish
+  - type: SolutionProducer
+    generated:
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 25
 
 - type: entity
   abstract: true
-  parent: [BaseMobRuminant, BaseSlicingRefinable]
+  parent: [BaseMobRuminant, BaseSlicingRefinable, BaseExaminableHunger]
   id: MobSheepBase
   name: sheepBase
   description: A sheep.
@@ -1206,12 +1262,11 @@
     solutions:
     - SolutionUdderSheep
     - SolutionWoolSheep
-  - type: Udder
-    reagentId: MilkSheep
-    quantityPerUpdate: 25
-    growthDelay: 20
-  - type: ExaminableHunger
-  - type: Wooly
+  - type: HarvestableSolution
+    solutionName: udder
+    verbText: udder-system-verb-milk
+    emptyMessage: udder-system-dry
+    successMessage: udder-system-success
   - type: Shearable
     targetSolutionName: wool
     shearedProductId: MaterialCotton1 # Cotton is spawned because there is no wool item.
@@ -1230,7 +1285,7 @@
       amount: 4
   - type: Grammar
     attributes:
-      gender: female # Here because of UdderComponent
+      gender: female # Milk-producing animals are female.
   - type: Speech
     speechSounds: Sheep
     speechVerb: Sheep
@@ -1273,6 +1328,13 @@
       reagents:
       - ReagentId: MilkSheep
         Quantity: 25
+  - type: SatiationProduction
+    delay: 20
+  - type: SolutionProducer
+    generated:
+      reagents:
+      - ReagentId: MilkSheep
+        Quantity: 25
 
 - type: entity
   parent: SolutionWool
@@ -1295,6 +1357,11 @@
       reagents:
       - ReagentId: SpaceDrugs
         Quantity: 25
+  - type: SolutionProducer
+    generated:
+      reagents:
+      - ReagentId: SpaceDrugs
+        Quantity: 25
 
 - type: entity
   parent: [ MobSheepBase, SimpleMobBase, BaseMobDestructible ]
@@ -1313,8 +1380,6 @@
     energy: 0.5
   - type: RgbLightController
     layers: [ 1 ]
-  - type: Wooly
-    reagentId: SpaceDrugs
   - type: Shearable
     targetSolutionName: wool
     shearedProductId: LeavesCannabisRainbow
@@ -1699,18 +1764,9 @@
     description: ghost-role-information-monkey-description
     rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
-  - type: Clumsy
-    gunShootFailDamage:
-      types:
-        Blunt: 5
-        Piercing: 4
-        Heat: 3
-    catchingFailDamage:
-      types:
-        Blunt: 1
-    clumsySound:
-      path: /Audio/Animals/monkey_scream.ogg
-
+  - type: PermanentStatusEffects
+    statusEffects:
+    - StatusEffectClumsyMonkey
 
 - type: entity
   name: monkey
@@ -1870,17 +1926,9 @@
   parent: MobBaseKobold
   description: Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
   components:
-  - type: Clumsy
-    gunShootFailDamage:
-      types:
-        Blunt: 2
-        Piercing: 7
-        Heat: 3
-    catchingFailDamage:
-      types:
-        Blunt: 1
-    clumsySound:
-      path: /Audio/Voice/Reptilian/reptilian_scream.ogg
+  - type: PermanentStatusEffects
+    statusEffects:
+    - StatusEffectClumsyKobold
 
 - type: entity
   id: MobBaseSyndicateKobold
@@ -2002,6 +2050,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.5
     baseSprintSpeed : 5
+  - type: NameIdentifier
+    group: AdjectivePrefix
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2014,23 +2064,12 @@
   - type: FlavorProfile
     flavors:
     - meaty
-  - type: Thirst
-    startingThirst: 25  # spawn with Okay thirst state
-    thresholds:
-      OverHydrated: 35
-      Okay: 25
-      Thirsty: 15
-      Parched: 10
-      Dead: 0
-    baseDecayRate: 0.04
-  - type: Hunger
-    thresholds:
-      Overfed: 35
-      Okay: 25
-      Peckish: 15
-      Starving: 10
-      Dead: 0
-    baseDecayRate: 0.5 # I'm very hungry! Give me. The cheese.
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: MouseHunger
+      Thirst:
+        prototype: MouseThirst
   - type: Extractable
     grindableSolutionName: food
   - type: ToolRefinable
@@ -2752,6 +2791,7 @@
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute from base.yml.
+    intervalHaltOnDamageTaken: 5s
     allowedStates:
     - Alive
     damage:
@@ -3440,7 +3480,7 @@
       types:
         Slash: 6
         Piercing: 6
-        Structural: 15
+        Structural: 6 # Secondary breaching
 
 - type: entity
   name: space cat
@@ -3468,7 +3508,9 @@
     tags:
       - DoorBumpOpener
   - type: MovementAlwaysTouching
-  - type: PressureImmunity
+  - type: PermanentStatusEffects
+    statusEffects:
+    - StatusEffectPressureImmunity
   - type: ProtectedFromStepTriggers
   - type: Insulated
   - type: InteractionPopup
@@ -3727,8 +3769,10 @@
   - type: FlavorProfile
     flavors:
     - meaty
-  - type: Hunger
-    baseDecayRate: 0.3
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: HamsterHunger
   - type: Extractable
     grindableSolutionName: food
   - type: Solution
@@ -3837,6 +3881,7 @@
     - Pig
     - VimPilot
   - type: Reproductive
+    minHungerThreshold: Peckish
     partnerWhitelist:
       tags:
       - Pig

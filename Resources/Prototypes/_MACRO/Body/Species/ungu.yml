@@ -194,15 +194,12 @@
       200: Dead
   - type: StaminaDamageOnHit
     damage: 18
-  - type: Hunger
-    thresholds:
-      Overfed: 150
-      Okay: 100
-      Peckish: 50
-      Starving: 25
-      Dead: 0
-    baseDecayRate: 0.0124 # 3/4 as fast as a human
-  - type: Thirst
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: UnguSatiationHunger
+      Thirst:
+        prototype: NormalSatiationThirst
   - type: Icon
     sprite: _MACRO/Mobs/Species/Ungu/parts.rsi
     state: full

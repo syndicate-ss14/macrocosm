@@ -2,9 +2,8 @@ using Robust.Shared.Configuration;
 
 namespace Content.Shared._MACRO.CCVar;
 
-/// <summary>
-/// Contains miscellaneous CCVars used in content.
-/// </summary>
+// Used for miscellaneous, highly-specific game CVars - e.g. variables that interact with only a single, narrow-purpose system.
+
 public sealed partial class MacroCCVars
 {
     /// <summary>
