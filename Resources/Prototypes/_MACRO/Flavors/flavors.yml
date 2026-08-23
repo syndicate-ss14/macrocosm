@@ -1,8 +1,18 @@
 - type: flavor
+  id: ants
+  flavorType: Complex
+  description: flavor-complex-ants
+
+- type: flavor
   id: snotty
   flavorType: Complex
   description: flavor-complex-snotty
 
+- type: flavor
+  id: kodepiia
+  flavorType: Base
+  description: flavor-base-kodepiia
+  
 - type: flavor
   id: allulalo
   flavorType: Complex

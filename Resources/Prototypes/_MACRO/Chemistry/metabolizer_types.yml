@@ -7,5 +7,13 @@
   name: metabolizer-type-apid
 
 - type: metabolizerType
+  id: Kodepiia
+  name: metabolizer-type-kodepiia
+
+- type: metabolizerType
   id: Allulalo
   name: metabolizer-type-allulalo
+
+- type: metabolizerType
+  id: Decapoid
+  name: metabolizer-type-decapoid
