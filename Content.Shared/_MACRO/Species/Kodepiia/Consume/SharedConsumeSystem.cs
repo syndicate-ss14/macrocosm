@@ -298,7 +298,7 @@ public abstract partial class SharedConsumeSystem : EntitySystem
         Dirty(target, consumed);
 
         // Gib if we exceed the threshold
-        if (_gibThreshold >= 0 && consumed.ConsumedValue >= _gibThreshold)
+        if (_gibThreshold > 0 && consumed.ConsumedValue >= _gibThreshold)
         {
             _gibbing.Gib(target);
             return;
