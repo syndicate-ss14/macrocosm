@@ -47,7 +47,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Arachnid, Moth, Apid ] #Macrocosm, add Apid
+          type: [ Human, Animal, Rat, Plant, Arachnid, Moth, Apid, Avali ] #Macrocosm, add Apid, Persistance - Add Avali
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
