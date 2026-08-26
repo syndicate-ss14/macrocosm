@@ -66,3 +66,8 @@
       saturation: [ 0, 0.75 ]
       value: [ 0.2, 0.9 ]
   squashEyeHairColors: true
+  strategy: !type:ClampedHslColoration
+    saturation: [0.0, 0.60]
+    lightness: [0.2, 0.9]
+
+
