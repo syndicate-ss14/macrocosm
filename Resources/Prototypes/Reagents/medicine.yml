@@ -286,7 +286,7 @@
       - !type:HealthChange
         damage:
           types:
-            poison: 1
+            Poison: 1
         conditions:
           - !type:MetabolizerTypeCondition
             type: [Avali]
@@ -324,7 +324,7 @@
       - !type:HealthChange
         damage:
           types:
-            poison: 3
+            Poison: 3
         conditions:
           - !type:MetabolizerTypeCondition
             type: [Avali]
@@ -770,11 +770,11 @@
 
         - !type:ModifyBloodLevel
           amount: 6
-          conditions: # Persistance14 Start
+          conditions:
            - !type:MetabolizerTypeCondition
              type: [Avali]
              inverted: true
-
+        # Persistance14 End
   #Macrocosm edit start
         - !type:HealthChange
           conditions:
