@@ -1,3 +1,4 @@
+
 # Miscellaneous
 - type: loadoutGroup
   id: Glasses
@@ -70,6 +71,13 @@
   hidden: true
   loadouts:
   - LoadoutTankHarness
+
+- type: loadoutGroup # Persistance14
+  id: GroupFireSuitAvali
+  name: loadout-group-firesuit-avali
+  hidden: true
+  loadouts:
+  - LoadoutFireSuit
 
 - type: loadoutGroup
   id: Survival
