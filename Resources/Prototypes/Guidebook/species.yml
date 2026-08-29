@@ -8,6 +8,7 @@
   # - Apid # macro - uncomment to enable
   - Arachnid
   # - Decapoid # macro - uncomment to enable
+  # - Avali # macro - uncomment to enavle
   - Diona
   - Dwarf
   # - Gastropoid # macro - uncomment to enable
@@ -27,6 +28,11 @@
   id: Arachnid
   name: species-name-arachnid
   text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"
+
+- type: guideEntry
+  id: Avali
+  name: species-name-avali
+  text: "/ServerInfo/Guidebook/Mobs/Avali.xml"
 
 - type: guideEntry
   id: Diona
