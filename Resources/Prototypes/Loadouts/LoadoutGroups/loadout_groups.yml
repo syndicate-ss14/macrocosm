@@ -73,11 +73,11 @@
   - LoadoutTankHarness
 
 - type: loadoutGroup # Persistance14
-  id: GroupFireSuitAvali
+  id: GroupAvaliHeatProtection
   name: loadout-group-firesuit-avali
   hidden: true
   loadouts:
-  - LoadoutFireSuit
+  - LoadoutAvaliHeatProtection
 
 - type: loadoutGroup
   id: Survival
