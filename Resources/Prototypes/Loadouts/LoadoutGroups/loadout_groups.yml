@@ -90,6 +90,7 @@
   - LoadoutSpeciesVoxNitrogen
   - EmergencyAquatic # MACRO: Decapoids
   - LoadoutSpeciesAquaticFullTank # MACRO: Decapoids
+  - EmergencyOxygenCooler # Persistance14 Edit: Avali
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
