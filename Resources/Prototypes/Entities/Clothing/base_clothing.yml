@@ -17,7 +17,6 @@
   - type: PhysicalComposition
     materialComposition:
       Cloth: 100
-  - type: whitelist
 
 - type: entity
   abstract: true

@@ -102,7 +102,7 @@
       back:
         sizeMaps:
           32:
-            sprite: _Starlight/_Starlight/Mobs/Species/Avali/displacement.rsi
+            sprite: _Starlight/Mobs/Species/Avali/displacement.rsi
             state: back
       outerClothing:
         sizeMaps:
@@ -124,21 +124,11 @@
           32:
             sprite: _Starlight/Mobs/Species/Avali/displacement.rsi
             state: head
-      neck:
-        sizeMaps:
-          32:
-            sprite: _Starlight/Mobs/Species/Avali/displacement.rsi
-            state: neck
       eyes:
         sizeMaps:
           32:
             sprite: _Starlight/Mobs/Species/Avali/displacement.rsi
             state: eyes
-      belt:
-        sizeMaps:
-          32:
-            sprite: _Starlight/Mobs/Species/Avali/displacement.rsi
-            state: belt
 
 - type: entity
   parent:

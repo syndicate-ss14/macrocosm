@@ -1,20 +1,4 @@
 - type: emote
-  id: Chirp
-  name: chat-emote-name-chirp
-  category: Vocal
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
-  chatMessages: ["chat-emote-msg-chirp"]
-  chatTriggers:
-  - chirp
-  - chirps
-  - chirped
-
-- type: emote
   id: Hisses
   name: chat-emote-name-hisses
   category: Vocal

@@ -1,6 +1,3 @@
-
-chat-emote-name-chirp = Chirp
-chat-emote-msg-chirp = chirps!
 chat-emote-name-hisses = Hiss
 chat-emote-msg-hisses = hisses!
 chat-emote-name-purr = Purr
