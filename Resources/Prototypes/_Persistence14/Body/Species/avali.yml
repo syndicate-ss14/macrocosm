@@ -159,7 +159,8 @@
       - !type:Emote
         emote: Hisses
         showInChat: false
-
+  - type: ScaleVisuals
+    scale: .5, .5
   - type: Vocal
     sounds:
       Male: MaleAvali
