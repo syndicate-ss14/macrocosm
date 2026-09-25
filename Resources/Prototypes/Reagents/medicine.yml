@@ -317,10 +317,10 @@
           types:
             Asphyxiation: -3.5
             Bloodloss: -3
-          conditions: # Persistance14 Start
-           - !type:MetabolizerTypeCondition
-             type: [Avali]
-             inverted: true
+        conditions: # Persistance14 Start
+        - !type:MetabolizerTypeCondition
+          type: [Avali]
+          inverted: true
       - !type:HealthChange
         damage:
           types:

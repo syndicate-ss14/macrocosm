@@ -2,6 +2,8 @@ using Content.Server.Body.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared._Persistence14.PersistentIdentifier;
 using Content.Shared._Starlight.CoolingUnit;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Temperature.Components;
@@ -14,6 +16,8 @@ public sealed partial class CoolingUnitSystem : SharedCoolingUnitSystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private TemperatureSystem _tempSys = default!;
     [Dependency] private PersistentIdentifierSystem _pid = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
     private TimeSpan _nextUpdate = TimeSpan.Zero;
     private TimeSpan _lastUpdate = TimeSpan.Zero;
@@ -28,6 +32,7 @@ public sealed partial class CoolingUnitSystem : SharedCoolingUnitSystem
 
         SubscribeLocalEvent<CoolingUnitComponent, GotEquippedEvent>(OnEquipped);
         SubscribeLocalEvent<CoolingUnitComponent, GotUnequippedEvent>(OnUnequipped);
+        SubscribeLocalEvent<CoolingUnitComponent, ComponentStartup>(OnComponentStartup);
     }
 
     public override void Update(float frameTime)
@@ -56,6 +61,28 @@ public sealed partial class CoolingUnitSystem : SharedCoolingUnitSystem
                 var coolingAmount = Math.Min(coolingUnit.MaxCooling * (float)timeSince.TotalSeconds, temperatureComponent.CurrentTemperature - thermalRegulatorComponent.NormalBodyTemperature);
                 _tempSys.ForceChangeTemperature(target, temperatureComponent.CurrentTemperature - coolingAmount, temperatureComponent);
             }
+        }
+    }
+
+    private void OnComponentStartup(EntityUid uid, CoolingUnitComponent component, ref ComponentStartup args)
+    {
+        var parent = Transform(uid).ParentUid;
+
+        if (!Exists(uid))
+            return;
+
+        if (_hands.IsHolding(parent, uid))
+        {
+            component.CoolingTarget = _pid.EnsureId(parent);
+            Dirty(uid, component);
+            return;
+        }
+
+        if (_inventory.TryGetContainingSlot(uid, out _))
+        {
+            component.CoolingTarget = _pid.EnsureId(parent);
+            Dirty(uid, component);
+            return;
         }
     }
 
