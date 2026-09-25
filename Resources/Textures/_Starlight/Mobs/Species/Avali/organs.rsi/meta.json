@@ -1,7 +1,7 @@
 {
   "version": 2,
   "license": "CC-BY-SA-3.0",
-  "copyright": "DocMoth with sprites copied from parts by Github MozarteanChaos / Discord mozarteanchaos (213813868282118144) and modified by Github Zeyria / Discord zeyria (232964236186353664). Additional versions edited by Github AegisShieldDev / Discord aegis_shield (230542392300666881)",
+  "copyright": "DocMoth with sprites copied from parts by Github MozarteanChaos / Discord mozarteanchaos (213813868282118144) and modified by Github Zeyria / Discord zeyria (232964236186353664). Additional versions edited by Github AegisShieldDev / Discord aegis_shield (230542392300666881). Placeholder for tongue & ears taken from /tg/station 13 at https://github.com/tgstation/tgstation/commit/c4b7f3c41b6742aca260fe60cc358a778ba9b8c8 | placeholder for appendix taken from CEV-Eris at https://github.com/discordia-space/CEV-Eris/commit/476e374cea95ff5e8b1603c48342bf700e2cd7af",
   "size": {
     "x": 32,
     "y": 32
@@ -90,6 +90,15 @@
     {
       "name": "stomach-inhand-right",
       "directions": 4
+    },
+    {
+      "name": "appendix"
+    },
+    {
+      "name": "tongue"
+    },
+    {
+      "name": "ears"
     }
   ]
 }
