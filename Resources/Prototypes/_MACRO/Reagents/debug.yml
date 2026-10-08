@@ -1,0 +1,65 @@
+- type: entity
+  parent: StatusEffectBase
+  id: DebugStatusEffectPopups
+  name: debug popups effect
+  description: Debug status effect for the sake of demonstrating popup components.
+  suffix: DEBUG
+  components:
+  # Spawns a popup message on startup.
+  - type: InitialPopupMessageStatusEffect
+    recipients: Local
+    visualType: Medium
+    messages: [ status-effect-debug-popups-initial1 ]
+  # Spawns a popup message with 80% chance every 1-4 seconds.
+  # Chooses one of three random messages.
+  - type: IntervalPopupMessageStatusEffect
+    recipients: Local
+    chance: 0.8
+    interval: [1, 4]
+    messages:
+    - status-effect-debug-popups-interval1
+    - status-effect-debug-popups-interval2
+    - status-effect-debug-popups-interval3
+  # Spawns a popup message when this expires.
+  - type: ExpiryPopupMessageStatusEffect
+    recipients: Local
+    visualType: LargeCaution
+    messages: [ status-effect-debug-popups-expired1 ]
+
+- type: reagent
+  id: DebugPopupEffect
+  group: Debug
+  name: reagent-name-debug-popups
+  desc: reagent-desc-debug-popups
+  physicalDesc: reagent-physical-desc-nothing
+  metabolisms:
+    Digestion: # Hack to get around slow transfer rates.
+      metabolismRate: 0.5
+      metabolites:
+        DebugPopupEffect: 1.0
+    Bloodstream: # Hack to get around slow transfer rates.
+      metabolismRate: 0.5
+      metabolites:
+        DebugPopupEffect: 1.0
+    Metabolites:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: DebugStatusEffectPopups
+        type: Add
+        time: 5
+        conditions:
+        # This effectively caps the status effect's duration at 15 seconds (active metabolism
+        # notwithstanding), as it can only add time if this is less than 10 seconds.
+        - !type:StatusEffectDurationCondition
+          effectProto: DebugStatusEffectPopups
+          max: 10
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        type: Add
+        time: 2
+        conditions:
+        # Requires another status effect between a range of durations to take effect.
+        - !type:StatusEffectDurationCondition
+          effectProto: StatusEffectDrunk
+          min: 30
+          max: 300
