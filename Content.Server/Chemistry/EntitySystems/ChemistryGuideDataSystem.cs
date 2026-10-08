@@ -48,6 +48,10 @@ public sealed partial class ChemistryGuideDataSystem : SharedChemistryGuideDataS
 
     private void PrototypeManagerReload(PrototypesReloadedEventArgs obj)
     {
+        // MACRO: Refresh all reagent prototypes if metabolizer types etc. are changed.
+        if (TryReloadAllTypes(obj))
+            return;
+
         if (!obj.ByType.TryGetValue(typeof(ReagentPrototype), out var reagents))
             return;
 

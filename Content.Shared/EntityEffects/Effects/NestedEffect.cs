@@ -1,4 +1,4 @@
-using Content.Shared.Localizations;
+// using Content.Shared.Localizations; MACRO
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.EntityEffects.Effects;
@@ -14,7 +14,7 @@ public sealed partial class NestedEffect : EntityEffectBase<NestedEffect>
     [DataField(required: true)]
     public ProtoId<EntityEffectPrototype> Proto;
 
-    private List<string> _conditions = new();
+    // private List<string> _conditions = new(); // MACRO: commented out, not sure why this is here
     private List<string> _effects = new();
 
     public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
@@ -29,21 +29,17 @@ public sealed partial class NestedEffect : EntityEffectBase<NestedEffect>
             if (effect.EntityEffectGuidebookText(prototype, entSys) is not {} text)
                 continue;
 
-            // basically GuidebookReagentEffectDescription but independent of reagents and no linq
-            _conditions.Clear();
-            if (effect.Conditions is {} conditions)
-            {
-                foreach (var condition in conditions)
-                {
-                    _conditions.Add(condition.EntityConditionGuidebookText(prototype));
-                }
-            }
+            // Begin MACRO: Allow hiding conditions from guidebook
+            var conditions = effect.GetConditions(prototype, out int count, out var showEntry);
+            if (!showEntry)
+                continue;
 
             var desc = Loc.GetString("guidebook-nested-effect-description",
                 ("effect", text),
                 ("chance", effect.Probability),
-                ("conditionCount", _conditions.Count),
-                ("conditions", ContentLocalizationManager.FormatList(_conditions)));
+                ("conditionCount", count),
+                ("conditions", conditions));
+            // End MACRO
             _effects.Add(desc);
         }
 

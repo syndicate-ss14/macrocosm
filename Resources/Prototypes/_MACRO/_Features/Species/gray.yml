@@ -1,0 +1,8 @@
+- type: !PartialOnly species
+  id: Gray
+  roundStart: &speciesEnabled false # Set this to "true" to enable.
+
+- type: !PartialOnly guideEntry
+  id: Gray
+  showInGuidebook: *speciesEnabled
+  includeAsChild: *speciesEnabled

@@ -1,0 +1,12 @@
+- type: !PartialOnly species
+  id: Kodepiia
+  roundStart: &speciesEnabled false # Set this to "true" to enable.
+
+- type: !PartialOnly guideEntry
+  id: Kodepiia
+  showInGuidebook: *speciesEnabled
+  includeAsChild: *speciesEnabled
+
+- type: !PartialOnly metabolizerType
+  id: Kodepiia
+  showInGuidebook: *speciesEnabled

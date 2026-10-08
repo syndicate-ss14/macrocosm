@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.EntityEffects;
 using Content.Shared.Localizations;
 using Content.Shared.Metabolism;
 using Robust.Shared.Prototypes;
@@ -17,14 +19,34 @@ public sealed partial class MetabolizerTypeCondition : EntityConditionBase<Metab
     public override string EntityConditionGuidebookText(IPrototypeManager prototype)
     {
         var typeList = new List<string>();
+        var allHidden = Type.Length > 0; // MACRO: Keep track if all metabolizers are hidden from the guidebook
 
         foreach (var type in Type)
         {
             if (!prototype.Resolve(type, out var proto))
                 continue;
 
+            // MACRO: Do not show this metabolizer type if it's hidden from the guidebook.
+            allHidden = allHidden && !proto.ShowInGuidebook;
+            if (!proto.ShowInGuidebook)
+                continue;
+
             typeList.Add(proto.LocalizedName);
         }
+
+        // Begin MACRO: This requirement gets hidden entirely if all metabolizers are hidden.
+        if (allHidden)
+        {
+            // Pretend there's no conditions if this is inverted, because it hypothetically should never be "failed".
+            // "Adds 5 seconds of status effect [if the metabolizing organ is not an Allulalo organ.]"
+            if (Inverted)
+                return string.Empty;
+            // The whole effect should be hidden if it's not inverted, because it hypothetically should never pass.
+            // "Adds 5 seconds of status effect [if the metabolizing organ is an Allulalo organ.]"
+            else
+                return EntityEffect.HideEffectTag;
+        }
+        // End MACRO
 
         var names = ContentLocalizationManager.FormatListToOr(typeList);
 
