@@ -1,5 +1,11 @@
+# NOTE: Before the solution refactor, the "large" bottle has 50 capacity,
+# and the "tall" bottle had 80 capacity. After the refactor, I decided to make
+# the "large" bottle the higher-capacity one, as maximum capacity is meant
+# to scale with the amount of inventory space an item takes up.
+# - portfiend, Macrocosm maintainer
+
 - type: entity
-  parent: [DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull]
+  parent: [SolutionNormal, DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull]
   id: DrinkWaterBottleLargeFull
   suffix: Decapoid
   name: water bottle
@@ -13,8 +19,7 @@
     solution:
       reagents:
       - ReagentId: Water
-        Quantity: 50
-      maxVol: 50
+        Quantity: 120
   - type: Sprite
     sprite: _MACRO/Objects/Consumable/Drinks/Plastic/bigwaterbottle.rsi
   - type: FitsInDispenser
@@ -23,7 +28,7 @@
     localizedLabel: reagent-name-water
 
 - type: entity
-  parent: [DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull]
+  parent: [SolutionSmall, DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull]
   id: DrinkWaterBottleTallFull
   suffix: Decapoid, Extended
   name: extended-capacity water bottle
@@ -37,8 +42,8 @@
     solution:
       reagents:
       - ReagentId: Water
-        Quantity: 80
-      maxVol: 80
+        Quantity: 90
+      maxVol: 90
   - type: Sprite
     sprite: _MACRO/Objects/Consumable/Drinks/Plastic/tallwaterbottle.rsi
   - type: FitsInDispenser
@@ -55,9 +60,9 @@
     solution:
       reagents:
       - ReagentId: Water
-        Quantity: 35
+        Quantity: 84
       - ReagentId: Laughter
-        Quantity: 15
+        Quantity: 36
   - type: FitsInDispenser
     solution: drink
   - type: Label
