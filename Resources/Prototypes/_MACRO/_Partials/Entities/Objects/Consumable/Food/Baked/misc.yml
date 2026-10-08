@@ -1,0 +1,46 @@
+- type: !PartialOnly entity
+  id: FoodBakedMuffin
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedBunHoney
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedBunHotX
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCookieOatmeal
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCookieSugar
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedWaffle
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedPretzel
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCannoli
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCroissant
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedChevreChaud
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedGrilledCheeseSandwich
+  components: *unguFood

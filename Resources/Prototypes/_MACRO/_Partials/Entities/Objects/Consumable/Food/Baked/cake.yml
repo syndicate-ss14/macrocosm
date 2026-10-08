@@ -1,0 +1,65 @@
+- type: !PartialOnly entity
+  id: MobCatCake
+  components:
+  - type: Tag
+    tags:
+    - KodeEdible
+
+- type: !PartialOnly entity
+  id: FoodCakePlain
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodCakePlainSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeCheese
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeCheeseSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeBirthday
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeBirthdaySlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeVanilla
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeVanillaSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeClown
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeClownSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeSpaceman
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeSpacemanSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeSuppermatter
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeSuppermatterSlice
+  components: *unguFood

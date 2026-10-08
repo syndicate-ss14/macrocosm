@@ -1,0 +1,22 @@
+- type: !PartialOnly entity
+  id: FoodPieBaklava
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodPieBaklavaSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPieAmanita
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPiePlump
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPiePlumpSlice
+  components: *unguFood

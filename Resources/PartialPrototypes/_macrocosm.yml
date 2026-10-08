@@ -1,0 +1,12 @@
+# Documentation on Macrocosm's pull request conventions and best practices can be found here:
+# https://docs.macrocosm.cool/Documents/Conventions/pull-requests
+
+# Represents changes to upstream files made by Macrocosm.
+# Used by contributors to facilitate adding a new feature.
+# For example: adding a metabolism to a reagent used by a certain species.
+- /Prototypes/_MACRO/_Partials
+
+# Represents prototypes used to enable/disable features easily.
+# Used by downstream forks to opt-in or opt-out of Macrocosm's features.
+# For example: enabling a species by making it roundstart, or uncommenting prototypes.
+- /Prototypes/_MACRO/_Features

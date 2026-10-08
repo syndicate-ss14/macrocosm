@@ -3,7 +3,7 @@
 
 - type: entity
   parent: [SolutionNormal, FoodInjectableBase]
-  id: FoodCakeBase
+  id: FoodCakeBaseNoSecretStash
   abstract: true
   components:
   - type: FlavorProfile
@@ -25,22 +25,14 @@
   - type: Tag
     tags:
     - Cake
-  - type: SecretStash
-    maxItemSize: "Normal"
-    secretStashName: secret-stash-cake
-    damageEatenItemInside:
-      types:
-        Slash: 7.5
-  - type: ToolOpenable
-    openToolQualityNeeded: Slicing
-    closeToolQualityNeeded: Slicing
-    verbOnly: true
-  - type: ContainerContainer
-    containers:
-      stash: !type:ContainerSlot {}
 
 - type: entity
-  parent: [SolutionVeryTiny, FoodCakeBase]
+  abstract: true
+  parent: [FoodCakeBaseNoSecretStash, BaseStashCake]
+  id: FoodCakeBase
+
+- type: entity
+  parent: [SolutionVeryTiny, FoodCakeBaseNoSecretStash] # no secret stash since it's tiny!
   id: FoodCakeSliceBase
   abstract: true
   description: Just a slice of cake, it is enough for everyone.
@@ -85,6 +77,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -111,6 +104,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -136,11 +130,6 @@
     state: plain
   - type: Item
     heldPrefix: plain
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: ToolRefinable
     refineResult:
     - id: FoodCakePlainSlice
@@ -157,11 +146,6 @@
     state: plain-slice
   - type: Item
     heldPrefix: plain-slice
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 # Tastes like sweetness, cake.
 
 - type: entity
@@ -192,6 +176,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Vegetable
   - type: Item
     inhandVisuals:
@@ -230,8 +215,9 @@
   - type: Tag
     tags:
     - Cake
-    - Vegetable
+    - FinishedMeal
     - Slice
+    - Vegetable
   - type: Item
     inhandVisuals:
       left:
@@ -262,6 +248,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Meat
   - type: Item
     inhandVisuals:
@@ -287,6 +274,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Meat
     - Slice
   - type: Item
@@ -325,11 +313,6 @@
       - state: plain-inhand-right
       - state: alpha-filling-inhand-right
         color: "#ffffff"
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 
 - type: entity
   name: slice of cheese cake
@@ -349,11 +332,6 @@
       - state: plain-inhand-right
       - state: alpha-slice-filling-inhand-right
         color: "#ffffff"
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 # Tastes like sweetness, cream cheese.
 
 - type: entity
@@ -374,6 +352,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -399,6 +378,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -431,6 +411,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -456,6 +437,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -488,6 +470,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -513,6 +496,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -559,6 +543,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     heldPrefix: lemoon
@@ -591,6 +576,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -692,6 +678,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -718,6 +705,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -748,6 +736,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Meat
   - type: Item
     inhandVisuals:
@@ -773,6 +762,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Meat
     - Slice
   - type: Item
@@ -813,6 +803,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -845,6 +836,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -874,6 +866,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -894,6 +887,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -920,11 +914,6 @@
       amount: 8
   - type: Item
     heldPrefix: birthday
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 
 - type: entity
   name: slice of birthday cake
@@ -936,11 +925,6 @@
     state: birthday-slice
   - type: Item
     heldPrefix: birthday-slice
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 # Tastes like sweetness, cake, christmas.
 
 - type: entity
@@ -957,11 +941,6 @@
       amount: 8
   - type: Item
     heldPrefix: vanilla
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 
 - type: entity
   name: slice of vanilla cake
@@ -979,11 +958,6 @@
       right:
       - state: plain-slice-inhand-right
       - state: alpha-slice-filling-inhand-right
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 # Tastes like sweetness, cake, vanilla.
 
 - type: entity
@@ -1000,11 +974,6 @@
       amount: 8
   - type: Item
     heldPrefix: clown
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 
 - type: entity
   name: slice of clown cake
@@ -1016,11 +985,6 @@
     state: clown-slice
   - type: Item
     heldPrefix: clown-slice
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 # Tastes like sweetness, cake, clown.
 
 - type: entity
@@ -1048,11 +1012,6 @@
         Quantity: 12
   - type: Item
     heldPrefix: trumpet
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 
 - type: entity
   name: slice of spaceman's cake
@@ -1075,11 +1034,6 @@
         Quantity: 1.5
   - type: Item
     heldPrefix: trumpet-slice
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 # Tastes like sweetness, cake, jam.
 
 - type: entity
@@ -1161,9 +1115,9 @@
   - type: Tag
     tags:
     - VimPilot
-    - DoorBumpOpener
     - Cake
-    - KodeEdible # macro add
+    - DoorBumpOpener
+    - FinishedMeal
   - type: CanEscapeInventory
     baseResistTime: 2
   - type: Puller
@@ -1214,11 +1168,6 @@
     color: "#FFFF00"
     radius: 2
     energy: 2.5
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 
 - type: entity
   name: suppermatter shard
@@ -1247,8 +1196,8 @@
     energy: 2.5
   - type: Tag
     tags:
+    - FinishedMeal
     - Slice
-    - UnguFood # macro edit - allow ungu to eat
   - type: FoodSequenceElement
     entries:
       Taco: Suppermatter
@@ -1272,6 +1221,7 @@
     tags:
     - Cake
     - ClothMade
+    - FinishedMeal
   - type: Solution
     solution:
       reagents:
@@ -1298,6 +1248,7 @@
     tags:
     - Cake
     - ClothMade
+    - FinishedMeal
     - Slice
   - type: Solution
     solution:
@@ -1348,6 +1299,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -1389,6 +1341,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item

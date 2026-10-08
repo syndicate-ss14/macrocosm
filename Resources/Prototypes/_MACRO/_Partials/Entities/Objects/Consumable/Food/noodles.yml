@@ -1,0 +1,10 @@
+- type: !PartialOnly entity
+  id: FoodNoodlesBoiled
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodNoodlesButter
+  components: *unguFood

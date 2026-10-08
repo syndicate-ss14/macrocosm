@@ -1,0 +1,42 @@
+- type: !PartialOnly entity
+  id: FoodPizzaMargherita
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodPizzaMargheritaSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPizzaMushroom
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPizzaMushroomSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPizzaVegetable
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPizzaVegetableSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPizzaDank
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPizzaDankSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPizzaWorldpeas
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodPizzaWorldpeasSlice
+  components: *unguFood

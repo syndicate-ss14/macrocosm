@@ -1,0 +1,18 @@
+- type: !PartialOnly entity
+  id: FoodMealNachos
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodMealNachosCheesy
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodMealNachosCuban
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodMealQueso
+  components: *unguFood
