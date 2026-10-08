@@ -51,6 +51,7 @@
   name: Kodepiia appearance
   components:
   - type: Inventory
+    speciesId: kodepiia
     displacements:
       jumpsuit:
         sizeMaps:
