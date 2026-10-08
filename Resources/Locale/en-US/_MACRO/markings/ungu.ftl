@@ -78,6 +78,7 @@ marking-LEyeHorn-LEyeHorn = Horn
 marking-REyeHorn = Right Curled Horn
 marking-REyeHorn-REyeHorn = Horn
 marking-TusksUngu = Tusks
+marking-TusksUngu-Tusks = Tusks
 marking-WalrusUngu = Walrus Tusks
 marking-WalrusUngu-Walrus = Tusks
 marking-AntlersUngu = Antlers
@@ -89,7 +90,7 @@ marking-HornsHawkUngu-Horn_Hawk = Horns
 marking-HornUniUngu = Unicorn / Narwhal Horn
 marking-HornUniUngu-Uni_Horn = Horn
 marking-HornsProstheticUngu = Prosthetic Horns
-marking-HornsProstheticUngu-Prosethic_Horns = Prosthetic Horns
+marking-HornsProstheticUngu-Prosthetic_Horns = Prosthetic Horns
 marking-HeadSplotchLUngu = Head Splotch (Left)
 marking-HeadSplotchLUngu-HeadSplotchL = Splotch
 marking-HeadSplotchRUngu = Head Splotch (Right)
@@ -98,27 +99,46 @@ marking-HeadSplotchRUngu-HeadSplotchR = Splotch
 # hair
 
 marking-HeadFluffUngu = Bangs
+marking-HeadFluffUngu-HeadFluff = Bangs
 marking-WoolyLongUngu = Long Wool
+marking-WoolyLongUngu-Wooly_Long = Wool
 marking-WoolyMediumUngu = Medium Wool
+marking-WoolyMediumUngu-Wooly_Medium = Wool
 marking-WoolyShortUngu = Short Wool
+marking-WoolyShortUngu-Wooly_Short = Wool
 marking-StrandUngu = One hair
+marking-StrandUngu-Single_Strand = Hair
 marking-StrandsUngu = A few hairs
+marking-StrandsUngu-Strands = Hair
 marking-ManeUngu = Short Mane
+marking-ManeUngu-Mane = Mane
 marking-BraidedManeUngu = Braided Mane
+marking-BraidedManeUngu-BraidedMane = Mane
 marking-LooseManeUngu = Loose Mane
+marking-LooseManeUngu-LooseMane = Mane
 marking-RegalManeUngu = Regal Mane
+marking-RegalManeUngu-RegalMane = Mane
 marking-PonytailUngu = Ponytail
+marking-PonytailUngu-Ponytail = Ponytail
 marking-TonsureUngu = Tonsure
+marking-TonsureUngu-Tonsure = Tonsure
 marking-PonyUngu = Pony
+marking-PonyUngu-Pony = Pony
 marking-BunUngu = Bun (Bangs)
+marking-BunUngu-Bun = Bun
 
 # facial hair
 
 marking-LongChopsUngu = Long Chops
+marking-LongChopsUngu-LongChops = Chops
 marking-ShortChopsUngu = Short Chops
+marking-ShortChopsUngu-ShortChops = Chops
 marking-ThickBraidUngu = Thick Braid
+marking-ThickBraidUngu-ThickBraid = Braid
 marking-TwinBraidsUngu = Twin Braids
+marking-TwinBraidsUngu-TwinBraids = Braids
 marking-WoolyUngu = Wooly Beard
+marking-WoolyUngu-Wooly = Beard
 
 # head options / snouts
 
@@ -225,7 +245,7 @@ marking-LLegStitchUngu-StitchLLeg = Stitches
 marking-PLLegUngu = Prosthetic Leg (Left)
 marking-PLLegUngu-PLLeg = Prosthetic
 marking-PRLegUngu = Prosthetic Leg (Right)
-marking-PLLegUngu-PRLeg = Prosthetic
+marking-PRLegUngu-PRLeg = Prosthetic
 marking-PLHoofUngu = Prosthetic Hoof (Left)
 marking-PLHoofUngu-PLHoof = Prosthetic
 marking-PRHoofUngu = Prosthetic Hoof (Right)
@@ -287,9 +307,9 @@ marking-TailFluffyUngu-TailFluffy_2 = Fur
 marking-TailBoneUngu = Bone Tail
 marking-TailBoneUngu-Bone_Tail = Tail
 marking-TailBushyUngu = Deer Tail
-marking-TailBushyUngu-BushyTail = Tail
+marking-TailBushyUngu-Bushy_Tail = Tail
 marking-TailProstheticUngu = Prosthetic Tail
-marking-TailProstheticUngu-Tail_Prosthetic = Tail
+marking-TailProstheticUngu-Prosthetic_Tail = Tail
 
 
 
