@@ -2,7 +2,6 @@
   id: Ant
   name: species-name-ant
   roundStart: false
-  #randomViable: false
   prototype: MobAnt
   dollPrototype: AppearanceAnt
   skinColoration: Hues
