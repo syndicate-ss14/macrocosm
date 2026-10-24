@@ -82,19 +82,19 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             : Loc.GetString("health-analyzer-window-entity-unknown-text"));
         NameLabel.SetMessage(name);
 
-        // Start Misfit - Change species identifier to have Synthetic prefix
+        // Start MACRO - Change species identifier to have Synthetic prefix
         var species =
             _entityManager.TryGetComponent<HumanoidProfileComponent>(target.Value,
                 out var humanoidComponent)
                 ? Loc.GetString(_prototypes.Index(humanoidComponent.Species).Name)
                 : Loc.GetString("health-analyzer-window-entity-unknown-species-text");
 
-        var synthSpecies = _entityManager.HasComponent<SynthComponent>(target.Value)
-            ? Loc.GetString("synthetic-component-prefix", ("species", species))
+        var speciesText = _entityManager.TryGetComponent<SpeciesAffixComponent>(target.Value, out var speciesAffix) // Box Change - Refactor to take custom strings
+            ? Loc.GetString(speciesAffix.Affix, ("species", species))
             : species;
 
-        SpeciesLabel.Text = synthSpecies;
-        // End Misfit
+        SpeciesLabel.Text = speciesText;
+        // End MACRO
 
         // Basic Diagnostic
 

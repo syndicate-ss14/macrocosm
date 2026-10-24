@@ -9,3 +9,6 @@
     - type: DamagedSiliconAccent # MACRO - Add silicon accent
       enableChargeCorruption: false
       damageAtMaxCorruption: 200
+    - type: SpeciesAffix # MACRO - Add species prefix
+      examineAffix: synthetic-component-examine
+      affix: synthetic-component-prefix

@@ -1,13 +1,13 @@
-﻿using Content.Shared._CD.Traits;
+﻿using Content.Shared._Box.Traits;
 
 namespace Content.Shared.Humanoid;
 
 public sealed partial class HumanoidProfileSystem
 {
-    public string GetSyntheticRepresentation(EntityUid uid, string speciesText)
+    public string GetAffixRepresentation(EntityUid uid, string speciesText)
     {
-        return HasComp<SynthComponent>(uid)
-            ? Loc.GetString("synthetic-component-examine", ("species", speciesText))
+        return TryComp<SpeciesAffixComponent>(uid, out var affix)
+            ? Loc.GetString(affix.ExamineAffix, ("species", speciesText))
             : speciesText;
     }
 }

@@ -44,10 +44,9 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
         var identity = Identity.Entity(ent, EntityManager);
         var species = GetSpeciesRepresentation(ent.Comp.Species).ToLower();
         var age = GetAgeRepresentation(ent.Comp.Species, ent.Comp.Age);
+        var speciesText = GetAffixRepresentation(ent, species); // Box Change - Misfit - Species Prefix (Synths) // Box Change - Custom Species Affixes
 
-        var syntheticSpecies = GetSyntheticRepresentation(ent, species); // Misfit - Shim synthetic prefix
-
-        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", syntheticSpecies))); // Misfit - Shim synthetic prefix
+        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", speciesText))); // MACRO - Custom Species Affixes
     }
 
     /// <summary>

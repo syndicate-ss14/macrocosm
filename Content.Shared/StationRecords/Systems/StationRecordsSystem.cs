@@ -97,7 +97,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
 
         _fingerprintQuery.TryComp(player, out var fingerprintComponent);
         _dnaQuery.TryComp(player, out var dnaComponent);
-        var synthetic = _synthQuery.HasComp(player); // MACRO
+        _synthQuery.TryComp(player, out var affixComponent); // MACRO - Custom Species Affixes
 
         CreateGeneralRecord(
             station,
@@ -109,7 +109,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
             jobId,
             fingerprintComponent?.Fingerprint,
             dnaComponent?.DNA,
-            synthetic, // MACRO
+            affixComponent?.Affix, // MACRO - Custom Species Affixes
             profile);
     }
 
@@ -133,7 +133,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
     /// </param>
     /// <param name="mobFingerprint">Fingerprint of the character.</param>
     /// <param name="dna">DNA of the character.</param>
-    /// <param name="synthetic">MACRO - Whether a character is synthetic or not.</param>
+    /// <param name="speciesAffix">MACRO - Affix to the character's species.</param>
     ///
     /// <param name="profile">
     ///     Profile for the related player. This is so that other systems can get further information
@@ -150,7 +150,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
         string jobId,
         string? mobFingerprint,
         string? dna,
-        bool synthetic, // MACRO - Add synthetic to species record
+        string? speciesAffix, // MACRO - Custom Species Affixes
         HumanoidCharacterProfile profile)
     {
         if (!ProtoMan.TryIndex<JobPrototype>(jobId, out var jobPrototype))
@@ -182,7 +182,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
             Gender = gender,
             DisplayPriority = displayPriority,
             Fingerprint = mobFingerprint,
-            Synthetic = synthetic, // MACRO - Add synthetic to species record
+            SpeciesAffix = speciesAffix, // MACRO - Custom Species Affixes
             DNA = dna
         };
 
