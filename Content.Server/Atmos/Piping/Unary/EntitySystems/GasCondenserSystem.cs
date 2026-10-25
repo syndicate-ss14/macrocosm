@@ -39,7 +39,7 @@ public sealed partial class GasCondenserSystem : EntitySystem
         if (solution.AvailableVolume == 0 || inlet.Air.TotalMoles == 0)
             return;
 
-        var molesToConvert = NumberOfMolesToConvert(receiver, inlet.Air, args.dt);
+        var molesToConvert = NumberOfMolesToConvert(receiver, inlet.Air, args.dt, entity); // MACRO: pass in entity
         var removed = inlet.Air.Remove(molesToConvert);
         for (var i = 0; i < Atmospherics.TotalNumberOfGases; i++)
         {
@@ -64,6 +64,24 @@ public sealed partial class GasCondenserSystem : EntitySystem
         _solution.UpdateChemicals(entity.Comp.Solution.Value);
     }
 
+    // BEGIN MACRO ADD
+    public float NumberOfMolesToConvert(ApcPowerReceiverComponent comp, GasMixture mix, float dt, Entity<GasCondenserComponent> entity)
+    {
+        //Rate of condensation is based on the gas mixture's specific heat (not heat capacity!).
+        var specificHeat = _atmosphereSystem.GetSpecificHeat(mix);
+
+        //Power usage of the condenser since the last update.
+        //Generally going to be a constant 6000.
+        var energy = comp.Load * dt;
+
+        //Apathy should not be 0
+        var apathy = entity.Comp.Apathy == 0f ? 0.0001f : entity.Comp.Apathy;
+
+        return energy / (apathy * specificHeat);
+    }
+    // END MACRO ADD
+
+    /* MACRO EDIT: UPSTREAM IMPLEMENTATION
     public float NumberOfMolesToConvert(ApcPowerReceiverComponent comp, GasMixture mix, float dt)
     {
         var hc = _atmosphereSystem.GetHeatCapacity(mix, true);
@@ -72,4 +90,5 @@ public sealed partial class GasCondenserSystem : EntitySystem
         var energy = comp.Load * dt;
         return energy / (alpha * hc);
     }
+    */
 }
