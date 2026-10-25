@@ -58,6 +58,7 @@
   name: allulalo appearance
   components:
   - type: Inventory
+    speciesId: allulalo
     displacements:
       jumpsuit:
         sizeMaps:

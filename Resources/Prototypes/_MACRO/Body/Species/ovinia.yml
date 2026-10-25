@@ -66,6 +66,7 @@
   name: ovinia appearance
   components:
   - type: Inventory
+    speciesId: ovinia
     displacements:
       jumpsuit:
         sizeMaps:
