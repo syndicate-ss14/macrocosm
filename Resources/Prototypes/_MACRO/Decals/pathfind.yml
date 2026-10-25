@@ -1,72 +1,124 @@
+# Helper prototype for applying properties to all pathfinding markings (e.g. tags).
+- type: decal
+  abstract: true
+  id: BasePathfind
+
+- type: decal
+  abstract: true
+  parent: BasePathfind
+  id: BasePathfindEnd
+
+- type: decal
+  abstract: true
+  parent: BasePathfind
+  id: BasePathfindBlockFlat
+
+- type: decal
+  abstract: true
+  parent: BasePathfind
+  id: BasePathfindBlockChevron
+
+- type: decal
+  abstract: true
+  parent: BasePathfind
+  id: BasePathfindFillChevron
+
+- type: decal
+  abstract: true
+  parent: BasePathfind
+  id: BasePathfindSymbolContainer
+
+- type: decal
+  abstract: true
+  parent: BasePathfind
+  id: BasePathfindYield
+
+- type: decal
+  abstract: true
+  parent: BasePathfind
+  id: BasePathfindPrefab
+
 # end pieces
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndTopLeft
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endtopleft
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndTopCenter
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endtopcenter
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndTopRight
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endtopright
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndLeftTop
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endlefttop
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndLeftCenter
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endleftcenter
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndLeftBottom
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endleftbottom
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndRightTop
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endrighttop
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndRightCenter
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endrightcenter
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndRightBottom
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endrightbottom
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndBottomLeft
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endbottomleft
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndBottomCenter
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: endbottomcenter
 
 - type: decal
+  parent: BasePathfindEnd
   id: PathfindEndBottomRight
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
@@ -75,54 +127,63 @@
 # flat blocks
 
 - type: decal
+  parent: BasePathfindBlockFlat
   id: PathfindBlockNW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknw
 
 - type: decal
+  parent: BasePathfindBlockFlat
   id: PathfindBlockN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockn
 
 - type: decal
+  parent: BasePathfindBlockFlat
   id: PathfindBlockNE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockne
 
 - type: decal
+  parent: BasePathfindBlockFlat
   id: PathfindBlockW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockw
 
 - type: decal
+  parent: BasePathfindBlockFlat
   id: PathfindBlockC
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockc
 
 - type: decal
+  parent: BasePathfindBlockFlat
   id: PathfindBlockE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocke
 
 - type: decal
+  parent: BasePathfindBlockFlat
   id: PathfindBlockSW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocksw
 
 - type: decal
+  parent: BasePathfindBlockFlat
   id: PathfindBlockS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocks
 
 - type: decal
+  parent: BasePathfindBlockFlat
   id: PathfindBlockSE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
@@ -131,216 +192,252 @@
 # chevron blocks
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNWChevronN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknwchevn
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNWChevronW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknwchevw
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNWChevronE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknwcheve
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNWChevronS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknwchevs
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNChevronN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknchevn
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNChevronW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknchevw
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNChevronE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockncheve
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNChevronS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknchevs
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNEChevronN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknechevn
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNEChevronW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknechevw
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNEChevronE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknecheve
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockNEChevronS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknechevs
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockWChevronN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockwchevn
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockWChevronW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockwchevw
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockWChevronE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockwcheve
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockWChevronS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockwchevs
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockCChevronN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockcchevn
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockCChevronW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockcchevw
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockCChevronE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockccheve
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockCChevronS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockcchevs
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockEChevronN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockechevn
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockEChevronW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockechevw
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockEChevronE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockecheve
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockEChevronS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockechevs
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSWChevronN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockswchevn
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSWChevronW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockswchevw
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSWChevronE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockswcheve
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSWChevronS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockswchevs
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSChevronN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockschevn
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSChevronW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockschevw
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSChevronE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockscheve
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSChevronS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockschevs
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSEChevronN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocksechevn
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSEChevronW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocksechevw
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSEChevronE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocksecheve
 
 - type: decal
+  parent: BasePathfindBlockChevron
   id: PathfindBlockSEChevronS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
@@ -349,216 +446,252 @@
 # chevron fill pieces
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNWChevronFillN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknwchevfilln
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNWChevronFillW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknwchevfillw
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNWChevronFillE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknwchevfille
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNWChevronFillS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknwchevfills
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNChevronFillN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknchevfilln
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNChevronFillW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknchevfillw
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNChevronFillE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknchevfille
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNChevronFillS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknchevfills
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNEChevronFillN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknechevfilln
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNEChevronFillW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknechevfillw
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNEChevronFillE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknechevfille
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockNEChevronFillS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocknechevfills
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockWChevronFillN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockwchevfilln
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockWChevronFillW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockwchevfillw
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockWChevronFillE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockwchevfille
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockWChevronFillS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockwchevfills
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockCChevronFillN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockcchevfilln
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockCChevronFillW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockcchevfillw
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockCChevronFillE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockcchevfille
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockCChevronFillS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockcchevfills
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockEChevronFillN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockechevfilln
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockEChevronFillW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockechevfillw
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockEChevronFillE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockechevfille
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockEChevronFillS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockechevfills
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSWChevronFillN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockswchevfilln
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSWChevronFillW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockswchevfillw
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSWChevronFillE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockswchevfille
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSWChevronFillS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockswchevfills
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSChevronFillN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockschevfilln
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSChevronFillW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockschevfillw
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSChevronFillE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockschevfille
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSChevronFillS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blockschevfills
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSEChevronFillN
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocksechevfilln
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSEChevronFillW
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocksechevfillw
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSEChevronFillE
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: blocksechevfille
 
 - type: decal
+  parent: BasePathfindFillChevron
   id: PathfindBlockSEChevronFillS
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
@@ -567,108 +700,126 @@
 # symbol containers
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerNWH
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconnwh
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerNWV
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconnwv
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerNH
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconnh
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerNV
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconnv
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerNEH
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconneh
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerNEV
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconnev
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerWH
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconwh
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerWV
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconwv
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerCH
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconch
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerCV
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconcv
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerEH
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconeh
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerEV
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconev
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerSWH
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconswh
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerSWV
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconswv
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerSH
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconsh
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerSV
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconsv
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerSEH
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: symconseh
 
 - type: decal
+  parent: BasePathfindSymbolContainer
   id: PathfindSymbolContainerSEV
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
@@ -677,180 +828,210 @@
 # yield pieces
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldLeftRT
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: lyieldrt
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldLeftRC
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: lyieldrc
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldLeftRB
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: lyieldrb
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldTopUL
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: tyieldul
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldTopUC
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: tyielduc
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldTopUR
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: tyieldur
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterLT
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldlt
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterLC
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldlc
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterLB
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldlb
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterDL
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyielddl
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterDC
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyielddc
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterDR
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyielddr
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterRT
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldrt
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterRC
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldrc
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterRB
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldrb
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterUL
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldul
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterUC
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyielduc
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterUR
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldur
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterBT
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldbt
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterBCV
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldbcv
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterBB
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldbb
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterBL
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldbl
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterBCH
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldbch
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldCenterBR
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: cyieldbr
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldRightLT
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: ryieldlt
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldRightLC
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: ryieldlc
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldRightLB
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: ryieldlb
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldBottomDC
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: byielddc
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldBottomDL
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: byielddl
 
 - type: decal
+  parent: BasePathfindYield
   id: PathfindYieldBottomDR
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
@@ -859,222 +1040,259 @@
 # prefabs to save time
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabBendCenter
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_bendcenter
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabBendCenterChevD
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_bendcenterchevd
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabBendCenterChevU
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_bendcenterchevu
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabBendInner
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_bendinner
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabBendOuter
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_bendouter
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabBendOuterChevD
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_bendouterchevd
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabBendOuterChevU
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_bendouterchevu
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHBottom
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_hbottom
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHBottomChevL
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_hbottomchevl
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHBottomChevLJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_hbottomchevljunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHBottomChevR
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_hbottomchevr
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHBottomChevRJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_hbottomchevrjunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHCenter
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_hcenter
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHCenterChevL
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_hcenterchevl
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHCenterChevLJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_hcenterchevljunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHCenterChevR
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_hcenterchevr
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHCenterChevRJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_hcenterchevrjunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHTop
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_htop
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHTopChevL
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_htopchevl
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHTopChevLJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_htopchevljunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHTopChevR
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_htopchevr
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabHTopChevRJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_htopchevrjunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVCenter
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vcenter
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVCenterChevD
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vcenterchevd
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVCenterChevDJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vcenterchevdjunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVCenterChevU
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vcenterchevu
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVCenterChevUJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vcenterchevujunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVLeft
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vleft
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVLeftChevD
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vleftchevd
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVLeftChevDJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vleftchevdjunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVLeftChevU
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vleftchevu
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVLeftChevUJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vleftchevujunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVRight
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vright
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVRightChevD
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vrightchevd
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVRightChevDJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vrightchevdjunc
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVRightChevU
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
     state: prefab_vrightchevu
 
 - type: decal
+  parent: BasePathfindPrefab
   id: PathfindPrefabVRightChevUJunc
   sprite:
     sprite: _MACRO/Decals/pathfind.rsi
