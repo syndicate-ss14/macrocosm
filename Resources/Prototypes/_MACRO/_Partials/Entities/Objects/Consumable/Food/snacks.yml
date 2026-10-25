@@ -1,0 +1,38 @@
+- type: !PartialOnly entity
+  id: FoodSnackChocolate
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodSnackChocolateBar
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodSnackPopcorn
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodSnackSemki
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodSnackSyndi
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodSnackChowMein
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodSnackDanDanNoodles
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodSnackCookieFortune
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodSnackSwirlLollipop
+  components: *unguFood

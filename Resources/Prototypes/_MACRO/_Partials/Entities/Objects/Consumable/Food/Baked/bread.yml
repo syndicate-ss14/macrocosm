@@ -1,0 +1,74 @@
+- type: !PartialOnly entity
+  id: FoodBreadCorn
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadCornSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadCreamcheese
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadCreamcheeseSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadMimana
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadMimanaSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadPlain
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadPlainSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadTofu
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadTofuSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadBaguette
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadBaguetteSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadButteredToast
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadFrenchToast
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadGarlicSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadJellySlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadMoldySlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBreadTwoSlice
+  components: *unguFood

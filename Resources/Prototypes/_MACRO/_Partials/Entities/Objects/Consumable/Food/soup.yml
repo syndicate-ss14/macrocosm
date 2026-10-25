@@ -1,0 +1,26 @@
+- type: !PartialOnly entity
+  id: FoodJellyAmanita
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodRiceBoiled
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodRiceEgg
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodRicePudding
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodSoupMushroom
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodOatmeal
+  components: *unguFood

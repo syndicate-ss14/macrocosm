@@ -1,4 +1,4 @@
-﻿using Content.Server.GameTicking.Rules;
+using Content.Server.GameTicking.Rules;
 using Content.Shared._MACRO.Announcements;
 using Content.Shared.NukeOps;
 using Robust.Shared.Audio;
@@ -11,7 +11,7 @@ namespace Content.Server.NukeOps;
 /// Used with NukeOps game rule to send war declaration announcement
 /// </summary>
 [RegisterComponent, AutoGenerateComponentPause]
-[Access(typeof(WarDeclaratorSystem), typeof(NukeopsRuleSystem))]
+[Access(typeof(WarDeclaratorSystem), typeof(ServerNukeopsRuleSystem))]
 public sealed partial class WarDeclaratorComponent : Component
 {
     /// <summary>

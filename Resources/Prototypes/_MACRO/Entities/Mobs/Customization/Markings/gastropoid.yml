@@ -55,8 +55,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/chest.rsi
     state: glow
-  shaders:
-    glow: unshaded
+    shader: unshaded
 
 - type: marking
   id: GastropoidLinesBody
@@ -123,8 +122,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/head.rsi
     state: cheekglow
-  shaders:
-    cheekglow: unshaded
+    shader: unshaded
 
 - type: marking
   id: GastropoidCheeks
@@ -173,8 +171,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/head.rsi
     state: antennaglow
-  shaders:
-    antennaglow: unshaded
+    shader: unshaded
 
 - type: marking
   id: GastropoidFaceLoops
@@ -457,8 +454,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: prostheticsimpleglowinthedarkstars
-  shaders:
-    prostheticsimpleglowinthedarkstars: unshaded
+    shader: unshaded
 
 - type: marking
   id: ProstheticInnerLight
@@ -467,8 +463,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: prostheticinnerlight
-  shaders:
-    prostheticinnerlight: unshaded
+    shader: unshaded
 
 - type: marking
   id: SimpleBow
@@ -493,13 +488,12 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: weewoo1
+    shader: unshaded
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: weewoo2
+    shader: unshaded
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: weewoo3
-  shaders:
-    weewoo1: unshaded
-    weewoo2: unshaded
 
 - type: marking
   id: SnailWeewooSmall
@@ -508,13 +502,12 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: weewoosmall1
+    shader: unshaded
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: weewoosmall2
+    shader: unshaded
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: weewoosmall3
-  shaders:
-    weewoosmall1: unshaded
-    weewoosmall2: unshaded
 
 - type: marking
   id: ConeBigStripes
@@ -547,8 +540,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: coneglow
-  shaders:
-    coneglow: unshaded
+    shader: unshaded
 
 - type: marking
   id: ConeGradient
@@ -597,8 +589,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: smallglow
-  shaders:
-    smallglow: unshaded
+    shader: unshaded
 
 - type: marking
   id: SmallGradient
@@ -671,8 +662,7 @@
   sprites:
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: bigglow
-  shaders:
-    bigglow: unshaded
+    shader: unshaded
 
 - type: marking
   id: BigGradient
@@ -801,8 +791,7 @@
     state: prostheticmulticolor2
   - sprite: _MACRO/Mobs/Customization/Gastropoid/tail.rsi
     state: prostheticpulse
-  shaders:
-    prostheticpulse: unshaded
+    shader: unshaded
 
 - type: marking
   id: SmallFlowers

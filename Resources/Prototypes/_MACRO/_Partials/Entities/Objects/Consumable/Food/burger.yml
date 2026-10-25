@@ -1,0 +1,6 @@
+- type: !PartialOnly entity
+  id: FoodBreadBun
+  components:
+  - type: Tag
+    tags:
+    - UnguFood

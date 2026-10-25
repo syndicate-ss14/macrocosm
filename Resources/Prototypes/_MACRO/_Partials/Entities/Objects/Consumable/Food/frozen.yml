@@ -1,0 +1,14 @@
+- type: !PartialOnly entity
+  id: FoodFrozenSnowconeBase
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodFrozenSnowconeBerry
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodFrozenSnowconeFruit
+  components: *unguFood

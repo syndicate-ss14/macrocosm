@@ -1,9 +1,11 @@
 using System.Linq;
 using Content.Server._MACRO.Announcements;
 using Content.Server.Administration;
+using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Shared._MACRO.Announcements;
 using Content.Shared.Administration;
+using Content.Shared.Database;
 using Robust.Shared.Audio;
 using Robust.Shared.Console;
 using Robust.Shared.ContentPack;
@@ -18,6 +20,7 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IResourceManager _res = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
     [Dependency] private AnnouncerManager _announcer = default!; // macrocosm
 
     public override string Command => "announce";
@@ -74,6 +77,18 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
         }
 
         _chat.DispatchGlobalAnnouncement(message, sender, true, sound, color);
+
+        if (shell.Player is null)
+        {
+            _adminLogger.Add(LogType.Chat, LogImpact.Low,
+                $"LOCAL used 'announce' with displayed sender {sender}: {message}");
+        }
+        else
+        {
+            _adminLogger.Add(LogType.Chat, LogImpact.Low,
+                $"{shell.Player:Player} used 'announce' with displayed sender {sender}: {message}");
+        }
+
         shell.WriteLine(Loc.GetString("shell-command-success"));
     }
 

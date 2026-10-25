@@ -1,0 +1,30 @@
+- type: !PartialOnly entity
+  id: FoodButter
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodButterSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCannabisButter
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCheese
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCheeseSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodChevre
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodChevreSlice
+  components: *unguFood

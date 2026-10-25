@@ -35,6 +35,7 @@
   - type: Tag
     tags:
     - Bread
+    - Ingredient
     - Slice
   - type: Solution
     solution:
@@ -95,8 +96,9 @@
       amount: 8
   - type: Tag
     tags:
-    - Fruit
     - Bread
+    - FinishedMeal
+    - Fruit
 # Tastes like bread, banana, nut.
 
 - type: entity
@@ -114,8 +116,9 @@
     - state: banana-slice
   - type: Tag
     tags:
-    - Fruit
     - Bread
+    - FinishedMeal
+    - Fruit
     - Slice
 
 - type: entity
@@ -139,8 +142,9 @@
       amount: 8
   - type: Tag
     tags:
-    - ClothMade
     - Bread
+    - ClothMade
+    - FinishedMeal
   - type: Solution
     solution:
       reagents:
@@ -166,8 +170,9 @@
     - state: cotton-slice
   - type: Tag
     tags:
-    - ClothMade
     - Bread
+    - ClothMade
+    - Ingredient
     - Slice
   - type: Solution
     solution:
@@ -190,11 +195,6 @@
   - type: Sprite
     layers:
     - state: cornbread
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: ToolRefinable
     refineResult:
     - id: FoodBreadCornSlice
@@ -214,11 +214,6 @@
   - type: Sprite
     layers:
     - state: cornbread-slice
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 
 - type: entity
   name: cream cheese bread
@@ -234,11 +229,6 @@
   - type: Sprite
     layers:
     - state: creamcheese
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: ToolRefinable
     refineResult:
     - id: FoodBreadCreamcheeseSlice
@@ -266,11 +256,6 @@
   - type: Sprite
     layers:
     - state: creamcheese-slice
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -307,8 +292,10 @@
         Quantity: 4
   - type: Tag
     tags:
-    - Meat
     - Bread
+    - FinishedMeal
+    - Ingredient
+    - Meat
 # Tastes like bread, meat.
 
 - type: entity
@@ -335,8 +322,8 @@
         Quantity: 0.5
   - type: Tag
     tags:
-    - Meat
     - Bread
+    - Meat
     - Slice
 
 - type: entity
@@ -352,11 +339,6 @@
   - type: Sprite
     layers:
     - state: mimana
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: ToolRefinable
     refineResult:
     - id: FoodBreadMimanaSlice
@@ -385,11 +367,6 @@
   - type: Sprite
     layers:
     - state: mimana-slice
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -409,11 +386,6 @@
   - type: Sprite
     layers:
     - state: plain
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: ToolRefinable
     refineResult:
     - id: FoodBreadPlainSlice
@@ -428,11 +400,6 @@
   - type: Sprite
     layers:
     - state: plain-slice
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 
 - type: entity
   name: sausage bread
@@ -460,8 +427,8 @@
         Quantity: 10
   - type: Tag
     tags:
-    - Meat
     - Bread
+    - Meat
 
 - type: entity
   name: sausage bread slice
@@ -485,8 +452,9 @@
         Quantity: 1.25
   - type: Tag
     tags:
-    - Meat
     - Bread
+    - FinishedMeal
+    - Meat
     - Slice
 
 - type: entity
@@ -517,8 +485,8 @@
         Quantity: 4
   - type: Tag
     tags:
-    - Meat
     - Bread
+    - Meat
 # Tastes like bread, cobwebs.
 
 - type: entity
@@ -545,8 +513,9 @@
         Quantity: 0.5
   - type: Tag
     tags:
-    - Meat
     - Bread
+    - FinishedMeal
+    - Meat
     - Slice
 
 - type: entity
@@ -562,11 +531,6 @@
   - type: Sprite
     layers:
     - state: tofu
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: ToolRefinable
     refineResult:
     - id: FoodBreadTofuSlice
@@ -593,11 +557,6 @@
   - type: Sprite
     layers:
     - state: tofu-slice
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -634,8 +593,9 @@
         Quantity: 4
   - type: Tag
     tags:
-    - Meat
     - Bread
+    - FinishedMeal
+    - Meat
 # Tastes like bread, acid.
 
 - type: entity
@@ -662,8 +622,9 @@
         Quantity: 0.5
   - type: Tag
     tags:
-    - Meat
     - Bread
+    - FinishedMeal
+    - Meat
     - Slice
 
 # Other than bread/slice:
@@ -709,11 +670,6 @@
     damage:
       types:
         Blunt: 1 # bonk
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 # Tastes like France.
 
 - type: entity
@@ -734,6 +690,7 @@
     tags:
     - Bread
     - ClothMade
+    - FinishedMeal
   - type: Clothing
     equippedPrefix: baguette-cotton
   - type: Item
@@ -767,11 +724,6 @@
   components:
   - type: Sprite
     state: crostini
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -797,8 +749,9 @@
   - type: Tag
     tags:
     - Bread
-    - Slice
     - ClothMade
+    - Ingredient
+    - Slice
   - type: Solution
     solution:
       reagents:
@@ -825,11 +778,6 @@
       - bread
   - type: Sprite
     state: buttered-toast
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -851,11 +799,6 @@
       - bread
   - type: Sprite
     state: french-toast
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -882,11 +825,6 @@
   - type: Sprite
     layers:
     - state: garlic-slice
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -913,11 +851,6 @@
   - type: Sprite
     layers:
     - state: jelly-toast
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -938,7 +871,6 @@
     - state: moldy-slice
   - type: Tag
     tags:
-    - UnguFood # macro edit - allow ungu to eat
     - Trash
   - type: Solution
     solution:
@@ -959,11 +891,6 @@
     layers:
     - state: two-slice
   - type: SolutionContainerManager
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -1043,10 +970,11 @@
     baseSprintSpeed : 3
   - type: Tag
     tags:
-    - VimPilot
-    - DoorBumpOpener
     - Bread
+    - DoorBumpOpener
+    - FinishedMeal
     - Meat
+    - VimPilot
   - type: CanEscapeInventory
     baseResistTime: 2
   - type: Puller
@@ -1078,6 +1006,7 @@
   - type: Tag
     tags:
     - ReptilianFood
+    - FinishedMeal
   - type: FlavorProfile
     flavors:
     - nutribrick
@@ -1104,6 +1033,7 @@
   - type: Tag
     tags:
     - ClothMade
+    - FinishedMeal
   - type: Item
     size: Small
     storedOffset: -1,0
