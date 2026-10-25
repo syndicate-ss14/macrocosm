@@ -10,7 +10,8 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: DrinkWaterBottleTallFull
+        - id: Flare
         - id: PillEmergency
   - type: Sprite
     sprite: _MACRO/Objects/Storage/boxes.rsi
@@ -31,8 +32,9 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: Flare
         - id: PillEmergency
+        - id: DrinkWaterBottleLargeFull
   - type: Sprite
     sprite: _MACRO/Objects/Storage/boxes.rsi
     layers:
@@ -56,8 +58,9 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: Flare
         - id: PillEmergency
+        - id: DrinkWaterBottleLargeFunnyFull
   - type: Tag
     tags:
     - BoxHug
@@ -71,7 +74,8 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreath
+        - id: DrinkWaterBottleTallFull
+        - id: Flare
         - id: PillEmergency
 
 - type: entity
@@ -83,7 +87,8 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskBreathMedical
+        - id: DrinkWaterBottleTallFull
+        - id: Flare
         - id: PillEmergency
 
 
@@ -96,7 +101,8 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskGasSecurity
+        - id: DrinkWaterBottleTallFull
+        - id: Flare
         - id: PillEmergency
 
 - type: entity
@@ -108,5 +114,6 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskGasSyndicate
+        - id: Flare
         - id: PillEmergency
+        - id: DrinkWaterBottleLargeFull
