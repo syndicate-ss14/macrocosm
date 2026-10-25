@@ -16,4 +16,7 @@
   id: UnguFood # Used to denote non-food items ungu are able to eat
 
 - type: Tag
+  id: MultitoolDefibrillatorTarget # Used to identify a creature as small enough for a multitool to act as a defibrillator
+
+- type: Tag
   id: Vaporizer # SpeechRequiresEquipment whitelist on MobDecapoid.
