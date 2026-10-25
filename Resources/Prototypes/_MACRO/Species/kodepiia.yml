@@ -2,7 +2,6 @@
   id: Kodepiia
   name: species-name-kodepiia
   roundStart: false
-# randomViable: true
   prototype: MobKodepiia
   dollPrototype: AppearanceKodepiia
   skinColoration: Hues
