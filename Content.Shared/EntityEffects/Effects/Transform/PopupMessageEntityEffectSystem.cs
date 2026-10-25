@@ -1,4 +1,5 @@
-﻿using Content.Shared.Popups;
+﻿using Content.Shared.Mobs;
+using Content.Shared.Popups;
 using Robust.Shared.Network;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
@@ -17,27 +18,35 @@ public sealed partial class PopupMessageEntityEffectSystem : EntityEffectSystem<
 
     protected override void Effect(Entity<TransformComponent> entity, ref EntityEffectEvent<PopupMessage> args)
     {
-        // TODO: When we get proper random prediction remove this check.
-        if (_net.IsClient)
-            return;
+        // Begin MACRO: Move this function out
+        PopupMessage(entity,
+            messages: args.Effect.Messages,
+            popupType: args.Effect.VisualType,
+            method: args.Effect.Method,
+            recipients: args.Effect.Type);
 
-        var msg = Loc.GetString(_random.Pick(args.Effect.Messages), ("entity", entity));
+        // // TODO: When we get proper random prediction remove this check.
+        // if (_net.IsClient)
+        //     return;
 
-        switch ((args.Effect.Method, args.Effect.Type))
-        {
-            case (PopupMethod.PopupEntity, PopupRecipients.Local):
-                _popup.PopupEntity(msg, entity, entity, args.Effect.VisualType);
-                break;
-            case (PopupMethod.PopupEntity, PopupRecipients.Pvs):
-                _popup.PopupEntity(msg, entity, args.Effect.VisualType);
-                break;
-            case (PopupMethod.PopupCoordinates, PopupRecipients.Local):
-                _popup.PopupCoordinates(msg, Transform(entity).Coordinates, entity, args.Effect.VisualType);
-                break;
-            case (PopupMethod.PopupCoordinates, PopupRecipients.Pvs):
-                _popup.PopupCoordinates(msg, Transform(entity).Coordinates, args.Effect.VisualType);
-                break;
-        }
+        // var msg = Loc.GetString(_random.Pick(args.Effect.Messages), ("entity", entity));
+
+        // switch ((args.Effect.Method, args.Effect.Type))
+        // {
+        //     case (PopupMethod.PopupEntity, PopupRecipients.Local):
+        //         _popup.PopupEntity(msg, entity, entity, args.Effect.VisualType);
+        //         break;
+        //     case (PopupMethod.PopupEntity, PopupRecipients.Pvs):
+        //         _popup.PopupEntity(msg, entity, args.Effect.VisualType);
+        //         break;
+        //     case (PopupMethod.PopupCoordinates, PopupRecipients.Local):
+        //         _popup.PopupCoordinates(msg, Transform(entity).Coordinates, entity, args.Effect.VisualType);
+        //         break;
+        //     case (PopupMethod.PopupCoordinates, PopupRecipients.Pvs):
+        //         _popup.PopupCoordinates(msg, Transform(entity).Coordinates, args.Effect.VisualType);
+        //         break;
+        // }
+        // End MACRO
     }
 }
 
