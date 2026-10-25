@@ -5,12 +5,13 @@
     enum.HumanoidVisualLayers.Hair:
       limit: 1
       required: false
+      weight: 0.3
     enum.HumanoidVisualLayers.Eyes:
       limit: 2
       required: true
       default: [ KodeHumanEyesUneven ]
     enum.HumanoidVisualLayers.Head:
-      limit: 8
+      limit: 4
       required: false
     enum.HumanoidVisualLayers.Chest:
       limit: 4
@@ -21,6 +22,7 @@
     enum.HumanoidVisualLayers.Tenta:
       limit: 1
       required: true
+      weight: 1
       default: [ KodeWingsBlade ]
     enum.HumanoidVisualLayers.Snout:
       limit: 1
@@ -32,10 +34,10 @@
       limit: 1
       required: true
     enum.HumanoidVisualLayers.LLeg:
-      limit: 8
+      limit: 3
       required: false
     enum.HumanoidVisualLayers.RLeg:
-      limit: 8
+      limit: 3
       required: false
     enum.HumanoidVisualLayers.LFoot:
       limit: 1
