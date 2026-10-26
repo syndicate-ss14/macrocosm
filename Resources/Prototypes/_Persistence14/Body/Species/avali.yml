@@ -162,10 +162,7 @@
   - type: ScaleVisuals
     scale: .75, .75
   - type: Vocal
-    sounds:
-      Male: MaleAvali
-      Female: FemaleAvali
-      Unsexed: MaleAvali
+    emoteSounds: MaleAvali
   - type: Damageable
     damageModifierSet: Avali
   - type: MeleeWeapon
@@ -180,7 +177,7 @@
     action: "ActionToggleWaggingAvali"
   - type: Temperature
     specificHeat: 44
-    currentTemperature: 220
+    temperature: 220
   - type: ThermalRegulator
     # Ammonia boils at normal tempature
     implicitHeatRegulation: 100
@@ -188,17 +185,15 @@
     radiatedHeat: 1000
     sweatHeatRegulation: 200 # Avali aren't used to heat so they wouldn't sweat as much
     shiveringHeatRegulation: 2000
-    normalBodyTemperature: 220
+    normalBodyTemperature: 237
   - type: MobThresholds # Small bird + Hollow bones means you have less health to work with
     thresholds:
       0: Alive
-      80: SoftCritical
-      130: HardCritical
+      80: Critical
       180: Dead
     stateAlertDict:
       Alive: HumanHealth
-      SoftCritical: HumanCrit
-      HardCritical: HumanCrit
+      Critical: HumanCrit
       Dead: HumanDead
   - type: TemperatureSpeed
     thresholds:
@@ -215,8 +210,7 @@
       types:
         Heat: 2.5 # Per second, scales with temperature & other constants
   - type: TemperatureProtection
-    heatingCoefficient: 1.2
-    coolingCoefficient: 3
+    coefficient: 1.2
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:

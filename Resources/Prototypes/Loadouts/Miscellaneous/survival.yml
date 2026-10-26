@@ -40,6 +40,15 @@
     species:
     - Vox
 
+- type: loadoutEffectGroup # Persistance
+  id: EffectTankHarness
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Vox
+    - Avali
+
+
 # Basic
 - type: loadout
   id: EmergencyOxygen
@@ -182,6 +191,7 @@
     back:
     - EmergencyCoolingUnit
 
+
 # Military / Double Extended
 - type: loadout
   id: EmergencyOxygenMilitaryDouble
@@ -256,7 +266,7 @@
   id: LoadoutTankHarness
   effects:
   - !type:GroupLoadoutEffect
-    proto: EffectSpeciesVox
+    proto: EffectTankHarness
   equipment:
     outerClothing: ClothingOuterVestTank
 
@@ -268,7 +278,6 @@
   - !type:GroupLoadoutEffect
     proto: EffectSpeciesAvali
   equipment:
-    outerClothing: ClothingOuterVestTank
     suitstorage: CoolingUnit
 
 # Breath Tool On Face

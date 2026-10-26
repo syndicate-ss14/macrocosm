@@ -1,5 +1,3 @@
-using Content.Shared._Persistence14.PersistentIdentifier;
-using Content.Shared._Persistence14.PersistentIdentifier.Reference;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -24,6 +22,6 @@ public sealed partial class CoolingUnitComponent : Component
     /// The target being cooled. Updated when the cooling unit is equipped/unequipped.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public PersistentEntityReference CoolingTarget = PersistentIdentifierSystem.EmptyId;
+    public EntityUid? CoolingTarget;
 
 }

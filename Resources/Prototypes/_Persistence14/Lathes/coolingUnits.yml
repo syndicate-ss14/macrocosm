@@ -12,7 +12,6 @@
     Plastic: 500
     Gold: 10
     Plasma: 100
-  unlockUses: 5
 
 - type: latheRecipe
   id: EmergencyCoolingUnitRecipe
@@ -23,6 +22,5 @@
     Glass: 200
     Plastic: 100
     Plasma: 50
-  unlockUses: 12
 
 

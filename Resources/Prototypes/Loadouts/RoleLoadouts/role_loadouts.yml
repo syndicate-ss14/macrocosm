@@ -13,6 +13,7 @@
   #- CaptainJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -30,6 +31,7 @@
   #- HoPJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 # Silicons
 - type: roleLoadout
@@ -78,6 +80,7 @@
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -92,6 +95,7 @@
   #- ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobChef
@@ -109,6 +113,7 @@
   #- ChefJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobLibrarian
@@ -123,6 +128,7 @@
   #- LibrarianJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobLawyer
@@ -138,6 +144,7 @@
   #- LawyerJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobChaplain
@@ -158,6 +165,7 @@
   #- ChaplainJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobJanitor
@@ -175,6 +183,7 @@
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobBotanist
@@ -191,6 +200,7 @@
   #- BotanistJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobClown
@@ -208,6 +218,7 @@
   - Trinkets
   - ClownJobTrinkets
   - GroupBreathToolDecapoidInventoryClown # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobMime
@@ -226,6 +237,7 @@
   - Trinkets
   #- MimeJobTrinkets
   - GroupBreathToolDecapoidInventoryMime # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobMusician
@@ -243,6 +255,7 @@
   #- MusicianJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 # Cargo
 - type: roleLoadout
@@ -262,6 +275,7 @@
   #- QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -280,6 +294,7 @@
   #- CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -295,6 +310,7 @@
   #- SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 # Engineering
 - type: roleLoadout
@@ -313,6 +329,7 @@
   #- ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -326,6 +343,7 @@
   #- TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -343,6 +361,7 @@
   #- StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -358,6 +377,7 @@
   #- AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 # Science
 - type: roleLoadout
@@ -378,6 +398,7 @@
   #- ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobScientist
@@ -398,6 +419,7 @@
   #- ScientistJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -412,6 +434,7 @@
   #- ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 # Security
 - type: roleLoadout
@@ -430,6 +453,7 @@
   - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobWarden
@@ -446,6 +470,7 @@
   - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -463,6 +488,7 @@
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobDetective
@@ -479,6 +505,7 @@
   - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -491,6 +518,7 @@
   #- SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 # Wildcards
 - type: roleLoadout
@@ -508,6 +536,7 @@
   #- ReporterJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobPsychologist
@@ -522,6 +551,7 @@
   #- PsychologistJobTrinkets
   - GroupSpeciesBreathTool
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobTramDriver
@@ -537,6 +567,7 @@
   - Trinkets
   #- TramDriverJobTrinkets
   - GroupSpeciesBreathTool
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit

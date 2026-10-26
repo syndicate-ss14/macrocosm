@@ -1,6 +1,6 @@
+using System;
 using Content.Server.Body.Components;
 using Content.Server.Temperature.Systems;
-using Content.Shared._Persistence14.PersistentIdentifier;
 using Content.Shared._Starlight.CoolingUnit;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
@@ -15,7 +15,6 @@ public sealed partial class CoolingUnitSystem : SharedCoolingUnitSystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private TemperatureSystem _tempSys = default!;
-    [Dependency] private PersistentIdentifierSystem _pid = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private InventorySystem _inventory = default!;
 
@@ -49,17 +48,17 @@ public sealed partial class CoolingUnitSystem : SharedCoolingUnitSystem
 
             while (query.MoveNext(out var uid, out var coolingUnit))
             {
+                var target = coolingUnit.CoolingTarget;
                 if (!TryComp<ItemToggleComponent>(uid, out var toggle) ||
                     !toggle.Activated ||
-                    !_pid.TryResolveId(coolingUnit.CoolingTarget, out var target) ||
                     !TryComp<TemperatureComponent>(target, out var temperatureComponent) ||
                     !TryComp<ThermalRegulatorComponent>(target, out var thermalRegulatorComponent) ||
-                    temperatureComponent.CurrentTemperature <= thermalRegulatorComponent.NormalBodyTemperature)
+                    temperatureComponent.Temperature <= thermalRegulatorComponent.NormalBodyTemperature)
                     continue;
 
 
-                var coolingAmount = Math.Min(coolingUnit.MaxCooling * (float)timeSince.TotalSeconds, temperatureComponent.CurrentTemperature - thermalRegulatorComponent.NormalBodyTemperature);
-                _tempSys.ForceChangeTemperature(target, temperatureComponent.CurrentTemperature - coolingAmount, temperatureComponent);
+                var coolingAmount = temperatureComponent.Temperature - Math.Min(coolingUnit.MaxCooling * (float)timeSince.TotalSeconds, temperatureComponent.Temperature - thermalRegulatorComponent.NormalBodyTemperature);
+                _tempSys.ConductHeat((target.Value, temperatureComponent), coolingAmount, timeSince.Milliseconds*1000f, 1f, true);
             }
         }
     }
@@ -73,14 +72,14 @@ public sealed partial class CoolingUnitSystem : SharedCoolingUnitSystem
 
         if (_hands.IsHolding(parent, uid))
         {
-            component.CoolingTarget = _pid.EnsureId(parent);
+            component.CoolingTarget = parent;
             Dirty(uid, component);
             return;
         }
 
         if (_inventory.TryGetContainingSlot(uid, out _))
         {
-            component.CoolingTarget = _pid.EnsureId(parent);
+            component.CoolingTarget = parent;
             Dirty(uid, component);
             return;
         }
@@ -88,13 +87,13 @@ public sealed partial class CoolingUnitSystem : SharedCoolingUnitSystem
 
     private void OnEquipped(EntityUid uid, CoolingUnitComponent component, ref GotEquippedEvent args)
     {
-        component.CoolingTarget = _pid.EnsureId(args.Equipee);
+        component.CoolingTarget = args.EquipTarget;
         Dirty(uid, component);
     }
 
     private void OnUnequipped(EntityUid uid, CoolingUnitComponent component, ref GotUnequippedEvent args)
     {
-        component.CoolingTarget = PersistentIdentifierSystem.EmptyId;
+        component.CoolingTarget = null;
         Dirty(uid, component);
     }
 }

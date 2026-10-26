@@ -772,14 +772,14 @@
           amount: 6
           conditions:
            - !type:MetabolizerTypeCondition
-             type: [Avali]
+             type: [ Avali ]
              inverted: true
         # Persistance14 End
   #Macrocosm edit start
         - !type:HealthChange
           conditions:
           - !type:MetabolizerTypeCondition
-            type: [ Gastropoid, Avali ]
+          type: [ Gastropoid, Avali ] # Persi: Add Saline
           damage:
             types:
               Poison: 4
