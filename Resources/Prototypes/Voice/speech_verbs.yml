@@ -1,4 +1,4 @@
-﻿- type: speechVerb
+- type: speechVerb
   id: Default
   name: chat-speech-verb-name-default
   speechVerbStrings:
@@ -180,7 +180,7 @@
   - chat-speech-verb-electricity-2
   - chat-speech-verb-electricity-3
 
-- type: speechVerb
+- type: speechVerb # Persistance14 Edit
   id: Vulpkanin
   name: chat-speech-verb-vulpkanin
   speechVerbStrings:

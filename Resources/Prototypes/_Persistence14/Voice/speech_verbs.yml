@@ -1,0 +1,8 @@
+- type: speechVerb
+  name: chat-speech-verb-name-avali
+  id: Avali
+  speechVerbStrings:
+  - chat-speech-verb-avali-1
+  - chat-speech-verb-avali-2
+
+

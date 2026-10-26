@@ -1,0 +1,4 @@
+- type: skinColoration
+  id: AvaliColors
+  strategy: !type:ClampedHslColoration
+     saturation: [0, 0.60]
