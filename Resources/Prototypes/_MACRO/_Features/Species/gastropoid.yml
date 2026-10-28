@@ -1,0 +1,12 @@
+- type: !PartialOnly species
+  id: Gastropoid
+  roundStart: &speciesEnabled false # Set this to "true" to enable.
+
+- type: !PartialOnly guideEntry
+  id: Gastropoid
+  showInGuidebook: *speciesEnabled
+  includeAsChild: *speciesEnabled
+
+- type: !PartialOnly metabolizerType
+  id: Gastropoid
+  showInGuidebook: *speciesEnabled
