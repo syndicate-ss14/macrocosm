@@ -1,0 +1,27 @@
+- type: entity
+  parent: MarkerBase
+  id: RandomBeachUmbrellaSpawner
+  name: random beach umbrella spawner
+  placement:
+    mode: SnapgridBorder
+  components:
+  - type: Transform
+    anchored: false # needed for SnapgridBorder
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _DEN/Structures/Decoration/umbrella.rsi
+      state: blue
+      offset: 0, 0.75
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:GroupSelector
+      children:
+      - id: BeachUmbrellaBlue
+      - id: BeachUmbrellaGray
+      - id: BeachUmbrellaGreen
+      - id: BeachUmbrellaOrange
+      - id: BeachUmbrellaPink
+      - id: BeachUmbrellaPurple
+      - id: BeachUmbrellaRed
+      - id: BeachUmbrellaYellow

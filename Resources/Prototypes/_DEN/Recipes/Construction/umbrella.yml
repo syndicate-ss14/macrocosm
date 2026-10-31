@@ -1,0 +1,95 @@
+- type: construction
+  id: BeachUmbrellaBlue
+  graph: BeachUmbrella
+  startNode: start
+  targetNode: BeachUmbrellaBlue
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridBorder
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: BeachUmbrellaGray
+  graph: BeachUmbrella
+  startNode: start
+  targetNode: BeachUmbrellaGray
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridBorder
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: BeachUmbrellaGreen
+  graph: BeachUmbrella
+  startNode: start
+  targetNode: BeachUmbrellaGreen
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridBorder
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: BeachUmbrellaOrange
+  graph: BeachUmbrella
+  startNode: start
+  targetNode: BeachUmbrellaOrange
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridBorder
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: BeachUmbrellaPink
+  graph: BeachUmbrella
+  startNode: start
+  targetNode: BeachUmbrellaPink
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridBorder
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: BeachUmbrellaPurple
+  graph: BeachUmbrella
+  startNode: start
+  targetNode: BeachUmbrellaPurple
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridBorder
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: BeachUmbrellaRed
+  graph: BeachUmbrella
+  startNode: start
+  targetNode: BeachUmbrellaRed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridBorder
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: BeachUmbrellaYellow
+  graph: BeachUmbrella
+  startNode: start
+  targetNode: BeachUmbrellaYellow
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridBorder
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

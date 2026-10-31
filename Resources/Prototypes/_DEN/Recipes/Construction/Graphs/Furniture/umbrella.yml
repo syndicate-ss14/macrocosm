@@ -1,0 +1,68 @@
+
+- type: constructionGraph
+  id: BeachUmbrella
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: BeachUmbrellaBlue
+      steps: &constructUmbrellaSteps
+      - material: MetalRod
+        amount: 2
+        doAfter: 1
+      - material: Cloth
+        amount: 2
+        doAfter: 1
+    - to: BeachUmbrellaGray
+      steps: *constructUmbrellaSteps
+    - to: BeachUmbrellaGreen
+      steps: *constructUmbrellaSteps
+    - to: BeachUmbrellaOrange
+      steps: *constructUmbrellaSteps
+    - to: BeachUmbrellaPink
+      steps: *constructUmbrellaSteps
+    - to: BeachUmbrellaPurple
+      steps: *constructUmbrellaSteps
+    - to: BeachUmbrellaRed
+      steps: *constructUmbrellaSteps
+    - to: BeachUmbrellaYellow
+      steps: *constructUmbrellaSteps
+
+  # Deconstructs
+  - node: BeachUmbrellaBlue
+    entity: BeachUmbrellaBlue
+    edges: &deconstructUmbrellaSteps
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: PartRodMetal1
+        amount: 2
+      - !type:SpawnPrototype
+        prototype: MaterialCloth1
+        amount: 2
+      steps:
+      - tool: Screwing
+        doAfter: 3
+  - node: BeachUmbrellaGray
+    entity: BeachUmbrellaGray
+    edges: *deconstructUmbrellaSteps
+  - node: BeachUmbrellaGreen
+    entity: BeachUmbrellaGreen
+    edges: *deconstructUmbrellaSteps
+  - node: BeachUmbrellaOrange
+    entity: BeachUmbrellaOrange
+    edges: *deconstructUmbrellaSteps
+  - node: BeachUmbrellaPink
+    entity: BeachUmbrellaPink
+    edges: *deconstructUmbrellaSteps
+  - node: BeachUmbrellaPurple
+    entity: BeachUmbrellaPurple
+    edges: *deconstructUmbrellaSteps
+  - node: BeachUmbrellaRed
+    entity: BeachUmbrellaRed
+    edges: *deconstructUmbrellaSteps
+  - node: BeachUmbrellaYellow
+    entity: BeachUmbrellaYellow
+    edges: *deconstructUmbrellaSteps

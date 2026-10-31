@@ -1,0 +1,11 @@
+- type: stack
+  parent: BaseTileStack
+  id: FloorTilePool
+  name: stack-pool-floor-tile
+  spawn: FloorTileItemPool
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTilePoolDark
+  name: stack-dark-pool-floor-tile
+  spawn: FloorTileItemPoolDark

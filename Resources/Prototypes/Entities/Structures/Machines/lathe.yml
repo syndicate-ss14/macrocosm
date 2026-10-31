@@ -698,6 +698,7 @@
     - PlasticTilesStatic
     - CarpetTilesStatic
     - PreciousTilesStatic
+    - DenFloorPoolTilesStatic # DEN
     dynamicPacks:
     - FauxTiles
   - type: MaterialStorage
