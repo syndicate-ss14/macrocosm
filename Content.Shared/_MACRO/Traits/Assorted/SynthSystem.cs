@@ -8,6 +8,7 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Forensics;
 using Content.Shared.Forensics.Components;
+using Content.Shared.Forensics.Systems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._MACRO.Traits;
@@ -20,14 +21,8 @@ public sealed partial class SynthSystem : EntitySystem
     [Dependency] private BloodstreamSystem _bloodstream = default!;
     [Dependency] private SharedTypingIndicatorSystem _typingIndicator = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<SynthComponent, ComponentStartup>(OnStartup);
-    }
-
-    private void OnStartup(EntityUid uid, SynthComponent component, ComponentStartup args)
+    [SubscribeLocalEvent(after: [typeof(ForensicsSystem)])]
+    private void OnStartup(EntityUid uid, SynthComponent component, MapInitEvent args)
     {
         _typingIndicator.SetIndicatorPrototype(uid, RobotTypingIndicator);
 
