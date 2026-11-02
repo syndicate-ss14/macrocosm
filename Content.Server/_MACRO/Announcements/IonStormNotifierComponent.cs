@@ -1,4 +1,4 @@
-﻿namespace Content.Server._Misfit.Announcements;
+﻿namespace Content.Server._MACRO.Announcements;
 
 /// <summary>
 /// Used to notify players of an incoming ion storm.

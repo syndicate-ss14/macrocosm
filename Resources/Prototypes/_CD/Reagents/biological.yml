@@ -8,9 +8,9 @@
   recognizable: true
   physicalDesc: reagent-physical-desc-reflective
   metabolisms:
-    Digestion: # Harmony - Drink>Digestion
+    Digestion: # MACRO - Drink>Digestion
       effects:
-      # Misfit - Change to give same effects as uncooked proteins
+      # MACRO - Change to give same effects as uncooked proteins
       - !type:Vomit
         probability: 0.1
       - !type:HealthChange

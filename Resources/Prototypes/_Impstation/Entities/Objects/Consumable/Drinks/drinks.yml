@@ -3,7 +3,7 @@
   id: DrinkBatteryAcidGlass
   suffix: battery acid
   components:
-  - type: Solution # Harmony - Update to SolutionComponent
+  - type: Solution # MACRO - Update to SolutionComponent
     solution:
       reagents:
         - ReagentId: BatteryAcid
@@ -17,7 +17,7 @@
   id: DrinkAngelsKissGlass
   suffix: angel's kiss
   components:
-  - type: Solution # Harmony - Update to SolutionComponent
+  - type: Solution # MACRO - Update to SolutionComponent
     solution:
       reagents:
         - ReagentId: AngelsKiss

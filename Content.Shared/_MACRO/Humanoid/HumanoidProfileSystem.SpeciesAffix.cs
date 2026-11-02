@@ -1,4 +1,4 @@
-﻿using Content.Shared._Box.Traits;
+﻿using Content.Shared._MACRO.Traits;
 
 namespace Content.Shared.Humanoid;
 

@@ -97,7 +97,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
 
         _fingerprintQuery.TryComp(player, out var fingerprintComponent);
         _dnaQuery.TryComp(player, out var dnaComponent);
-        _synthQuery.TryComp(player, out var affixComponent); // MACRO - Custom Species Affixes
+        _affixQuery.TryComp(player, out var affixComponent); // MACRO - Custom Species Affixes
 
         CreateGeneralRecord(
             station,

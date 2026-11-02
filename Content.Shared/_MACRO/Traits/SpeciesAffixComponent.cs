@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Box.Traits;
+namespace Content.Shared._MACRO.Traits;
 
 /// <summary>
 /// Set an affix to all instances of the players original species
@@ -13,7 +13,6 @@ namespace Content.Shared._Box.Traits;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SpeciesAffixComponent : Component
 {
-
     /// <summary>
     /// The Loc String to pull when the entity is Examined
     /// The string must always take a "species" arguement
@@ -27,5 +26,4 @@ public sealed partial class SpeciesAffixComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public string Affix { get; set; } = "strange-species-affix";
-
 }

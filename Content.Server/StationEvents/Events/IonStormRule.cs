@@ -1,4 +1,4 @@
-using Content.Server._Misfit.Announcements; // MACRO - Ion Storm Notifier
+using Content.Server._MACRO.Announcements; // MACRO - Ion Storm Notifier
 using Content.Server.Silicons.Laws;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
@@ -25,13 +25,13 @@ public sealed partial class IonStormRule : StationEventSystem<IonStormRuleCompon
         if (!TryGetRandomStation(out var chosenStation))
             return;
 
-        // Begin MACRO - Moved CD's synth notifier to its own function
+        // MACRO Start - Moved CD's synth notifier to its own function
         var notifierQuery = EntityQueryEnumerator<IonStormNotifierComponent>();
         while (notifierQuery.MoveNext(out var ent, out var notifierComponent))
         {
             NotifyIonStorm(ent, notifierComponent.AlertChance, notifierComponent.Loc);
         }
-        // End MACRO
+        // MACRO End
 
         var query = EntityQueryEnumerator<SiliconLawBoundComponent, TransformComponent, IonStormTargetComponent>();
         while (query.MoveNext(out var ent, out var lawBound, out var xform, out var target))
@@ -44,7 +44,7 @@ public sealed partial class IonStormRule : StationEventSystem<IonStormRuleCompon
         }
     }
 
-    // Begin MACRO - Move CD's ion storm notification to its own function
+    // MACRO Start - Move CD's ion storm notification to its own function
     private void NotifyIonStorm(EntityUid ent, float alertChance, string loc)
     {
         if (!Random.Shared.Prob(alertChance))
@@ -57,5 +57,5 @@ public sealed partial class IonStormRule : StationEventSystem<IonStormRuleCompon
         var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
         _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Yellow);
     }
-    // End MACRO
+    // MACRO End
 }
