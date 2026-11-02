@@ -7,8 +7,7 @@ namespace Content.Shared._MACRO.Traits;
 /// i.e. "Vulpkanin" > "Synthetic Vulpkanin" or "Vox" > "Vox Automata"
 /// </summary>
 /// <remark>
-/// based heavily on the Cosmatic Drift synth trait
-/// Box - Added support for custom strings and generalizes it to any affix
+/// This feature is originally from Box Station PR https://github.com/ss14-boxstation/ss14-boxstation/pull/342
 /// </remark>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SpeciesAffixComponent : Component
