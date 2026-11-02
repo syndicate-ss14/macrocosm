@@ -8,7 +8,7 @@
   flavor: batteryacid
   color: "#00ff00"
   metamorphicSprite:
-    sprite: _Impstation/Objects/Consumable/Drinks/batteryacid.rsi
+    sprite: _MACRO/Objects/Consumable/Drinks/batteryacid.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
@@ -41,7 +41,7 @@
   flavor: angelskiss
   color: "#a6ffff"
   metamorphicSprite:
-    sprite: _Impstation/Objects/Consumable/Drinks/angelskiss.rsi
+    sprite: _MACRO/Objects/Consumable/Drinks/angelskiss.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-

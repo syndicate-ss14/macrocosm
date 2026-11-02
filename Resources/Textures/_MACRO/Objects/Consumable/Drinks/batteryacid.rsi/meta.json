@@ -6,7 +6,7 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "By maelines (Git)",
+    "copyright": "original sprite credit: (https://github.com/discordia-space/CEV-Eris/raw/f7aa28fd4b4d0386c3393d829681ebca526f1d2d/icons/obj/drinks.dmi) modified sprite by maelines (Git) originally from Impstation in PR https://github.com/impstation/imp-station-14/pull/2903",
     "states":
     [
         {
@@ -14,6 +14,8 @@
             "delays":
             [
                 [
+                    0.5,
+                    0.5,
                     0.5,
                     0.5,
                     0.5,
@@ -32,6 +34,8 @@
                     0.5,
                     0.5,
                     0.5,
+                    0.5,
+                    0.5,
                     0.5
                 ]
             ]
@@ -44,6 +48,8 @@
                     0.5,
                     0.5,
                     0.5,
+                    0.5,
+                    0.5,
                     0.5
                 ]
             ]
@@ -53,6 +59,22 @@
             "delays":
             [
                 [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "fill-4",
+            "delays":
+            [
+                [
+                    0.5,
+                    0.5,
                     0.5,
                     0.5,
                     0.5,

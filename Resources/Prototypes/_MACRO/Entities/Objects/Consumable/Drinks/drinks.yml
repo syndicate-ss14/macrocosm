@@ -8,9 +8,9 @@
     solution:
       reagents:
         - ReagentId: BatteryAcid
-          Quantity: 60
+          Quantity: 30
   - type: Icon
-    sprite: _Impstation/Objects/Consumable/Drinks/batteryacid.rsi
+    sprite: _MACRO/Objects/Consumable/Drinks/batteryacid.rsi
     state: icon
 
 - type: entity
@@ -22,8 +22,8 @@
     solution:
       reagents:
         - ReagentId: AngelsKiss
-          Quantity: 60
+          Quantity: 30
   - type: Icon
-    sprite: _Impstation/Objects/Consumable/Drinks/angelskiss.rsi
+    sprite: _MACRO/Objects/Consumable/Drinks/angelskiss.rsi
     state: icon
 # Section End
