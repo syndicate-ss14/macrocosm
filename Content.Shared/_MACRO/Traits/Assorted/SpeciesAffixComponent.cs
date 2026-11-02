@@ -7,7 +7,7 @@ namespace Content.Shared._MACRO.Traits;
 /// i.e. "Vulpkanin" > "Synthetic Vulpkanin" or "Vox" > "Vox Automata"
 /// </summary>
 /// <remark>
-/// This feature is originally from Box Station PR https://github.com/ss14-boxstation/ss14-boxstation/pull/342
+/// This feature is originally from BoxStation PR https://github.com/ss14-boxstation/ss14-boxstation/pull/342
 /// </remark>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SpeciesAffixComponent : Component
