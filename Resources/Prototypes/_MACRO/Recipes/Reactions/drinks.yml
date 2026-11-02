@@ -1,4 +1,5 @@
-﻿- type: reaction
+﻿# Section Originally from Impstation from PR https://github.com/impstation/imp-station-14/pull/2903
+- type: reaction
   id: BatteryAcid
   requiredMixerCategories:
   - Stir
@@ -27,3 +28,4 @@
       amount: 1
   products:
     AngelsKiss: 3
+# Section End

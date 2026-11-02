@@ -115,3 +115,19 @@
           inverted: true
       - !type:Drunk
         boozePower: 2
+
+# Section Originally from Impstation from PR https://github.com/impstation/imp-station-14/pull/2903
+- type: reaction
+  id: SynthBloodBreakdown # synthblood under /_CD/Reagents/biological.yml
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    SynthBlood:
+      amount: 5
+  products:
+    Silicon: 1
+    Lithium: 1
+    Ethanol: 2
+    SpaceLube: 1
+# Section End

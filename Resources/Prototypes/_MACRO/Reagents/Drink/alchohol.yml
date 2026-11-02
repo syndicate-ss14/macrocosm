@@ -1,4 +1,5 @@
-﻿- type: reagent
+﻿# Section Originally from Impstation from PR https://github.com/impstation/imp-station-14/pull/2903
+- type: reagent
   id: BatteryAcid
   name: reagent-name-batteryacid
   parent: BaseAlcohol
@@ -13,14 +14,14 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Digestion: # MACRO - Drink>Digestion
+    Digestion:
       effects:
       - !type:SatiateThirst
         factor: 1
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.2
-    Bloodstream: # MACRO - Poison>Bloodstream
+    Bloodstream:
       effects:
       - !type:Electrocute
         conditions:
@@ -44,3 +45,4 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+# Section End
