@@ -1,19 +1,22 @@
 # Section derived from synth trait from Cosmatic Drift from PR https://github.com/cosmatic-drift-14/cosmatic-drift/pull/149
-- type: trait
-  id: Synthetic
-  name: trait-synth-name
-  description: trait-synth-desc
-  category: Quirks
-  components:
-    - type: IonStormNotifier # Ion storm notification
-    - type: DamagedSiliconAccent # Adds borg damage accent
-      enableChargeCorruption: false
-      damageAtMaxCorruption: 200
-    - type: SpeciesAffix # Adds species prefix
-      examineAffix: synthetic-component-examine
-      affix: synthetic-component-prefix
-    - type: ReplaceTypingIndicator # Replaces the typing indicator with the borg one
-      proto: robot
-    - type: ReplaceBloodstream # Replaces blood reagent with Synth Blood
-      proto: SynthBlood
+# NOTE - Uncomment below to enable the Synthetic Trait
+
+# - type: trait
+#   id: Synthetic
+#   name: trait-synth-name
+#   description: trait-synth-desc
+#   category: Quirks
+#   components:
+#     - type: IonStormNotifier # Ion storm notification
+#     - type: DamagedSiliconAccent # Adds borg damage accent
+#       enableChargeCorruption: false
+#       damageAtMaxCorruption: 200
+#     - type: SpeciesAffix # Adds species prefix
+#       examineAffix: synthetic-component-examine
+#       affix: synthetic-component-prefix
+#     - type: ReplaceTypingIndicator # Replaces the typing indicator with the borg one
+#       proto: robot
+#     - type: ReplaceBloodstream # Replaces blood reagent with Synth Blood
+#       proto: SynthBlood
+
 # End Section
