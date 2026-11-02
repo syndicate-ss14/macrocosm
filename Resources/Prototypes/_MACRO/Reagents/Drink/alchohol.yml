@@ -1,4 +1,4 @@
-﻿# Section Originally from Impstation from PR https://github.com/impstation/imp-station-14/pull/2903
+﻿# Section derived from Impstation from PR https://github.com/impstation/imp-station-14/pull/2903
 - type: reagent
   id: BatteryAcid
   name: reagent-name-batteryacid
