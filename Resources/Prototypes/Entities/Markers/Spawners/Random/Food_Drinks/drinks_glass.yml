@@ -139,7 +139,8 @@
         - id: DrinkHoochGlass
         - id: DrinkBeepskySmashGlass
         - id: DrinkBacchusBlessing
-        # imp
+        # MACRO Start - Add synth blood drinks, originally from Impstation
         - id: DrinkBatteryAcidGlass
         - id: DrinkAngelsKissGlass
+        # MACRO End
     offset: 0.0

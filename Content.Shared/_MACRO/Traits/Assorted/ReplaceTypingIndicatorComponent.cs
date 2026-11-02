@@ -3,6 +3,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._MACRO.Traits.Assorted;
 
+/// <summary>
+/// Component which allows you to replace the typing indicator as a trait
+/// </summary>
 [RegisterComponent]
 public sealed partial class ReplaceTypingIndicatorComponent : Component
 {
