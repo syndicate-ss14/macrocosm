@@ -4,7 +4,8 @@
   description: trait-synth-desc
   category: Quirks
   components:
-  - type: Synth
-  - type: DamagedSiliconAccent # MACRO - Add silicon accent
-    enableChargeCorruption: false
-    damageAtMaxCorruption: 200
+    - type: Synth
+    - type: IonStormNotifier # MACRO - Ion storm notification
+    - type: DamagedSiliconAccent # MACRO - Add silicon accent
+      enableChargeCorruption: false
+      damageAtMaxCorruption: 200
