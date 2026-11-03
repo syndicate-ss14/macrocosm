@@ -1,7 +1,7 @@
 using System;
 using Content.Server.Body.Components;
 using Content.Server.Temperature.Systems;
-using Content.Shared._Starlight.CoolingUnit;
+using Content.Shared._MACRO.Ports._Starlight.CoolingUnit;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
@@ -9,7 +9,7 @@ using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Temperature.Components;
 using Robust.Shared.Timing;
 
-namespace Content.Server._Starlight.CoolingUnit;
+namespace Content.Server._MACRO.Ports._Starlight.CoolingUnit;
 
 public sealed partial class CoolingUnitSystem : SharedCoolingUnitSystem
 {

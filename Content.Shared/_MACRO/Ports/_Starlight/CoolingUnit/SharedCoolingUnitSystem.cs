@@ -3,7 +3,7 @@ using Content.Shared.Examine;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Toggleable;
 
-namespace Content.Shared._Starlight.CoolingUnit;
+namespace Content.Shared._MACRO.Ports._Starlight.CoolingUnit;
 
 public abstract partial class SharedCoolingUnitSystem : EntitySystem
 {

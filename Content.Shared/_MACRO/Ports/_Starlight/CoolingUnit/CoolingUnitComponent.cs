@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Starlight.CoolingUnit;
+namespace Content.Shared._MACRO.Ports._Starlight.CoolingUnit;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CoolingUnitComponent : Component
