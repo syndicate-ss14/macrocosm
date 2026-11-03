@@ -1,0 +1,91 @@
+- type: constructionGraph
+  id: ChairBeachLounge
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: beige
+      steps: &constructBeachChairSteps
+      - material: Steel
+        amount: 1
+        doAfter: 1
+      - material: Cloth
+        amount: 2
+        doAfter: 1
+    - to: black
+      steps: *constructBeachChairSteps
+    - to: blue
+      steps: *constructBeachChairSteps
+    - to: brown
+      steps: *constructBeachChairSteps
+    - to: gray
+      steps: *constructBeachChairSteps
+    - to: green
+      steps: *constructBeachChairSteps
+    - to: orange
+      steps: *constructBeachChairSteps
+    - to: pink
+      steps: *constructBeachChairSteps
+    - to: purple
+      steps: *constructBeachChairSteps
+    - to: red
+      steps: *constructBeachChairSteps
+    - to: teal
+      steps: *constructBeachChairSteps
+    - to: white
+      steps: *constructBeachChairSteps
+    - to: yellow
+      steps: *constructBeachChairSteps
+
+  - node: beige
+    entity: ChairBeachLoungeBeige
+    edges: &deconstructBeachChairSteps
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 1
+      - !type:SpawnPrototype
+        prototype: MaterialCloth1
+        amount: 2
+      steps:
+      - tool: Screwing
+        doAfter: 1
+  - node: black
+    entity: ChairBeachLoungeBlack
+    edges: *deconstructBeachChairSteps
+  - node: blue
+    entity: ChairBeachLoungeBlue
+    edges: *deconstructBeachChairSteps
+  - node: brown
+    entity: ChairBeachLoungeBrown
+    edges: *deconstructBeachChairSteps
+  - node: gray
+    entity: ChairBeachLoungeGray
+    edges: *deconstructBeachChairSteps
+  - node: green
+    entity: ChairBeachLoungeGreen
+    edges: *deconstructBeachChairSteps
+  - node: orange
+    entity: ChairBeachLoungeOrange
+    edges: *deconstructBeachChairSteps
+  - node: pink
+    entity: ChairBeachLoungePink
+    edges: *deconstructBeachChairSteps
+  - node: purple
+    entity: ChairBeachLoungePurple
+    edges: *deconstructBeachChairSteps
+  - node: red
+    entity: ChairBeachLoungeRed
+    edges: *deconstructBeachChairSteps
+  - node: teal
+    entity: ChairBeachLoungeTeal
+    edges: *deconstructBeachChairSteps
+  - node: white
+    entity: ChairBeachLoungeWhite
+    edges: *deconstructBeachChairSteps
+  - node: yellow
+    entity: ChairBeachLoungeYellow
+    edges: *deconstructBeachChairSteps
