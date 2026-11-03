@@ -14,7 +14,7 @@ marking-CrabCrackedChest = Chest Cracks
 marking-CrabCrackedChest-crackedchest = Chest Cracks
 
 marking-CrabSpine = Armored Spine
-marking-Crabspine-spine = Armored Spine
+marking-CrabSpine-spine = Armored Spine
 
 marking-DecapoidAbPlate = Abdominal Plate
 marking-DecapoidAbPlate-abdominalplate = Abdominal Plate
@@ -180,7 +180,7 @@ marking-DecapoidCrestWise = Crest (Wise)
 # HeadSide
 
 marking-DecapoidWhiskerMid = Whiskers (Mid)
-marking-DecapoidWhisker-whisker-mid = Whiskers
+marking-DecapoidWhiskerMid-whisker-mid = Whiskers
 
 marking-DecapoidWhiskerMidR = Whiskers (Mid Uneven R)
 marking-DecapoidWhiskerMidR-whisker-midr = Whiskers
@@ -201,7 +201,7 @@ marking-DecapoidWhiskerLongL = Whiskers (Long Uneven L)
 marking-DecapoidWhiskerLongL-whisker-longl = Whiskers
 
 marking-DecapoidWhiskerSimple = Whiskers (Simple)
-marking-DecapoidWhisker-whisker-simple = Whiskers
+marking-DecapoidWhiskerSimple-whisker-simple = Whiskers
 
 marking-DecapoidWhiskerStraight = Whiskers (Straight)
 marking-DecapoidWhiskerStraight-whisker-straight = Whiskers
