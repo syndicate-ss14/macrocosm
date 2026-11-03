@@ -18,6 +18,7 @@
 #  - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistance14: Avali
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -37,6 +38,7 @@
 #  - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistnace14: Avali
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -51,6 +53,7 @@
 #  - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistnace14: Avali
 
 - type: roleLoadout
   id: JobChemist
@@ -68,6 +71,7 @@
 #  - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistnace14: Avali
 
 - type: roleLoadout
   id: JobParamedic
@@ -86,3 +90,5 @@
 #  - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
   - GroupBreathToolDecapoid # MACRO: Decapoid
+  - GroupAvaliHeatProtection # Persistnace14: Avali
+
