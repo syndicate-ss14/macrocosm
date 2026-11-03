@@ -140,6 +140,7 @@
     tags:
     - Bee
     - Trash
+    - MultitoolDefibrillatorTarget #MACRO
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
@@ -425,6 +426,8 @@
     tags:
     - Trash
     - VimPilot
+    - MultitoolDefibrillatorTarget #MACRO
+
   - type: NonSpreaderZombie
   - type: StepTrigger
     requiredTriggeredSpeed: 1
@@ -618,6 +621,7 @@
     - Trash
     - CannotSuicide
     - VimPilot
+    - MultitoolDefibrillatorTarget #MACRO
   - type: CanEscapeInventory
   - type: NpcFactionMember
     factions:
@@ -874,6 +878,7 @@
   - type: Tag
     tags:
     - Trash
+    - MultitoolDefibrillatorTarget #MACRO
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
@@ -2079,6 +2084,7 @@
     - ChefPilot
     - Mouse
     - Meat
+    - MultitoolDefibrillatorTarget #MACRO
   - type: Respirator
     damage:
       types:
@@ -2313,6 +2319,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - MultitoolDefibrillatorTarget #MACRO
 
 - type: entity
   name: slug
@@ -2363,6 +2370,9 @@
       reagents:
       - ReagentId: Blood
         Quantity: 50
+  - type: Tag #MACRO
+    tags:
+    - MultitoolDefibrillatorTarget #MACRO
 
 - type: entity
   name: frog
@@ -2425,6 +2435,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - MultitoolDefibrillatorTarget #MACRO
   - type: Destructible
     thresholds:
     - trigger:
@@ -3321,6 +3332,10 @@
   - type: Grammar
     attributes:
       gender: epicene
+  - type: Tag #MACRO - add MultitoolDefib... on the youngling, necessitates overriding parent Tag comp
+    tags:
+    - VimPilot
+    - MultitoolDefibrillatorTarget #MACRO
 
 - type: entity
   name: cat
@@ -3559,6 +3574,10 @@
     thresholds:
       0: Alive
       25: Dead
+  - type: Tag #MACRO - add MultitoolDefib... on the youngling, necessitates overriding parent Tag comp
+    tags:
+    - VimPilot
+    - MultitoolDefibrillatorTarget #MACRO
 
 - type: entity
   name: sloth
@@ -3778,6 +3797,7 @@
     - Trash
     - Hamster
     - Meat
+    - MultitoolDefibrillatorTarget #MACRO
   - type: Respirator
     damage:
       types:

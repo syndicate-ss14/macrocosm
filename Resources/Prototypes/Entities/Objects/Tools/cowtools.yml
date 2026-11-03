@@ -117,6 +117,25 @@
   - type: Tag
     tags:
       - Multitool
+  # Begin Macrocosm: Multitool defibrillator
+  - type: Defibrillator
+    zapHeal:
+      types:
+        Asphyxiation: -10
+    zapSound: /Audio/Effects/sparks1.ogg
+    whitelist:
+      tags:
+      - MultitoolDefibrillatorTarget
+    showMessages: false
+    allowBypassCrit: true
+    doAfterDuration: 0.01
+    writheDuration: 1
+    zapDamage: 0
+    chargeSound: null
+    failureSound: null
+    successSound: null
+    readySound: null
+  # End Macrocosm
 
 - type: entity
   name: cowelding tool
