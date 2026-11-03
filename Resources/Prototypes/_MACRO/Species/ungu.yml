@@ -2,7 +2,6 @@
   id: Ungu
   name: species-name-ungu
   roundStart: false
-  #randomViable: true
   prototype: MobUngu
   dollPrototype: AppearanceUngu
   skinColoration: Hues

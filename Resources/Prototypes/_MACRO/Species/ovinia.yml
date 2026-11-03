@@ -2,7 +2,6 @@
   id: Ovinia
   name: species-name-ovinia
   roundStart: false
-  #randomViable: false
   prototype: MobOvinia
   defaultSkinTone: "#ffffff"
   dollPrototype: AppearanceOvinia

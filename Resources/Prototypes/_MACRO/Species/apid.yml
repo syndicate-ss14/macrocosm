@@ -2,7 +2,6 @@
   id: Apid
   name: species-name-apid
   roundStart: false
-  #randomViable: false
   prototype: MobApid
   defaultSkinTone: "#fcd719"
   dollPrototype: AppearanceApid
