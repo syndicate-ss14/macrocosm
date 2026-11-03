@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Shared._MACRO.Traits; // MACRO - Species affix
 using Content.Shared.Atmos;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -81,11 +82,19 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             : Loc.GetString("health-analyzer-window-entity-unknown-text"));
         NameLabel.SetMessage(name);
 
-        SpeciesLabel.Text =
+        // MACRO Start - Change species identifier to have Synthetic prefix
+        var species =
             _entityManager.TryGetComponent<HumanoidProfileComponent>(target.Value,
                 out var humanoidComponent)
                 ? Loc.GetString(_prototypes.Index(humanoidComponent.Species).Name)
                 : Loc.GetString("health-analyzer-window-entity-unknown-species-text");
+
+        var speciesText = _entityManager.TryGetComponent<SpeciesAffixComponent>(target.Value, out var speciesAffix)
+            ? Loc.GetString(speciesAffix.Affix, ("species", species))
+            : species;
+
+        SpeciesLabel.Text = speciesText;
+        // MACRO End
 
         // Basic Diagnostic
 

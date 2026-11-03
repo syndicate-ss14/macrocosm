@@ -15,6 +15,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
+using Content.Shared.Humanoid.Prototypes; // MACRO
 using Content.Shared.StatusIcon;
 using Robust.Client.GameObjects;
 
@@ -232,6 +233,14 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
         {
             PersonJobIcon.Texture = _spriteSystem.Frame0(proto.Icon);
         }
+
+        // MACRO Start - Add species (back?) to Criminal Records Console
+        var species = Loc.GetString(_proto.Index<SpeciesPrototype>(stationRecord.Species).Name);
+        var speciesText = stationRecord.SpeciesAffix != null
+            ? Loc.GetString(stationRecord.SpeciesAffix, ("species", species))
+            : species;
+        PersonSpecies.Text = speciesText;
+        // MACRO End
 
         PersonPrints.Text = stationRecord.Fingerprint ??  Loc.GetString("generic-not-available-shorthand");
         PersonDna.Text = stationRecord.DNA ??  Loc.GetString("generic-not-available-shorthand");

@@ -115,3 +115,44 @@
           inverted: true
       - !type:Drunk
         boozePower: 2
+
+# Section derived from synth trait from Cosmatic Drift from PR https://github.com/cosmatic-drift-14/cosmatic-drift/pull/149
+- type: reagent
+  id: SynthBlood
+  name: reagent-name-synth-blood
+  group: Biological
+  desc: reagent-desc-synth-blood
+  flavor: metallic
+  color: "#00b8f5"
+  recognizable: true
+  physicalDesc: reagent-physical-desc-reflective
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:Vomit
+        probability: 0.1
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+# Section End
+
+# Section derived from Impstation from PR https://github.com/impstation/imp-station-14/pull/2903
+- type: reaction
+  id: SynthBloodBreakdown
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    SynthBlood:
+      amount: 5
+  products:
+    Silicon: 1
+    Lithium: 1
+    Ethanol: 2
+    SpaceLube: 1
+# Section End

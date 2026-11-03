@@ -14,6 +14,8 @@ public sealed partial class IonStormRule : StationEventSystem<IonStormRuleCompon
     {
         base.Started(uid, comp, gameRule, args);
 
+        NotifyAllIonStorm(); // MACRO - Ion storm notifications
+
         if (!TryGetRandomStation(out var chosenStation))
             return;
 

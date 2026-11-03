@@ -12,8 +12,20 @@
   id: kodepiia
   flavorType: Base
   description: flavor-base-kodepiia
-  
+
 - type: flavor
   id: allulalo
   flavorType: Complex
   description: flavor-complex-allulalo
+
+# Section derived from Impstation from PR https://github.com/impstation/imp-station-14/pull/2903
+- type: flavor
+  id: batteryacid
+  flavorType: Complex
+  description: flavor-complex-safe
+
+- type: flavor
+  id: angelskiss
+  flavorType: Complex
+  description: flavor-complex-profane
+# Section End

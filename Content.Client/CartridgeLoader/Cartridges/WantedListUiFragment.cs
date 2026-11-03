@@ -102,9 +102,15 @@ public sealed partial class WantedListUiFragment : BoxContainer
             "wanted-list-job-label",
             ("job", record.TargetInfo.JobTitle.ToLower())
         ));
+        // MACRO Start - Species affix
+        var species = record.TargetInfo.SpeciesAffix != null
+            ? Loc.GetString(record.TargetInfo.SpeciesAffix, ("species", record.TargetInfo.Species)).ToLower()
+            : record.TargetInfo.Species.ToLower();
+        // MACRO End
+
         TargetSpecies.SetMessage(GetLoc(
             "wanted-list-species-label",
-            ("species", record.TargetInfo.Species.ToLower())
+            ("species", species) // MACRO - Add affix to wanted list cart
         ));
         TargetGender.SetMessage(GetLoc(
             "wanted-list-gender-label",

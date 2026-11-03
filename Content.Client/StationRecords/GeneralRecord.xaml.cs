@@ -19,7 +19,12 @@ public sealed partial class GeneralRecord : Control
         Title.Text = Loc.GetString("general-station-record-console-record-title",
             ("job", record.JobTitle));
         var species = Loc.GetString(prototypeManager.Index<SpeciesPrototype>(record.Species).Name);
-        Species.Text = Loc.GetString("general-station-record-console-record-species", ("species", species));
+        // MACRO Start - Custom Species Affixes
+        var speciesText = record.SpeciesAffix != null
+            ? Loc.GetString(record.SpeciesAffix, ("species", species))
+            : species;
+        Species.Text = Loc.GetString("general-station-record-console-record-species", ("species", speciesText));
+        // MACRO End
         Gender.Text = Loc.GetString("general-station-record-console-record-gender",
             ("gender", record.Gender.ToString()));
         Fingerprint.Text = Loc.GetString("general-station-record-console-record-fingerprint",

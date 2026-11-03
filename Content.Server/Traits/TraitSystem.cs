@@ -2,6 +2,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Roles;
+using Content.Shared.StationRecords.Systems; // MACRO
 using Content.Shared.Traits;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
@@ -17,7 +18,7 @@ public sealed partial class TraitSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete, before: [typeof(StationRecordsSystem)]); // MACRO - The records system needs to run after this
     }
 
     // When the player is spawned in, add all trait components selected during character creation

@@ -97,6 +97,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
 
         _fingerprintQuery.TryComp(player, out var fingerprintComponent);
         _dnaQuery.TryComp(player, out var dnaComponent);
+        _affixQuery.TryComp(player, out var affixComponent); // MACRO - Custom Species Affixes
 
         CreateGeneralRecord(
             station,
@@ -108,6 +109,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
             jobId,
             fingerprintComponent?.Fingerprint,
             dnaComponent?.DNA,
+            affixComponent?.Affix, // MACRO - Custom Species Affixes
             profile);
     }
 
@@ -131,6 +133,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
     /// </param>
     /// <param name="mobFingerprint">Fingerprint of the character.</param>
     /// <param name="dna">DNA of the character.</param>
+    /// <param name="speciesAffix">MACRO - Affix to the character's species.</param>
     ///
     /// <param name="profile">
     ///     Profile for the related player. This is so that other systems can get further information
@@ -147,6 +150,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
         string jobId,
         string? mobFingerprint,
         string? dna,
+        string? speciesAffix, // MACRO - Custom Species Affixes
         HumanoidCharacterProfile profile)
     {
         if (!ProtoMan.TryIndex<JobPrototype>(jobId, out var jobPrototype))
@@ -178,6 +182,7 @@ public sealed partial class StationRecordsSystem : EntitySystem
             Gender = gender,
             DisplayPriority = displayPriority,
             Fingerprint = mobFingerprint,
+            SpeciesAffix = speciesAffix, // MACRO - Custom Species Affixes
             DNA = dna
         };
 

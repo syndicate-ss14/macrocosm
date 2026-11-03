@@ -9,3 +9,8 @@ reagent-desc-bloodkodepiia = The fluid that bleeds from a kodepiia if you cut it
 
 reagent-name-bloodallulalo = methylated blood
 reagent-desc-bloodallulalo = An ancient alkylate form of blood. Known to rapidly evaporate if spilled.
+
+# Section derived from synth trait from Cosmatic Drift from PR https://github.com/cosmatic-drift-14/cosmatic-drift/pull/149
+reagent-name-synth-blood = synth blood
+reagent-desc-synth-blood = Not quite coolant, not quite blue powerade.
+# Section End

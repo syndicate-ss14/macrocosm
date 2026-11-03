@@ -27,7 +27,9 @@ public sealed partial class StationRecordsSystem
             StationRecordFilterType.Job =>
                 !someRecord.JobTitle.Contains(filterLowerCaseValue, StringComparison.OrdinalIgnoreCase),
             StationRecordFilterType.Species =>
-                !someRecord.Species.Contains(filterLowerCaseValue, StringComparison.OrdinalIgnoreCase),
+                someRecord.SpeciesAffix != null // MACRO - Custom Species Affixes
+                    ? !Loc.GetString(someRecord.SpeciesAffix, ("species", someRecord.Species)).Contains(filterLowerCaseValue, StringComparison.OrdinalIgnoreCase)
+                    : !someRecord.Species.Contains(filterLowerCaseValue, StringComparison.OrdinalIgnoreCase),
             StationRecordFilterType.Prints => someRecord.Fingerprint != null
                 && IsFilterWithSomeCodeValue(someRecord.Fingerprint, filterLowerCaseValue),
             StationRecordFilterType.DNA => someRecord.DNA != null

@@ -1,0 +1,29 @@
+﻿# Section derived from Impstation from PR https://github.com/impstation/imp-station-14/pull/2903
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBatteryAcidGlass
+  suffix: battery acid
+  components:
+  - type: Solution
+    solution:
+      reagents:
+        - ReagentId: BatteryAcid
+          Quantity: 30
+  - type: Icon
+    sprite: _MACRO/Objects/Consumable/Drinks/batteryacid.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkAngelsKissGlass
+  suffix: angel's kiss
+  components:
+  - type: Solution
+    solution:
+      reagents:
+        - ReagentId: AngelsKiss
+          Quantity: 30
+  - type: Icon
+    sprite: _MACRO/Objects/Consumable/Drinks/angelskiss.rsi
+    state: icon
+# Section End
