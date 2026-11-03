@@ -1,2 +1,2 @@
-﻿synthetic-component-examine = synthetic { $species }
-synthetic-component-prefix = Synthetic { $species }
+﻿synthetic-species-examine = synthetic { $species }
+synthetic-species-prefix = Synthetic { $species }

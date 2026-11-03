@@ -17,12 +17,12 @@ public sealed partial class SpeciesAffixComponent : Component
     /// The string must always take a "species" arguement
     /// </summary>
     [DataField, AutoNetworkedField]
-    public string ExamineAffix { get; set; } = "strange-affix-examine";
+    public string ExamineAffix { get; set; } = "synthetic-species-examine";
 
     /// <summary>
     /// The Loc String to pull in all other circumstances
     /// The string must always take a "species" arguement
     /// </summary>
     [DataField, AutoNetworkedField]
-    public string Affix { get; set; } = "strange-species-affix";
+    public string Affix { get; set; } = "synthetic-species-prefix";
 }

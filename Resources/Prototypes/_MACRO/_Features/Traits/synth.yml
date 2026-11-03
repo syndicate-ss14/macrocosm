@@ -12,8 +12,8 @@
 #       enableChargeCorruption: false
 #       damageAtMaxCorruption: 200
 #     - type: SpeciesAffix # Adds species prefix
-#       examineAffix: synthetic-component-examine
-#       affix: synthetic-component-prefix
+#       examineAffix: synthetic-species-examine
+#       affix: synthetic-species-prefix
 #     - type: ReplaceTypingIndicator # Replaces the typing indicator with the borg one
 #       proto: robot
 #     - type: ReplaceBloodstream # Replaces blood reagent with Synth Blood
