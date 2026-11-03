@@ -1,0 +1,6 @@
+# Represents changes to upstream files made by Macrocosm.
+- /Prototypes/_MACRO/_Partials
+
+# Represents prototypes used to enable/disable features easily.
+# https://docs.macrocosm.cool/Documents/Conventions/pull-requests
+- /Prototypes/_MACRO/_Features

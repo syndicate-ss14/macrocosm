@@ -1,0 +1,26 @@
+# Note that these entries will not show up in the guidebook if "showInGuidebook" and "includeAsChild"
+# are disabled in the guidebook entry prototypes. You can enable or disable individual entries from
+# the guidebook within the individual species' _Features file.
+
+- type: !PartialOnly guideEntry
+  id: Species
+  children:
+  # Above "Arachnid"
+  - !Index:0 Allulalo
+  - !Index:0 Ant
+  - !Index:0 Apid
+  # Above "Diona"
+  - !Index:1 Decapoid
+  # Above "Human"
+  - !Index:3 Gastropoid
+  - !Index:3 Gray
+  # Above "Moth"
+  - !Index:4 Kodepiia
+  # Above "Reptilian"
+  - !Index:5 Ovinia
+  # Above "Vox"
+  - !Index:7 Ungu
+
+# If you are enabling or disabling certain species from the guidebook, you should probably add
+# the "doll" entity preview of the species to the guidebook entry at this location:
+# Resources/ServerInfo/_MACRO/Guidebook/Mobs/Species.xml

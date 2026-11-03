@@ -181,6 +181,7 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
         if (guides == null)
         {
             guides = _prototypeManager.EnumeratePrototypes<GuideEntryPrototype>()
+                .Where(g => g.ShowInGuidebook) // MACRO: Exclude entries not enabled for "main" guidebook.
                 .ToDictionary(x => new ProtoId<GuideEntryPrototype>(x.ID), x => (GuideEntry)x);
         }
         else if (includeChildren)
@@ -261,6 +262,10 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
                 Log.Error($"Encountered unknown guide prototype: {childId} as a child of {guide.Id}. If the child is not a prototype, it must be directly provided.");
                 continue;
             }
+
+            // MACRO: Exclude this entry as a child if this field is disabled.
+            if (!child.IncludeAsChild)
+                continue;
 
             guides.Add(childId, child);
             RecursivelyAddChildren(child, guides);
