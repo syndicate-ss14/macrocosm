@@ -13,7 +13,7 @@ marking-GastropoidStripesBody = Stripes
 marking-GastropoidStripesBody-stripes = Stripes
 
 marking-GastropoidVertStripes = Streaks
-marking-GastropoidVertStripes-vert_stripes = Streaks
+marking-GastropoidVertStripes-streaks = Streaks
 
 marking-GastropoidFreckledBody = Freckles
 marking-GastropoidFreckledBody-freckled = Freckles
@@ -167,6 +167,7 @@ marking-GastropoidTentacleStubs-stubs = Tentacle Stubs
 
 marking-GastropoidShellBig = Big Shell
 marking-GastropoidShellBig-big = Big Shell
+marking-GastropoidShellBig-bigstripes = Stripes (Big Shell)
 
 marking-GastropoidShellBigStripes = Stripes (Big Shell)
 marking-GastropoidShellBigStripes-bigstripes = Stripes (Big Shell)
@@ -182,6 +183,7 @@ marking-GastropoidShellProstheticSimple-prostheticsimple = Simple Prosthetic She
 
 marking-GastropoidShellSmall = Small Shell
 marking-GastropoidShellSmall-small = Small Shell
+marking-GastropoidShellSmall-smallstripes = Stripes (Small Shell)
 
 marking-GastropoidShellSmallStripes = Stripes (Small Shell)
 marking-GastropoidShellSmallStripes-smallstripes = Stripes (Small Shell)

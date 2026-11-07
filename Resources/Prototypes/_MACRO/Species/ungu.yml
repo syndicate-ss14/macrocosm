@@ -16,6 +16,10 @@
   - Female
   youngAge: 60
   oldAge: 150
+  maxAge: 999
+  # Originally designed for a server (Impstation) with this max age range;
+  # since 150 (old age) > 120 (default max age) we have to adjust the age range anyway.
+  # Might as well let Ungu players have accurate ages.
   defaultSoundsBySex:
   - UnisexUngu
   - UnisexUngu

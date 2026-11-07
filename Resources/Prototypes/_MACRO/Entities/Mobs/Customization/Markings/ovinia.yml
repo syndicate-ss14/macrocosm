@@ -299,7 +299,7 @@
 # RFoot
 
 - type: marking
-  id: OviniaLeftHoof
+  id: OviniaRightHoof
   bodyPart: RFoot
   groupWhitelist: [ Ovinia ]
   sprites:
@@ -313,7 +313,7 @@
 # LFoot
 
 - type: marking
-  id: OviniaRightHoof
+  id: OviniaLeftHoof
   bodyPart: LFoot
   groupWhitelist: [ Ovinia ]
   sprites:

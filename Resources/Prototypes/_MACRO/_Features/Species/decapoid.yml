@@ -1,0 +1,12 @@
+- type: !PartialOnly species
+  id: Decapoid
+  roundStart: &speciesEnabled false # Set this to "true" to enable.
+
+- type: !PartialOnly guideEntry
+  id: Decapoid
+  showInGuidebook: *speciesEnabled
+  includeAsChild: *speciesEnabled
+
+- type: !PartialOnly metabolizerType
+  id: Decapoid
+  showInGuidebook: *speciesEnabled
