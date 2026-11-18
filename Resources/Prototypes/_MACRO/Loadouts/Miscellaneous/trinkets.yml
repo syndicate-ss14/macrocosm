@@ -1,0 +1,22 @@
+# Uncomment the following block of text as well as the corresponding line in /Loadouts/loadout_groups.yml to enable the tutorial pAI selection in the loadout menu for new players only.
+# On Imp, we also have these in our trainee roles' (for example, Technical Assistant or Security Cadet) pockets by default. We recommend you do the same on your downstream.
+# Change the pocket1 slot for any roles you designate as 'trainee' to TutorialPersonalAI.
+
+# - type: loadoutEffectGroup
+#   id: Tutorial
+#   effects:
+#   - !type:JobRequirementLoadoutEffect
+#     requirement:
+#       !type:OverallPlaytimeRequirement
+#       time: 15h
+#       inverted: true # don't let experienced players select these
+
+# - type: loadout
+#   id: TutorialAI_Newcomer # <15 hours.
+#   effects:
+#   - !type:GroupLoadoutEffect
+#     proto: Tutorial
+#   storage:
+#     back:
+#     - TutorialPersonalAI
+#   groupBy: "accessibility"
