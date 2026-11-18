@@ -20,6 +20,9 @@
       reagents:
       - ReagentId: Nutriment
         Quantity: 40 # Bonus for complete meal
+  - type: Tag
+    tags:
+    - FinishedMeal
 
 # Meals
 
@@ -89,6 +92,7 @@
   - type: Tag
     tags:
     - CarrotFries
+    - FinishedMeal
   - type: Solution
     solution:
       reagents:
@@ -114,11 +118,6 @@
       - nachos
   - type: Sprite
     state: nachos
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -145,11 +144,6 @@
       - cheesy
   - type: Sprite
     state: nachos-cheesy
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -177,11 +171,6 @@
       - spicy
   - type: Sprite
     state: nachos-cuban
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
@@ -234,6 +223,7 @@
     state: eggplantparm
   - type: Tag
     tags:
+    - FinishedMeal
     - Fruit
 # Tastes like eggplant, cheese.
 
@@ -284,6 +274,7 @@
   - type: Tag
     tags:
     - CubanCarp
+    - FinishedMeal
     - Meat
 # Tastes like fish, batter, hot peppers.
 
@@ -303,6 +294,7 @@
     state: cornedbeef
   - type: Tag
     tags:
+    - FinishedMeal
     - Meat
 # Tastes like meat, cabbage.
 
@@ -324,6 +316,7 @@
     state: bearsteak
   - type: Tag
     tags:
+    - FinishedMeal
     - Meat
 # Tastes like meat, salmon.
 
@@ -344,6 +337,7 @@
     state: pigblanket
   - type: Tag
     tags:
+    - FinishedMeal
     - Meat
 # Tastes like meat, butter.
 
@@ -377,6 +371,7 @@
         Quantity: 10
   - type: Tag
     tags:
+    - FinishedMeal
     - Meat
 # Tastes like meat, smokey sauce.
 
@@ -395,6 +390,7 @@
     state: benedict
   - type: Tag
     tags:
+    - FinishedMeal
     - Meat
 # Tastes like eggs, bacon, bun.
 
@@ -414,6 +410,7 @@
     state: omelette
   - type: Tag
     tags:
+    - FinishedMeal
     - Meat
 # Tastes like egg, cheese.
 
@@ -434,6 +431,7 @@
     state: friedegg
   - type: Tag
     tags:
+    - FinishedMeal
     - Meat
 # Tastes like egg, salt, pepper.
 
@@ -500,11 +498,6 @@
         - cheesy
     - type: Sprite
       state: queso
-    # macro edit start - allow ungu to eat
-    - type: Tag
-      tags:
-      - UnguFood
-    # macro edit end
 # Its queso! Everyone loves queso... Right?.
 
 - type: entity
@@ -529,6 +522,7 @@
         Quantity: 1
   - type: Tag
     tags:
+    - FinishedMeal
     - Meat
 # tastes exotic
 
@@ -558,6 +552,7 @@
           Quantity: 5
     - type: Tag
       tags:
+      - FinishedMeal
       - Meat
 # What do Europeans eat instead of enchiladas? 25.4 millimeter-iladas.
 
@@ -592,6 +587,7 @@
         Quantity: 5
   - type: Tag
     tags:
+    - FinishedMeal
     - Fruit
 
 - type: entity

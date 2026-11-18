@@ -1,0 +1,86 @@
+# Note: All of the meat-based foods redefine their own tags, removing UnguFood.
+# The UnguFood tag is intentionally not readded, as Ungu are vegetarian.
+# If any other vegetarian (non-meat) foods get added, make sure they're tagged properly.
+
+- type: !PartialOnly entity
+  id: FoodBakedMuffin
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedMuffinChocolate
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedMuffinBluecherry
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedBunHoney
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedBunHotX
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCookie
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCookieOatmeal
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCookieSugar
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedPancake
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedWaffle
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedPretzel
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCannoli
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedChevreChaud
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedBrownieBatch
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedBrownie
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCannabisBrownieBatch
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCannabisBrownie
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodOnionRings
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedCroissant
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodBakedGrilledCheeseSandwich
+  components: *unguFood

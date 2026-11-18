@@ -1,0 +1,105 @@
+- type: !PartialOnly entity
+  id: MobCatCake
+  components:
+  - type: Tag
+    tags:
+    - KodeEdible
+
+- type: !PartialOnly entity
+  id: FoodCakeBase
+  components: &unguFood
+  - type: Tag
+    tags:
+    - UnguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeSliceBase
+  components: *unguFood
+
+# Note: All of the meat-based foods redefine their own tags, removing UnguFood.
+# The UnguFood tag is intentionally not readded, as Ungu are vegetarian.
+# If any other vegetarian (non-meat) foods get added, make sure they're tagged properly.
+
+- type: !PartialOnly entity
+  id: FoodCakeBlueberry
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeBlueberrySlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeCarrot
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeCarrotSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeOrange
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeOrangeSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeLime
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeLimeSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeLemon
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeLemonSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeLemoon
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeLemoonSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeApple
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeAppleSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakePumpkin
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakePumpkinSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeChristmas
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeChristmasSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeSuppermatterSlice
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeBerryDelight
+  components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodCakeBerryDelightSlice
+  components: *unguFood

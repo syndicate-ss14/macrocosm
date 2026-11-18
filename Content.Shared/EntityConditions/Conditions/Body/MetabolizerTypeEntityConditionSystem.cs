@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Shared.Chemistry.Reagent; // MACRO
 using Content.Shared.EntityEffects; // MACRO
 using Content.Shared.Localizations;

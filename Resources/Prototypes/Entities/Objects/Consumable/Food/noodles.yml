@@ -17,6 +17,9 @@
       reagents:
       - ReagentId: Nutriment
         Quantity: 30
+  - type: Tag
+    tags:
+    - FinishedMeal
 
 # Noodles
 
@@ -33,11 +36,6 @@
       - pasta
   - type: Sprite
     state: boiled
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
 # Tastes like pasta.
 
 - type: entity
@@ -63,7 +61,8 @@
         Quantity: 5
   - type: Tag
     tags:
-    - Fruit # ???
+    - FinishedMeal
+    - Fruit # because tomatos are fruit
 # Tastes like pasta, tomato.
 
 - type: entity
@@ -117,6 +116,7 @@
         Quantity: 5
   - type: Tag
     tags:
+    - FinishedMeal
     - Meat
 # Tastes like pasta, meat.
 
@@ -134,6 +134,10 @@
       - meaty
   - type: Sprite
     state: spesslaw
+  - type: Tag
+    tags:
+    - FinishedMeal
+    - Meat
 # Tastes like pasta, meat.
 
 - type: entity
@@ -157,7 +161,10 @@
         Quantity: 45
       - ReagentId: Vitamin
         Quantity: 12
-# Tastes like pasta, tomato.
+  - type: Tag
+    tags:
+    - FinishedMeal
+# Tastes like pasta, oily, eggplant, and carrot.
 
 - type: entity
   parent: FoodNoodlesBase
@@ -173,11 +180,6 @@
       - butter
   - type: Sprite
     state: butter
-  # macro edit start - allow ungu to eat
-  - type: Tag
-    tags:
-    - UnguFood
-  # macro edit end
   - type: Solution
     solution:
       reagents:
