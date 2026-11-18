@@ -28,3 +28,7 @@
 - type: !PartialOnly entity
   id: FoodChevreSlice
   components: *unguFood
+
+- type: !PartialOnly entity
+  id: FoodTacoShell
+  components: *unguFood

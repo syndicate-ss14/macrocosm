@@ -1,5 +1,5 @@
 - type: !PartialOnly entity
-  id: FoodBagelPoppy
+  id: FoodBagelBase
   components:
   - type: Tag
     tags:

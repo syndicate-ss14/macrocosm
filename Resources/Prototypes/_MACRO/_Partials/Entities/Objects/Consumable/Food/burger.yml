@@ -1,6 +1,14 @@
 - type: !PartialOnly entity
-  id: FoodBreadBun
-  components:
+  id: FoodBurgerBase
+  components: &unguFood
   - type: Tag
     tags:
     - UnguFood
+
+# Note: All of the meat-based foods redefine their own tags, removing UnguFood.
+# The UnguFood tag is intentionally not readded, as Ungu are vegetarian.
+# If any other vegetarian (non-meat) foods get added, make sure they're tagged properly.
+
+- type: !PartialOnly entity
+  id: FoodBurgerBaseball
+  components: *unguFood
